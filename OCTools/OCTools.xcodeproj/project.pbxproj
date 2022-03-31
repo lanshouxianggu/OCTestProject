@@ -38,6 +38,7 @@
 		9198BFBE27F5992000BC069F /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
 		9198BFC127F59CE100BC069F /* LCMainTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCMainTabBar.h; sourceTree = "<group>"; };
 		9198BFC227F59CE100BC069F /* LCMainTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCMainTabBar.m; sourceTree = "<group>"; };
+		9198BFC527F5A77500BC069F /* OCToolsPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCToolsPrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +82,7 @@
 		9198BF9F27F594C800BC069F /* OCTools */ = {
 			isa = PBXGroup;
 			children = (
+				9198BFC427F5A71A00BC069F /* PrefixHeader */,
 				9198BFC027F59C9100BC069F /* tabbar */,
 				9198BFBD27F5992000BC069F /* Launch */,
 				9198BFA027F594C800BC069F /* AppDelegate.h */,
@@ -115,13 +117,20 @@
 			path = tabbar;
 			sourceTree = "<group>";
 		};
+		9198BFC427F5A71A00BC069F /* PrefixHeader */ = {
+			isa = PBXGroup;
+			children = (
+				9198BFC527F5A77500BC069F /* OCToolsPrefixHeader.pch */,
+			);
+			path = PrefixHeader;
+			sourceTree = "<group>";
+		};
 		FF38C48554218EB4DEE59609 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				57656EB50BF0E508CAB60E42 /* Pods-OCTools.debug.xcconfig */,
 				2AAFD91B260ED2B7DE4A206B /* Pods-OCTools.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -389,6 +398,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TT9L7QSCDD;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/OCTools/PrefixHeader/OCToolsPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OCTools/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -418,6 +428,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TT9L7QSCDD;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/OCTools/PrefixHeader/OCToolsPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OCTools/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
