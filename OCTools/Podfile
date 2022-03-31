@@ -1,0 +1,11 @@
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+
+target 'OCTools' do
+
+pod 'SVProgressHUD'
+pod "GTMBase64"
+pod "Masonry"
+
+end

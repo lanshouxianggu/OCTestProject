@@ -1,0 +1,24 @@
+PODS:
+  - GTMBase64 (1.0.1)
+  - Masonry (1.1.0)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - GTMBase64
+  - Masonry
+  - SVProgressHUD
+
+SPEC REPOS:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - GTMBase64
+    - Masonry
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  GTMBase64: f0f91be06a7a20b84c8e4fee30c0430395091d82
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: 88ba5a9a7f4aa5e99eb27be29d92aab7f45d1736
+
+COCOAPODS: 1.11.0
