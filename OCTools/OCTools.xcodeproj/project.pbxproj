@@ -15,6 +15,7 @@
 		9198BFB027F594CA00BC069F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9198BFAE27F594CA00BC069F /* LaunchScreen.storyboard */; };
 		9198BFB327F594CA00BC069F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFB227F594CA00BC069F /* main.m */; };
 		9198BFBF27F5992000BC069F /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 9198BFBE27F5992000BC069F /* launch.png */; };
+		9198BFC327F59CE100BC069F /* LCMainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFC227F59CE100BC069F /* LCMainTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		9198BFB127F594CA00BC069F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9198BFB227F594CA00BC069F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9198BFBE27F5992000BC069F /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
+		9198BFC127F59CE100BC069F /* LCMainTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCMainTabBar.h; sourceTree = "<group>"; };
+		9198BFC227F59CE100BC069F /* LCMainTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCMainTabBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 		9198BF9F27F594C800BC069F /* OCTools */ = {
 			isa = PBXGroup;
 			children = (
+				9198BFC027F59C9100BC069F /* tabbar */,
 				9198BFBD27F5992000BC069F /* Launch */,
 				9198BFA027F594C800BC069F /* AppDelegate.h */,
 				9198BFA127F594C800BC069F /* AppDelegate.m */,
@@ -85,6 +89,15 @@
 				9198BFBE27F5992000BC069F /* launch.png */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		9198BFC027F59C9100BC069F /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				9198BFC127F59CE100BC069F /* LCMainTabBar.h */,
+				9198BFC227F59CE100BC069F /* LCMainTabBar.m */,
+			);
+			path = tabbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +173,7 @@
 			files = (
 				9198BFA827F594C800BC069F /* ViewController.m in Sources */,
 				9198BFA227F594C800BC069F /* AppDelegate.m in Sources */,
+				9198BFC327F59CE100BC069F /* LCMainTabBar.m in Sources */,
 				9198BFB327F594CA00BC069F /* main.m in Sources */,
 				9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */,
 			);
@@ -304,6 +318,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TT9L7QSCDD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OCTools/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -311,6 +326,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,6 +346,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TT9L7QSCDD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OCTools/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -337,6 +354,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
