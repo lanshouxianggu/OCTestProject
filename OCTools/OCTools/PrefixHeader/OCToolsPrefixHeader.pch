@@ -14,5 +14,7 @@
 #import "Masonry.h"
 #import "SVProgressHUD.h"
 #import "GTMBase64.h"
+#import "LCConfig.h"
+#import "UIImage+Tool.h"
 
 #endif /* OCToolsPrefixHeader_pch */

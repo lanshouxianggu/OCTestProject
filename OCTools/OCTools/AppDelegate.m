@@ -6,6 +6,8 @@
 //
 
 #import "AppDelegate.h"
+#import "LCLoginViewController.h"
+#import "LCMainTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -16,9 +18,33 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucess) name:@"NOTIF_LOGIN_SUCCESS" object:nil];
+    
+    if (@available(iOS 13.0, *)) {
+      
+    } else {
+      
+        self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        self.window.rootViewController = [[LCLoginViewController alloc]init];
+        self.window.backgroundColor = [UIColor whiteColor];
+        [self.window makeKeyAndVisible];
+        
+    }
+    
     return YES;
 }
 
+
+-(void)loginSucess {
+    if (@available(iOS 13.0, *)) {
+      
+    }else {
+        self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        self.window.rootViewController = [[LCMainTabBarController alloc]init];
+        [self.window makeKeyAndVisible];
+    }
+}
 
 #pragma mark - UISceneSession lifecycle
 

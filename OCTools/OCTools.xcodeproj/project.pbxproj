@@ -17,6 +17,13 @@
 		9198BFB327F594CA00BC069F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFB227F594CA00BC069F /* main.m */; };
 		9198BFBF27F5992000BC069F /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 9198BFBE27F5992000BC069F /* launch.png */; };
 		9198BFC327F59CE100BC069F /* LCMainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFC227F59CE100BC069F /* LCMainTabBar.m */; };
+		9198BFC927F6A11B00BC069F /* LCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFC827F6A11B00BC069F /* LCLoginViewController.m */; };
+		9198BFD127F6A67B00BC069F /* LCMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFCF27F6A67B00BC069F /* LCMainTabBarController.m */; };
+		9198BFDB27F6A92100BC069F /* LCSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFDA27F6A92100BC069F /* LCSquareViewController.m */; };
+		9198BFDE27F6A92D00BC069F /* LCDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFDD27F6A92D00BC069F /* LCDiscoveryViewController.m */; };
+		9198BFE127F6A93A00BC069F /* LCEntertainmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFE027F6A93A00BC069F /* LCEntertainmentViewController.m */; };
+		9198BFE427F6A94200BC069F /* LCMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFE327F6A94200BC069F /* LCMineViewController.m */; };
+		9198BFE827F6ABD800BC069F /* UIImage+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFE727F6ABD800BC069F /* UIImage+Tool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +46,21 @@
 		9198BFC127F59CE100BC069F /* LCMainTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCMainTabBar.h; sourceTree = "<group>"; };
 		9198BFC227F59CE100BC069F /* LCMainTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCMainTabBar.m; sourceTree = "<group>"; };
 		9198BFC527F5A77500BC069F /* OCToolsPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCToolsPrefixHeader.pch; sourceTree = "<group>"; };
+		9198BFC727F6A11B00BC069F /* LCLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCLoginViewController.h; sourceTree = "<group>"; };
+		9198BFC827F6A11B00BC069F /* LCLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCLoginViewController.m; sourceTree = "<group>"; };
+		9198BFCE27F6A67B00BC069F /* LCMainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCMainTabBarController.h; sourceTree = "<group>"; };
+		9198BFCF27F6A67B00BC069F /* LCMainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCMainTabBarController.m; sourceTree = "<group>"; };
+		9198BFD427F6A82C00BC069F /* LCConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCConfig.h; sourceTree = "<group>"; };
+		9198BFD927F6A92100BC069F /* LCSquareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCSquareViewController.h; sourceTree = "<group>"; };
+		9198BFDA27F6A92100BC069F /* LCSquareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCSquareViewController.m; sourceTree = "<group>"; };
+		9198BFDC27F6A92D00BC069F /* LCDiscoveryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCDiscoveryViewController.h; sourceTree = "<group>"; };
+		9198BFDD27F6A92D00BC069F /* LCDiscoveryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCDiscoveryViewController.m; sourceTree = "<group>"; };
+		9198BFDF27F6A93A00BC069F /* LCEntertainmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCEntertainmentViewController.h; sourceTree = "<group>"; };
+		9198BFE027F6A93A00BC069F /* LCEntertainmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCEntertainmentViewController.m; sourceTree = "<group>"; };
+		9198BFE227F6A94200BC069F /* LCMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCMineViewController.h; sourceTree = "<group>"; };
+		9198BFE327F6A94200BC069F /* LCMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCMineViewController.m; sourceTree = "<group>"; };
+		9198BFE627F6ABD800BC069F /* UIImage+Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tool.h"; sourceTree = "<group>"; };
+		9198BFE727F6ABD800BC069F /* UIImage+Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tool.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +104,13 @@
 		9198BF9F27F594C800BC069F /* OCTools */ = {
 			isa = PBXGroup;
 			children = (
+				9198BFE527F6ABC100BC069F /* Category */,
+				9198BFD827F6A91000BC069F /* Mine */,
+				9198BFD727F6A8EB00BC069F /* Entertainment */,
+				9198BFD627F6A8AE00BC069F /* Discovery */,
+				9198BFD527F6A89F00BC069F /* Square */,
+				9198BFD327F6A81000BC069F /* Utils */,
+				9198BFC627F6A10000BC069F /* Login */,
 				9198BFC427F5A71A00BC069F /* PrefixHeader */,
 				9198BFC027F59C9100BC069F /* tabbar */,
 				9198BFBD27F5992000BC069F /* Launch */,
@@ -113,6 +142,8 @@
 			children = (
 				9198BFC127F59CE100BC069F /* LCMainTabBar.h */,
 				9198BFC227F59CE100BC069F /* LCMainTabBar.m */,
+				9198BFCE27F6A67B00BC069F /* LCMainTabBarController.h */,
+				9198BFCF27F6A67B00BC069F /* LCMainTabBarController.m */,
 			);
 			path = tabbar;
 			sourceTree = "<group>";
@@ -123,6 +154,68 @@
 				9198BFC527F5A77500BC069F /* OCToolsPrefixHeader.pch */,
 			);
 			path = PrefixHeader;
+			sourceTree = "<group>";
+		};
+		9198BFC627F6A10000BC069F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9198BFC727F6A11B00BC069F /* LCLoginViewController.h */,
+				9198BFC827F6A11B00BC069F /* LCLoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9198BFD327F6A81000BC069F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9198BFD427F6A82C00BC069F /* LCConfig.h */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9198BFD527F6A89F00BC069F /* Square */ = {
+			isa = PBXGroup;
+			children = (
+				9198BFD927F6A92100BC069F /* LCSquareViewController.h */,
+				9198BFDA27F6A92100BC069F /* LCSquareViewController.m */,
+			);
+			path = Square;
+			sourceTree = "<group>";
+		};
+		9198BFD627F6A8AE00BC069F /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				9198BFDC27F6A92D00BC069F /* LCDiscoveryViewController.h */,
+				9198BFDD27F6A92D00BC069F /* LCDiscoveryViewController.m */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		9198BFD727F6A8EB00BC069F /* Entertainment */ = {
+			isa = PBXGroup;
+			children = (
+				9198BFDF27F6A93A00BC069F /* LCEntertainmentViewController.h */,
+				9198BFE027F6A93A00BC069F /* LCEntertainmentViewController.m */,
+			);
+			path = Entertainment;
+			sourceTree = "<group>";
+		};
+		9198BFD827F6A91000BC069F /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				9198BFE227F6A94200BC069F /* LCMineViewController.h */,
+				9198BFE327F6A94200BC069F /* LCMineViewController.m */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		9198BFE527F6ABC100BC069F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9198BFE627F6ABD800BC069F /* UIImage+Tool.h */,
+				9198BFE727F6ABD800BC069F /* UIImage+Tool.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		FF38C48554218EB4DEE59609 /* Pods */ = {
@@ -250,8 +343,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9198BFA827F594C800BC069F /* ViewController.m in Sources */,
+				9198BFC927F6A11B00BC069F /* LCLoginViewController.m in Sources */,
+				9198BFDB27F6A92100BC069F /* LCSquareViewController.m in Sources */,
+				9198BFE827F6ABD800BC069F /* UIImage+Tool.m in Sources */,
 				9198BFA227F594C800BC069F /* AppDelegate.m in Sources */,
 				9198BFC327F59CE100BC069F /* LCMainTabBar.m in Sources */,
+				9198BFDE27F6A92D00BC069F /* LCDiscoveryViewController.m in Sources */,
+				9198BFE127F6A93A00BC069F /* LCEntertainmentViewController.m in Sources */,
+				9198BFE427F6A94200BC069F /* LCMineViewController.m in Sources */,
+				9198BFD127F6A67B00BC069F /* LCMainTabBarController.m in Sources */,
 				9198BFB327F594CA00BC069F /* main.m in Sources */,
 				9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */,
 			);
