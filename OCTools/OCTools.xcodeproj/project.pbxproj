@@ -24,6 +24,13 @@
 		9198BFE127F6A93A00BC069F /* LCEntertainmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFE027F6A93A00BC069F /* LCEntertainmentViewController.m */; };
 		9198BFE427F6A94200BC069F /* LCMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFE327F6A94200BC069F /* LCMineViewController.m */; };
 		9198BFE827F6ABD800BC069F /* UIImage+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFE727F6ABD800BC069F /* UIImage+Tool.m */; };
+		9198BFEB27F6F71300BC069F /* LCSquareTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFEA27F6F71300BC069F /* LCSquareTableViewCell.m */; };
+		9198BFF827F6F97800BC069F /* OTLAddOrDeleteToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFF127F6F97800BC069F /* OTLAddOrDeleteToolView.m */; };
+		9198BFF927F6F97800BC069F /* OTLPracticePianoTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFF227F6F97800BC069F /* OTLPracticePianoTaskViewController.m */; };
+		9198BFFA27F6F97800BC069F /* OTLPracticePianoTaskFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFF327F6F97800BC069F /* OTLPracticePianoTaskFirstCell.m */; };
+		9198BFFB27F6F97800BC069F /* OTLPracticePianoCommonCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFF427F6F97800BC069F /* OTLPracticePianoCommonCellView.m */; };
+		9198BFFC27F6F97800BC069F /* OTLTeacherSideMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFF727F6F97800BC069F /* OTLTeacherSideMainViewController.m */; };
+		9198C00027F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFFF27F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +68,21 @@
 		9198BFE327F6A94200BC069F /* LCMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCMineViewController.m; sourceTree = "<group>"; };
 		9198BFE627F6ABD800BC069F /* UIImage+Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tool.h"; sourceTree = "<group>"; };
 		9198BFE727F6ABD800BC069F /* UIImage+Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tool.m"; sourceTree = "<group>"; };
+		9198BFE927F6F71300BC069F /* LCSquareTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCSquareTableViewCell.h; sourceTree = "<group>"; };
+		9198BFEA27F6F71300BC069F /* LCSquareTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCSquareTableViewCell.m; sourceTree = "<group>"; };
+		9198BFEE27F6F97800BC069F /* OTLPracticePianoCommonCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTLPracticePianoCommonCellView.h; sourceTree = "<group>"; };
+		9198BFEF27F6F97800BC069F /* OTLPracticePianoTaskFirstCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTLPracticePianoTaskFirstCell.h; sourceTree = "<group>"; };
+		9198BFF027F6F97800BC069F /* OTLPracticePianoTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTLPracticePianoTaskViewController.h; sourceTree = "<group>"; };
+		9198BFF127F6F97800BC069F /* OTLAddOrDeleteToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTLAddOrDeleteToolView.m; sourceTree = "<group>"; };
+		9198BFF227F6F97800BC069F /* OTLPracticePianoTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTLPracticePianoTaskViewController.m; sourceTree = "<group>"; };
+		9198BFF327F6F97800BC069F /* OTLPracticePianoTaskFirstCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTLPracticePianoTaskFirstCell.m; sourceTree = "<group>"; };
+		9198BFF427F6F97800BC069F /* OTLPracticePianoCommonCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTLPracticePianoCommonCellView.m; sourceTree = "<group>"; };
+		9198BFF527F6F97800BC069F /* OTLAddOrDeleteToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTLAddOrDeleteToolView.h; sourceTree = "<group>"; };
+		9198BFF627F6F97800BC069F /* OTLTeacherSideMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTLTeacherSideMainViewController.h; sourceTree = "<group>"; };
+		9198BFF727F6F97800BC069F /* OTLTeacherSideMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTLTeacherSideMainViewController.m; sourceTree = "<group>"; };
+		9198BFFD27F6FA0400BC069F /* OTLCommonEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLCommonEnum.h; sourceTree = "<group>"; };
+		9198BFFE27F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLPracticePianoTaskSecondCell.h; sourceTree = "<group>"; };
+		9198BFFF27F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLPracticePianoTaskSecondCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				9198BFD427F6A82C00BC069F /* LCConfig.h */,
+				9198BFFD27F6FA0400BC069F /* OTLCommonEnum.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -176,8 +199,11 @@
 		9198BFD527F6A89F00BC069F /* Square */ = {
 			isa = PBXGroup;
 			children = (
+				9198BFEC27F6F97800BC069F /* teacherSide */,
 				9198BFD927F6A92100BC069F /* LCSquareViewController.h */,
 				9198BFDA27F6A92100BC069F /* LCSquareViewController.m */,
+				9198BFE927F6F71300BC069F /* LCSquareTableViewCell.h */,
+				9198BFEA27F6F71300BC069F /* LCSquareTableViewCell.m */,
 			);
 			path = Square;
 			sourceTree = "<group>";
@@ -216,6 +242,33 @@
 				9198BFE727F6ABD800BC069F /* UIImage+Tool.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		9198BFEC27F6F97800BC069F /* teacherSide */ = {
+			isa = PBXGroup;
+			children = (
+				9198BFED27F6F97800BC069F /* 练琴任务 */,
+				9198BFF627F6F97800BC069F /* OTLTeacherSideMainViewController.h */,
+				9198BFF727F6F97800BC069F /* OTLTeacherSideMainViewController.m */,
+			);
+			path = teacherSide;
+			sourceTree = "<group>";
+		};
+		9198BFED27F6F97800BC069F /* 练琴任务 */ = {
+			isa = PBXGroup;
+			children = (
+				9198BFF527F6F97800BC069F /* OTLAddOrDeleteToolView.h */,
+				9198BFF127F6F97800BC069F /* OTLAddOrDeleteToolView.m */,
+				9198BFEE27F6F97800BC069F /* OTLPracticePianoCommonCellView.h */,
+				9198BFF427F6F97800BC069F /* OTLPracticePianoCommonCellView.m */,
+				9198BFEF27F6F97800BC069F /* OTLPracticePianoTaskFirstCell.h */,
+				9198BFF327F6F97800BC069F /* OTLPracticePianoTaskFirstCell.m */,
+				9198BFF027F6F97800BC069F /* OTLPracticePianoTaskViewController.h */,
+				9198BFF227F6F97800BC069F /* OTLPracticePianoTaskViewController.m */,
+				9198BFFE27F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.h */,
+				9198BFFF27F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m */,
+			);
+			path = "练琴任务";
 			sourceTree = "<group>";
 		};
 		FF38C48554218EB4DEE59609 /* Pods */ = {
@@ -343,16 +396,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				9198BFA827F594C800BC069F /* ViewController.m in Sources */,
+				9198BFFC27F6F97800BC069F /* OTLTeacherSideMainViewController.m in Sources */,
 				9198BFC927F6A11B00BC069F /* LCLoginViewController.m in Sources */,
+				9198BFEB27F6F71300BC069F /* LCSquareTableViewCell.m in Sources */,
 				9198BFDB27F6A92100BC069F /* LCSquareViewController.m in Sources */,
 				9198BFE827F6ABD800BC069F /* UIImage+Tool.m in Sources */,
+				9198C00027F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m in Sources */,
+				9198BFF927F6F97800BC069F /* OTLPracticePianoTaskViewController.m in Sources */,
+				9198BFFA27F6F97800BC069F /* OTLPracticePianoTaskFirstCell.m in Sources */,
 				9198BFA227F594C800BC069F /* AppDelegate.m in Sources */,
+				9198BFFB27F6F97800BC069F /* OTLPracticePianoCommonCellView.m in Sources */,
 				9198BFC327F59CE100BC069F /* LCMainTabBar.m in Sources */,
 				9198BFDE27F6A92D00BC069F /* LCDiscoveryViewController.m in Sources */,
 				9198BFE127F6A93A00BC069F /* LCEntertainmentViewController.m in Sources */,
 				9198BFE427F6A94200BC069F /* LCMineViewController.m in Sources */,
 				9198BFD127F6A67B00BC069F /* LCMainTabBarController.m in Sources */,
 				9198BFB327F594CA00BC069F /* main.m in Sources */,
+				9198BFF827F6F97800BC069F /* OTLAddOrDeleteToolView.m in Sources */,
 				9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

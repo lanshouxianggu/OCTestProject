@@ -16,5 +16,6 @@
 #import "GTMBase64.h"
 #import "LCConfig.h"
 #import "UIImage+Tool.h"
+#import "OTLCommonEnum.h"
 
 #endif /* OCToolsPrefixHeader_pch */
