@@ -19,9 +19,13 @@
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setTitle:@"登录" forState:UIControlStateNormal];
-    [btn setBackgroundColor:UIColor.orangeColor];
-    btn.layer.cornerRadius = 25;
-    btn.layer.masksToBounds = YES;
+    [btn.titleLabel setFont:[UIFont systemFontOfSize:30 weight:UIFontWeightBold]];
+    [btn setBackgroundColor:UIColor.darkTextColor];
+    btn.layer.cornerRadius = 75;
+    btn.layer.shadowColor = UIColor.orangeColor.CGColor;
+    btn.layer.shadowRadius = 20;
+    btn.layer.shadowOffset = CGSizeMake(0, 0);
+    btn.layer.shadowOpacity = 0.8;
     
     [btn addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
     
@@ -29,7 +33,7 @@
     [self.view addSubview:btn];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.offset(0);
-        make.size.mas_equalTo(CGSizeMake(150, 50));
+        make.size.mas_equalTo(CGSizeMake(150, 150));
     }];
 }
 
