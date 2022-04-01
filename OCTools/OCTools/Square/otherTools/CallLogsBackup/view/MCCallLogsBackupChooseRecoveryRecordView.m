@@ -88,7 +88,7 @@
             make.left.offset(16);
             make.right.offset(-16);
             make.height.mas_equalTo(44);
-            make.bottomMargin.offset(-16);
+            make.bottom.offset(-(16+CPISafeAreaBottomHeight));
         }];
         
         [mainView addSubview:self.tableView];

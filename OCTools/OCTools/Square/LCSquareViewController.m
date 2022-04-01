@@ -8,6 +8,7 @@
 #import "LCSquareViewController.h"
 #import "LCSquareTableViewCell.h"
 #import "OTLTeacherSideMainViewController.h"
+#import "LCOtherToolsViewController.h"
 
 @interface LCSquareViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) NSArray *sectionArr;
@@ -84,7 +85,11 @@
             [TipProgress showText:@"学生端"];
             break;
         case 2:
-            [TipProgress showText:@"工具小玩意"];
+        {
+            LCOtherToolsViewController *vc = [LCOtherToolsViewController new];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             break;
         default:
             break;

@@ -1,21 +1,20 @@
 //
-//  OTLTeacherSideMainViewController.m
-//  ChatClub
+//  LCOtherToolsViewController.m
+//  OCTools
 //
-//  Created by stray s on 2022/3/30.
-//  Copyright © 2022 ArcherMind. All rights reserved.
+//  Created by 刘创 on 2022/4/1.
 //
 
-#import "OTLTeacherSideMainViewController.h"
-#import "OTLPracticePianoTaskViewController.h"
+#import "LCOtherToolsViewController.h"
 #import "LCSquareTableViewCell.h"
+#import "MCCallLogsBackupViewController.h"
 
-@interface OTLTeacherSideMainViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface LCOtherToolsViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataArray;
 @end
 
-@implementation OTLTeacherSideMainViewController
+@implementation LCOtherToolsViewController
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -25,10 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"云上钢琴老师端";
+    self.title = @"工具小玩意儿";
     self.view.backgroundColor = UIColorFromRGB(0xd2d2d2);
     
-    self.dataArray = @[@"练琴任务",@"线下一对一主课课后反馈单"];
+    self.dataArray = @[@"通话备份"];
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -66,10 +65,10 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.section) {
+    switch (indexPath.row) {
         case 0:
         {
-            OTLPracticePianoTaskViewController *vc = [OTLPracticePianoTaskViewController new];
+            MCCallLogsBackupViewController *vc = [MCCallLogsBackupViewController new];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
@@ -92,5 +91,7 @@
     }
     return _tableView;
 }
+
+
 
 @end

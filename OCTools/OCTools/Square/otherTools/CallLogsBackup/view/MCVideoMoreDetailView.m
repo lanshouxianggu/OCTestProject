@@ -102,7 +102,7 @@ static const CGFloat cellHeihgt = 80.f;
             make.right.offset(-16);
             make.height.mas_equalTo(44);
             make.top.equalTo(self.collectionView.mas_bottom).offset(16);
-            make.bottomMargin.offset(-16);
+            make.bottom.offset(-(16+CPISafeAreaBottomHeight));
         }];
         
         
