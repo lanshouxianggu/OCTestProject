@@ -31,6 +31,16 @@
 		9198BFFB27F6F97800BC069F /* OTLPracticePianoCommonCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFF427F6F97800BC069F /* OTLPracticePianoCommonCellView.m */; };
 		9198BFFC27F6F97800BC069F /* OTLTeacherSideMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFF727F6F97800BC069F /* OTLTeacherSideMainViewController.m */; };
 		9198C00027F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFFF27F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m */; };
+		9198C01827F6FECF00BC069F /* MCCallLogsBackupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C00427F6FECF00BC069F /* MCCallLogsBackupViewController.m */; };
+		9198C01927F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C00727F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordModel.m */; };
+		9198C01A27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C00927F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryRecordView.m */; };
+		9198C01B27F6FECF00BC069F /* MCCallLogsBackupMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C00A27F6FECF00BC069F /* MCCallLogsBackupMainView.m */; };
+		9198C01C27F6FECF00BC069F /* MCCallLogsBackupFirstPartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C00D27F6FECF00BC069F /* MCCallLogsBackupFirstPartView.m */; };
+		9198C01D27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryStyleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C00E27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryStyleView.m */; };
+		9198C01E27F6FECF00BC069F /* MCCallLogsBackupSecondPartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C00F27F6FECF00BC069F /* MCCallLogsBackupSecondPartView.m */; };
+		9198C01F27F6FECF00BC069F /* MCVideoMoreDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C01027F6FECF00BC069F /* MCVideoMoreDetailView.m */; };
+		9198C02027F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C01127F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordCell.m */; };
+		9198C02427F702E400BC069F /* TipProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C02227F702E400BC069F /* TipProgress.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +93,27 @@
 		9198BFFD27F6FA0400BC069F /* OTLCommonEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLCommonEnum.h; sourceTree = "<group>"; };
 		9198BFFE27F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLPracticePianoTaskSecondCell.h; sourceTree = "<group>"; };
 		9198BFFF27F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLPracticePianoTaskSecondCell.m; sourceTree = "<group>"; };
+		9198C00427F6FECF00BC069F /* MCCallLogsBackupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCallLogsBackupViewController.m; sourceTree = "<group>"; };
+		9198C00627F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCallLogsBackupRecoveryRecordModel.h; sourceTree = "<group>"; };
+		9198C00727F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCallLogsBackupRecoveryRecordModel.m; sourceTree = "<group>"; };
+		9198C00927F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCallLogsBackupChooseRecoveryRecordView.m; sourceTree = "<group>"; };
+		9198C00A27F6FECF00BC069F /* MCCallLogsBackupMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCallLogsBackupMainView.m; sourceTree = "<group>"; };
+		9198C00B27F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCallLogsBackupRecoveryRecordCell.h; sourceTree = "<group>"; };
+		9198C00C27F6FECF00BC069F /* MCVideoMoreDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCVideoMoreDetailView.h; sourceTree = "<group>"; };
+		9198C00D27F6FECF00BC069F /* MCCallLogsBackupFirstPartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCallLogsBackupFirstPartView.m; sourceTree = "<group>"; };
+		9198C00E27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryStyleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCallLogsBackupChooseRecoveryStyleView.m; sourceTree = "<group>"; };
+		9198C00F27F6FECF00BC069F /* MCCallLogsBackupSecondPartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCallLogsBackupSecondPartView.m; sourceTree = "<group>"; };
+		9198C01027F6FECF00BC069F /* MCVideoMoreDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCVideoMoreDetailView.m; sourceTree = "<group>"; };
+		9198C01127F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCallLogsBackupRecoveryRecordCell.m; sourceTree = "<group>"; };
+		9198C01227F6FECF00BC069F /* MCCallLogsBackupMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCallLogsBackupMainView.h; sourceTree = "<group>"; };
+		9198C01327F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCallLogsBackupChooseRecoveryRecordView.h; sourceTree = "<group>"; };
+		9198C01427F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryStyleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCallLogsBackupChooseRecoveryStyleView.h; sourceTree = "<group>"; };
+		9198C01527F6FECF00BC069F /* MCCallLogsBackupFirstPartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCallLogsBackupFirstPartView.h; sourceTree = "<group>"; };
+		9198C01627F6FECF00BC069F /* MCCallLogsBackupSecondPartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCallLogsBackupSecondPartView.h; sourceTree = "<group>"; };
+		9198C01727F6FECF00BC069F /* MCCallLogsBackupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCallLogsBackupViewController.h; sourceTree = "<group>"; };
+		9198C02227F702E400BC069F /* TipProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipProgress.m; sourceTree = "<group>"; };
+		9198C02327F702E400BC069F /* TipProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipProgress.h; sourceTree = "<group>"; };
+		9198C02527F7031A00BC069F /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +163,7 @@
 				9198BFD627F6A8AE00BC069F /* Discovery */,
 				9198BFD527F6A89F00BC069F /* Square */,
 				9198BFD327F6A81000BC069F /* Utils */,
+				9198C02127F702AD00BC069F /* Tools */,
 				9198BFC627F6A10000BC069F /* Login */,
 				9198BFC427F5A71A00BC069F /* PrefixHeader */,
 				9198BFC027F59C9100BC069F /* tabbar */,
@@ -199,6 +231,8 @@
 		9198BFD527F6A89F00BC069F /* Square */ = {
 			isa = PBXGroup;
 			children = (
+				9198C00227F6FEBF00BC069F /* otherTools */,
+				9198C00127F6FEB200BC069F /* studentSide */,
 				9198BFEC27F6F97800BC069F /* teacherSide */,
 				9198BFD927F6A92100BC069F /* LCSquareViewController.h */,
 				9198BFDA27F6A92100BC069F /* LCSquareViewController.m */,
@@ -269,6 +303,72 @@
 				9198BFFF27F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m */,
 			);
 			path = "练琴任务";
+			sourceTree = "<group>";
+		};
+		9198C00127F6FEB200BC069F /* studentSide */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = studentSide;
+			sourceTree = "<group>";
+		};
+		9198C00227F6FEBF00BC069F /* otherTools */ = {
+			isa = PBXGroup;
+			children = (
+				9198C00327F6FECF00BC069F /* CallLogsBackup */,
+			);
+			path = otherTools;
+			sourceTree = "<group>";
+		};
+		9198C00327F6FECF00BC069F /* CallLogsBackup */ = {
+			isa = PBXGroup;
+			children = (
+				9198C00427F6FECF00BC069F /* MCCallLogsBackupViewController.m */,
+				9198C00527F6FECF00BC069F /* model */,
+				9198C00827F6FECF00BC069F /* view */,
+				9198C01727F6FECF00BC069F /* MCCallLogsBackupViewController.h */,
+			);
+			path = CallLogsBackup;
+			sourceTree = "<group>";
+		};
+		9198C00527F6FECF00BC069F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9198C00627F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordModel.h */,
+				9198C00727F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		9198C00827F6FECF00BC069F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9198C00927F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryRecordView.m */,
+				9198C00A27F6FECF00BC069F /* MCCallLogsBackupMainView.m */,
+				9198C00B27F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordCell.h */,
+				9198C00C27F6FECF00BC069F /* MCVideoMoreDetailView.h */,
+				9198C00D27F6FECF00BC069F /* MCCallLogsBackupFirstPartView.m */,
+				9198C00E27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryStyleView.m */,
+				9198C00F27F6FECF00BC069F /* MCCallLogsBackupSecondPartView.m */,
+				9198C01027F6FECF00BC069F /* MCVideoMoreDetailView.m */,
+				9198C01127F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordCell.m */,
+				9198C01227F6FECF00BC069F /* MCCallLogsBackupMainView.h */,
+				9198C01327F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryRecordView.h */,
+				9198C01427F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryStyleView.h */,
+				9198C01527F6FECF00BC069F /* MCCallLogsBackupFirstPartView.h */,
+				9198C01627F6FECF00BC069F /* MCCallLogsBackupSecondPartView.h */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		9198C02127F702AD00BC069F /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				9198C02527F7031A00BC069F /* Singleton.h */,
+				9198C02327F702E400BC069F /* TipProgress.h */,
+				9198C02227F702E400BC069F /* TipProgress.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		FF38C48554218EB4DEE59609 /* Pods */ = {
@@ -395,22 +495,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9198C02027F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordCell.m in Sources */,
 				9198BFA827F594C800BC069F /* ViewController.m in Sources */,
 				9198BFFC27F6F97800BC069F /* OTLTeacherSideMainViewController.m in Sources */,
 				9198BFC927F6A11B00BC069F /* LCLoginViewController.m in Sources */,
 				9198BFEB27F6F71300BC069F /* LCSquareTableViewCell.m in Sources */,
 				9198BFDB27F6A92100BC069F /* LCSquareViewController.m in Sources */,
 				9198BFE827F6ABD800BC069F /* UIImage+Tool.m in Sources */,
+				9198C01F27F6FECF00BC069F /* MCVideoMoreDetailView.m in Sources */,
+				9198C01827F6FECF00BC069F /* MCCallLogsBackupViewController.m in Sources */,
 				9198C00027F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m in Sources */,
 				9198BFF927F6F97800BC069F /* OTLPracticePianoTaskViewController.m in Sources */,
 				9198BFFA27F6F97800BC069F /* OTLPracticePianoTaskFirstCell.m in Sources */,
+				9198C02427F702E400BC069F /* TipProgress.m in Sources */,
 				9198BFA227F594C800BC069F /* AppDelegate.m in Sources */,
+				9198C01C27F6FECF00BC069F /* MCCallLogsBackupFirstPartView.m in Sources */,
+				9198C01B27F6FECF00BC069F /* MCCallLogsBackupMainView.m in Sources */,
+				9198C01927F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordModel.m in Sources */,
+				9198C01E27F6FECF00BC069F /* MCCallLogsBackupSecondPartView.m in Sources */,
 				9198BFFB27F6F97800BC069F /* OTLPracticePianoCommonCellView.m in Sources */,
 				9198BFC327F59CE100BC069F /* LCMainTabBar.m in Sources */,
+				9198C01A27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryRecordView.m in Sources */,
 				9198BFDE27F6A92D00BC069F /* LCDiscoveryViewController.m in Sources */,
 				9198BFE127F6A93A00BC069F /* LCEntertainmentViewController.m in Sources */,
 				9198BFE427F6A94200BC069F /* LCMineViewController.m in Sources */,
 				9198BFD127F6A67B00BC069F /* LCMainTabBarController.m in Sources */,
+				9198C01D27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryStyleView.m in Sources */,
 				9198BFB327F594CA00BC069F /* main.m in Sources */,
 				9198BFF827F6F97800BC069F /* OTLAddOrDeleteToolView.m in Sources */,
 				9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */,

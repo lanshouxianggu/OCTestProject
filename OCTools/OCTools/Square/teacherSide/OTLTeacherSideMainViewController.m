@@ -8,6 +8,7 @@
 
 #import "OTLTeacherSideMainViewController.h"
 #import "OTLPracticePianoTaskViewController.h"
+#import "LCSquareTableViewCell.h"
 
 @interface OTLTeacherSideMainViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -35,17 +36,30 @@
     }];
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataArray.count;
 }
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return [UIView new];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
+    LCSquareTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LCSquareTableViewCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
+        cell = [[LCSquareTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"LCSquareTableViewCell"];
     }
-    cell.textLabel.text = self.dataArray[indexPath.row];
+    [cell setCornerRadius:50];
+    cell.label.text = self.dataArray[indexPath.section];
     
     return cell;
 }
@@ -70,8 +84,10 @@
         _tableView = [UITableView new];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.rowHeight = 100;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.tableFooterView = [UIView new];
-        [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"UITableViewCell"];
+        [_tableView registerClass:LCSquareTableViewCell.class forCellReuseIdentifier:@"LCSquareTableViewCell"];
     }
     return _tableView;
 }

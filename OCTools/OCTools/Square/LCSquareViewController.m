@@ -22,7 +22,7 @@
     self.title = @"广场";
     self.view.backgroundColor = UIColor.cyanColor;
     
-    self.sectionArr = @[@"云上钢琴老师端",@"云上钢琴学生端"];
+    self.sectionArr = @[@"云上钢琴老师端",@"云上钢琴学生端",@"工具小玩意"];
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -81,6 +81,10 @@
         }
             break;
         case 1:
+            [TipProgress showText:@"学生端"];
+            break;
+        case 2:
+            [TipProgress showText:@"工具小玩意"];
             break;
         default:
             break;

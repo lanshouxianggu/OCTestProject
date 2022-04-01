@@ -17,5 +17,6 @@
 #import "LCConfig.h"
 #import "UIImage+Tool.h"
 #import "OTLCommonEnum.h"
+#import "TipProgress.h"
 
 #endif /* OCToolsPrefixHeader_pch */

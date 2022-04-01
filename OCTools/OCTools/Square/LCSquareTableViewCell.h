@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LCSquareTableViewCell : UITableViewCell
 @property (nonatomic, strong) UILabel *label;
+-(void)setCornerRadius:(CGFloat)radius;
 @end
 
 NS_ASSUME_NONNULL_END

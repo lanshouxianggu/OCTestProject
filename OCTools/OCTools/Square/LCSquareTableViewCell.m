@@ -7,6 +7,10 @@
 
 #import "LCSquareTableViewCell.h"
 
+@interface LCSquareTableViewCell ()
+@property (nonatomic, strong) UIView *mainView;
+@end
+
 @implementation LCSquareTableViewCell
 
 - (void)awakeFromNib {
@@ -26,6 +30,7 @@
         mainView.layer.shadowOffset = CGSizeMake(0, 0);
         mainView.layer.shadowRadius = 15;
         mainView.layer.shadowOpacity = 0.8;
+        self.mainView = mainView;
         
         [mainView addSubview:self.label];
         [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -40,6 +45,10 @@
         }];
     }
     return self;
+}
+
+-(void)setCornerRadius:(CGFloat)radius {
+    self.mainView.layer.cornerRadius = radius;
 }
 
 -(UILabel *)label {

@@ -34,15 +34,15 @@
 }
 
 -(void)loginAction {
-//    [SVProgressHUD showWithStatus:@"登录中..."];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-//    });
-//
-//    [SVProgressHUD dismissWithDelay:2 completion:^{
-//
-//    }];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIF_LOGIN_SUCCESS" object:nil];
+    [SVProgressHUD showWithStatus:@"登录中..."];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+    });
+
+    [SVProgressHUD dismissWithDelay:1 completion:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIF_LOGIN_SUCCESS" object:nil];
+    }];
+    
 }
 
 @end
