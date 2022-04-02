@@ -151,7 +151,9 @@ const CGFloat kTopViewHeight = 40.f;
 
 #pragma mark - ThreeLevelLinkageSelectViewDelegate
 -(void)resetAction {
-    self.selectView.hidden = YES;
+    CGRect frame = self.selectView.frame;
+    frame.size.height = 0;
+    self.selectView.frame = frame;
     self.topTouchBtn.selected = NO;
     self.topTitleLabel.textColor = UIColor.darkTextColor;
     self.topArrowImageView.image = [UIImage imageNamed:@"downArrow"];
@@ -159,7 +161,9 @@ const CGFloat kTopViewHeight = 40.f;
 }
 
 -(void)completeActionWithProvince:(NSString *)province city:(NSString *)city area:(NSString *)area {
-    self.selectView.hidden = YES;
+    CGRect frame = self.selectView.frame;
+    frame.size.height = 0;
+    self.selectView.frame = frame;
     self.topTouchBtn.selected = NO;
     self.topTitleLabel.textColor = UIColor.darkTextColor;
     self.topArrowImageView.image = [UIImage imageNamed:@"downArrow"];
