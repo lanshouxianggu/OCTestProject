@@ -6,6 +6,7 @@
 //
 
 #import "LCAIRoomViewController.h"
+#import "AppDelegate.h"
 
 @interface LCAIRoomViewController ()
 
@@ -20,17 +21,18 @@
     self.navigationItem.title = @"AI练琴房";
     self.view.backgroundColor = UIColor.whiteColor;
     
-    [self setScreenOrientationTo:UIInterfaceOrientationLandscapeRight];
 }
 
 
 #pragma mark - 设置屏幕方向
-- (void)setScreenOrientationTo:(UIInterfaceOrientation)orientation {
+- (void)setScreenOrientationTo:(UIInterfaceOrientationMask)orientation {
+    AppDelegate *appDelegate = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    appDelegate.interfaceOrientation = orientation;
+    [appDelegate application:UIApplication.sharedApplication supportedInterfaceOrientationsForWindow:appDelegate.window];
     NSNumber *resetOrientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationUnknown];
     [[UIDevice currentDevice] setValue:resetOrientationTarget forKey:@"orientation"];
     NSNumber *orientationTarget = [NSNumber numberWithInt:(int)orientation];
     [[UIDevice currentDevice] setValue:orientationTarget forKey:@"orientation"];
 }
-
 
 @end

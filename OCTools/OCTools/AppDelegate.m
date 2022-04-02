@@ -21,6 +21,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSucess) name:@"NOTIF_LOGIN_SUCCESS" object:nil];
     
+    self.interfaceOrientation = UIInterfaceOrientationMaskPortrait;
     if (@available(iOS 13.0, *)) {
       
     } else {
@@ -45,6 +46,16 @@
         [self.window makeKeyAndVisible];
     }
 }
+
+//- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+//{
+//    return self.interfaceOrientation;
+//}
+//
+//// 不允许设备自动旋转
+//- (BOOL)shouldAutorotate {
+//    return NO;
+//}
 
 #pragma mark - UISceneSession lifecycle
 

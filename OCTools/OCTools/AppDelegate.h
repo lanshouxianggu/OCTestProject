@@ -9,5 +9,6 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, assign) UIInterfaceOrientationMask interfaceOrientation;
 @end
 
