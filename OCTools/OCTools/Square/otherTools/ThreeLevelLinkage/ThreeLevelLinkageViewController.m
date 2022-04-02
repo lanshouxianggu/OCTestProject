@@ -56,9 +56,17 @@ const CGFloat kTopViewHeight = 40.f;
         rect.size.height += point.y-self.lastPoint.y;
         if (rect.size.height>SCREEN_HEIGHT/2) {
             rect.size.height=SCREEN_HEIGHT/2;
+            
+            self.topTouchBtn.selected = YES;
+            self.topTitleLabel.textColor = UIColor.redColor;
+            self.topArrowImageView.image = [UIImage imageNamed:@"upArrow"];
         }
         if (rect.size.height<=0) {
             rect.size.height=0;
+            
+            self.topTouchBtn.selected = NO;
+            self.topTitleLabel.textColor = UIColor.darkTextColor;
+            self.topArrowImageView.image = [UIImage imageNamed:@"downArrow"];
         }
         self.selectView.frame = rect;
     }
@@ -129,19 +137,15 @@ const CGFloat kTopViewHeight = 40.f;
         self.topTitleLabel.textColor = UIColor.redColor;
         self.topArrowImageView.image = [UIImage imageNamed:@"upArrow"];
         
-        __block CGRect frame = self.selectView.frame;
-        [UIView animateWithDuration:0.35 animations:^{
-            frame.size.height = SCREEN_HEIGHT/2;
-            self.selectView.frame = frame;
-        }];
+        CGRect frame = self.selectView.frame;
+        frame.size.height = SCREEN_HEIGHT/2;
+        self.selectView.frame = frame;
     }else{
         self.topTitleLabel.textColor = UIColor.darkTextColor;
         self.topArrowImageView.image = [UIImage imageNamed:@"downArrow"];
-        __block CGRect frame = self.selectView.frame;
-        [UIView animateWithDuration:0.35 animations:^{
-            frame.size.height = 0;
-            self.selectView.frame = frame;
-        }];
+        CGRect frame = self.selectView.frame;
+        frame.size.height = 0;
+        self.selectView.frame = frame;
     }
 }
 
