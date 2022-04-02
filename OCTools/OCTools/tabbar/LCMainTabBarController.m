@@ -10,6 +10,7 @@
 #import "LCEntertainmentViewController.h"
 #import "LCDiscoveryViewController.h"
 #import "LCSquareViewController.h"
+#import "MainNavigationController.h"
 
 @interface LCMainTabBarController () <UITabBarControllerDelegate>
 @property (nonatomic, strong) NSArray *vcsArray;
@@ -28,7 +29,8 @@
     
     NSMutableArray *navsArray = [NSMutableArray array];
     for (int i=0; i < self.titlesArray.count; i++) {
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.vcsArray[i]];
+        MainNavigationController *nav = [[MainNavigationController alloc] initWithRootViewController:self.vcsArray[i]];
+        nav.title = self.titlesArray[i];
         nav.tabBarItem.image = self.normalImagesArray[i];
         nav.tabBarItem.selectedImage = self.selectImagesArray[i];
         nav.tabBarItem.tag = i;

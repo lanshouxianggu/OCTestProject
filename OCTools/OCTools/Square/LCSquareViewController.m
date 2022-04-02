@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"广场";
+    self.navigationItem.title = @"广场";
     self.view.backgroundColor = UIColor.cyanColor;
     
     self.sectionArr = @[@"云上钢琴老师端",@"云上钢琴学生端",@"工具小玩意"];

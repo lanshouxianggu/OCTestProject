@@ -18,5 +18,8 @@
 #import "UIImage+Tool.h"
 #import "OTLCommonEnum.h"
 #import "TipProgress.h"
+#import "UIImage+Common.h"
+#import "UIColor+LLRandomColor.h"
+#import "NSString+Common.h"
 
 #endif /* OCToolsPrefixHeader_pch */
