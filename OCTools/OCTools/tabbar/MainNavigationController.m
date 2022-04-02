@@ -36,7 +36,7 @@
 //    self.navigationBar.translucent = NO;
     
     self.interactivePopGestureRecognizer.delegate = self;
-    self.navigationBar.hidden = YES;
+    self.navigationBar.hidden = NO;
 }
 
 -(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {

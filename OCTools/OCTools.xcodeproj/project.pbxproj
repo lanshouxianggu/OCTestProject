@@ -52,6 +52,10 @@
 		9198C04127F7EC0E00BC069F /* UILabel+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C03527F7EC0D00BC069F /* UILabel+Common.m */; };
 		9198C04327F7EC0E00BC069F /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C03827F7EC0E00BC069F /* UIImage+Common.m */; };
 		9198C04627F7EC7600BC069F /* PathUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C04427F7EC7600BC069F /* PathUtility.m */; };
+		9198C04C27F7F07600BC069F /* OTLWeekReportDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C04827F7F07600BC069F /* OTLWeekReportDetailTableViewCell.m */; };
+		9198C04D27F7F07600BC069F /* OTLWeekReportDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C04A27F7F07600BC069F /* OTLWeekReportDetailViewController.m */; };
+		9198C05027F7F14C00BC069F /* OTLPracticeWeekReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C04E27F7F14C00BC069F /* OTLPracticeWeekReportViewController.m */; };
+		9198C05327F7F17300BC069F /* CPISegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C05227F7F17300BC069F /* CPISegementView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,6 +151,14 @@
 		9198C03A27F7EC0E00BC069F /* NSString+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
 		9198C04427F7EC7600BC069F /* PathUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathUtility.m; sourceTree = "<group>"; };
 		9198C04527F7EC7600BC069F /* PathUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathUtility.h; sourceTree = "<group>"; };
+		9198C04827F7F07600BC069F /* OTLWeekReportDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTLWeekReportDetailTableViewCell.m; sourceTree = "<group>"; };
+		9198C04927F7F07600BC069F /* OTLWeekReportDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTLWeekReportDetailTableViewCell.h; sourceTree = "<group>"; };
+		9198C04A27F7F07600BC069F /* OTLWeekReportDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTLWeekReportDetailViewController.m; sourceTree = "<group>"; };
+		9198C04B27F7F07600BC069F /* OTLWeekReportDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTLWeekReportDetailViewController.h; sourceTree = "<group>"; };
+		9198C04E27F7F14C00BC069F /* OTLPracticeWeekReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTLPracticeWeekReportViewController.m; sourceTree = "<group>"; };
+		9198C04F27F7F14C00BC069F /* OTLPracticeWeekReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTLPracticeWeekReportViewController.h; sourceTree = "<group>"; };
+		9198C05127F7F17300BC069F /* CPISegementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPISegementView.h; sourceTree = "<group>"; };
+		9198C05227F7F17300BC069F /* CPISegementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPISegementView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +344,7 @@
 		9198BFEC27F6F97800BC069F /* teacherSide */ = {
 			isa = PBXGroup;
 			children = (
+				9198C04727F7EFA800BC069F /* 练琴周报 */,
 				9198BFED27F6F97800BC069F /* 练琴任务 */,
 				9198BFF627F6F97800BC069F /* OTLTeacherSideMainViewController.h */,
 				9198BFF727F6F97800BC069F /* OTLTeacherSideMainViewController.m */,
@@ -417,6 +430,8 @@
 		9198C02127F702AD00BC069F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				9198C05127F7F17300BC069F /* CPISegementView.h */,
+				9198C05227F7F17300BC069F /* CPISegementView.m */,
 				9198C02527F7031A00BC069F /* Singleton.h */,
 				9198C02327F702E400BC069F /* TipProgress.h */,
 				9198C02227F702E400BC069F /* TipProgress.m */,
@@ -424,6 +439,19 @@
 				9198C04427F7EC7600BC069F /* PathUtility.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		9198C04727F7EFA800BC069F /* 练琴周报 */ = {
+			isa = PBXGroup;
+			children = (
+				9198C04F27F7F14C00BC069F /* OTLPracticeWeekReportViewController.h */,
+				9198C04E27F7F14C00BC069F /* OTLPracticeWeekReportViewController.m */,
+				9198C04927F7F07600BC069F /* OTLWeekReportDetailTableViewCell.h */,
+				9198C04827F7F07600BC069F /* OTLWeekReportDetailTableViewCell.m */,
+				9198C04B27F7F07600BC069F /* OTLWeekReportDetailViewController.h */,
+				9198C04A27F7F07600BC069F /* OTLWeekReportDetailViewController.m */,
+			);
+			path = "练琴周报";
 			sourceTree = "<group>";
 		};
 		FF38C48554218EB4DEE59609 /* Pods */ = {
@@ -567,17 +595,21 @@
 				9198BFF927F6F97800BC069F /* OTLPracticePianoTaskViewController.m in Sources */,
 				9198BFFA27F6F97800BC069F /* OTLPracticePianoTaskFirstCell.m in Sources */,
 				9198C04327F7EC0E00BC069F /* UIImage+Common.m in Sources */,
+				9198C04C27F7F07600BC069F /* OTLWeekReportDetailTableViewCell.m in Sources */,
 				9198C02427F702E400BC069F /* TipProgress.m in Sources */,
 				9198BFA227F594C800BC069F /* AppDelegate.m in Sources */,
 				9198C01C27F6FECF00BC069F /* MCCallLogsBackupFirstPartView.m in Sources */,
 				9198C03E27F7EC0E00BC069F /* UIImage+Alpha.m in Sources */,
 				9198C04027F7EC0E00BC069F /* NSData+Common.m in Sources */,
 				9198C02827F7EB4900BC069F /* MainNavigationController.m in Sources */,
+				9198C05027F7F14C00BC069F /* OTLPracticeWeekReportViewController.m in Sources */,
 				9198C01B27F6FECF00BC069F /* MCCallLogsBackupMainView.m in Sources */,
 				9198C04127F7EC0E00BC069F /* UILabel+Common.m in Sources */,
+				9198C05327F7F17300BC069F /* CPISegementView.m in Sources */,
 				9198C03B27F7EC0E00BC069F /* UIColor+LLRandomColor.m in Sources */,
 				9198C01927F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordModel.m in Sources */,
 				9198C01E27F6FECF00BC069F /* MCCallLogsBackupSecondPartView.m in Sources */,
+				9198C04D27F7F07600BC069F /* OTLWeekReportDetailViewController.m in Sources */,
 				9198C04627F7EC7600BC069F /* PathUtility.m in Sources */,
 				9198BFFB27F6F97800BC069F /* OTLPracticePianoCommonCellView.m in Sources */,
 				9198BFC327F59CE100BC069F /* LCMainTabBar.m in Sources */,

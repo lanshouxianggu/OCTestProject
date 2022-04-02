@@ -9,6 +9,7 @@
 #import "OTLTeacherSideMainViewController.h"
 #import "OTLPracticePianoTaskViewController.h"
 #import "LCSquareTableViewCell.h"
+#import "OTLPracticeWeekReportViewController.h"
 
 @interface OTLTeacherSideMainViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -28,7 +29,7 @@
     self.title = @"云上钢琴老师端";
     self.view.backgroundColor = UIColorFromRGB(0xd2d2d2);
     
-    self.dataArray = @[@"练琴任务",@"线下一对一主课课后反馈单"];
+    self.dataArray = @[@"练琴任务",@"练琴周报",@"线下一对一主课课后反馈单"];
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -73,7 +74,12 @@
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
-            
+        case 1:
+        {
+            OTLPracticeWeekReportViewController *vc = [OTLPracticeWeekReportViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;;
         default:
             break;
     }

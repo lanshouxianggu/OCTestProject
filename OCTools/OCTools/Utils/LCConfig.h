@@ -23,6 +23,25 @@
 #define IS_DIC(a)       (a && [a isKindOfClass:[NSDictionary class]])
 #define IS_ARRAY(a)     (a && [a isKindOfClass:[NSArray class]] && a.count)
 
+//  字体
+#define MediumStr @"PingFangSC-Regular"
+#define RegularStr  @"PingFangSC-Regular"
+#define BoldStr  @"PingFangSC-Semibold"
+
+#define isIPhoneX (iPhoneX==YES || iPhoneXR==YES  || iPhoneXSMax==YES)
+//底部安全高度
+#define BOTTOM_SAFE_HEIGHT (isIPhoneX ? 34 : 0)
+//系统手势高度
+#define SYSTEM_GESTURE_HEIGHT (isIPhoneX ? 13 : 0)
+//tabbar高度
+#define TABBAR_HEIGHT (49 + BOTTOM_SAFE_HEIGHT)
+//状态栏高度
+#define STATUS_HEIGHT (isIPhoneX ? 44 : 20)
+//导航栏高
+#define NAVBAR_HEIGHT 44
+//顶部总的高度
+#define TOP_HEIGHT (NAVBAR_HEIGHT + STATUS_HEIGHT)
+
 //AppDelegate
 #define DF_APP AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate
 
