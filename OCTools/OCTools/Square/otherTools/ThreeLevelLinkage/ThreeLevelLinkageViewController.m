@@ -18,9 +18,7 @@ const CGFloat kTopViewHeight = 40.f;
 @property (nonatomic, strong) UIImageView *topArrowImageView;
 @property (nonatomic, strong) UIButton *topTouchBtn;
 @property (nonatomic, strong) UIPanGestureRecognizer *panGes;
-@property (nonatomic, assign) CGPoint startPoint;
-@property (nonatomic, assign) BOOL hasSetStartPoint;
-@property (nonatomic, strong) UIView *testMoveView;
+@property (nonatomic, assign) CGPoint lastPoint;
 @end
 
 @implementation ThreeLevelLinkageViewController
@@ -48,36 +46,27 @@ const CGFloat kTopViewHeight = 40.f;
 -(void)setupUI {
     [self.view addSubview:self.selectView];
     [self.view addSubview:self.topView];
-    
-    [self.view addSubview:self.testMoveView];
 }
 
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch *touch = touches.anyObject;
-    CGPoint point = [touch locationInView:self.view];
-//    NSLog(@"point x=%.1f y=%.1f",point.x,point.y);
-    if (!self.hasSetStartPoint) {
-        NSLog(@"hasSetStartPoint");
-        self.startPoint = point;
-        self.hasSetStartPoint = YES;
-    }
-    if (point.y-self.startPoint.y>SCREEN_HEIGHT/2 || point.y-self.startPoint.y<0) {
-        return;
-    }
-    self.selectView.hidden = NO;
+    CGPoint point = [touch locationInView:UIApplication.sharedApplication.keyWindow];
     CGRect rect = self.selectView.frame;
-    NSLog(@"height start=%.1f",rect.size.height);
-    rect.size.height = point.y-self.startPoint.y;
-    NSLog(@"height end=%.1f",rect.size.height);
-    self.selectView.frame = rect;
-    
-    
-//    self.testMoveView.transform = CGAffineTransformMakeTranslation(0, -(self.startPoint.y-point.y));
+    if (self.lastPoint.y!=0) {
+        rect.size.height += point.y-self.lastPoint.y;
+        if (rect.size.height>SCREEN_HEIGHT/2) {
+            rect.size.height=SCREEN_HEIGHT/2;
+        }
+        if (rect.size.height<=0) {
+            rect.size.height=0;
+        }
+        self.selectView.frame = rect;
+    }
+    self.lastPoint = point;
 }
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    self.hasSetStartPoint = NO;
-//    self.startPoint = CGPointZero;
+    self.lastPoint = CGPointZero;
 }
 
 -(UIView *)topView {
@@ -129,29 +118,30 @@ const CGFloat kTopViewHeight = 40.f;
 -(ThreeLevelLinkageSelectView *)selectView {
     if (!_selectView) {
         _selectView = [[ThreeLevelLinkageSelectView alloc] initWithFrame:CGRectMake(0, kTopViewHeight, SCREEN_WIDTH, /*SCREEN_HEIGHT/2*/0)];
-        _selectView.hidden = YES;
         _selectView.delegate = self;
     }
     return _selectView;
 }
 
--(UIView *)testMoveView {
-    if (!_testMoveView) {
-        _testMoveView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-50, SCREEN_HEIGHT-100, 100, 100)];
-        _testMoveView.backgroundColor = OTLAppMainColor;
-    }
-    return _testMoveView;
-}
-
 -(void)topViewTouchAction {
     self.topTouchBtn.selected = !self.topTouchBtn.selected;
-    self.selectView.hidden = !self.topTouchBtn.selected;
     if (self.topTouchBtn.selected) {
         self.topTitleLabel.textColor = UIColor.redColor;
         self.topArrowImageView.image = [UIImage imageNamed:@"upArrow"];
+        
+        __block CGRect frame = self.selectView.frame;
+        [UIView animateWithDuration:0.35 animations:^{
+            frame.size.height = SCREEN_HEIGHT/2;
+            self.selectView.frame = frame;
+        }];
     }else{
         self.topTitleLabel.textColor = UIColor.darkTextColor;
         self.topArrowImageView.image = [UIImage imageNamed:@"downArrow"];
+        __block CGRect frame = self.selectView.frame;
+        [UIView animateWithDuration:0.35 animations:^{
+            frame.size.height = 0;
+            self.selectView.frame = frame;
+        }];
     }
 }
 
