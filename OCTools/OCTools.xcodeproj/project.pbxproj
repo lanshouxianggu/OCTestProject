@@ -13,6 +13,7 @@
 		911E42E427F82E1F0088FCDF /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 911E42DB27F82E1F0088FCDF /* city.plist */; };
 		911E42E527F82E1F0088FCDF /* SelectFirstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911E42E027F82E1F0088FCDF /* SelectFirstView.m */; };
 		911E42E627F82E1F0088FCDF /* ThreeLevelLinkageSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911E42E127F82E1F0088FCDF /* ThreeLevelLinkageSelectView.m */; };
+		911E42EA27F84B2D0088FCDF /* LCAIRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911E42E927F84B2D0088FCDF /* LCAIRoomViewController.m */; };
 		9198BFA227F594C800BC069F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA127F594C800BC069F /* AppDelegate.m */; };
 		9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA427F594C800BC069F /* SceneDelegate.m */; };
 		9198BFA827F594C800BC069F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA727F594C800BC069F /* ViewController.m */; };
@@ -75,6 +76,8 @@
 		911E42E027F82E1F0088FCDF /* SelectFirstView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectFirstView.m; sourceTree = "<group>"; };
 		911E42E127F82E1F0088FCDF /* ThreeLevelLinkageSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeLevelLinkageSelectView.m; sourceTree = "<group>"; };
 		911E42E227F82E1F0088FCDF /* ThreeLevelLinkageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeLevelLinkageViewController.h; sourceTree = "<group>"; };
+		911E42E827F84B2D0088FCDF /* LCAIRoomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCAIRoomViewController.h; sourceTree = "<group>"; };
+		911E42E927F84B2D0088FCDF /* LCAIRoomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCAIRoomViewController.m; sourceTree = "<group>"; };
 		9198BF9D27F594C800BC069F /* OCTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9198BFA027F594C800BC069F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9198BFA127F594C800BC069F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -220,6 +223,15 @@
 				911E42E027F82E1F0088FCDF /* SelectFirstView.m */,
 			);
 			path = subview;
+			sourceTree = "<group>";
+		};
+		911E42E727F84B150088FCDF /* AI练琴房 */ = {
+			isa = PBXGroup;
+			children = (
+				911E42E827F84B2D0088FCDF /* LCAIRoomViewController.h */,
+				911E42E927F84B2D0088FCDF /* LCAIRoomViewController.m */,
+			);
+			path = "AI练琴房";
 			sourceTree = "<group>";
 		};
 		9198BF9427F594C800BC069F = {
@@ -385,6 +397,7 @@
 		9198BFEC27F6F97800BC069F /* teacherSide */ = {
 			isa = PBXGroup;
 			children = (
+				911E42E727F84B150088FCDF /* AI练琴房 */,
 				9198C04727F7EFA800BC069F /* 练琴周报 */,
 				9198BFED27F6F97800BC069F /* 练琴任务 */,
 				9198BFF627F6F97800BC069F /* OTLTeacherSideMainViewController.h */,
@@ -661,6 +674,7 @@
 				9198C01A27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryRecordView.m in Sources */,
 				9198BFDE27F6A92D00BC069F /* LCDiscoveryViewController.m in Sources */,
 				9198BFE127F6A93A00BC069F /* LCEntertainmentViewController.m in Sources */,
+				911E42EA27F84B2D0088FCDF /* LCAIRoomViewController.m in Sources */,
 				9198BFE427F6A94200BC069F /* LCMineViewController.m in Sources */,
 				9198BFD127F6A67B00BC069F /* LCMainTabBarController.m in Sources */,
 				911E42E527F82E1F0088FCDF /* SelectFirstView.m in Sources */,
@@ -818,6 +832,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -848,6 +864,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
