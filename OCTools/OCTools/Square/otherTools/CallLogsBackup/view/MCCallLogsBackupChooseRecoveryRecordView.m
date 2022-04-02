@@ -58,7 +58,7 @@
     [mainView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.offset(0);
         make.bottom.offset(16);
-        make.height.mas_equalTo(434);
+        make.height.mas_equalTo(404);
     }];
     
     ({
@@ -88,7 +88,7 @@
             make.left.offset(16);
             make.right.offset(-16);
             make.height.mas_equalTo(44);
-            make.bottom.offset(-(16+CPISafeAreaBottomHeight));
+            make.bottomMargin.offset(-32);
         }];
         
         [mainView addSubview:self.tableView];

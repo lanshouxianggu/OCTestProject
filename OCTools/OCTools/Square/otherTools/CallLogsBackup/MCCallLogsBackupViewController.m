@@ -73,7 +73,7 @@
     [UIView animateWithDuration:0.35 animations:^{
         self.moreDetailView.transform = CGAffineTransformMakeTranslation(0, -SCREEN_HEIGHT);
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.15 animations:^{
+        [UIView animateWithDuration:0.2 animations:^{
             self.moreDetailView.backgroundColor = DF_COLOR_0x_alpha(0x000, 0.3);
         }];
     }];
@@ -84,8 +84,8 @@
     [UIView animateWithDuration:0.35 animations:^{
         self.chooseView.transform = CGAffineTransformMakeTranslation(0, -SCREEN_HEIGHT);
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.15 animations:^{
-            self.chooseView.backgroundColor = DF_COLOR_0x_alpha(0x000, 0.5);
+        [UIView animateWithDuration:0.2 animations:^{
+            self.chooseView.backgroundColor = DF_COLOR_0x_alpha(0x000, 0.3);
         }];
     }];
 }
