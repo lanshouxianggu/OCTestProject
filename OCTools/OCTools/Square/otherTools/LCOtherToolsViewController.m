@@ -8,6 +8,7 @@
 #import "LCOtherToolsViewController.h"
 #import "LCSquareTableViewCell.h"
 #import "MCCallLogsBackupViewController.h"
+#import "ThreeLevelLinkageViewController.h"
 
 @interface LCOtherToolsViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -27,7 +28,7 @@
     self.title = @"工具小玩意儿";
     self.view.backgroundColor = UIColorFromRGB(0xd2d2d2);
     
-    self.dataArray = @[@"通话备份"];
+    self.dataArray = @[@"通话备份",@"三级联动"];
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -65,14 +66,19 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
+    switch (indexPath.section) {
         case 0:
         {
             MCCallLogsBackupViewController *vc = [MCCallLogsBackupViewController new];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
-            
+        case 1:
+        {
+            ThreeLevelLinkageViewController *vc = [ThreeLevelLinkageViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
         default:
             break;
     }
