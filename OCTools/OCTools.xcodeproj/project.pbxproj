@@ -10,6 +10,7 @@
 		34EFDAB3CDB904402C9A4921 /* libPods-OCTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0B4649436608D22BC47675 /* libPods-OCTools.a */; };
 		6D96906927F7248A00678EAD /* LCOtherToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D96906827F7248A00678EAD /* LCOtherToolsViewController.m */; };
 		6D96906C27F932B800678EAD /* LCAIRoomLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D96906B27F932B800678EAD /* LCAIRoomLeftView.m */; };
+		6D96907027F93F5C00678EAD /* LCCaculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D96906F27F93F5C00678EAD /* LCCaculatorViewController.m */; };
 		911E42E327F82E1F0088FCDF /* ThreeLevelLinkageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911E42DA27F82E1F0088FCDF /* ThreeLevelLinkageViewController.m */; };
 		911E42E427F82E1F0088FCDF /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 911E42DB27F82E1F0088FCDF /* city.plist */; };
 		911E42E527F82E1F0088FCDF /* SelectFirstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911E42E027F82E1F0088FCDF /* SelectFirstView.m */; };
@@ -72,6 +73,8 @@
 		6D96906827F7248A00678EAD /* LCOtherToolsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCOtherToolsViewController.m; sourceTree = "<group>"; };
 		6D96906A27F932B800678EAD /* LCAIRoomLeftView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCAIRoomLeftView.h; sourceTree = "<group>"; };
 		6D96906B27F932B800678EAD /* LCAIRoomLeftView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCAIRoomLeftView.m; sourceTree = "<group>"; };
+		6D96906E27F93F5C00678EAD /* LCCaculatorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCCaculatorViewController.h; sourceTree = "<group>"; };
+		6D96906F27F93F5C00678EAD /* LCCaculatorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCCaculatorViewController.m; sourceTree = "<group>"; };
 		911E42DA27F82E1F0088FCDF /* ThreeLevelLinkageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeLevelLinkageViewController.m; sourceTree = "<group>"; };
 		911E42DB27F82E1F0088FCDF /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		911E42DD27F82E1F0088FCDF /* ThreeLevelLinkageSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeLevelLinkageSelectView.h; sourceTree = "<group>"; };
@@ -196,6 +199,15 @@
 				1D0B4649436608D22BC47675 /* libPods-OCTools.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D96906D27F93F2200678EAD /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				6D96906E27F93F5C00678EAD /* LCCaculatorViewController.h */,
+				6D96906F27F93F5C00678EAD /* LCCaculatorViewController.m */,
+			);
+			path = Calculator;
 			sourceTree = "<group>";
 		};
 		911E42D927F82E1F0088FCDF /* ThreeLevelLinkage */ = {
@@ -438,6 +450,7 @@
 		9198C00227F6FEBF00BC069F /* otherTools */ = {
 			isa = PBXGroup;
 			children = (
+				6D96906D27F93F2200678EAD /* Calculator */,
 				911E42D927F82E1F0088FCDF /* ThreeLevelLinkage */,
 				9198C00327F6FECF00BC069F /* CallLogsBackup */,
 				6D96906727F7248A00678EAD /* LCOtherToolsViewController.h */,
@@ -685,6 +698,7 @@
 				9198BFD127F6A67B00BC069F /* LCMainTabBarController.m in Sources */,
 				911E42E527F82E1F0088FCDF /* SelectFirstView.m in Sources */,
 				9198C01D27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryStyleView.m in Sources */,
+				6D96907027F93F5C00678EAD /* LCCaculatorViewController.m in Sources */,
 				9198BFB327F594CA00BC069F /* main.m in Sources */,
 				9198BFF827F6F97800BC069F /* OTLAddOrDeleteToolView.m in Sources */,
 				9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */,
