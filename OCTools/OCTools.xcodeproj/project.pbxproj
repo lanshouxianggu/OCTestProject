@@ -63,6 +63,7 @@
 		9198C04D27F7F07600BC069F /* OTLWeekReportDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C04A27F7F07600BC069F /* OTLWeekReportDetailViewController.m */; };
 		9198C05027F7F14C00BC069F /* OTLPracticeWeekReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C04E27F7F14C00BC069F /* OTLPracticeWeekReportViewController.m */; };
 		9198C05327F7F17300BC069F /* CPISegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C05227F7F17300BC069F /* CPISegementView.m */; };
+		91B5910B2823A149008690B4 /* OTLDDLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B5910A2823A149008690B4 /* OTLDDLogFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -179,6 +180,8 @@
 		9198C04F27F7F14C00BC069F /* OTLPracticeWeekReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTLPracticeWeekReportViewController.h; sourceTree = "<group>"; };
 		9198C05127F7F17300BC069F /* CPISegementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPISegementView.h; sourceTree = "<group>"; };
 		9198C05227F7F17300BC069F /* CPISegementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPISegementView.m; sourceTree = "<group>"; };
+		91B591092823A149008690B4 /* OTLDDLogFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLDDLogFormatter.h; sourceTree = "<group>"; };
+		91B5910A2823A149008690B4 /* OTLDDLogFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLDDLogFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +275,7 @@
 		9198BF9F27F594C800BC069F /* OCTools */ = {
 			isa = PBXGroup;
 			children = (
+				91B591082823A11A008690B4 /* DDLogManager */,
 				9198BFE527F6ABC100BC069F /* Category */,
 				9198BFD827F6A91000BC069F /* Mine */,
 				9198BFD727F6A8EB00BC069F /* Entertainment */,
@@ -527,6 +531,15 @@
 			path = "练琴周报";
 			sourceTree = "<group>";
 		};
+		91B591082823A11A008690B4 /* DDLogManager */ = {
+			isa = PBXGroup;
+			children = (
+				91B591092823A149008690B4 /* OTLDDLogFormatter.h */,
+				91B5910A2823A149008690B4 /* OTLDDLogFormatter.m */,
+			);
+			path = DDLogManager;
+			sourceTree = "<group>";
+		};
 		FF38C48554218EB4DEE59609 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -666,6 +679,7 @@
 				6D96906C27F932B800678EAD /* LCAIRoomLeftView.m in Sources */,
 				6D96906927F7248A00678EAD /* LCOtherToolsViewController.m in Sources */,
 				9198C03F27F7EC0E00BC069F /* UIView+PartRounded.m in Sources */,
+				91B5910B2823A149008690B4 /* OTLDDLogFormatter.m in Sources */,
 				9198C01827F6FECF00BC069F /* MCCallLogsBackupViewController.m in Sources */,
 				911E42E327F82E1F0088FCDF /* ThreeLevelLinkageViewController.m in Sources */,
 				9198C00027F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m in Sources */,

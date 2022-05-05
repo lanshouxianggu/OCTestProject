@@ -8,6 +8,7 @@
 #import "AppDelegate.h"
 #import "LCLoginViewController.h"
 #import "LCMainTabBarController.h"
+#import "OTLDDLogFormatter.h"
 
 @interface AppDelegate ()
 
@@ -32,6 +33,24 @@
         [self.window makeKeyAndVisible];
         
     }
+    
+    //初始化日志框架
+    OTLDDLogFormatter *formatter = [[OTLDDLogFormatter alloc] init];
+    
+    [[DDTTYLogger sharedInstance] setLogFormatter:formatter];
+    [[DDOSLogger sharedInstance] setLogFormatter:formatter];
+    
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+//    [DDLog addLogger:[DDOSLogger sharedInstance]];
+//    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+    
+//    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor redColor] backgroundColor:nil forFlag:DDLogFlagInfo];
+//
+//    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor yellowColor] backgroundColor:nil forFlag:DDLogFlagError];
+//
+//    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor orangeColor] backgroundColor:nil forFlag:DDLogFlagWarning];
+//
+//    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor blueColor] backgroundColor:nil forFlag:DDLogFlagVerbose];
     
     return YES;
 }

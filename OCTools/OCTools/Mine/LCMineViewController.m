@@ -18,6 +18,11 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"个人中心";
     self.view.backgroundColor = UIColor.blueColor;
+    
+    DDLogError(@"队长，别开枪，是我");
+    DDLogWarn(@"哦，原来是狗屁贾队长");
+    DDLogInfo(@"嗯，小的就是那狗屁贾队长");
+    DDLogVerbose(@"说，是不是你小子一人把公厕吃的干干净净");
 }
 
 /*

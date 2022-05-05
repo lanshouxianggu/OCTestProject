@@ -21,5 +21,28 @@
 #import "UIImage+Common.h"
 #import "UIColor+LLRandomColor.h"
 #import "NSString+Common.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
+
+#ifdef __OBJC__
+// 配置头文件
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
+
+// 老版本不可用
+//#ifdef DEBUG
+//    static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+//#else
+//    static const int ddLogLevel = LOG_LEVEL_WARN;
+//#endif
+
+// 使用新版本
+#ifdef DEBUG
+    static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#else
+    static const DDLogLevel ddLogLevel = DDLogLevelWarning;
+#endif
+
+#endif
 
 #endif /* OCToolsPrefixHeader_pch */
