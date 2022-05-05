@@ -64,6 +64,8 @@
 		9198C05027F7F14C00BC069F /* OTLPracticeWeekReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C04E27F7F14C00BC069F /* OTLPracticeWeekReportViewController.m */; };
 		9198C05327F7F17300BC069F /* CPISegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198C05227F7F17300BC069F /* CPISegementView.m */; };
 		91B5910B2823A149008690B4 /* OTLDDLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B5910A2823A149008690B4 /* OTLDDLogFormatter.m */; };
+		91B5910E2823B761008690B4 /* OTLDDLogFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B5910D2823B761008690B4 /* OTLDDLogFileLogger.m */; };
+		91B591112823BD61008690B4 /* OTLDDLogFileManagerDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B591102823BD61008690B4 /* OTLDDLogFileManagerDefault.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +184,10 @@
 		9198C05227F7F17300BC069F /* CPISegementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPISegementView.m; sourceTree = "<group>"; };
 		91B591092823A149008690B4 /* OTLDDLogFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLDDLogFormatter.h; sourceTree = "<group>"; };
 		91B5910A2823A149008690B4 /* OTLDDLogFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLDDLogFormatter.m; sourceTree = "<group>"; };
+		91B5910C2823B761008690B4 /* OTLDDLogFileLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLDDLogFileLogger.h; sourceTree = "<group>"; };
+		91B5910D2823B761008690B4 /* OTLDDLogFileLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLDDLogFileLogger.m; sourceTree = "<group>"; };
+		91B5910F2823BD61008690B4 /* OTLDDLogFileManagerDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLDDLogFileManagerDefault.h; sourceTree = "<group>"; };
+		91B591102823BD61008690B4 /* OTLDDLogFileManagerDefault.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLDDLogFileManagerDefault.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -536,6 +542,10 @@
 			children = (
 				91B591092823A149008690B4 /* OTLDDLogFormatter.h */,
 				91B5910A2823A149008690B4 /* OTLDDLogFormatter.m */,
+				91B5910C2823B761008690B4 /* OTLDDLogFileLogger.h */,
+				91B5910D2823B761008690B4 /* OTLDDLogFileLogger.m */,
+				91B5910F2823BD61008690B4 /* OTLDDLogFileManagerDefault.h */,
+				91B591102823BD61008690B4 /* OTLDDLogFileManagerDefault.m */,
 			);
 			path = DDLogManager;
 			sourceTree = "<group>";
@@ -697,12 +707,14 @@
 				9198C01B27F6FECF00BC069F /* MCCallLogsBackupMainView.m in Sources */,
 				9198C04127F7EC0E00BC069F /* UILabel+Common.m in Sources */,
 				9198C05327F7F17300BC069F /* CPISegementView.m in Sources */,
+				91B5910E2823B761008690B4 /* OTLDDLogFileLogger.m in Sources */,
 				9198C03B27F7EC0E00BC069F /* UIColor+LLRandomColor.m in Sources */,
 				9198C01927F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordModel.m in Sources */,
 				9198C01E27F6FECF00BC069F /* MCCallLogsBackupSecondPartView.m in Sources */,
 				9198C04D27F7F07600BC069F /* OTLWeekReportDetailViewController.m in Sources */,
 				9198C04627F7EC7600BC069F /* PathUtility.m in Sources */,
 				9198BFFB27F6F97800BC069F /* OTLPracticePianoCommonCellView.m in Sources */,
+				91B591112823BD61008690B4 /* OTLDDLogFileManagerDefault.m in Sources */,
 				9198BFC327F59CE100BC069F /* LCMainTabBar.m in Sources */,
 				9198C01A27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryRecordView.m in Sources */,
 				9198BFDE27F6A92D00BC069F /* LCDiscoveryViewController.m in Sources */,

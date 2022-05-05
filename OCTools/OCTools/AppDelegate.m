@@ -9,6 +9,7 @@
 #import "LCLoginViewController.h"
 #import "LCMainTabBarController.h"
 #import "OTLDDLogFormatter.h"
+#import "OTLDDLogFileLogger.h"
 
 @interface AppDelegate ()
 
@@ -36,13 +37,15 @@
     
     //初始化日志框架
     OTLDDLogFormatter *formatter = [[OTLDDLogFormatter alloc] init];
+    OTLDDLogFileLogger *fileLogger = [[OTLDDLogFileLogger alloc] initWithFileName:@"我的模块"];
     
     [[DDTTYLogger sharedInstance] setLogFormatter:formatter];
     [[DDOSLogger sharedInstance] setLogFormatter:formatter];
     
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
 //    [DDLog addLogger:[DDOSLogger sharedInstance]];
-//    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
+    [DDLog addLogger:fileLogger];
+    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];
     
 //    [[DDTTYLogger sharedInstance] setForegroundColor:[UIColor redColor] backgroundColor:nil forFlag:DDLogFlagInfo];
 //
