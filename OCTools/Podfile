@@ -7,5 +7,6 @@ target 'OCTools' do
 pod 'SVProgressHUD'
 pod "GTMBase64"
 pod "Masonry"
+pod "CocoaLumberjack"
 
 end

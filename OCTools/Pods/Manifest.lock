@@ -1,24 +1,30 @@
 PODS:
+  - CocoaLumberjack (3.7.4):
+    - CocoaLumberjack/Core (= 3.7.4)
+  - CocoaLumberjack/Core (3.7.4)
   - GTMBase64 (1.0.1)
   - Masonry (1.1.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - CocoaLumberjack
   - GTMBase64
   - Masonry
   - SVProgressHUD
 
 SPEC REPOS:
   https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - CocoaLumberjack
     - GTMBase64
     - Masonry
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  CocoaLumberjack: 543c79c114dadc3b1aba95641d8738b06b05b646
   GTMBase64: f0f91be06a7a20b84c8e4fee30c0430395091d82
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 88ba5a9a7f4aa5e99eb27be29d92aab7f45d1736
+PODFILE CHECKSUM: e57f92655b7870e48eb4fd0834b78a817df07ed0
 
 COCOAPODS: 1.11.0
