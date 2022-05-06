@@ -26,8 +26,7 @@
             break;
     }
     
-    NSString *logMsg = [NSString stringWithFormat:@"fileName:%@ | function:%@ | line:%@ | %@ log:%@",
-                        [logMessage fileName], logMessage->_function, @(logMessage->_line), logType, logMessage->_message];
+    NSString *logMsg = [NSString stringWithFormat:@"fileName:%@ | function:%@ | line:%@ | %@ log:%@",[logMessage fileName],logMessage->_function,@(logMessage->_line),logType,logMessage->_message];
     
     NSString *formatStr = [NSString stringWithFormat:@"%@ %@",dateStr,logMsg];
     
