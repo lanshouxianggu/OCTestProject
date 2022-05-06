@@ -10,8 +10,28 @@
 @implementation OTLDDLogFormatter
 
 -(NSString *)formatLogMessage:(DDLogMessage *)logMessage {
-    return [NSString stringWithFormat:@"fileName:%@ | function:%@ | line:%@ | message:%@",
-            [logMessage fileName], logMessage->_function, @(logMessage->_line), logMessage->_message];
+    NSString *dateStr = @"";
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy/MM/dd HH:mm:ss:SSS"];
+    dateStr = [dateFormatter stringFromDate:[NSDate date]];
+    
+    NSString *logType = @"";
+    switch (logMessage.flag) {
+        case DDLogFlagError:logType = @"Error";break;
+        case DDLogFlagInfo:logType=@"Info";break;
+        case DDLogFlagWarning:logType=@"Warn";break;
+        case DDLogFlagDebug:logType=@"Debug";break;
+        case DDLogFlagVerbose:logType=@"Verbose";break;
+        default:
+            break;
+    }
+    
+    NSString *logMsg = [NSString stringWithFormat:@"fileName:%@ | function:%@ | line:%@ | %@ log:%@",
+                        [logMessage fileName], logMessage->_function, @(logMessage->_line), logType, logMessage->_message];
+    
+    NSString *formatStr = [NSString stringWithFormat:@"%@ %@",dateStr,logMsg];
+    
+    return formatStr;
 }
 
 @end

@@ -38,6 +38,7 @@
     //初始化日志框架
     OTLDDLogFormatter *formatter = [[OTLDDLogFormatter alloc] init];
     OTLDDLogFileLogger *fileLogger = [[OTLDDLogFileLogger alloc] initWithFileName:@"我的模块"];
+    [fileLogger setLogFormatter:formatter];
     
     [[DDTTYLogger sharedInstance] setLogFormatter:formatter];
     [[DDOSLogger sharedInstance] setLogFormatter:formatter];

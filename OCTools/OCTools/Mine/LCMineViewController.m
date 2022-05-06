@@ -23,6 +23,7 @@
     DDLogWarn(@"哦，原来是狗屁贾队长");
     DDLogInfo(@"嗯，小的就是那狗屁贾队长");
     DDLogVerbose(@"说，是不是你小子一人把公厕吃的干干净净");
+//    DDLogErrorToDDLog(<#ddlog#>, <#frmt, ...#>)
 }
 
 /*
