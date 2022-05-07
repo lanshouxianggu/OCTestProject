@@ -66,6 +66,10 @@
 		91B5910B2823A149008690B4 /* OTLDDLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B5910A2823A149008690B4 /* OTLDDLogFormatter.m */; };
 		91B5910E2823B761008690B4 /* OTLDDLogFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B5910D2823B761008690B4 /* OTLDDLogFileLogger.m */; };
 		91B591112823BD61008690B4 /* OTLDDLogFileManagerDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B591102823BD61008690B4 /* OTLDDLogFileManagerDefault.m */; };
+		91D640392826024000E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D640382826024000E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassVC.m */; };
+		91D6403C2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6403B2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.m */; };
+		91D6403F282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6403E282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m */; };
+		91D64042282618AA00E132B6 /* OTLBackClassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D64041282618AA00E132B6 /* OTLBackClassView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,6 +192,14 @@
 		91B5910D2823B761008690B4 /* OTLDDLogFileLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLDDLogFileLogger.m; sourceTree = "<group>"; };
 		91B5910F2823BD61008690B4 /* OTLDDLogFileManagerDefault.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLDDLogFileManagerDefault.h; sourceTree = "<group>"; };
 		91B591102823BD61008690B4 /* OTLDDLogFileManagerDefault.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLDDLogFileManagerDefault.m; sourceTree = "<group>"; };
+		91D640372826024000E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLOfflineOneToOneSmartMajorBeforeClassVC.h; sourceTree = "<group>"; };
+		91D640382826024000E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLOfflineOneToOneSmartMajorBeforeClassVC.m; sourceTree = "<group>"; };
+		91D6403A2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLOfflineOneToOneSmartMajorBeforeClassLeftView.h; sourceTree = "<group>"; };
+		91D6403B2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLOfflineOneToOneSmartMajorBeforeClassLeftView.m; sourceTree = "<group>"; };
+		91D6403D282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLOfflineOneToOneSmartMajorBeforeClassRightView.h; sourceTree = "<group>"; };
+		91D6403E282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLOfflineOneToOneSmartMajorBeforeClassRightView.m; sourceTree = "<group>"; };
+		91D64040282618AA00E132B6 /* OTLBackClassView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLBackClassView.h; sourceTree = "<group>"; };
+		91D64041282618AA00E132B6 /* OTLBackClassView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLBackClassView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +436,7 @@
 		9198BFEC27F6F97800BC069F /* teacherSide */ = {
 			isa = PBXGroup;
 			children = (
+				91D640362826003200E132B6 /* 线下一对一智慧主课 */,
 				911E42E727F84B150088FCDF /* AI练琴房 */,
 				9198C04727F7EFA800BC069F /* 练琴周报 */,
 				9198BFED27F6F97800BC069F /* 练琴任务 */,
@@ -548,6 +561,21 @@
 				91B591102823BD61008690B4 /* OTLDDLogFileManagerDefault.m */,
 			);
 			path = DDLogManager;
+			sourceTree = "<group>";
+		};
+		91D640362826003200E132B6 /* 线下一对一智慧主课 */ = {
+			isa = PBXGroup;
+			children = (
+				91D640372826024000E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassVC.h */,
+				91D640382826024000E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassVC.m */,
+				91D6403A2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.h */,
+				91D6403B2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.m */,
+				91D6403D282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.h */,
+				91D6403E282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m */,
+				91D64040282618AA00E132B6 /* OTLBackClassView.h */,
+				91D64041282618AA00E132B6 /* OTLBackClassView.m */,
+			);
+			path = "线下一对一智慧主课";
 			sourceTree = "<group>";
 		};
 		FF38C48554218EB4DEE59609 /* Pods */ = {
@@ -684,6 +712,7 @@
 				9198BFEB27F6F71300BC069F /* LCSquareTableViewCell.m in Sources */,
 				9198BFDB27F6A92100BC069F /* LCSquareViewController.m in Sources */,
 				9198BFE827F6ABD800BC069F /* UIImage+Tool.m in Sources */,
+				91D64042282618AA00E132B6 /* OTLBackClassView.m in Sources */,
 				9198C01F27F6FECF00BC069F /* MCVideoMoreDetailView.m in Sources */,
 				9198C03D27F7EC0E00BC069F /* NSAttributedString+LLMake.m in Sources */,
 				6D96906C27F932B800678EAD /* LCAIRoomLeftView.m in Sources */,
@@ -702,6 +731,7 @@
 				9198C01C27F6FECF00BC069F /* MCCallLogsBackupFirstPartView.m in Sources */,
 				9198C03E27F7EC0E00BC069F /* UIImage+Alpha.m in Sources */,
 				9198C04027F7EC0E00BC069F /* NSData+Common.m in Sources */,
+				91D640392826024000E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassVC.m in Sources */,
 				9198C02827F7EB4900BC069F /* MainNavigationController.m in Sources */,
 				9198C05027F7F14C00BC069F /* OTLPracticeWeekReportViewController.m in Sources */,
 				9198C01B27F6FECF00BC069F /* MCCallLogsBackupMainView.m in Sources */,
@@ -722,7 +752,9 @@
 				911E42EA27F84B2D0088FCDF /* LCAIRoomViewController.m in Sources */,
 				9198BFE427F6A94200BC069F /* LCMineViewController.m in Sources */,
 				9198BFD127F6A67B00BC069F /* LCMainTabBarController.m in Sources */,
+				91D6403F282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m in Sources */,
 				911E42E527F82E1F0088FCDF /* SelectFirstView.m in Sources */,
+				91D6403C2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.m in Sources */,
 				9198C01D27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryStyleView.m in Sources */,
 				6D96907027F93F5C00678EAD /* LCCaculatorViewController.m in Sources */,
 				9198BFB327F594CA00BC069F /* main.m in Sources */,

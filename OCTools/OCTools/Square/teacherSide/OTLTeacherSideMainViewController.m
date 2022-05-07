@@ -11,6 +11,7 @@
 #import "LCSquareTableViewCell.h"
 #import "OTLPracticeWeekReportViewController.h"
 #import "LCAIRoomViewController.h"
+#import "OTLOfflineOneToOneSmartMajorBeforeClassVC.h"
 
 @interface OTLTeacherSideMainViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -30,7 +31,7 @@
     self.title = @"云上钢琴老师端";
     self.view.backgroundColor = UIColorFromRGB(0xd2d2d2);
     
-    self.dataArray = @[@"AI练琴房",@"练琴任务",@"练琴周报",@"线下一对一主课课后反馈单"];
+    self.dataArray = @[@"AI练琴房",@"练琴任务",@"练琴周报",@"线下一对一智慧主课"];
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -86,7 +87,13 @@
             OTLPracticeWeekReportViewController *vc = [OTLPracticeWeekReportViewController new];
             [self.navigationController pushViewController:vc animated:YES];
         }
-            break;;
+            break;
+        case 3:
+        {
+            OTLOfflineOneToOneSmartMajorBeforeClassVC *vc = [OTLOfflineOneToOneSmartMajorBeforeClassVC new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
         default:
             break;
     }
