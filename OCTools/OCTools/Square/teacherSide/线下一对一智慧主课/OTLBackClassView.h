@@ -9,13 +9,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+//回课新课公用
 @interface OTLBackClassView : UIView
-
+-(instancetype)initWithFrame:(CGRect)frame isFreshClass:(BOOL)isFreshClass;
 @end
 
 NS_ASSUME_NONNULL_END
 
 @interface OTLBackClassTopCollectionViewCell : UICollectionViewCell
+@property (nonatomic, strong) UIView *addMusicView;
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *nameLabel;
 @end

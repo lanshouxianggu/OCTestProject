@@ -92,7 +92,7 @@
 #pragma mark - lazy
 -(OTLBackClassView *)backClassView {
     if (!_backClassView) {
-        _backClassView = [[OTLBackClassView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        _backClassView = [[OTLBackClassView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) isFreshClass:NO];
         _backClassView.backgroundColor = UIColorFromRGB(0xf2f2f2);
     }
     return _backClassView;
@@ -100,7 +100,7 @@
 
 -(OTLBackClassView *)freshClassView {
     if (!_freshClassView) {
-        _freshClassView = [OTLBackClassView new];
+        _freshClassView = [[OTLBackClassView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) isFreshClass:YES];
         _freshClassView.backgroundColor = UIColorFromRGB(0xf2f2f2);
     }
     return _freshClassView;
@@ -108,7 +108,7 @@
 
 -(OTLBackClassView *)afterClassSheetView {
     if (!_afterClassSheetView) {
-        _afterClassSheetView = [OTLBackClassView new];
+        _afterClassSheetView = [[OTLBackClassView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         _afterClassSheetView.backgroundColor = UIColorFromRGB(0xf2f2f2);
     }
     return _afterClassSheetView;

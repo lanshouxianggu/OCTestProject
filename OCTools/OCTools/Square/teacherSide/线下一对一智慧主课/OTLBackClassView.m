@@ -19,12 +19,16 @@
 @property (nonatomic, assign) CGSize bottomItemSize;
 @property (nonatomic, assign) CGFloat topViewHeight;
 @property (nonatomic, assign) CGFloat bottomViewHeight;
+
+///是否新课
+@property (nonatomic, assign) BOOL isFreshClass;
 @end
 
 @implementation OTLBackClassView
 
--(instancetype)initWithFrame:(CGRect)frame {
+-(instancetype)initWithFrame:(CGRect)frame isFreshClass:(BOOL)isFreshClass {
     if (self = [super initWithFrame:frame]) {
+        self.isFreshClass = isFreshClass;
         self.topViewHeight = (self.frame.size.height-30)*0.46;
         self.bottomViewHeight = self.frame.size.height-self.topViewHeight-26-15;
         CGFloat topItemHeight = self.topViewHeight-30;
@@ -65,7 +69,7 @@
 #pragma mark - UICollectionViewDelegate
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if ([collectionView isEqual:self.topCollectionView]) {
-        return 3;
+        return self.isFreshClass?4:3;
     }
     return 2;
 }
@@ -73,7 +77,13 @@
 -(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([collectionView isEqual:self.topCollectionView]) {
         OTLBackClassTopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"OTLBackClassTopCollectionViewCell" forIndexPath:indexPath];
-        
+        cell.addMusicView.hidden = YES;
+        cell.imageView.hidden = NO;
+        if (self.isFreshClass && indexPath.item==0) {
+            cell.nameLabel.text = @"";
+            cell.addMusicView.hidden = NO;
+            cell.imageView.hidden = YES;
+        }
         
         return cell;
     }else if ([collectionView isEqual:self.bottomCollectionView]) {
@@ -83,6 +93,11 @@
         return cell;
     }
     return [UICollectionViewCell new];
+}
+
+#pragma mark - 书本批注
+-(void)bookRemarkAction {
+    
 }
 
 #pragma mark - lazy
@@ -174,6 +189,26 @@
             make.centerY.offset(0);
         }];
         
+        if (self.isFreshClass) {
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            [btn setTitle:@"书本批注" forState:UIControlStateNormal];
+            [btn setTitleColor:UIColorFromRGB(0x76C0EF) forState:UIControlStateNormal];
+            [btn.titleLabel setFont:[UIFont systemFontOfSize:13]];
+            btn.layer.cornerRadius = 12;
+            btn.layer.masksToBounds = YES;
+            btn.layer.borderColor = UIColorFromRGB(0x76C0EF).CGColor;
+            btn.layer.borderWidth = 1;
+            
+            [btn addTarget:self action:@selector(bookRemarkAction) forControlEvents:UIControlEventTouchUpInside];
+            
+            [topView addSubview:btn];
+            [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerY.offset(0);
+                make.size.mas_equalTo(CGSizeMake(72, 24));
+                make.right.offset(-15);
+            }];
+        }
+        
         [_bottomView addSubview:self.bottomCollectionView];
     }
     return _bottomView;
@@ -181,7 +216,7 @@
 @end
 
 
-
+#pragma mark - OTLBackClassTopCollectionViewCell
 @implementation OTLBackClassTopCollectionViewCell
 
 -(instancetype)initWithFrame:(CGRect)frame {
@@ -201,9 +236,24 @@
     [self.contentView addSubview:self.nameLabel];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.offset(0);
-        make.top.equalTo(self.imageView.mas_bottom).offset(8);
+        make.top.equalTo(self.imageView.mas_bottom).offset(12);
         make.left.right.offset(0);
     }];
+    
+    [self.contentView addSubview:self.addMusicView];
+    
+    CAShapeLayer *border = [CAShapeLayer layer];
+    border.strokeColor = UIColorFromRGB(0x999999).CGColor;
+    border.fillColor = [UIColor clearColor].CGColor;
+    UIBezierPath * path = [UIBezierPath bezierPathWithRoundedRect:self.addMusicView.bounds cornerRadius:4];
+    border.path = path.CGPath;
+    border.frame = self.addMusicView.frame;
+    //线宽(厚度)
+    border.lineWidth = 1.f;
+    //虚线的间隔（线长和间隔）
+    border.lineDashPattern = @[@(5),@(5)];
+    
+    [self.addMusicView.layer addSublayer:border];
 }
 
 #pragma mark - lazy
@@ -212,7 +262,7 @@
         _imageView = [[UIImageView alloc] init];
         _imageView.backgroundColor = UIColor.cyanColor;
         _imageView.layer.borderColor = OTLAppMainColor.CGColor;
-        _imageView.layer.borderWidth = 1;
+        _imageView.layer.borderWidth = 1.5;
     }
     return _imageView;
 }
@@ -228,8 +278,41 @@
     }
     return _nameLabel;
 }
+
+-(UIView *)addMusicView {
+    if (!_addMusicView) {
+        _addMusicView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height-45)];
+        _addMusicView.backgroundColor = UIColorFromRGB(0xf2f2f2);
+        _addMusicView.hidden = YES;
+        _addMusicView.layer.cornerRadius = 4;
+        
+        UILabel *lab1 = [UILabel new];
+        lab1.text = @"＋";
+        lab1.textColor = UIColorFromRGB(0x999999);
+        lab1.font = [UIFont systemFontOfSize:20];
+        
+        [_addMusicView addSubview:lab1];
+        [lab1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.offset(0);
+            make.centerY.offset(-5);
+        }];
+        
+        UILabel *lab2 = [UILabel new];
+        lab2.text = @"添加曲谱";
+        lab2.textColor = UIColorFromRGB(0x999999);
+        lab2.font = [UIFont systemFontOfSize:12];
+        
+        [_addMusicView addSubview:lab2];
+        [lab2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.offset(0);
+            make.centerY.offset(20);
+        }];
+    }
+    return _addMusicView;
+}
 @end
 
+#pragma mark - OTLBackClassBottomCollectionViewCell
 @implementation OTLBackClassBottomCollectionViewCell
 
 -(instancetype)initWithFrame:(CGRect)frame {
@@ -252,7 +335,7 @@
         _imageView = [[UIImageView alloc] init];
         _imageView.backgroundColor = UIColor.cyanColor;
         _imageView.layer.borderColor = OTLAppMainColor.CGColor;
-        _imageView.layer.borderWidth = 1;
+        _imageView.layer.borderWidth = 1.5;
         _imageView.layer.cornerRadius = 6;
     }
     return _imageView;
