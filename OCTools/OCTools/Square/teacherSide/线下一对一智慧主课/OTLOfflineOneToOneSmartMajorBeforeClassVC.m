@@ -9,7 +9,7 @@
 #import "OTLOfflineOneToOneSmartMajorBeforeClassLeftView.h"
 #import "OTLOfflineOneToOneSmartMajorBeforeClassRightView.h"
 
-#define kLeftViewWidth SCREEN_WIDTH*0.14
+#define kLeftViewWidth SCREEN_WIDTH*0.14+(isIPhoneX?34:0)
 #define kRightViewWidth SCREEN_WIDTH-kLeftViewWidth
 
 @interface OTLOfflineOneToOneSmartMajorBeforeClassVC ()
@@ -30,17 +30,7 @@
 
 -(void)setupUI {
     [self.view addSubview:self.leftView];
-    [self.leftView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.bottom.offset(0);
-        make.width.mas_equalTo(kLeftViewWidth);
-    }];
-    
     [self.view addSubview:self.rightView];
-    [self.rightView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.right.bottom.offset(0);
-        make.left.equalTo(self.leftView.mas_right);
-        make.width.mas_equalTo(kRightViewWidth);
-    }];
 }
 
 #pragma mark - lazy

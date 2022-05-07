@@ -65,8 +65,11 @@
         UIImage *selectImage = self.selectImagesArray[i];
         [btn setImage:normalImage forState:UIControlStateNormal];
         [btn setImage:selectImage forState:UIControlStateSelected];
+        [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 15)];
+        [btn setContentEdgeInsets:UIEdgeInsetsMake(0, 17, 0, 0)];
+        [btn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
         [btn setTitle:title forState:UIControlStateNormal];
-        [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 10)];
+        
         [btn setTitleColor:UIColorFromRGB(0x3b3b3b) forState:UIControlStateNormal];
         [btn setTitleColor:OTLAppMainColor forState:UIControlStateSelected];
         [btn.titleLabel setFont:[UIFont systemFontOfSize:16]];

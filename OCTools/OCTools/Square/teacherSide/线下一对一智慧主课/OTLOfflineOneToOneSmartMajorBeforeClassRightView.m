@@ -92,7 +92,7 @@
 #pragma mark - lazy
 -(OTLBackClassView *)backClassView {
     if (!_backClassView) {
-        _backClassView = [OTLBackClassView new];
+        _backClassView = [[OTLBackClassView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         _backClassView.backgroundColor = UIColorFromRGB(0xf2f2f2);
     }
     return _backClassView;
