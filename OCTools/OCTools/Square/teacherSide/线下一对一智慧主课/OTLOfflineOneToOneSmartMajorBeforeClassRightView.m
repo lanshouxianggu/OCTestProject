@@ -7,6 +7,7 @@
 
 #import "OTLOfflineOneToOneSmartMajorBeforeClassRightView.h"
 #import "OTLBackClassView.h"
+#import "OTLAfterClassSheetView.h"
 
 @interface OTLOfflineOneToOneSmartMajorBeforeClassRightView () <UIScrollViewDelegate>
 ///回课
@@ -14,7 +15,7 @@
 ///新课
 @property (nonatomic, strong) OTLBackClassView *freshClassView;
 ///课后单
-@property (nonatomic, strong) OTLBackClassView *afterClassSheetView;
+@property (nonatomic, strong) OTLAfterClassSheetView *afterClassSheetView;
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @end
@@ -106,9 +107,9 @@
     return _freshClassView;
 }
 
--(OTLBackClassView *)afterClassSheetView {
+-(OTLAfterClassSheetView *)afterClassSheetView {
     if (!_afterClassSheetView) {
-        _afterClassSheetView = [[OTLBackClassView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        _afterClassSheetView = [[OTLAfterClassSheetView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         _afterClassSheetView.backgroundColor = UIColorFromRGB(0xf2f2f2);
     }
     return _afterClassSheetView;

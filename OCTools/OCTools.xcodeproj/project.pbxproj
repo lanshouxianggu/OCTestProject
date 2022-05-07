@@ -70,6 +70,12 @@
 		91D6403C2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6403B2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.m */; };
 		91D6403F282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6403E282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m */; };
 		91D64042282618AA00E132B6 /* OTLBackClassView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D64041282618AA00E132B6 /* OTLBackClassView.m */; };
+		91D640482826592900E132B6 /* OTLAfterClassSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D640472826592900E132B6 /* OTLAfterClassSheetView.m */; };
+		91D6404B28265D0E00E132B6 /* OTLAfterClassSheetPerformanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6404A28265D0E00E132B6 /* OTLAfterClassSheetPerformanceCell.m */; };
+		91D6404E2826635E00E132B6 /* OTLAfterClassSheetVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D6404D2826635E00E132B6 /* OTLAfterClassSheetVideoCell.m */; };
+		91D640512826680F00E132B6 /* OTLAfterClassSheetPianoTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D640502826680F00E132B6 /* OTLAfterClassSheetPianoTaskCell.m */; };
+		91D640542826686800E132B6 /* OTLAfterClassSheetCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D640532826686800E132B6 /* OTLAfterClassSheetCommentCell.m */; };
+		91D640572826688D00E132B6 /* OTLAfterClassSheetEndClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D640562826688D00E132B6 /* OTLAfterClassSheetEndClassCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -200,6 +206,18 @@
 		91D6403E282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLOfflineOneToOneSmartMajorBeforeClassRightView.m; sourceTree = "<group>"; };
 		91D64040282618AA00E132B6 /* OTLBackClassView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLBackClassView.h; sourceTree = "<group>"; };
 		91D64041282618AA00E132B6 /* OTLBackClassView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLBackClassView.m; sourceTree = "<group>"; };
+		91D640462826592900E132B6 /* OTLAfterClassSheetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLAfterClassSheetView.h; sourceTree = "<group>"; };
+		91D640472826592900E132B6 /* OTLAfterClassSheetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLAfterClassSheetView.m; sourceTree = "<group>"; };
+		91D6404928265D0E00E132B6 /* OTLAfterClassSheetPerformanceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLAfterClassSheetPerformanceCell.h; sourceTree = "<group>"; };
+		91D6404A28265D0E00E132B6 /* OTLAfterClassSheetPerformanceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLAfterClassSheetPerformanceCell.m; sourceTree = "<group>"; };
+		91D6404C2826635E00E132B6 /* OTLAfterClassSheetVideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLAfterClassSheetVideoCell.h; sourceTree = "<group>"; };
+		91D6404D2826635E00E132B6 /* OTLAfterClassSheetVideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLAfterClassSheetVideoCell.m; sourceTree = "<group>"; };
+		91D6404F2826680F00E132B6 /* OTLAfterClassSheetPianoTaskCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLAfterClassSheetPianoTaskCell.h; sourceTree = "<group>"; };
+		91D640502826680F00E132B6 /* OTLAfterClassSheetPianoTaskCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLAfterClassSheetPianoTaskCell.m; sourceTree = "<group>"; };
+		91D640522826686800E132B6 /* OTLAfterClassSheetCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLAfterClassSheetCommentCell.h; sourceTree = "<group>"; };
+		91D640532826686800E132B6 /* OTLAfterClassSheetCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLAfterClassSheetCommentCell.m; sourceTree = "<group>"; };
+		91D640552826688D00E132B6 /* OTLAfterClassSheetEndClassCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLAfterClassSheetEndClassCell.h; sourceTree = "<group>"; };
+		91D640562826688D00E132B6 /* OTLAfterClassSheetEndClassCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLAfterClassSheetEndClassCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -574,6 +592,18 @@
 				91D6403E282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m */,
 				91D64040282618AA00E132B6 /* OTLBackClassView.h */,
 				91D64041282618AA00E132B6 /* OTLBackClassView.m */,
+				91D640462826592900E132B6 /* OTLAfterClassSheetView.h */,
+				91D640472826592900E132B6 /* OTLAfterClassSheetView.m */,
+				91D6404928265D0E00E132B6 /* OTLAfterClassSheetPerformanceCell.h */,
+				91D6404A28265D0E00E132B6 /* OTLAfterClassSheetPerformanceCell.m */,
+				91D6404C2826635E00E132B6 /* OTLAfterClassSheetVideoCell.h */,
+				91D6404D2826635E00E132B6 /* OTLAfterClassSheetVideoCell.m */,
+				91D6404F2826680F00E132B6 /* OTLAfterClassSheetPianoTaskCell.h */,
+				91D640502826680F00E132B6 /* OTLAfterClassSheetPianoTaskCell.m */,
+				91D640522826686800E132B6 /* OTLAfterClassSheetCommentCell.h */,
+				91D640532826686800E132B6 /* OTLAfterClassSheetCommentCell.m */,
+				91D640552826688D00E132B6 /* OTLAfterClassSheetEndClassCell.h */,
+				91D640562826688D00E132B6 /* OTLAfterClassSheetEndClassCell.m */,
 			);
 			path = "线下一对一智慧主课";
 			sourceTree = "<group>";
@@ -728,6 +758,7 @@
 				9198C04C27F7F07600BC069F /* OTLWeekReportDetailTableViewCell.m in Sources */,
 				9198C02427F702E400BC069F /* TipProgress.m in Sources */,
 				9198BFA227F594C800BC069F /* AppDelegate.m in Sources */,
+				91D640512826680F00E132B6 /* OTLAfterClassSheetPianoTaskCell.m in Sources */,
 				9198C01C27F6FECF00BC069F /* MCCallLogsBackupFirstPartView.m in Sources */,
 				9198C03E27F7EC0E00BC069F /* UIImage+Alpha.m in Sources */,
 				9198C04027F7EC0E00BC069F /* NSData+Common.m in Sources */,
@@ -743,20 +774,25 @@
 				9198C01E27F6FECF00BC069F /* MCCallLogsBackupSecondPartView.m in Sources */,
 				9198C04D27F7F07600BC069F /* OTLWeekReportDetailViewController.m in Sources */,
 				9198C04627F7EC7600BC069F /* PathUtility.m in Sources */,
+				91D640482826592900E132B6 /* OTLAfterClassSheetView.m in Sources */,
 				9198BFFB27F6F97800BC069F /* OTLPracticePianoCommonCellView.m in Sources */,
 				91B591112823BD61008690B4 /* OTLDDLogFileManagerDefault.m in Sources */,
 				9198BFC327F59CE100BC069F /* LCMainTabBar.m in Sources */,
 				9198C01A27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryRecordView.m in Sources */,
 				9198BFDE27F6A92D00BC069F /* LCDiscoveryViewController.m in Sources */,
 				9198BFE127F6A93A00BC069F /* LCEntertainmentViewController.m in Sources */,
+				91D6404E2826635E00E132B6 /* OTLAfterClassSheetVideoCell.m in Sources */,
 				911E42EA27F84B2D0088FCDF /* LCAIRoomViewController.m in Sources */,
+				91D640572826688D00E132B6 /* OTLAfterClassSheetEndClassCell.m in Sources */,
 				9198BFE427F6A94200BC069F /* LCMineViewController.m in Sources */,
 				9198BFD127F6A67B00BC069F /* LCMainTabBarController.m in Sources */,
 				91D6403F282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m in Sources */,
 				911E42E527F82E1F0088FCDF /* SelectFirstView.m in Sources */,
 				91D6403C2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.m in Sources */,
+				91D640542826686800E132B6 /* OTLAfterClassSheetCommentCell.m in Sources */,
 				9198C01D27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryStyleView.m in Sources */,
 				6D96907027F93F5C00678EAD /* LCCaculatorViewController.m in Sources */,
+				91D6404B28265D0E00E132B6 /* OTLAfterClassSheetPerformanceCell.m in Sources */,
 				9198BFB327F594CA00BC069F /* main.m in Sources */,
 				9198BFF827F6F97800BC069F /* OTLAddOrDeleteToolView.m in Sources */,
 				9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */,
