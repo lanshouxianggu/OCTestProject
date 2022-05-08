@@ -29,15 +29,22 @@
 -(instancetype)initWithFrame:(CGRect)frame isFreshClass:(BOOL)isFreshClass {
     if (self = [super initWithFrame:frame]) {
         self.isFreshClass = isFreshClass;
-        self.topViewHeight = (self.frame.size.height-30)*0.46;
-        self.bottomViewHeight = self.frame.size.height-self.topViewHeight-26-15;
-        CGFloat topItemHeight = self.topViewHeight-30;
-        CGFloat topItemWidth = topItemHeight*5/8;
-        self.topItemSize = CGSizeMake(topItemWidth, topItemHeight);
-        
-        CGFloat bottomItemHeight = self.bottomViewHeight-56-15-30;
-        CGFloat bottomItemWidth = bottomItemHeight*3/4;
-        self.bottomItemSize = CGSizeMake(bottomItemWidth, bottomItemHeight);
+        if (isPad) {
+            self.topViewHeight = (self.frame.size.height-30)*0.46;
+            self.bottomViewHeight = self.frame.size.height-self.topViewHeight-26-15;
+            CGFloat topItemHeight = self.topViewHeight-30;
+            CGFloat topItemWidth = topItemHeight*5/8;
+            self.topItemSize = CGSizeMake(topItemWidth, topItemHeight);
+
+            CGFloat bottomItemHeight = self.bottomViewHeight-56-15-30;
+            CGFloat bottomItemWidth = bottomItemHeight*3/4;
+            self.bottomItemSize = CGSizeMake(bottomItemWidth, bottomItemHeight);
+        }else {
+            self.topViewHeight = 220;
+            self.bottomViewHeight = 257;
+            self.topItemSize = CGSizeMake(120, self.topViewHeight-30);
+            self.bottomItemSize = CGSizeMake(118, self.bottomViewHeight-56-15-30);
+        }
         
         [self setupUI];
     }
@@ -50,20 +57,51 @@
         make.edges.insets(UIEdgeInsetsMake(15, 15, 26, 15));
     }];
     
-    [self.mainView addSubview:self.topCollectionView];
+    UIScrollView *scrollView = [UIScrollView new];
+    UIView *subMainView = [UIView new];
+    if (!isPad) {
+        [self.mainView addSubview:scrollView];
+        [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.insets(UIEdgeInsetsZero);
+            make.width.height.equalTo(self.mainView);
+        }];
+        [scrollView addSubview:subMainView];
+        [subMainView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.insets(UIEdgeInsetsZero);
+            make.width.equalTo(scrollView);
+            make.height.mas_equalTo(self.topViewHeight+self.bottomViewHeight);
+        }];
         
-    UIView *line = [UIView new];
-    line.backgroundColor = UIColorFromRGB(0xE5E5E5);
-    
-    [self.mainView addSubview:line];
-    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.offset(15);
-        make.right.offset(-15);
-        make.top.equalTo(self.topCollectionView.mas_bottom);
-        make.height.mas_equalTo(1);
-    }];
-    
-    [self.mainView addSubview:self.bottomView];
+        [subMainView addSubview:self.topCollectionView];
+            
+        UIView *line = [UIView new];
+        line.backgroundColor = UIColorFromRGB(0xE5E5E5);
+        
+        [subMainView addSubview:line];
+        [line mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.offset(15);
+            make.right.offset(-15);
+            make.top.equalTo(self.topCollectionView.mas_bottom);
+            make.height.mas_equalTo(1);
+        }];
+        
+        [subMainView addSubview:self.bottomView];
+    }else {
+        [self.mainView addSubview:self.topCollectionView];
+            
+        UIView *line = [UIView new];
+        line.backgroundColor = UIColorFromRGB(0xE5E5E5);
+        
+        [self.mainView addSubview:line];
+        [line mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.offset(15);
+            make.right.offset(-15);
+            make.top.equalTo(self.topCollectionView.mas_bottom);
+            make.height.mas_equalTo(1);
+        }];
+        
+        [self.mainView addSubview:self.bottomView];
+    }
 }
 
 #pragma mark - UICollectionViewDelegate

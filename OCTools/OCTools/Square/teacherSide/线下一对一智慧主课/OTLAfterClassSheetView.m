@@ -52,6 +52,9 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (@available(iOS 15.0, *)) {
+        return 0;
+    }
     return 15;
 }
 
