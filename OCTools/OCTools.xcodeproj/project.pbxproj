@@ -16,6 +16,7 @@
 		911E42E527F82E1F0088FCDF /* SelectFirstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911E42E027F82E1F0088FCDF /* SelectFirstView.m */; };
 		911E42E627F82E1F0088FCDF /* ThreeLevelLinkageSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 911E42E127F82E1F0088FCDF /* ThreeLevelLinkageSelectView.m */; };
 		911E42EA27F84B2D0088FCDF /* LCAIRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 911E42E927F84B2D0088FCDF /* LCAIRoomViewController.m */; };
+		916A337D2828B1EA00898E3C /* OTLAfterClassSheetVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A337C2828B1EA00898E3C /* OTLAfterClassSheetVideoCollectionCell.m */; };
 		9198BFA227F594C800BC069F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA127F594C800BC069F /* AppDelegate.m */; };
 		9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA427F594C800BC069F /* SceneDelegate.m */; };
 		9198BFA827F594C800BC069F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA727F594C800BC069F /* ViewController.m */; };
@@ -97,6 +98,8 @@
 		911E42E227F82E1F0088FCDF /* ThreeLevelLinkageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeLevelLinkageViewController.h; sourceTree = "<group>"; };
 		911E42E827F84B2D0088FCDF /* LCAIRoomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCAIRoomViewController.h; sourceTree = "<group>"; };
 		911E42E927F84B2D0088FCDF /* LCAIRoomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCAIRoomViewController.m; sourceTree = "<group>"; };
+		916A337B2828B1EA00898E3C /* OTLAfterClassSheetVideoCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLAfterClassSheetVideoCollectionCell.h; sourceTree = "<group>"; };
+		916A337C2828B1EA00898E3C /* OTLAfterClassSheetVideoCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLAfterClassSheetVideoCollectionCell.m; sourceTree = "<group>"; };
 		9198BF9D27F594C800BC069F /* OCTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9198BFA027F594C800BC069F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9198BFA127F594C800BC069F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -604,6 +607,8 @@
 				91D640532826686800E132B6 /* OTLAfterClassSheetCommentCell.m */,
 				91D640552826688D00E132B6 /* OTLAfterClassSheetEndClassCell.h */,
 				91D640562826688D00E132B6 /* OTLAfterClassSheetEndClassCell.m */,
+				916A337B2828B1EA00898E3C /* OTLAfterClassSheetVideoCollectionCell.h */,
+				916A337C2828B1EA00898E3C /* OTLAfterClassSheetVideoCollectionCell.m */,
 			);
 			path = "线下一对一智慧主课";
 			sourceTree = "<group>";
@@ -754,6 +759,7 @@
 				9198C00027F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m in Sources */,
 				9198BFF927F6F97800BC069F /* OTLPracticePianoTaskViewController.m in Sources */,
 				9198BFFA27F6F97800BC069F /* OTLPracticePianoTaskFirstCell.m in Sources */,
+				916A337D2828B1EA00898E3C /* OTLAfterClassSheetVideoCollectionCell.m in Sources */,
 				9198C04327F7EC0E00BC069F /* UIImage+Common.m in Sources */,
 				9198C04C27F7F07600BC069F /* OTLWeekReportDetailTableViewCell.m in Sources */,
 				9198C02427F702E400BC069F /* TipProgress.m in Sources */,

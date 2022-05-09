@@ -39,15 +39,15 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.section) {
-        case 0:return 60;break;
-        case 1:return 92;break;
-        case 2:return 145;break;
-        case 3:return 218;break;
-        case 4:return 40;break;
-        default:
-            break;
-    }
+//    switch (indexPath.section) {
+//        case 0:return 60;break;
+//        case 1:return 92;break;
+//        case 2:return 145;break;
+//        case 3:return 218;break;
+//        case 4:return 40;break;
+//        default:
+//            break;
+//    }
     return UITableViewAutomaticDimension;
 }
 
@@ -78,7 +78,18 @@
         if (!cell) {
             cell = [[OTLAfterClassSheetVideoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"OTLAfterClassSheetVideoCell"];
         }
-        
+        __block OTLAfterClassSheetVideoCell *tmpCell = cell;
+        WS(weakSelf)
+        [cell setVideoAddBlock:^{
+            [tmpCell.videosArr addObject:@""];
+            [weakSelf.tableView reloadData];
+            [tmpCell reloadData];
+        }];
+        [cell setVideoDeleteBlock:^(NSInteger index) {
+            [tmpCell.videosArr removeObjectAtIndex:index];
+            [weakSelf.tableView reloadData];
+            [tmpCell reloadData];
+        }];
         return cell;
     }
 #pragma mark - 练琴任务cell

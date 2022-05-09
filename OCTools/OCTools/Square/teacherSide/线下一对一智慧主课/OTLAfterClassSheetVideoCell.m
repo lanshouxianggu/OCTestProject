@@ -6,10 +6,15 @@
 //
 
 #import "OTLAfterClassSheetVideoCell.h"
+#import "OTLAfterClassSheetVideoCollectionCell.h"
 
-@interface OTLAfterClassSheetVideoCell ()
+static const CGFloat sCollectionViewHeight = 187.f;
+
+@interface OTLAfterClassSheetVideoCell () <UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UIView *topView;
 @property (nonatomic, strong) UILabel *tipsLabel;
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UICollectionViewFlowLayout *layout;
 @end
 
 @implementation OTLAfterClassSheetVideoCell
@@ -19,7 +24,7 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = UIColor.whiteColor;
         self.layer.cornerRadius = 9;
-        
+        self.videosArr = [NSMutableArray array];
         [self setupUI];
     }
     return self;
@@ -38,11 +43,55 @@
         make.right.offset(-15);
         make.top.equalTo(self.topView.mas_bottom);
     }];
+    
+    [self.contentView addSubview:self.collectionView];
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(15);
+        make.right.offset(-15);
+        make.top.equalTo(self.topView.mas_bottom);
+        make.bottom.offset(-15);
+        make.height.mas_equalTo(15);
+    }];
+}
+
+-(void)reloadData{
+    if (self.videosArr.count) {
+        self.collectionView.hidden = NO;
+        self.tipsLabel.hidden = YES;
+        [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(sCollectionViewHeight);
+        }];
+        [self.collectionView reloadData];
+    }else {
+        self.collectionView.hidden = YES;
+        self.tipsLabel.hidden = NO;
+        [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(15);
+        }];
+    }
 }
 
 #pragma mark - 相册上传
 -(void)assertUpload {
-    
+    if (self.videoAddBlock) {
+        self.videoAddBlock();
+    }
+}
+
+#pragma mark - UICollectionViewDelegate
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.videosArr.count;
+}
+
+-(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    OTLAfterClassSheetVideoCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"OTLAfterClassSheetVideoCollectionCell" forIndexPath:indexPath];
+    WS(weakSelf)
+    [cell setDeleteBlock:^{
+        if (weakSelf.videoDeleteBlock) {
+            weakSelf.videoDeleteBlock(indexPath.item);
+        }
+    }];
+    return cell;
 }
 
 #pragma mark - lazy
@@ -71,7 +120,7 @@
         }];
         
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setTitle:@"书本批注" forState:UIControlStateNormal];
+        [btn setTitle:@"相册上传" forState:UIControlStateNormal];
         [btn setTitleColor:UIColorFromRGB(0x76C0EF) forState:UIControlStateNormal];
         [btn.titleLabel setFont:[UIFont systemFontOfSize:13]];
         btn.layer.cornerRadius = 12;
@@ -100,4 +149,28 @@
     }
     return _tipsLabel;
 }
+
+-(UICollectionView *)collectionView {
+    if (!_collectionView) {
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.layout];
+        _collectionView.backgroundColor = UIColor.whiteColor;
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        _collectionView.hidden = YES;
+        _collectionView.showsHorizontalScrollIndicator = NO;
+        [_collectionView registerClass:OTLAfterClassSheetVideoCollectionCell.class forCellWithReuseIdentifier:@"OTLAfterClassSheetVideoCollectionCell"];
+    }
+    return _collectionView;
+}
+
+-(UICollectionViewFlowLayout *)layout {
+    if (!_layout) {
+        _layout = [[UICollectionViewFlowLayout alloc] init];
+        _layout.itemSize = CGSizeMake(240, sCollectionViewHeight);
+        _layout.minimumLineSpacing = 15;
+        _layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    }
+    return _layout;
+}
+
 @end
