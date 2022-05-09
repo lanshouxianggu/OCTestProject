@@ -6,13 +6,19 @@
 //
 
 #import "OTLAfterClassSheetPianoTaskCell.h"
+#import "OTLAfterClassSheetPianoTaskCollectionCell.h"
 
-@interface OTLAfterClassSheetPianoTaskCell ()
+@interface OTLAfterClassSheetPianoTaskCell () <UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UIView *topView;
 ///练琴时长view
 @property (nonatomic, strong) OTLAfterClassSheetPianoTaskNormalView *practiceDurationView;
 ///练琴天数view
 @property (nonatomic, strong) OTLAfterClassSheetPianoTaskNormalView *practiceDaysView;
+
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UICollectionViewFlowLayout *layout;
+
+@property (nonatomic, strong) NSMutableArray *tasksArray;
 @end
 
 @implementation OTLAfterClassSheetPianoTaskCell
@@ -22,6 +28,7 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = UIColor.whiteColor;
         self.layer.cornerRadius = 9;
+        self.tasksArray = [NSMutableArray array];
         
         [self setupUI];
         [self loadData];
@@ -48,13 +55,43 @@
         make.left.right.offset(0);
         make.top.equalTo(self.practiceDurationView.mas_bottom);
         make.height.mas_equalTo(38);
-        make.bottom.offset(-10);
+    }];
+    
+    [self.contentView addSubview:self.collectionView];
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(15);
+        make.right.offset(-15);
+        make.top.equalTo(self.practiceDaysView.mas_bottom).offset(5);
+        make.height.mas_equalTo(0);
+        make.bottom.offset(-15);
     }];
 }
 
 -(void)loadData {
     [self.practiceDurationView updateRightValue:@"30分钟"];
     [self.practiceDaysView updateRightValue:@"3天"];
+}
+
+-(void)reloadData {
+    [self.collectionView reloadData];
+    [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(self.tasksArray.count?162:0);
+    }];
+}
+
+#pragma mark - UICollectionViewDelegate
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.tasksArray.count;
+}
+
+-(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    OTLAfterClassSheetPianoTaskCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"OTLAfterClassSheetPianoTaskCollectionCell" forIndexPath:indexPath];
+    
+    return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 #pragma mark - lazy
@@ -88,6 +125,13 @@
 -(OTLAfterClassSheetPianoTaskNormalView *)practiceDurationView {
     if (!_practiceDurationView) {
         _practiceDurationView = [[OTLAfterClassSheetPianoTaskNormalView alloc] initWithLeftTitle:@"每日练琴时长"];
+        WS(weakSelf)
+        [_practiceDurationView setRightActionBlock:^{
+            [weakSelf.tasksArray addObject:@""];
+            if (weakSelf.tasksUpdateBlock) {
+                weakSelf.tasksUpdateBlock();
+            }
+        }];
     }
     return _practiceDurationView;
 }
@@ -95,8 +139,38 @@
 -(OTLAfterClassSheetPianoTaskNormalView *)practiceDaysView {
     if (!_practiceDaysView) {
         _practiceDaysView = [[OTLAfterClassSheetPianoTaskNormalView alloc] initWithLeftTitle:@"未来一周练琴天数"];
+        WS(weakSelf)
+        [_practiceDaysView setRightActionBlock:^{
+            [weakSelf.tasksArray removeLastObject];
+            if (weakSelf.tasksUpdateBlock) {
+                weakSelf.tasksUpdateBlock();
+            }
+        }];
     }
     return _practiceDaysView;
+}
+
+-(UICollectionViewFlowLayout *)layout {
+    if (!_layout) {
+        _layout = [[UICollectionViewFlowLayout alloc] init];
+        _layout.itemSize = CGSizeMake(240, 162);
+        _layout.minimumLineSpacing = 15;
+        _layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    }
+    return _layout;
+}
+
+-(UICollectionView *)collectionView {
+    if (!_collectionView) {
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.layout];
+        _collectionView.backgroundColor = UIColor.whiteColor;
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        
+        _collectionView.showsHorizontalScrollIndicator = NO;
+        [_collectionView registerNib:[UINib nibWithNibName:@"OTLAfterClassSheetPianoTaskCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"OTLAfterClassSheetPianoTaskCollectionCell"];
+    }
+    return _collectionView;
 }
 
 @end
@@ -137,8 +211,23 @@
     [self.rightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.offset(0);
     }];
+    
+    UIButton *touchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [touchBtn addTarget:self action:@selector(touchBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.rightView addSubview:touchBtn];
+    [touchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.insets(UIEdgeInsetsZero);
+    }];
 }
 
+#pragma mark - 选择
+-(void)touchBtnAction {
+    if (self.rightActionBlock) {
+        self.rightActionBlock();
+    }
+}
+
+#pragma mark - 更新
 -(void)updateRightValue:(NSString *)value {
     self.rightLabel.text = value;
 }

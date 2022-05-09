@@ -10,7 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OTLAfterClassSheetPianoTaskCell : UITableViewCell
-@property (nonatomic, strong) NSArray *tasksArray;
+@property (nonatomic, copy) void (^tasksUpdateBlock)(void);
+
+-(void)reloadData;
 @end
 
 NS_ASSUME_NONNULL_END

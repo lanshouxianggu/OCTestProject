@@ -28,7 +28,8 @@
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.offset(0);
             make.height.mas_equalTo(40);
-            make.top.bottom.offset(0);
+            make.top.offset(0);
+            make.bottom.offset(-15);
             make.width.mas_equalTo(SCREEN_WIDTH*0.314);
         }];
     }

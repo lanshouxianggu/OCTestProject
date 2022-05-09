@@ -98,7 +98,12 @@
         if (!cell) {
             cell = [[OTLAfterClassSheetPianoTaskCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"OTLAfterClassSheetPianoTaskCell"];
         }
-        
+        WS(weakSelf)
+        __block OTLAfterClassSheetPianoTaskCell *tmpCell = cell;
+        [cell setTasksUpdateBlock:^{
+            [tmpCell reloadData];
+            [weakSelf.tableView reloadData];
+        }];
         return cell;
     }
 #pragma mark - 老师点评cell
@@ -140,6 +145,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.showsVerticalScrollIndicator = NO;
         
         [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"UITableViewCell"];
         [_tableView registerClass:OTLAfterClassSheetPerformanceCell.class forCellReuseIdentifier:@"OTLAfterClassSheetPerformanceCell"];

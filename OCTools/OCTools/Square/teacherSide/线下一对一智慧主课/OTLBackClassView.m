@@ -9,6 +9,7 @@
 
 @interface OTLBackClassView () <UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UIView *mainView;
+@property (nonatomic, strong) UIView *subMainView;
 @property (nonatomic, strong) UICollectionView *topCollectionView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *topLayout;
 @property (nonatomic, strong) UIView *bottomView;
@@ -22,6 +23,8 @@
 
 ///暂无回课曲谱
 @property (nonatomic, strong) UILabel *noQupuLabel;
+///暂未上传书本批注
+@property (nonatomic, strong) UILabel *noRemarkLabel;
 ///暂无回课内容
 @property (nonatomic, strong) UILabel *noBackClassLabel;
 
@@ -79,7 +82,8 @@
         make.width.equalTo(scrollView);
         make.height.mas_equalTo(self.topViewHeight+self.bottomViewHeight);
     }];
-        
+    self.subMainView = subMainView;
+    
     [subMainView addSubview:self.noQupuLabel];
     [self.noQupuLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.offset(0);
@@ -124,6 +128,9 @@
     [self.mainView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(self.topViewHeight+self.bottomViewHeight);
     }];
+    [self.subMainView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(self.topViewHeight+self.bottomViewHeight);
+    }];
     qupuRect.size.height = self.topViewHeight;
     remarkRect.origin.y = self.topViewHeight;
     
@@ -137,14 +144,19 @@
     CGRect bottomCollectionViewRect = self.bottomCollectionView.frame;
     if (remarkArray.count) {
         self.bottomViewHeight = 257;
+        self.noRemarkLabel.hidden = YES;
     }else {
         self.bottomViewHeight = self.isFreshClass?116:0;
+        self.noRemarkLabel.hidden = self.isFreshClass?NO:YES;
     }
     [self.mainView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(self.topViewHeight+self.bottomViewHeight);
     }];
+    [self.subMainView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(self.topViewHeight+self.bottomViewHeight);
+    }];
     bottomRect.size.height = self.bottomViewHeight;
-    bottomCollectionViewRect.size.height = self.bottomViewHeight-56-15;
+    bottomCollectionViewRect.size.height = self.bottomViewHeight>0?self.bottomViewHeight-56-15:0;
     self.bottomView.frame = bottomRect;
     self.bottomCollectionView.frame = bottomCollectionViewRect;
     
@@ -188,6 +200,19 @@
         return cell;
     }
     return [UICollectionViewCell new];
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if ([collectionView isEqual:self.topCollectionView]) {
+        if (indexPath.item==0) {
+            //添加曲谱
+        }
+    }
+}
+
+#pragma mark - 添加曲谱
+-(void)addMusicQupu {
+    
 }
 
 #pragma mark - 书本批注
@@ -241,6 +266,18 @@
     return _noQupuLabel;
 }
 
+-(UILabel *)noRemarkLabel {
+    if (!_noRemarkLabel) {
+        _noRemarkLabel = [UILabel new];
+        _noRemarkLabel.text = @"暂未上传书本批注";
+        _noRemarkLabel.hidden = YES;
+        _noRemarkLabel.textColor = UIColorFromRGB(0x999999);
+        _noRemarkLabel.font = [UIFont systemFontOfSize:14];
+        _noRemarkLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _noRemarkLabel;
+}
+
 -(UILabel *)noBackClassLabel {
     if (!_noBackClassLabel) {
         _noBackClassLabel = [UILabel new];
@@ -261,6 +298,12 @@
         _bottomCollectionView.layer.cornerRadius = 9;
         _bottomCollectionView.delegate = self;
         _bottomCollectionView.dataSource = self;
+        
+        [_bottomCollectionView addSubview:self.noRemarkLabel];
+        [self.noRemarkLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.offset(0);
+            make.height.mas_equalTo(60);
+        }];
         
         [_bottomCollectionView registerClass:OTLBackClassBottomCollectionViewCell.class forCellWithReuseIdentifier:@"OTLBackClassBottomCollectionViewCell"];
     }
