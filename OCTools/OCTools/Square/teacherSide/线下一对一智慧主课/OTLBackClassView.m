@@ -20,6 +20,11 @@
 @property (nonatomic, assign) CGFloat topViewHeight;
 @property (nonatomic, assign) CGFloat bottomViewHeight;
 
+///暂无回课曲谱
+@property (nonatomic, strong) UILabel *noQupuLabel;
+///暂无回课内容
+@property (nonatomic, strong) UILabel *noBackClassLabel;
+
 ///是否新课
 @property (nonatomic, assign) BOOL isFreshClass;
 @end
@@ -54,62 +59,114 @@
 -(void)setupUI {
     [self addSubview:self.mainView];
     [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.insets(UIEdgeInsetsMake(15, 15, 26, 15));
+//        make.edges.insets(UIEdgeInsetsMake(15, 15, 26, 15));
+        make.left.top.offset(15);
+        make.right.offset(-15);
+        make.height.mas_equalTo(self.topViewHeight+self.bottomViewHeight);
     }];
     
     UIScrollView *scrollView = [UIScrollView new];
     UIView *subMainView = [UIView new];
-//    if (!isPad) {
-        [self.mainView addSubview:scrollView];
-        [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.insets(UIEdgeInsetsZero);
-            make.width.height.equalTo(self.mainView);
-        }];
-        [scrollView addSubview:subMainView];
-        [subMainView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.insets(UIEdgeInsetsZero);
-            make.width.equalTo(scrollView);
-            make.height.mas_equalTo(self.topViewHeight+self.bottomViewHeight);
-        }];
+
+    [self.mainView addSubview:scrollView];
+    [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.insets(UIEdgeInsetsZero);
+        make.width.height.equalTo(self.mainView);
+    }];
+    [scrollView addSubview:subMainView];
+    [subMainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.insets(UIEdgeInsetsZero);
+        make.width.equalTo(scrollView);
+        make.height.mas_equalTo(self.topViewHeight+self.bottomViewHeight);
+    }];
         
-        [subMainView addSubview:self.topCollectionView];
-            
-        UIView *line = [UIView new];
-        line.backgroundColor = UIColorFromRGB(0xE5E5E5);
+    [subMainView addSubview:self.noQupuLabel];
+    [self.noQupuLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.offset(0);
+        make.height.mas_equalTo(60);
+    }];
+    
+    [subMainView addSubview:self.topCollectionView];
         
-        [subMainView addSubview:line];
-        [line mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.offset(15);
-            make.right.offset(-15);
-            make.top.equalTo(self.topCollectionView.mas_bottom);
-            make.height.mas_equalTo(1);
-        }];
-        
-        [subMainView addSubview:self.bottomView];
-//    }else {
-//        [self.mainView addSubview:self.topCollectionView];
-//
-//        UIView *line = [UIView new];
-//        line.backgroundColor = UIColorFromRGB(0xE5E5E5);
-//
-//        [self.mainView addSubview:line];
-//        [line mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.left.offset(15);
-//            make.right.offset(-15);
-//            make.top.equalTo(self.topCollectionView.mas_bottom);
-//            make.height.mas_equalTo(1);
-//        }];
-//
-//        [self.mainView addSubview:self.bottomView];
-//    }
+    UIView *line = [UIView new];
+    line.backgroundColor = UIColorFromRGB(0xE5E5E5);
+    
+    [subMainView addSubview:line];
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(15);
+        make.right.offset(-15);
+        make.top.equalTo(self.topCollectionView.mas_bottom);
+        make.height.mas_equalTo(1);
+    }];
+    
+    [subMainView addSubview:self.bottomView];
+    
+    [self addSubview:self.noBackClassLabel];
+    [self.noBackClassLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.offset(0);
+        make.centerY.offset(-20);
+    }];
+}
+
+-(void)setQupuArray:(NSArray *)qupuArray {
+    _qupuArray = qupuArray;
+    CGRect qupuRect = self.topCollectionView.frame;
+    CGRect remarkRect = self.bottomView.frame;
+    if (qupuArray.count==0 && !self.isFreshClass) {
+        self.topViewHeight = 60;
+        self.topCollectionView.hidden = YES;
+        self.noQupuLabel.hidden = NO;
+    }else {
+        self.topViewHeight = 220;
+        self.noQupuLabel.hidden = YES;
+        self.topCollectionView.hidden = NO;
+    }
+    [self.mainView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(self.topViewHeight+self.bottomViewHeight);
+    }];
+    qupuRect.size.height = self.topViewHeight;
+    remarkRect.origin.y = self.topViewHeight;
+    
+    self.topCollectionView.frame = qupuRect;
+    self.bottomView.frame = remarkRect;
+}
+
+-(void)setRemarkArray:(NSArray *)remarkArray {
+    _remarkArray = remarkArray;
+    CGRect bottomRect = self.bottomView.frame;
+    CGRect bottomCollectionViewRect = self.bottomCollectionView.frame;
+    if (remarkArray.count) {
+        self.bottomViewHeight = 257;
+    }else {
+        self.bottomViewHeight = self.isFreshClass?116:0;
+    }
+    [self.mainView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(self.topViewHeight+self.bottomViewHeight);
+    }];
+    bottomRect.size.height = self.bottomViewHeight;
+    bottomCollectionViewRect.size.height = self.bottomViewHeight-56-15;
+    self.bottomView.frame = bottomRect;
+    self.bottomCollectionView.frame = bottomCollectionViewRect;
+    
+    if (!self.isFreshClass) {
+        //回课，曲谱为空，标注为空的处理
+        if (self.remarkArray.count==0 && self.qupuArray.count==0) {
+            self.mainView.hidden = YES;
+            self.noBackClassLabel.hidden = NO;
+        }
+    }
 }
 
 #pragma mark - UICollectionViewDelegate
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if ([collectionView isEqual:self.topCollectionView]) {
-        return self.isFreshClass?4:3;
+        if (self.isFreshClass) {
+            return self.qupuArray.count+1;
+        }else {
+            return self.qupuArray.count;
+        }
     }
-    return 2;
+    return self.remarkArray.count;
 }
 
 -(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -170,6 +227,30 @@
         _topLayout.sectionInset = UIEdgeInsetsMake(0, 15, 0, 0);
     }
     return _topLayout;
+}
+
+-(UILabel *)noQupuLabel {
+    if (!_noQupuLabel) {
+        _noQupuLabel = [UILabel new];
+        _noQupuLabel.text = @"暂无回课曲谱";
+        _noQupuLabel.hidden = YES;
+        _noQupuLabel.textColor = UIColorFromRGB(0x999999);
+        _noQupuLabel.font = [UIFont systemFontOfSize:14];
+        _noQupuLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _noQupuLabel;
+}
+
+-(UILabel *)noBackClassLabel {
+    if (!_noBackClassLabel) {
+        _noBackClassLabel = [UILabel new];
+        _noBackClassLabel.text = @"暂无回课内容";
+        _noBackClassLabel.hidden = YES;
+        _noBackClassLabel.textColor = UIColorFromRGB(0x999999);
+        _noBackClassLabel.font = [UIFont systemFontOfSize:14];
+        _noBackClassLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    return _noBackClassLabel;
 }
 
 -(UICollectionView *)bottomCollectionView {

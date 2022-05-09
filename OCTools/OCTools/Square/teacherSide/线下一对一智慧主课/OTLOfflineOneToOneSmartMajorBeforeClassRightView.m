@@ -25,6 +25,13 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setupUI];
+        
+        //测试数据
+        self.backClassView.qupuArray = @[];
+        self.backClassView.remarkArray = @[];
+        
+        self.freshClassView.qupuArray = @[];
+        self.freshClassView.remarkArray = @[];
     }
     return self;
 }

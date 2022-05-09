@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 //回课新课公用
 @interface OTLBackClassView : UIView
 -(instancetype)initWithFrame:(CGRect)frame isFreshClass:(BOOL)isFreshClass;
+@property (nonatomic, strong) NSArray *qupuArray;
+@property (nonatomic, strong) NSArray *remarkArray;
 @end
 
 NS_ASSUME_NONNULL_END
