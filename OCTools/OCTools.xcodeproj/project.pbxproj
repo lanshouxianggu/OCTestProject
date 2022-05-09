@@ -19,6 +19,7 @@
 		916A337D2828B1EA00898E3C /* OTLAfterClassSheetVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A337C2828B1EA00898E3C /* OTLAfterClassSheetVideoCollectionCell.m */; };
 		916A33812828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A337F2828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.m */; };
 		916A33822828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 916A33802828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.xib */; };
+		916A33852828F05A00898E3C /* OTLPianoTaskChooseCommonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A33842828F05A00898E3C /* OTLPianoTaskChooseCommonView.m */; };
 		9198BFA227F594C800BC069F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA127F594C800BC069F /* AppDelegate.m */; };
 		9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA427F594C800BC069F /* SceneDelegate.m */; };
 		9198BFA827F594C800BC069F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA727F594C800BC069F /* ViewController.m */; };
@@ -105,6 +106,8 @@
 		916A337E2828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLAfterClassSheetPianoTaskCollectionCell.h; sourceTree = "<group>"; };
 		916A337F2828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLAfterClassSheetPianoTaskCollectionCell.m; sourceTree = "<group>"; };
 		916A33802828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTLAfterClassSheetPianoTaskCollectionCell.xib; sourceTree = "<group>"; };
+		916A33832828F05A00898E3C /* OTLPianoTaskChooseCommonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLPianoTaskChooseCommonView.h; sourceTree = "<group>"; };
+		916A33842828F05A00898E3C /* OTLPianoTaskChooseCommonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLPianoTaskChooseCommonView.m; sourceTree = "<group>"; };
 		9198BF9D27F594C800BC069F /* OCTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9198BFA027F594C800BC069F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9198BFA127F594C800BC069F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -617,6 +620,8 @@
 				916A337E2828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.h */,
 				916A337F2828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.m */,
 				916A33802828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.xib */,
+				916A33832828F05A00898E3C /* OTLPianoTaskChooseCommonView.h */,
+				916A33842828F05A00898E3C /* OTLPianoTaskChooseCommonView.m */,
 			);
 			path = "线下一对一智慧主课";
 			sourceTree = "<group>";
@@ -802,6 +807,7 @@
 				91D640572826688D00E132B6 /* OTLAfterClassSheetEndClassCell.m in Sources */,
 				9198BFE427F6A94200BC069F /* LCMineViewController.m in Sources */,
 				9198BFD127F6A67B00BC069F /* LCMainTabBarController.m in Sources */,
+				916A33852828F05A00898E3C /* OTLPianoTaskChooseCommonView.m in Sources */,
 				91D6403F282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m in Sources */,
 				911E42E527F82E1F0088FCDF /* SelectFirstView.m in Sources */,
 				91D6403C2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.m in Sources */,

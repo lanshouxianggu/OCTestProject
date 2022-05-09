@@ -10,15 +10,10 @@
 
 @interface OTLAfterClassSheetPianoTaskCell () <UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UIView *topView;
-///练琴时长view
-@property (nonatomic, strong) OTLAfterClassSheetPianoTaskNormalView *practiceDurationView;
-///练琴天数view
-@property (nonatomic, strong) OTLAfterClassSheetPianoTaskNormalView *practiceDaysView;
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *layout;
 
-@property (nonatomic, strong) NSMutableArray *tasksArray;
 @end
 
 @implementation OTLAfterClassSheetPianoTaskCell
@@ -29,7 +24,9 @@
         self.backgroundColor = UIColor.whiteColor;
         self.layer.cornerRadius = 9;
         self.tasksArray = [NSMutableArray array];
-        
+        for (int i=0; i<5; i++) {
+            [self.tasksArray addObject:@""];
+        }
         [self setupUI];
         [self loadData];
     }
@@ -86,7 +83,13 @@
 
 -(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     OTLAfterClassSheetPianoTaskCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"OTLAfterClassSheetPianoTaskCollectionCell" forIndexPath:indexPath];
-    
+    WS(weakSelf)
+    [cell setDeleteBlock:^{
+        if (weakSelf.tasksUpdateBlock) {
+            [weakSelf.tasksArray removeObjectAtIndex:indexPath.item];
+            weakSelf.tasksUpdateBlock();
+        }
+    }];
     return cell;
 }
 
@@ -126,10 +129,9 @@
     if (!_practiceDurationView) {
         _practiceDurationView = [[OTLAfterClassSheetPianoTaskNormalView alloc] initWithLeftTitle:@"每日练琴时长"];
         WS(weakSelf)
-        [_practiceDurationView setRightActionBlock:^{
-            [weakSelf.tasksArray addObject:@""];
-            if (weakSelf.tasksUpdateBlock) {
-                weakSelf.tasksUpdateBlock();
+        [_practiceDurationView setRightActionBlock:^(NSString * _Nonnull currentStr) {
+            if (weakSelf.rightActionBlock) {
+                weakSelf.rightActionBlock(TaskChooseTypePracticeDuration, currentStr);
             }
         }];
     }
@@ -140,10 +142,9 @@
     if (!_practiceDaysView) {
         _practiceDaysView = [[OTLAfterClassSheetPianoTaskNormalView alloc] initWithLeftTitle:@"未来一周练琴天数"];
         WS(weakSelf)
-        [_practiceDaysView setRightActionBlock:^{
-            [weakSelf.tasksArray removeLastObject];
-            if (weakSelf.tasksUpdateBlock) {
-                weakSelf.tasksUpdateBlock();
+        [_practiceDaysView setRightActionBlock:^(NSString * _Nonnull currentStr) {
+            if (weakSelf.rightActionBlock) {
+                weakSelf.rightActionBlock(TaskChooseTypePracticeDay, currentStr);
             }
         }];
     }
@@ -223,7 +224,7 @@
 #pragma mark - 选择
 -(void)touchBtnAction {
     if (self.rightActionBlock) {
-        self.rightActionBlock();
+        self.rightActionBlock(self.rightLabel.text);
     }
 }
 

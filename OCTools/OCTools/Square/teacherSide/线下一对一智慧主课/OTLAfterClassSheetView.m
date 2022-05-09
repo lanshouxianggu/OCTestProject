@@ -11,9 +11,13 @@
 #import "OTLAfterClassSheetCommentCell.h"
 #import "OTLAfterClassSheetPianoTaskCell.h"
 #import "OTLAfterClassSheetEndClassCell.h"
+#import "OTLPianoTaskChooseCommonView.h"
 
 @interface OTLAfterClassSheetView () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) OTLPianoTaskChooseCommonView *chooseView;
+
+@property (nonatomic, strong) OTLAfterClassSheetPianoTaskCell *taskCell;
 @end
 
 @implementation OTLAfterClassSheetView
@@ -21,6 +25,8 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setupUI];
+        
+        [UIApplication.sharedApplication.keyWindow addSubview:self.chooseView];
     }
     return self;
 }
@@ -98,11 +104,17 @@
         if (!cell) {
             cell = [[OTLAfterClassSheetPianoTaskCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"OTLAfterClassSheetPianoTaskCell"];
         }
+        
+        [cell reloadData];
+        self.taskCell = cell;
         WS(weakSelf)
-        __block OTLAfterClassSheetPianoTaskCell *tmpCell = cell;
         [cell setTasksUpdateBlock:^{
-            [tmpCell reloadData];
+            [weakSelf.taskCell reloadData];
             [weakSelf.tableView reloadData];
+        }];
+        
+        [cell setRightActionBlock:^(TaskChooseType type, NSString * _Nonnull currentStr) {
+            [weakSelf.chooseView showWithType:type selectStr:currentStr];
         }];
         return cell;
     }
@@ -155,5 +167,20 @@
         [_tableView registerClass:OTLAfterClassSheetEndClassCell.class forCellReuseIdentifier:@"OTLAfterClassSheetEndClassCell"];
     }
     return _tableView;
+}
+
+-(OTLPianoTaskChooseCommonView *)chooseView {
+    if (!_chooseView) {
+        _chooseView = [[OTLPianoTaskChooseCommonView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        WS(weakSelf)
+        [_chooseView setSelectBlock:^(TaskChooseType type, NSString * _Nonnull selectStr) {
+            if (type==TaskChooseTypePracticeDuration) {
+                [weakSelf.taskCell.practiceDurationView updateRightValue:selectStr];
+            }else if (type==TaskChooseTypePracticeDay) {
+                [weakSelf.taskCell.practiceDaysView updateRightValue:selectStr];
+            }
+        }];
+    }
+    return _chooseView;
 }
 @end
