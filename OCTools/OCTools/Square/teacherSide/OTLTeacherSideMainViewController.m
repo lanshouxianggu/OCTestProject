@@ -8,6 +8,7 @@
 
 #import "OTLTeacherSideMainViewController.h"
 #import "OTLPracticePianoTaskViewController.h"
+#import "OTLPracticePianoTaskVC.h"
 #import "LCSquareTableViewCell.h"
 #import "OTLPracticeWeekReportViewController.h"
 #import "LCAIRoomViewController.h"
@@ -31,7 +32,7 @@
     self.title = @"云上钢琴老师端";
     self.view.backgroundColor = UIColorFromRGB(0xd2d2d2);
     
-    self.dataArray = @[@"AI练琴房",@"练琴任务",@"练琴周报",@"线下一对一智慧主课"];
+    self.dataArray = @[@"AI练琴房",@"练琴任务",@"新练琴任务",@"练琴周报",@"线下一对一智慧主课"];
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -84,11 +85,17 @@
             break;
         case 2:
         {
-            OTLPracticeWeekReportViewController *vc = [OTLPracticeWeekReportViewController new];
+            OTLPracticePianoTaskVC *vc = [OTLPracticePianoTaskVC new];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 3:
+        {
+            OTLPracticeWeekReportViewController *vc = [OTLPracticeWeekReportViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 4:
         {
             OTLOfflineOneToOneSmartMajorBeforeClassVC *vc = [OTLOfflineOneToOneSmartMajorBeforeClassVC new];
             [self.navigationController pushViewController:vc animated:YES];

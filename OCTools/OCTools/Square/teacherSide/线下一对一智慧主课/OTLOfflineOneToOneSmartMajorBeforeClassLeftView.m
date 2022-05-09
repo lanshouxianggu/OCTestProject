@@ -65,7 +65,7 @@
         UIImage *selectImage = self.selectImagesArray[i];
         [btn setImage:normalImage forState:UIControlStateNormal];
         [btn setImage:selectImage forState:UIControlStateSelected];
-        [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 15)];
+        [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 5, 0, 0)];
         [btn setContentEdgeInsets:UIEdgeInsetsMake(0, 17, 0, 0)];
         [btn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
         [btn setTitle:title forState:UIControlStateNormal];

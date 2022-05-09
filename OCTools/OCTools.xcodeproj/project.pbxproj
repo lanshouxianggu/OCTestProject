@@ -20,6 +20,10 @@
 		916A33812828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A337F2828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.m */; };
 		916A33822828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 916A33802828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.xib */; };
 		916A33852828F05A00898E3C /* OTLPianoTaskChooseCommonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A33842828F05A00898E3C /* OTLPianoTaskChooseCommonView.m */; };
+		916A33882829085600898E3C /* OTLPracticePianoTaskPartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A33872829085600898E3C /* OTLPracticePianoTaskPartCell.m */; };
+		916A338C282909BC00898E3C /* OTLPracticePianoTaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A338B282909BC00898E3C /* OTLPracticePianoTaskVC.m */; };
+		916A338F28290BC300898E3C /* OTLPracticePianoTaskFirstPartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A338E28290BC300898E3C /* OTLPracticePianoTaskFirstPartView.m */; };
+		916A33922829108400898E3C /* OTLPracticePianoTaskSecondPartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A33912829108400898E3C /* OTLPracticePianoTaskSecondPartView.m */; };
 		9198BFA227F594C800BC069F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA127F594C800BC069F /* AppDelegate.m */; };
 		9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA427F594C800BC069F /* SceneDelegate.m */; };
 		9198BFA827F594C800BC069F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA727F594C800BC069F /* ViewController.m */; };
@@ -108,6 +112,14 @@
 		916A33802828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTLAfterClassSheetPianoTaskCollectionCell.xib; sourceTree = "<group>"; };
 		916A33832828F05A00898E3C /* OTLPianoTaskChooseCommonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLPianoTaskChooseCommonView.h; sourceTree = "<group>"; };
 		916A33842828F05A00898E3C /* OTLPianoTaskChooseCommonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLPianoTaskChooseCommonView.m; sourceTree = "<group>"; };
+		916A33862829085600898E3C /* OTLPracticePianoTaskPartCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLPracticePianoTaskPartCell.h; sourceTree = "<group>"; };
+		916A33872829085600898E3C /* OTLPracticePianoTaskPartCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLPracticePianoTaskPartCell.m; sourceTree = "<group>"; };
+		916A338A282909BC00898E3C /* OTLPracticePianoTaskVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLPracticePianoTaskVC.h; sourceTree = "<group>"; };
+		916A338B282909BC00898E3C /* OTLPracticePianoTaskVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLPracticePianoTaskVC.m; sourceTree = "<group>"; };
+		916A338D28290BC300898E3C /* OTLPracticePianoTaskFirstPartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLPracticePianoTaskFirstPartView.h; sourceTree = "<group>"; };
+		916A338E28290BC300898E3C /* OTLPracticePianoTaskFirstPartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLPracticePianoTaskFirstPartView.m; sourceTree = "<group>"; };
+		916A33902829108400898E3C /* OTLPracticePianoTaskSecondPartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLPracticePianoTaskSecondPartView.h; sourceTree = "<group>"; };
+		916A33912829108400898E3C /* OTLPracticePianoTaskSecondPartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLPracticePianoTaskSecondPartView.m; sourceTree = "<group>"; };
 		9198BF9D27F594C800BC069F /* OCTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9198BFA027F594C800BC069F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9198BFA127F594C800BC069F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -301,6 +313,19 @@
 			path = "AI练琴房";
 			sourceTree = "<group>";
 		};
+		916A33892829098200898E3C /* 新练琴任务 */ = {
+			isa = PBXGroup;
+			children = (
+				916A338A282909BC00898E3C /* OTLPracticePianoTaskVC.h */,
+				916A338B282909BC00898E3C /* OTLPracticePianoTaskVC.m */,
+				916A338D28290BC300898E3C /* OTLPracticePianoTaskFirstPartView.h */,
+				916A338E28290BC300898E3C /* OTLPracticePianoTaskFirstPartView.m */,
+				916A33902829108400898E3C /* OTLPracticePianoTaskSecondPartView.h */,
+				916A33912829108400898E3C /* OTLPracticePianoTaskSecondPartView.m */,
+			);
+			path = "新练琴任务";
+			sourceTree = "<group>";
+		};
 		9198BF9427F594C800BC069F = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +503,7 @@
 		9198BFED27F6F97800BC069F /* 练琴任务 */ = {
 			isa = PBXGroup;
 			children = (
+				916A33892829098200898E3C /* 新练琴任务 */,
 				9198BFF527F6F97800BC069F /* OTLAddOrDeleteToolView.h */,
 				9198BFF127F6F97800BC069F /* OTLAddOrDeleteToolView.m */,
 				9198BFEE27F6F97800BC069F /* OTLPracticePianoCommonCellView.h */,
@@ -488,6 +514,8 @@
 				9198BFF227F6F97800BC069F /* OTLPracticePianoTaskViewController.m */,
 				9198BFFE27F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.h */,
 				9198BFFF27F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m */,
+				916A33862829085600898E3C /* OTLPracticePianoTaskPartCell.h */,
+				916A33872829085600898E3C /* OTLPracticePianoTaskPartCell.m */,
 			);
 			path = "练琴任务";
 			sourceTree = "<group>";
@@ -752,6 +780,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916A338C282909BC00898E3C /* OTLPracticePianoTaskVC.m in Sources */,
 				9198C02027F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordCell.m in Sources */,
 				911E42E627F82E1F0088FCDF /* ThreeLevelLinkageSelectView.m in Sources */,
 				9198BFA827F594C800BC069F /* ViewController.m in Sources */,
@@ -763,6 +792,7 @@
 				9198BFE827F6ABD800BC069F /* UIImage+Tool.m in Sources */,
 				91D64042282618AA00E132B6 /* OTLBackClassView.m in Sources */,
 				9198C01F27F6FECF00BC069F /* MCVideoMoreDetailView.m in Sources */,
+				916A338F28290BC300898E3C /* OTLPracticePianoTaskFirstPartView.m in Sources */,
 				9198C03D27F7EC0E00BC069F /* NSAttributedString+LLMake.m in Sources */,
 				6D96906C27F932B800678EAD /* LCAIRoomLeftView.m in Sources */,
 				6D96906927F7248A00678EAD /* LCOtherToolsViewController.m in Sources */,
@@ -795,6 +825,7 @@
 				9198C01E27F6FECF00BC069F /* MCCallLogsBackupSecondPartView.m in Sources */,
 				9198C04D27F7F07600BC069F /* OTLWeekReportDetailViewController.m in Sources */,
 				9198C04627F7EC7600BC069F /* PathUtility.m in Sources */,
+				916A33922829108400898E3C /* OTLPracticePianoTaskSecondPartView.m in Sources */,
 				91D640482826592900E132B6 /* OTLAfterClassSheetView.m in Sources */,
 				9198BFFB27F6F97800BC069F /* OTLPracticePianoCommonCellView.m in Sources */,
 				91B591112823BD61008690B4 /* OTLDDLogFileManagerDefault.m in Sources */,
@@ -814,6 +845,7 @@
 				91D640542826686800E132B6 /* OTLAfterClassSheetCommentCell.m in Sources */,
 				9198C01D27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryStyleView.m in Sources */,
 				6D96907027F93F5C00678EAD /* LCCaculatorViewController.m in Sources */,
+				916A33882829085600898E3C /* OTLPracticePianoTaskPartCell.m in Sources */,
 				91D6404B28265D0E00E132B6 /* OTLAfterClassSheetPerformanceCell.m in Sources */,
 				9198BFB327F594CA00BC069F /* main.m in Sources */,
 				9198BFF827F6F97800BC069F /* OTLAddOrDeleteToolView.m in Sources */,

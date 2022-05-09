@@ -72,8 +72,8 @@
 -(void)addBtnAction {
     self.currentNum++;
     [self addOrDeleteBtnEnableState];
-    if (self.currentNum>60) {
-        self.currentNum=60;
+    if (self.currentNum>120) {
+        self.currentNum=120;
         return;
     }
     self.textField.text = [NSString stringWithFormat:@"%d",self.currentNum];
