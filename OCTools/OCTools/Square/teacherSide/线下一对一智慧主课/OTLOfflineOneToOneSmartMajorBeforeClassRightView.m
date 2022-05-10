@@ -43,6 +43,7 @@
     scrollView.showsVerticalScrollIndicator = NO;
     scrollView.bounces = NO;
     scrollView.delegate = self;
+    scrollView.scrollsToTop = NO;
     //    scrollView.alwaysBounceVertical = YES;
     [self addSubview:scrollView];
     self.scrollView = scrollView;

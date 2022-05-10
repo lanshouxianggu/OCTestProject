@@ -17,13 +17,20 @@
     self.contentView.layer.masksToBounds = YES;
     
     self.audioView.layer.cornerRadius = 12;
+    self.audioView.layer.masksToBounds = YES;
     
+    [self.playBtn setImage:[UIImage imageNamed:@"icon_play_task"] forState:UIControlStateNormal];
+    [self.playBtn setImage:[UIImage imageNamed:@"icon_pause_task"] forState:UIControlStateSelected];
 }
 
 - (IBAction)deleteAction:(id)sender {
     if (self.deleteBlock) {
         self.deleteBlock();
     }
+}
+
+- (IBAction)playBtnAction:(UIButton *)sender {
+    sender.selected = !sender.selected;
 }
 
 @end

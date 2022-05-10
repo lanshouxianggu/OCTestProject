@@ -85,10 +85,49 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uii-sZ-tU8">
                                 <rect key="frame" x="15" y="75" width="100" height="24"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_voice_task" translatesAutoresizingMaskIntoConstraints="NO" id="Tmc-S0-qRL">
+                                        <rect key="frame" x="28" y="5" width="25" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="AdD-B6-vgr"/>
+                                            <constraint firstAttribute="height" constant="14" id="fzw-kC-How"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3l-xS-f31">
+                                        <rect key="frame" x="6" y="4" width="16" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="faP-mp-877"/>
+                                            <constraint firstAttribute="height" constant="16" id="qG7-Dz-dkI"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="icon_play_task"/>
+                                        <connections>
+                                            <action selector="playBtnAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="MIh-Kn-bJt"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01′30″" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pc-AQ-mgh">
+                                        <rect key="frame" x="61" y="6" width="33" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="33" id="3tq-nM-h4C"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="Xgc-Xq-ewm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.96862745100000003" green="0.57647058819999997" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.97254901960784312" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="6JK-0r-CtI"/>
+                                    <constraint firstItem="s3l-xS-f31" firstAttribute="leading" secondItem="Uii-sZ-tU8" secondAttribute="leading" constant="6" id="Db4-E8-GrD"/>
+                                    <constraint firstItem="s3l-xS-f31" firstAttribute="centerY" secondItem="Uii-sZ-tU8" secondAttribute="centerY" id="Lsq-E8-RmT"/>
                                     <constraint firstAttribute="height" constant="24" id="SJ8-OT-3Np"/>
+                                    <constraint firstAttribute="trailing" secondItem="4pc-AQ-mgh" secondAttribute="trailing" constant="6" id="YBA-kP-aGC"/>
+                                    <constraint firstItem="Tmc-S0-qRL" firstAttribute="centerY" secondItem="Uii-sZ-tU8" secondAttribute="centerY" id="d8M-3j-8Jf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="de5-Uu-rDL"/>
+                                    <constraint firstItem="4pc-AQ-mgh" firstAttribute="leading" secondItem="Tmc-S0-qRL" secondAttribute="trailing" constant="8" id="njD-kA-cpW"/>
+                                    <constraint firstItem="4pc-AQ-mgh" firstAttribute="centerY" secondItem="Uii-sZ-tU8" secondAttribute="centerY" id="pEw-S8-JMF"/>
+                                    <constraint firstItem="Tmc-S0-qRL" firstAttribute="leading" secondItem="s3l-xS-f31" secondAttribute="trailing" constant="6" id="poG-bD-A6u"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -101,6 +140,7 @@
                             <constraint firstAttribute="trailing" secondItem="RI3-BQ-824" secondAttribute="trailing" constant="15" id="YHx-7x-PCW"/>
                             <constraint firstItem="aP1-KK-fTM" firstAttribute="top" secondItem="ngw-Qb-Nx3" secondAttribute="top" constant="15" id="hmV-mR-HlO"/>
                             <constraint firstItem="Uii-sZ-tU8" firstAttribute="leading" secondItem="ngw-Qb-Nx3" secondAttribute="leading" constant="15" id="kDo-kb-mPx"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Uii-sZ-tU8" secondAttribute="trailing" constant="15" id="pkC-wD-ewP"/>
                             <constraint firstItem="RI3-BQ-824" firstAttribute="top" secondItem="aP1-KK-fTM" secondAttribute="bottom" constant="10" id="wLG-MF-sqy"/>
                         </constraints>
                     </view>
@@ -117,16 +157,20 @@
                 <constraint firstItem="BtA-0l-r0S" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qDG-IC-4iJ"/>
             </constraints>
             <connections>
-                <outlet property="audioView" destination="Uii-sZ-tU8" id="Ueb-H7-tKd"/>
+                <outlet property="audioView" destination="Uii-sZ-tU8" id="YwZ-u4-bhR"/>
+                <outlet property="durationLabel" destination="4pc-AQ-mgh" id="0VZ-Uu-i7w"/>
                 <outlet property="nameLabel" destination="O7m-dC-h0T" id="2Er-f2-Uuf"/>
                 <outlet property="numberLabel" destination="51N-cx-9f4" id="LPC-SS-W25"/>
                 <outlet property="partLabel" destination="RI3-BQ-824" id="hlo-ue-NGT"/>
+                <outlet property="playBtn" destination="s3l-xS-f31" id="Xjc-N0-Cn7"/>
                 <outlet property="speedLabel" destination="aP1-KK-fTM" id="fiv-Se-x0E"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="75"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="icon_play_task" width="16" height="16"/>
         <image name="icon_star_slight" width="24" height="24"/>
+        <image name="icon_voice_task" width="25" height="14"/>
     </resources>
 </document>

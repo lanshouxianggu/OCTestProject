@@ -8,6 +8,9 @@
 
 #import "OTLAddOrDeleteToolView.h"
 
+static const NSInteger sMaxSpeed = 120;
+static const NSInteger sMinSpeed = 20;
+
 @interface OTLAddOrDeleteToolView ()
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) UILabel *textLabel;
@@ -90,6 +93,7 @@
 #pragma mark - 更新
 -(void)updateValue:(NSString *)value {
     self.textLabel.text = value;
+    self.currentNum = [value intValue];
 }
 
 #pragma mark - 点击事件
@@ -103,8 +107,8 @@
 -(void)addBtnAction {
     self.currentNum++;
     [self addOrDeleteBtnEnableState];
-    if (self.currentNum>120) {
-        self.currentNum=120;
+    if (self.currentNum>sMaxSpeed) {
+        self.currentNum=sMaxSpeed;
         return;
     }
 //    self.textField.text = [NSString stringWithFormat:@"%d",self.currentNum];
@@ -115,8 +119,8 @@
 -(void)deleteBtnAction {
     self.currentNum--;
     [self addOrDeleteBtnEnableState];
-    if (self.currentNum<0) {
-        self.currentNum=0;
+    if (self.currentNum<sMinSpeed) {
+        self.currentNum=sMinSpeed;
         return;
     }
 //    self.textField.text = [NSString stringWithFormat:@"%d",self.currentNum];
@@ -125,8 +129,8 @@
 
 -(void)addOrDeleteBtnEnableState {
     [self endEditing:YES];
-    self.deleteBtn.enabled = self.currentNum>=0;
-    self.addBtn.enabled = self.currentNum<=60;
+    self.deleteBtn.enabled = self.currentNum>=sMinSpeed;
+    self.addBtn.enabled = self.currentNum<=sMaxSpeed;
 }
 
 #pragma mark - lazy
