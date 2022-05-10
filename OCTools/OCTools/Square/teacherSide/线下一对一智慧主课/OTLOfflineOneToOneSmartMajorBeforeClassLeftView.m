@@ -98,7 +98,9 @@
     [self.btnsArray enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         obj.selected = obj.tag==index;
         if (obj.tag==index) {
-            weakSelf.selectImageView.center = obj.center;
+            [UIView animateWithDuration:0.25 animations:^{
+                weakSelf.selectImageView.center = obj.center;
+            }];
         }
     }];
 }
@@ -107,7 +109,10 @@
     if (self.selectBtnBlock) {
         self.selectBtnBlock(btn.tag);
     }
-    self.selectImageView.center = btn.center;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.selectImageView.center = btn.center;
+    }];
+    
     [self.btnsArray enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         obj.selected = obj.tag==btn.tag;
     }];
