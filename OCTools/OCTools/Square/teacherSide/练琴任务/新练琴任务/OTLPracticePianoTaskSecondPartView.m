@@ -91,6 +91,14 @@
     cell.partImageView.image = self.selectImagesArray[indexPath.item];
     cell.mainView.backgroundColor = UIColorFromRGB(0xFFF8EB);
     cell.selectImageView.hidden = NO;
+    
+    [UIView animateWithDuration:0.15 animations:^{
+        cell.contentView.transform = CGAffineTransformMakeScale(1.05, 1.05);
+    }completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.1 animations:^{
+            cell.contentView.transform = CGAffineTransformIdentity;
+        }];
+    }];
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {

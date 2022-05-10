@@ -27,8 +27,8 @@
         [self setupUI];
         
         //测试数据
-        self.backClassView.qupuArray = @[@"",@""];
-        self.backClassView.remarkArray = @[];
+        self.backClassView.qupuArray = @[];
+        self.backClassView.remarkArray = @[@"",@"",@"",@"",@"",@""];
         
         self.freshClassView.qupuArray = @[@""];
         self.freshClassView.remarkArray = @[@"",@""];
