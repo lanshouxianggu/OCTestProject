@@ -31,6 +31,7 @@
 		916A33A6282A305600898E3C /* OTLStudentSidePracticePianoTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A33A5282A305600898E3C /* OTLStudentSidePracticePianoTaskCell.m */; };
 		916A33A9282A373800898E3C /* OTLStudentSidePracticePianoTaskMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A33A8282A373800898E3C /* OTLStudentSidePracticePianoTaskMainView.m */; };
 		916A33AB282A377000898E3C /* OTLStudentSidePracticePianoTaskMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 916A33AA282A377000898E3C /* OTLStudentSidePracticePianoTaskMainView.xib */; };
+		916A33AE282A48DA00898E3C /* OTLStudentSidePracticePianoTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A33AD282A48DA00898E3C /* OTLStudentSidePracticePianoTaskModel.m */; };
 		9198BFA227F594C800BC069F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA127F594C800BC069F /* AppDelegate.m */; };
 		9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA427F594C800BC069F /* SceneDelegate.m */; };
 		9198BFA827F594C800BC069F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA727F594C800BC069F /* ViewController.m */; };
@@ -139,6 +140,8 @@
 		916A33A7282A373800898E3C /* OTLStudentSidePracticePianoTaskMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLStudentSidePracticePianoTaskMainView.h; sourceTree = "<group>"; };
 		916A33A8282A373800898E3C /* OTLStudentSidePracticePianoTaskMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLStudentSidePracticePianoTaskMainView.m; sourceTree = "<group>"; };
 		916A33AA282A377000898E3C /* OTLStudentSidePracticePianoTaskMainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTLStudentSidePracticePianoTaskMainView.xib; sourceTree = "<group>"; };
+		916A33AC282A48DA00898E3C /* OTLStudentSidePracticePianoTaskModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLStudentSidePracticePianoTaskModel.h; sourceTree = "<group>"; };
+		916A33AD282A48DA00898E3C /* OTLStudentSidePracticePianoTaskModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLStudentSidePracticePianoTaskModel.m; sourceTree = "<group>"; };
 		9198BF9D27F594C800BC069F /* OCTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9198BFA027F594C800BC069F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9198BFA127F594C800BC069F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -358,6 +361,8 @@
 				916A33A7282A373800898E3C /* OTLStudentSidePracticePianoTaskMainView.h */,
 				916A33A8282A373800898E3C /* OTLStudentSidePracticePianoTaskMainView.m */,
 				916A33AA282A377000898E3C /* OTLStudentSidePracticePianoTaskMainView.xib */,
+				916A33AC282A48DA00898E3C /* OTLStudentSidePracticePianoTaskModel.h */,
+				916A33AD282A48DA00898E3C /* OTLStudentSidePracticePianoTaskModel.m */,
 			);
 			path = "练琴任务";
 			sourceTree = "<group>";
@@ -871,6 +876,7 @@
 				9198C04D27F7F07600BC069F /* OTLWeekReportDetailViewController.m in Sources */,
 				9198C04627F7EC7600BC069F /* PathUtility.m in Sources */,
 				916A33922829108400898E3C /* OTLPracticePianoTaskSecondPartView.m in Sources */,
+				916A33AE282A48DA00898E3C /* OTLStudentSidePracticePianoTaskModel.m in Sources */,
 				91D640482826592900E132B6 /* OTLAfterClassSheetView.m in Sources */,
 				9198BFFB27F6F97800BC069F /* OTLPracticePianoCommonCellView.m in Sources */,
 				91B591112823BD61008690B4 /* OTLDDLogFileManagerDefault.m in Sources */,

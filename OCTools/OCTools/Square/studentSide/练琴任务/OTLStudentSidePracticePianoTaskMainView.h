@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OTLStudentSidePracticePianoTaskModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,9 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 ///练琴要求垂直居中偏移的layout
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *practicePianoMainViewCenterYLayout;
 
+@property (nonatomic, strong) OTLStudentSidePracticePianoTaskListModel *listModel;
 
 +(instancetype)customerView;
--(void)init;
+-(void)initData;
 @end
 
 NS_ASSUME_NONNULL_END

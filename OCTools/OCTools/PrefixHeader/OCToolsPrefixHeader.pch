@@ -22,6 +22,7 @@
 #import "UIColor+LLRandomColor.h"
 #import "NSString+Common.h"
 #import <CocoaLumberjack/CocoaLumberjack.h>
+#import "NSAttributedString+LLMake.h"
 
 #ifdef __OBJC__
 // 配置头文件

@@ -44,15 +44,20 @@ static const CGFloat sTopViewHeight = 56.f;
     }];
 }
 
--(void)setTaskListArray:(NSArray *)taskListArray {
-    _taskListArray = taskListArray;
+-(void)setModel:(OTLStudentSidePracticePianoTaskModel *)model {
+    _model = model;
+    self.dateLabel.text = model.taskDateTime;
+    self.rightLabel.attributedText = [NSAttributedString makeAttributedString:^(LLAttributedStringMaker * _Nonnull make) {
+        make.text([NSString stringWithFormat:@"%.1f",model.totalAlreadyTime]).foregroundColor(UIColorFromRGB(0x3b3b3b)).font([UIFont systemFontOfSize:20 weight:UIFontWeightBold]);
+        make.text([NSString stringWithFormat:@"/%.1f小时",model.totalNeedTime]).foregroundColor(UIColorFromRGB(0x999999)).font([UIFont systemFontOfSize:12]);
+    }];
     for (UIView *subView in self.bottomView.subviews) {
         [subView removeFromSuperview];
     }
     CGFloat mainViewWidth = (SCREEN_WIDTH-15*3)/2;
-    for (int i=0; i<taskListArray.count; i++) {
+    for (int i=0; i<model.listModel.count; i++) {
         OTLStudentSidePracticePianoTaskMainView *mainView = [OTLStudentSidePracticePianoTaskMainView customerView];
-        [mainView init];
+        [mainView initData];
         
         UIView *shadowView = [UIView new];
         shadowView.layer.shadowColor = UIColor.blackColor.CGColor;
@@ -70,12 +75,12 @@ static const CGFloat sTopViewHeight = 56.f;
             make.top.offset(i/2*(174+15));
             make.height.mas_equalTo(174);
             make.width.mas_equalTo(mainViewWidth);
-            if (taskListArray.count%2==0) {
-                if (i==taskListArray.count-1||i==taskListArray.count-2) {
+            if (model.listModel.count%2==0) {
+                if (i==model.listModel.count-1||i==model.listModel.count-2) {
                     make.bottom.offset(-15);
                 }
             }else {
-                if (i==taskListArray.count-1) {
+                if (i==model.listModel.count-1) {
                     make.bottom.offset(-15);
                 }
             }
@@ -85,6 +90,8 @@ static const CGFloat sTopViewHeight = 56.f;
         [mainView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.insets(UIEdgeInsetsZero);
         }];
+        
+        mainView.listModel = model.listModel[i];
     }
 }
 
