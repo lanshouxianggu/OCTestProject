@@ -6,16 +6,34 @@
 //
 
 #import "OTLPracticePianoTaskSecondPartView.h"
+#import "OTLPracticePianoTaskSecondPartCell.h"
 
 @interface OTLPracticePianoTaskSecondPartView () <UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *layout;
+
+@property (nonatomic, strong) NSArray <UIImage *> *normalImagesArray;
+@property (nonatomic, strong) NSArray <UIImage *> *selectImagesArray;
+@property (nonatomic, strong) NSArray *titlesArray;
+@property (nonatomic, strong) NSArray *subTitlesArray;
+@property (nonatomic, assign) BOOL isFirstTimeIn;
 @end
 
 @implementation OTLPracticePianoTaskSecondPartView
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        self.normalImagesArray = @[
+            [UIImage imageNamed:@"icon_jichu_gray"],
+            [UIImage imageNamed:@"icon_tisheng_gray"],
+            [UIImage imageNamed:@"icon_ceping_gray"]];
+        self.selectImagesArray = @[
+            [UIImage imageNamed:@"icon_jichu"],
+            [UIImage imageNamed:@"icon_tisheng"],
+            [UIImage imageNamed:@"icon_ceping"]];
+        self.titlesArray = @[@"基础",@"提升",@"测评"];
+        self.subTitlesArray = @[@"错音纠正",@"节奏规范",@"成果检测"];
+        self.isFirstTimeIn = YES;
         [self setupUI];
     }
     return self;
@@ -47,10 +65,39 @@
 }
 
 -(__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell" forIndexPath:indexPath];
-    cell.backgroundColor = UIColor.cyanColor;
+    OTLPracticePianoTaskSecondPartCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"OTLPracticePianoTaskSecondPartCell" forIndexPath:indexPath];
+    
+    cell.partImageView.image = self.normalImagesArray[indexPath.item];
+    cell.titleLabel.text = self.titlesArray[indexPath.item];
+    cell.subTitleLabel.text = self.subTitlesArray[indexPath.item];
+    cell.selectImageView.hidden = YES;
+
+    
+    if (indexPath.item==0) {
+        [self collectionView:collectionView didSelectItemAtIndexPath:indexPath];
+        cell.partImageView.image = self.selectImagesArray[indexPath.item];
+        cell.mainView.backgroundColor = UIColorFromRGB(0xFFF8EB);
+        cell.selectImageView.hidden = NO;
+    }
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.isFirstTimeIn && indexPath.item!=0) {
+        [self collectionView:collectionView didDeselectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0]];
+    }
+    OTLPracticePianoTaskSecondPartCell *cell = (OTLPracticePianoTaskSecondPartCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    cell.partImageView.image = self.selectImagesArray[indexPath.item];
+    cell.mainView.backgroundColor = UIColorFromRGB(0xFFF8EB);
+    cell.selectImageView.hidden = NO;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    OTLPracticePianoTaskSecondPartCell *cell = (OTLPracticePianoTaskSecondPartCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    cell.partImageView.image = self.normalImagesArray[indexPath.item];
+    cell.mainView.backgroundColor = UIColorFromRGB(0xf2f2f2);
+    cell.selectImageView.hidden = YES;
 }
 
 #pragma mark - lazy
@@ -62,7 +109,7 @@
         _collectionView.dataSource = self;
         _collectionView.showsHorizontalScrollIndicator = NO;
         
-        [_collectionView registerClass:UICollectionViewCell.class forCellWithReuseIdentifier:@"UICollectionViewCell"];
+        [_collectionView registerNib:[UINib nibWithNibName:@"OTLPracticePianoTaskSecondPartCell" bundle:nil] forCellWithReuseIdentifier:@"OTLPracticePianoTaskSecondPartCell"];
     }
     return _collectionView;
 }

@@ -7,6 +7,7 @@
 
 #import "OTLPracticePianoTaskFirstPartView.h"
 #import "OTLAddOrDeleteToolView.h"
+#import "OTLPianoTaskChooseCommonView.h"
 
 @interface OTLPracticePianoTaskFirstPartView ()
 @property (nonatomic, strong) OTLAddOrDeleteToolView *toolView;
@@ -70,10 +71,20 @@
     btn.selected = !btn.selected;
 }
 
+-(void)updateValue:(NSString *)value {
+    [self.toolView updateValue:value];
+}
+
 #pragma mark - lazy
 -(OTLAddOrDeleteToolView *)toolView {
     if (!_toolView) {
         _toolView = [[OTLAddOrDeleteToolView alloc] initWithFrame:CGRectZero currentNum:60];
+        WS(weakSelf)
+        [_toolView setTouchBlock:^(NSString * _Nonnull currentStr) {
+            if (weakSelf.speedTouchBlock) {
+                weakSelf.speedTouchBlock(currentStr);
+            }
+        }];
     }
     return _toolView;
 }

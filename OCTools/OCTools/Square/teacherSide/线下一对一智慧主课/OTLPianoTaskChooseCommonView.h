@@ -10,6 +10,7 @@
 typedef enum : NSUInteger {
     TaskChooseTypePracticeDuration,
     TaskChooseTypePracticeDay,
+    TaskChooseTypeSpeed,
 } TaskChooseType;
 
 NS_ASSUME_NONNULL_BEGIN

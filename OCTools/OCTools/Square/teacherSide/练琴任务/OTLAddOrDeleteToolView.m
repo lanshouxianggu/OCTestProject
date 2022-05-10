@@ -10,6 +10,7 @@
 
 @interface OTLAddOrDeleteToolView ()
 @property (nonatomic, strong) UITextField *textField;
+@property (nonatomic, strong) UILabel *textLabel;
 @property (nonatomic, assign) int currentNum;
 @property (nonatomic, strong) UIButton *addBtn;
 @property (nonatomic, strong) UIButton *deleteBtn;
@@ -21,15 +22,30 @@
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = UIColor.clearColor;
         self.currentNum = currentNum;
-        self.textField.text = [NSString stringWithFormat:@"%d",self.currentNum];
+//        self.textField.text = [NSString stringWithFormat:@"%d",self.currentNum];
+        self.textLabel.text = [NSString stringWithFormat:@"%d",self.currentNum];
         [self setupUI];
     }
     return self;
 }
 
 -(void)setupUI {
-    [self addSubview:self.textField];
-    [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
+//    [self addSubview:self.textField];
+//    [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.offset(0);
+//        make.size.mas_equalTo(CGSizeMake(48, 28));
+//    }];
+    
+    [self addSubview:self.textLabel];
+    [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.offset(0);
+        make.size.mas_equalTo(CGSizeMake(48, 28));
+    }];
+    
+    UIButton *touchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [touchBtn addTarget:self action:@selector(touchBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:touchBtn];
+    [touchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.offset(0);
         make.size.mas_equalTo(CGSizeMake(48, 28));
     }];
@@ -48,7 +64,8 @@
     [deleteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.offset(0);
         make.size.mas_equalTo(CGSizeMake(28, 28));
-        make.right.equalTo(self.textField.mas_left).offset(-4);
+//        make.right.equalTo(self.textField.mas_left).offset(-4);
+        make.right.equalTo(self.textLabel.mas_left).offset(-4);
     }];
     
     UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -65,10 +82,24 @@
     [addBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.offset(0);
         make.size.mas_equalTo(CGSizeMake(28, 28));
-        make.left.equalTo(self.textField.mas_right).offset(4);
+//        make.left.equalTo(self.textField.mas_right).offset(4);
+        make.left.equalTo(self.textLabel.mas_right).offset(4);
     }];
 }
 
+#pragma mark - 更新
+-(void)updateValue:(NSString *)value {
+    self.textLabel.text = value;
+}
+
+#pragma mark - 点击事件
+-(void)touchBtnAction {
+    if (self.touchBlock) {
+        self.touchBlock(self.textLabel.text);
+    }
+}
+
+#pragma mark - ＋事件
 -(void)addBtnAction {
     self.currentNum++;
     [self addOrDeleteBtnEnableState];
@@ -76,9 +107,11 @@
         self.currentNum=120;
         return;
     }
-    self.textField.text = [NSString stringWithFormat:@"%d",self.currentNum];
+//    self.textField.text = [NSString stringWithFormat:@"%d",self.currentNum];
+    self.textLabel.text = [NSString stringWithFormat:@"%d",self.currentNum];
 }
 
+#pragma mark - －事件
 -(void)deleteBtnAction {
     self.currentNum--;
     [self addOrDeleteBtnEnableState];
@@ -86,13 +119,29 @@
         self.currentNum=0;
         return;
     }
-    self.textField.text = [NSString stringWithFormat:@"%d",self.currentNum];
+//    self.textField.text = [NSString stringWithFormat:@"%d",self.currentNum];
+    self.textLabel.text = [NSString stringWithFormat:@"%d",self.currentNum];
 }
 
 -(void)addOrDeleteBtnEnableState {
     [self endEditing:YES];
     self.deleteBtn.enabled = self.currentNum>=0;
     self.addBtn.enabled = self.currentNum<=60;
+}
+
+#pragma mark - lazy
+-(UILabel *)textLabel {
+    if (!_textLabel) {
+        _textLabel = [UILabel new];
+        _textLabel.backgroundColor = UIColorFromRGB(0xf2f2f2);
+        _textLabel.layer.borderColor = UIColorFromRGB(0xcccccc).CGColor;
+        _textLabel.textColor = UIColorFromRGB(0x3b3b3b);
+        _textLabel.font = [UIFont systemFontOfSize:16];
+        _textLabel.textAlignment = NSTextAlignmentCenter;
+        _textLabel.layer.borderWidth = 1;
+        _textLabel.layer.cornerRadius = 4;
+    }
+    return _textLabel;
 }
 
 -(UITextField *)textField {

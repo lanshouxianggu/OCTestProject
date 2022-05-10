@@ -11,7 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OTLAddOrDeleteToolView : UIView
+@property (nonatomic, copy) void (^touchBlock)(NSString *currentStr);
+
 -(instancetype)initWithFrame:(CGRect)frame currentNum:(int)currentNum;
+-(void)updateValue:(NSString *)value;
 @end
 
 NS_ASSUME_NONNULL_END

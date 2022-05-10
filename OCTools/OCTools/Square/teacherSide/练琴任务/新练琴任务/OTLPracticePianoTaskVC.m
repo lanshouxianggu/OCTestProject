@@ -8,11 +8,13 @@
 #import "OTLPracticePianoTaskVC.h"
 #import "OTLPracticePianoTaskFirstPartView.h"
 #import "OTLPracticePianoTaskSecondPartView.h"
+#import "OTLPianoTaskChooseCommonView.h"
 
 @interface OTLPracticePianoTaskVC ()
 @property (nonatomic, strong) OTLPracticePianoTaskFirstPartView *firstPartView;
-@property (nonatomic, strong) UIView *secondPartView;
+@property (nonatomic, strong) OTLPracticePianoTaskSecondPartView *secondPartView;
 @property (nonatomic, strong) UIView *thirdPartView;
+@property (nonatomic, strong) OTLPianoTaskChooseCommonView *chooseView;
 @end
 
 @implementation OTLPracticePianoTaskVC
@@ -64,6 +66,8 @@
         make.top.equalTo(self.secondPartView.mas_bottom).offset(15);
         make.bottom.mas_lessThanOrEqualTo(-15);
     }];
+    
+    [UIApplication.sharedApplication.keyWindow addSubview:self.chooseView];
 }
 
 #pragma mark - lazy
@@ -71,6 +75,10 @@
     if (!_firstPartView) {
         _firstPartView = [[OTLPracticePianoTaskFirstPartView alloc] initWithFrame:CGRectZero];
         _firstPartView.backgroundColor = UIColorFromRGB(0xf2f2f2);
+        WS(weakSelf)
+        [_firstPartView setSpeedTouchBlock:^(NSString * _Nonnull currentStr) {
+            [weakSelf.chooseView showWithType:TaskChooseTypeSpeed selectStr:currentStr];
+        }];
     }
     return _firstPartView;
 }
@@ -92,5 +100,23 @@
         _thirdPartView.layer.cornerRadius = 9;
     }
     return _thirdPartView;
+}
+
+-(OTLPianoTaskChooseCommonView *)chooseView {
+    if (!_chooseView) {
+        _chooseView = [[OTLPianoTaskChooseCommonView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        WS(weakSelf)
+        [_chooseView setSelectBlock:^(TaskChooseType type, NSString * _Nonnull selectStr) {
+            [weakSelf.firstPartView updateValue:selectStr];
+        }];
+    }
+    return _chooseView;
+}
+
+-(void)dealloc {
+    if (_chooseView) {
+        [_chooseView removeFromSuperview];
+        _chooseView = nil;
+    }
 }
 @end

@@ -17,6 +17,7 @@
 @property (nonatomic, strong) UIPickerView *pickView;
 @property (nonatomic, strong) NSArray <NSString *> *durationsArray;
 @property (nonatomic, strong) NSArray <NSString *> *daysArray;
+@property (nonatomic, strong) NSArray <NSString *> *speedArray;
 
 @property (nonatomic, copy) NSString *selectStr;
 @end
@@ -35,6 +36,12 @@
             @"90分钟",
             @"105分钟",
             @"120分钟"];
+        
+        NSMutableArray *tempArr = [NSMutableArray array];
+        for (int i=20; i<121; i++) {
+            [tempArr addObject:[NSString stringWithFormat:@"%d",i]];
+        }
+        self.speedArray = tempArr;
         [self setupUI];
     }
     return self;
@@ -42,6 +49,13 @@
 
 -(void)setupUI {
     [self addSubview:self.mainView];
+    UIButton *touchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self addSubview:touchBtn];
+    [touchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.offset(0);
+        make.bottom.offset(-245);
+    }];
+    [touchBtn addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - 取消
@@ -89,10 +103,21 @@
             }];
         }
             break;
+        case TaskChooseTypeSpeed:
+        {
+            self.titleLabel.text = @"请选择速度";
+            [self.speedArray enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([obj isEqualToString:selectStr]) {
+                    index=idx;
+                    *stop=YES;
+                }
+            }];
+        }
+            break;
         default:
             break;
     }
-    [self.pickView selectRow:index inComponent:0 animated:NO];
+    
     self.transform = CGAffineTransformMakeTranslation(0, -SCREEN_HEIGHT);
     [UIView animateWithDuration:0.15 animations:^{
         self.backgroundColor = UIColorFromRGBA(0x000000, 0.4);
@@ -101,6 +126,7 @@
         self.mainView.transform = CGAffineTransformMakeTranslation(0, -236);
     }];
     [self.pickView reloadAllComponents];
+    [self.pickView selectRow:index inComponent:0 animated:NO];
 }
 
 #pragma mark - dismiss
@@ -123,6 +149,8 @@
         return self.daysArray.count;
     }else if (self.type==TaskChooseTypePracticeDuration) {
         return self.durationsArray.count;
+    }else if (self.type==TaskChooseTypeSpeed) {
+        return self.speedArray.count;
     }
     return 0;
 }
@@ -136,6 +164,8 @@
         return self.daysArray[row];
     }else if (self.type==TaskChooseTypePracticeDuration) {
         return self.durationsArray[row];
+    }else if (self.type==TaskChooseTypeSpeed) {
+        return self.speedArray[row];
     }
     return @"";
 }
@@ -147,6 +177,9 @@
             break;
         case TaskChooseTypePracticeDuration:
             self.selectStr = self.durationsArray[row];
+            break;
+        case TaskChooseTypeSpeed:
+            self.selectStr = self.speedArray[row];
             break;
         default:
             break;
