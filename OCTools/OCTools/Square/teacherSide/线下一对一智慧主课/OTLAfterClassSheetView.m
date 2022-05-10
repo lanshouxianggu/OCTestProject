@@ -183,4 +183,12 @@
     }
     return _chooseView;
 }
+
+#pragma mark - dealloc
+-(void)dealloc {
+    if (_chooseView) {
+        [_chooseView removeFromSuperview];
+        _chooseView = nil;
+    }
+}
 @end

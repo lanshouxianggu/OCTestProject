@@ -8,6 +8,7 @@
 #import "LCSquareViewController.h"
 #import "LCSquareTableViewCell.h"
 #import "OTLTeacherSideMainViewController.h"
+#import "OTLStudentSideMainViewController.h"
 #import "LCOtherToolsViewController.h"
 
 @interface LCSquareViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -82,7 +83,11 @@
         }
             break;
         case 1:
-            [TipProgress showText:@"学生端"];
+        {
+            OTLStudentSideMainViewController *vc = [OTLStudentSideMainViewController new];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             break;
         case 2:
         {
