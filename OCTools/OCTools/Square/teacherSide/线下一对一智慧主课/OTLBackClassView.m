@@ -37,22 +37,10 @@
 -(instancetype)initWithFrame:(CGRect)frame isFreshClass:(BOOL)isFreshClass {
     if (self = [super initWithFrame:frame]) {
         self.isFreshClass = isFreshClass;
-//        if (isPad) {
-//            self.topViewHeight = (self.frame.size.height-30)*0.46;
-//            self.bottomViewHeight = self.frame.size.height-self.topViewHeight-26-15;
-//            CGFloat topItemHeight = self.topViewHeight-30;
-//            CGFloat topItemWidth = topItemHeight*5/8;
-//            self.topItemSize = CGSizeMake(topItemWidth, topItemHeight);
-//
-//            CGFloat bottomItemHeight = self.bottomViewHeight-56-15-30;
-//            CGFloat bottomItemWidth = bottomItemHeight*3/4;
-//            self.bottomItemSize = CGSizeMake(bottomItemWidth, bottomItemHeight);
-//        }else {
-            self.topViewHeight = 220;
-            self.bottomViewHeight = 257;
-            self.topItemSize = CGSizeMake(120, self.topViewHeight-30);
-            self.bottomItemSize = CGSizeMake(118, self.bottomViewHeight-56-15-30);
-//        }
+        self.topViewHeight = 220;
+        self.bottomViewHeight = 257;
+        self.topItemSize = CGSizeMake(120, self.topViewHeight-30);
+        self.bottomItemSize = CGSizeMake(118, self.bottomViewHeight-56-15-30);
         
         [self setupUI];
     }
@@ -62,7 +50,6 @@
 -(void)setupUI {
     [self addSubview:self.mainView];
     [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.insets(UIEdgeInsetsMake(15, 15, 26, 15));
         make.left.top.offset(15);
         make.right.offset(-15);
         make.height.mas_equalTo(self.topViewHeight+self.bottomViewHeight);
@@ -112,6 +99,7 @@
     }];
 }
 
+#pragma mark - setter
 -(void)setQupuArray:(NSArray *)qupuArray {
     _qupuArray = qupuArray;
     CGRect qupuRect = self.topCollectionView.frame;

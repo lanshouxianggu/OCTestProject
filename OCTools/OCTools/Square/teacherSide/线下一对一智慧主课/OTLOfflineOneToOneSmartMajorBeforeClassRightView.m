@@ -30,8 +30,8 @@
         self.backClassView.qupuArray = @[];
         self.backClassView.remarkArray = @[@"",@"",@"",@"",@"",@""];
         
-        self.freshClassView.qupuArray = @[@""];
-        self.freshClassView.remarkArray = @[@"",@""];
+        self.freshClassView.qupuArray = @[];
+        self.freshClassView.remarkArray = @[];
     }
     return self;
 }
