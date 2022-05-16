@@ -39,6 +39,9 @@
 		916A341B2831F3D600898E3C /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34162831F3D600898E3C /* DiscoveryViewController.m */; };
 		916A34212831FB6600898E3C /* CommonServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A341D2831FB6600898E3C /* CommonServiceViewController.m */; };
 		916A34222831FB6600898E3C /* CommonServiceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34202831FB6600898E3C /* CommonServiceCollectionViewCell.m */; };
+		916A342B2831FD9200898E3C /* MCGetIPFromUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34252831FD9200898E3C /* MCGetIPFromUrl.m */; };
+		916A342C2831FD9200898E3C /* WebViewTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34262831FD9200898E3C /* WebViewTestController.m */; };
+		916A342D2831FD9200898E3C /* LMJHorizontalScrollText.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A342A2831FD9200898E3C /* LMJHorizontalScrollText.m */; };
 		9198BFA227F594C800BC069F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA127F594C800BC069F /* AppDelegate.m */; };
 		9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA427F594C800BC069F /* SceneDelegate.m */; };
 		9198BFA827F594C800BC069F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA727F594C800BC069F /* ViewController.m */; };
@@ -163,6 +166,12 @@
 		916A341E2831FB6600898E3C /* CommonServiceCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonServiceCollectionViewCell.h; sourceTree = "<group>"; };
 		916A341F2831FB6600898E3C /* CommonServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonServiceViewController.h; sourceTree = "<group>"; };
 		916A34202831FB6600898E3C /* CommonServiceCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonServiceCollectionViewCell.m; sourceTree = "<group>"; };
+		916A34242831FD9200898E3C /* MCGetIPFromUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGetIPFromUrl.h; sourceTree = "<group>"; };
+		916A34252831FD9200898E3C /* MCGetIPFromUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGetIPFromUrl.m; sourceTree = "<group>"; };
+		916A34262831FD9200898E3C /* WebViewTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewTestController.m; sourceTree = "<group>"; };
+		916A34272831FD9200898E3C /* WebViewTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewTestController.h; sourceTree = "<group>"; };
+		916A34292831FD9200898E3C /* LMJHorizontalScrollText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHorizontalScrollText.h; sourceTree = "<group>"; };
+		916A342A2831FD9200898E3C /* LMJHorizontalScrollText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHorizontalScrollText.m; sourceTree = "<group>"; };
 		9198BF9D27F594C800BC069F /* OCTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9198BFA027F594C800BC069F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9198BFA127F594C800BC069F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -432,6 +441,27 @@
 			path = CommonService;
 			sourceTree = "<group>";
 		};
+		916A34232831FD8300898E3C /* WebViewTest */ = {
+			isa = PBXGroup;
+			children = (
+				916A34282831FD9200898E3C /* LMJHorizontalScrollText */,
+				916A34242831FD9200898E3C /* MCGetIPFromUrl.h */,
+				916A34252831FD9200898E3C /* MCGetIPFromUrl.m */,
+				916A34272831FD9200898E3C /* WebViewTestController.h */,
+				916A34262831FD9200898E3C /* WebViewTestController.m */,
+			);
+			path = WebViewTest;
+			sourceTree = "<group>";
+		};
+		916A34282831FD9200898E3C /* LMJHorizontalScrollText */ = {
+			isa = PBXGroup;
+			children = (
+				916A34292831FD9200898E3C /* LMJHorizontalScrollText.h */,
+				916A342A2831FD9200898E3C /* LMJHorizontalScrollText.m */,
+			);
+			path = LMJHorizontalScrollText;
+			sourceTree = "<group>";
+		};
 		9198BF9427F594C800BC069F = {
 			isa = PBXGroup;
 			children = (
@@ -639,6 +669,7 @@
 		9198C00227F6FEBF00BC069F /* otherTools */ = {
 			isa = PBXGroup;
 			children = (
+				916A34232831FD8300898E3C /* WebViewTest */,
 				916A341C2831FB5200898E3C /* CommonService */,
 				916A340A2831F3BB00898E3C /* Discovery */,
 				6D96906D27F93F2200678EAD /* Calculator */,
@@ -900,6 +931,7 @@
 				911E42E627F82E1F0088FCDF /* ThreeLevelLinkageSelectView.m in Sources */,
 				9198BFA827F594C800BC069F /* ViewController.m in Sources */,
 				9198BFFC27F6F97800BC069F /* OTLTeacherSideMainViewController.m in Sources */,
+				916A342B2831FD9200898E3C /* MCGetIPFromUrl.m in Sources */,
 				9198BFC927F6A11B00BC069F /* LCLoginViewController.m in Sources */,
 				9198C03C27F7EC0E00BC069F /* NSString+Common.m in Sources */,
 				9198BFEB27F6F71300BC069F /* LCSquareTableViewCell.m in Sources */,
@@ -943,6 +975,7 @@
 				91B5910E2823B761008690B4 /* OTLDDLogFileLogger.m in Sources */,
 				916A33812828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.m in Sources */,
 				9198C03B27F7EC0E00BC069F /* UIColor+LLRandomColor.m in Sources */,
+				916A342C2831FD9200898E3C /* WebViewTestController.m in Sources */,
 				9198C01927F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordModel.m in Sources */,
 				9198C01E27F6FECF00BC069F /* MCCallLogsBackupSecondPartView.m in Sources */,
 				9198C04D27F7F07600BC069F /* OTLWeekReportDetailViewController.m in Sources */,
@@ -962,6 +995,7 @@
 				91D640572826688D00E132B6 /* OTLAfterClassSheetEndClassCell.m in Sources */,
 				9198BFE427F6A94200BC069F /* LCMineViewController.m in Sources */,
 				9198BFD127F6A67B00BC069F /* LCMainTabBarController.m in Sources */,
+				916A342D2831FD9200898E3C /* LMJHorizontalScrollText.m in Sources */,
 				916A33852828F05A00898E3C /* OTLPianoTaskChooseCommonView.m in Sources */,
 				91D6403F282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m in Sources */,
 				916A341B2831F3D600898E3C /* DiscoveryViewController.m in Sources */,
