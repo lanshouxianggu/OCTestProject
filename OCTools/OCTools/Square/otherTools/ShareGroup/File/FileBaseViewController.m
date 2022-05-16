@@ -233,7 +233,7 @@ typedef NS_ENUM(NSUInteger, FileSortType) {
 
 -(UIBarButtonItem *)sortBarItem {
     if (!_sortBarItem) {
-        _sortBarItem = [[UIBarButtonItem alloc] initWithTitle:@"排序" style:UIBarButtonItemStylePlain target:self action:@selector(sortAction)];
+        _sortBarItem = [[UIBarButtonItem alloc] initWithTitle:@"排序" style:UIBarButtonItemStylePlain target:self action:@selector(sortAction:)];
     }
     return _sortBarItem;
 }
@@ -283,7 +283,7 @@ typedef NS_ENUM(NSUInteger, FileSortType) {
     self.navigationItem.rightBarButtonItem = self.sortBarItem;
 }
 
--(void)sortAction {
+-(void)sortAction:(UIBarButtonItem *)btnItem {
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:@"选择排序方式" preferredStyle:UIAlertControllerStyleActionSheet];
     
     __weak typeof(self) weakSelf = self;
@@ -335,6 +335,14 @@ typedef NS_ENUM(NSUInteger, FileSortType) {
     [alertVC addAction:actionC];
     [alertVC addAction:actionD];
     [alertVC addAction:actionE];
+    
+    UIPopoverPresentationController *popover = alertVC.popoverPresentationController;
+    if (popover) {
+        popover.sourceView = self.view;
+        CGRect rect = CGRectMake(SCREEN_WIDTH-60, 0, 100, 100);
+        popover.sourceRect = rect;
+        popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    }
     
     [self presentViewController:alertVC animated:YES completion:nil];
 }
