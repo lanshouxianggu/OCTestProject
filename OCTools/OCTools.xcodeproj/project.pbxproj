@@ -37,6 +37,8 @@
 		916A34192831F3D600898E3C /* MCDiscoveryAllColumnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34122831F3D500898E3C /* MCDiscoveryAllColumnViewController.m */; };
 		916A341A2831F3D600898E3C /* DiscoveryHeadSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34152831F3D600898E3C /* DiscoveryHeadSegmentView.m */; };
 		916A341B2831F3D600898E3C /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34162831F3D600898E3C /* DiscoveryViewController.m */; };
+		916A34212831FB6600898E3C /* CommonServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A341D2831FB6600898E3C /* CommonServiceViewController.m */; };
+		916A34222831FB6600898E3C /* CommonServiceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34202831FB6600898E3C /* CommonServiceCollectionViewCell.m */; };
 		9198BFA227F594C800BC069F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA127F594C800BC069F /* AppDelegate.m */; };
 		9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA427F594C800BC069F /* SceneDelegate.m */; };
 		9198BFA827F594C800BC069F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA727F594C800BC069F /* ViewController.m */; };
@@ -157,6 +159,10 @@
 		916A34142831F3D600898E3C /* DiscoveryHeadSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryHeadSegmentView.h; sourceTree = "<group>"; };
 		916A34152831F3D600898E3C /* DiscoveryHeadSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryHeadSegmentView.m; sourceTree = "<group>"; };
 		916A34162831F3D600898E3C /* DiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryViewController.m; sourceTree = "<group>"; };
+		916A341D2831FB6600898E3C /* CommonServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonServiceViewController.m; sourceTree = "<group>"; };
+		916A341E2831FB6600898E3C /* CommonServiceCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonServiceCollectionViewCell.h; sourceTree = "<group>"; };
+		916A341F2831FB6600898E3C /* CommonServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonServiceViewController.h; sourceTree = "<group>"; };
+		916A34202831FB6600898E3C /* CommonServiceCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonServiceCollectionViewCell.m; sourceTree = "<group>"; };
 		9198BF9D27F594C800BC069F /* OCTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9198BFA027F594C800BC069F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9198BFA127F594C800BC069F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -415,6 +421,17 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		916A341C2831FB5200898E3C /* CommonService */ = {
+			isa = PBXGroup;
+			children = (
+				916A341E2831FB6600898E3C /* CommonServiceCollectionViewCell.h */,
+				916A34202831FB6600898E3C /* CommonServiceCollectionViewCell.m */,
+				916A341F2831FB6600898E3C /* CommonServiceViewController.h */,
+				916A341D2831FB6600898E3C /* CommonServiceViewController.m */,
+			);
+			path = CommonService;
+			sourceTree = "<group>";
+		};
 		9198BF9427F594C800BC069F = {
 			isa = PBXGroup;
 			children = (
@@ -622,6 +639,7 @@
 		9198C00227F6FEBF00BC069F /* otherTools */ = {
 			isa = PBXGroup;
 			children = (
+				916A341C2831FB5200898E3C /* CommonService */,
 				916A340A2831F3BB00898E3C /* Discovery */,
 				6D96906D27F93F2200678EAD /* Calculator */,
 				911E42D927F82E1F0088FCDF /* ThreeLevelLinkage */,
@@ -904,10 +922,12 @@
 				9198C00027F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m in Sources */,
 				9198BFF927F6F97800BC069F /* OTLPracticePianoTaskViewController.m in Sources */,
 				9198BFFA27F6F97800BC069F /* OTLPracticePianoTaskFirstCell.m in Sources */,
+				916A34212831FB6600898E3C /* CommonServiceViewController.m in Sources */,
 				916A337D2828B1EA00898E3C /* OTLAfterClassSheetVideoCollectionCell.m in Sources */,
 				9198C04327F7EC0E00BC069F /* UIImage+Common.m in Sources */,
 				9198C04C27F7F07600BC069F /* OTLWeekReportDetailTableViewCell.m in Sources */,
 				9198C02427F702E400BC069F /* TipProgress.m in Sources */,
+				916A34222831FB6600898E3C /* CommonServiceCollectionViewCell.m in Sources */,
 				9198BFA227F594C800BC069F /* AppDelegate.m in Sources */,
 				91D640512826680F00E132B6 /* OTLAfterClassSheetPianoTaskCell.m in Sources */,
 				9198C01C27F6FECF00BC069F /* MCCallLogsBackupFirstPartView.m in Sources */,

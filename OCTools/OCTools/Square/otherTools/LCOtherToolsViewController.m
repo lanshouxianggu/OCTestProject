@@ -9,6 +9,7 @@
 #import "LCSquareTableViewCell.h"
 #import "MCCallLogsBackupViewController.h"
 #import "ThreeLevelLinkageViewController.h"
+#import "CommonServiceViewController.h"
 
 @interface LCOtherToolsViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -28,7 +29,7 @@
     self.title = @"工具小玩意儿";
     self.view.backgroundColor = UIColorFromRGB(0xd2d2d2);
     
-    self.dataArray = @[@"通话备份",@"三级联动"];
+    self.dataArray = @[@"通话备份",@"三级联动",@"常用服务"];
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -76,6 +77,12 @@
         case 1:
         {
             ThreeLevelLinkageViewController *vc = [ThreeLevelLinkageViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 2:
+        {
+            CommonServiceViewController *vc = [CommonServiceViewController new];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
