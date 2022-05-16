@@ -19,6 +19,7 @@
 #import "OTLCommonEnum.h"
 #import "TipProgress.h"
 #import "UIImage+Common.h"
+#import "UIView+PartRounded.h"
 #import "UIColor+LLRandomColor.h"
 #import "NSString+Common.h"
 #import <CocoaLumberjack/CocoaLumberjack.h>

@@ -42,6 +42,40 @@
 		916A342B2831FD9200898E3C /* MCGetIPFromUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34252831FD9200898E3C /* MCGetIPFromUrl.m */; };
 		916A342C2831FD9200898E3C /* WebViewTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34262831FD9200898E3C /* WebViewTestController.m */; };
 		916A342D2831FD9200898E3C /* LMJHorizontalScrollText.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A342A2831FD9200898E3C /* LMJHorizontalScrollText.m */; };
+		916A34672831FF0000898E3C /* MCSearchGroupFileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34332831FF0000898E3C /* MCSearchGroupFileModel.m */; };
+		916A34682831FF0000898E3C /* MCSearchShareGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34352831FF0000898E3C /* MCSearchShareGroupModel.m */; };
+		916A34692831FF0000898E3C /* MCCommonSearchTitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34362831FF0000898E3C /* MCCommonSearchTitleModel.m */; };
+		916A346A2831FF0000898E3C /* MCCommonSearchHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A343B2831FF0000898E3C /* MCCommonSearchHistoryView.m */; };
+		916A346B2831FF0000898E3C /* MCCommonSearchTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A343C2831FF0000898E3C /* MCCommonSearchTitleCell.m */; };
+		916A346C2831FF0000898E3C /* MCShareGroupSearchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A343D2831FF0000898E3C /* MCShareGroupSearchTableView.m */; };
+		916A346D2831FF0000898E3C /* MCSearchShareGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A343E2831FF0000898E3C /* MCSearchShareGroupCell.m */; };
+		916A346E2831FF0000898E3C /* MCCommonSearchNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34402831FF0000898E3C /* MCCommonSearchNavView.m */; };
+		916A346F2831FF0000898E3C /* MCShareGroupSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34432831FF0000898E3C /* MCShareGroupSearchViewController.m */; };
+		916A34702831FF0000898E3C /* ShareGroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34452831FF0000898E3C /* ShareGroupTableViewCell.m */; };
+		916A34712831FF0000898E3C /* CreateShareGroupNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A344A2831FF0000898E3C /* CreateShareGroupNavView.m */; };
+		916A34722831FF0000898E3C /* CreateShareGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A344C2831FF0000898E3C /* CreateShareGroupViewController.m */; };
+		916A34732831FF0000898E3C /* ShareGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A344D2831FF0000898E3C /* ShareGroupViewController.m */; };
+		916A34742831FF0000898E3C /* ShareGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34512831FF0000898E3C /* ShareGroupModel.m */; };
+		916A34752831FF0000898E3C /* GroupFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34552831FF0000898E3C /* GroupFileViewController.m */; };
+		916A34762831FF0000898E3C /* ShareGroupDetailInfoHeadSegementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34582831FF0000898E3C /* ShareGroupDetailInfoHeadSegementView.m */; };
+		916A34772831FF0000898E3C /* ShareGroupDetailInfoItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 916A34592831FF0000898E3C /* ShareGroupDetailInfoItemCell.xib */; };
+		916A34782831FF0000898E3C /* ShareGroupDetailInfoItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A345A2831FF0000898E3C /* ShareGroupDetailInfoItemCell.m */; };
+		916A34792831FF0000898E3C /* ShareGroupDetailInfoToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A345E2831FF0000898E3C /* ShareGroupDetailInfoToolBarView.m */; };
+		916A347A2831FF0000898E3C /* ShareGroupDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A345F2831FF0000898E3C /* ShareGroupDetailInfoViewController.m */; };
+		916A347B2831FF0000898E3C /* ShareMomentHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34622831FF0000898E3C /* ShareMomentHeadCell.m */; };
+		916A347C2831FF0000898E3C /* ShareMomentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34632831FF0000898E3C /* ShareMomentViewController.m */; };
+		916A347D2831FF0000898E3C /* ShareMomentNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34642831FF0000898E3C /* ShareMomentNormalCell.m */; };
+		916A348E2831FFF800898E3C /* FileBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A347F2831FFF800898E3C /* FileBaseViewController.m */; };
+		916A348F2831FFF800898E3C /* FileBaseFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34812831FFF800898E3C /* FileBaseFlowCell.m */; };
+		916A34902831FFF800898E3C /* FileBaseFlowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 916A34842831FFF800898E3C /* FileBaseFlowCell.xib */; };
+		916A34912831FFF800898E3C /* FileBaseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34852831FFF800898E3C /* FileBaseListCell.m */; };
+		916A34922831FFF800898E3C /* FileBaseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 916A34862831FFF800898E3C /* FileBaseListCell.xib */; };
+		916A34932831FFF800898E3C /* FileVerticalIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A348B2831FFF800898E3C /* FileVerticalIndicatorView.m */; };
+		916A34942831FFF800898E3C /* FileBaseReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 916A348C2831FFF800898E3C /* FileBaseReusableView.xib */; };
+		916A34952831FFF800898E3C /* FileBaseReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A348D2831FFF800898E3C /* FileBaseReusableView.m */; };
+		916A349B2832003900898E3C /* FileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34972832003900898E3C /* FileModel.m */; };
+		916A349C2832003900898E3C /* FileBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34982832003900898E3C /* FileBaseModel.m */; };
+		916A349F2832008300898E3C /* LCLongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A349D2832008300898E3C /* LCLongPressGestureRecognizer.m */; };
 		9198BFA227F594C800BC069F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA127F594C800BC069F /* AppDelegate.m */; };
 		9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA427F594C800BC069F /* SceneDelegate.m */; };
 		9198BFA827F594C800BC069F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA727F594C800BC069F /* ViewController.m */; };
@@ -172,6 +206,70 @@
 		916A34272831FD9200898E3C /* WebViewTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewTestController.h; sourceTree = "<group>"; };
 		916A34292831FD9200898E3C /* LMJHorizontalScrollText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMJHorizontalScrollText.h; sourceTree = "<group>"; };
 		916A342A2831FD9200898E3C /* LMJHorizontalScrollText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMJHorizontalScrollText.m; sourceTree = "<group>"; };
+		916A34302831FF0000898E3C /* MCShareGroupSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCShareGroupSearchViewController.h; sourceTree = "<group>"; };
+		916A34322831FF0000898E3C /* MCSearchShareGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSearchShareGroupModel.h; sourceTree = "<group>"; };
+		916A34332831FF0000898E3C /* MCSearchGroupFileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSearchGroupFileModel.m; sourceTree = "<group>"; };
+		916A34342831FF0000898E3C /* MCCommonSearchTitleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCommonSearchTitleModel.h; sourceTree = "<group>"; };
+		916A34352831FF0000898E3C /* MCSearchShareGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSearchShareGroupModel.m; sourceTree = "<group>"; };
+		916A34362831FF0000898E3C /* MCCommonSearchTitleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCommonSearchTitleModel.m; sourceTree = "<group>"; };
+		916A34372831FF0000898E3C /* MCSearchGroupFileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSearchGroupFileModel.h; sourceTree = "<group>"; };
+		916A34392831FF0000898E3C /* MCSearchShareGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSearchShareGroupCell.h; sourceTree = "<group>"; };
+		916A343A2831FF0000898E3C /* MCCommonSearchNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCommonSearchNavView.h; sourceTree = "<group>"; };
+		916A343B2831FF0000898E3C /* MCCommonSearchHistoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCommonSearchHistoryView.m; sourceTree = "<group>"; };
+		916A343C2831FF0000898E3C /* MCCommonSearchTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCommonSearchTitleCell.m; sourceTree = "<group>"; };
+		916A343D2831FF0000898E3C /* MCShareGroupSearchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCShareGroupSearchTableView.m; sourceTree = "<group>"; };
+		916A343E2831FF0000898E3C /* MCSearchShareGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSearchShareGroupCell.m; sourceTree = "<group>"; };
+		916A343F2831FF0000898E3C /* MCCommonSearchHistoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCommonSearchHistoryView.h; sourceTree = "<group>"; };
+		916A34402831FF0000898E3C /* MCCommonSearchNavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCommonSearchNavView.m; sourceTree = "<group>"; };
+		916A34412831FF0000898E3C /* MCShareGroupSearchTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCShareGroupSearchTableView.h; sourceTree = "<group>"; };
+		916A34422831FF0000898E3C /* MCCommonSearchTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCommonSearchTitleCell.h; sourceTree = "<group>"; };
+		916A34432831FF0000898E3C /* MCShareGroupSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCShareGroupSearchViewController.m; sourceTree = "<group>"; };
+		916A34452831FF0000898E3C /* ShareGroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareGroupTableViewCell.m; sourceTree = "<group>"; };
+		916A34462831FF0000898E3C /* ShareGroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareGroupTableViewCell.h; sourceTree = "<group>"; };
+		916A34482831FF0000898E3C /* CreateShareGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateShareGroupViewController.h; sourceTree = "<group>"; };
+		916A344A2831FF0000898E3C /* CreateShareGroupNavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateShareGroupNavView.m; sourceTree = "<group>"; };
+		916A344B2831FF0000898E3C /* CreateShareGroupNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateShareGroupNavView.h; sourceTree = "<group>"; };
+		916A344C2831FF0000898E3C /* CreateShareGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateShareGroupViewController.m; sourceTree = "<group>"; };
+		916A344D2831FF0000898E3C /* ShareGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareGroupViewController.m; sourceTree = "<group>"; };
+		916A344E2831FF0000898E3C /* ShareGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareGroupViewController.h; sourceTree = "<group>"; };
+		916A34502831FF0000898E3C /* ShareGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareGroupModel.h; sourceTree = "<group>"; };
+		916A34512831FF0000898E3C /* ShareGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareGroupModel.m; sourceTree = "<group>"; };
+		916A34542831FF0000898E3C /* GroupFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupFileViewController.h; sourceTree = "<group>"; };
+		916A34552831FF0000898E3C /* GroupFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupFileViewController.m; sourceTree = "<group>"; };
+		916A34562831FF0000898E3C /* ShareGroupDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareGroupDetailInfoViewController.h; sourceTree = "<group>"; };
+		916A34582831FF0000898E3C /* ShareGroupDetailInfoHeadSegementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareGroupDetailInfoHeadSegementView.m; sourceTree = "<group>"; };
+		916A34592831FF0000898E3C /* ShareGroupDetailInfoItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareGroupDetailInfoItemCell.xib; sourceTree = "<group>"; };
+		916A345A2831FF0000898E3C /* ShareGroupDetailInfoItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareGroupDetailInfoItemCell.m; sourceTree = "<group>"; };
+		916A345B2831FF0000898E3C /* ShareGroupDetailInfoToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareGroupDetailInfoToolBarView.h; sourceTree = "<group>"; };
+		916A345C2831FF0000898E3C /* ShareGroupDetailInfoHeadSegementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareGroupDetailInfoHeadSegementView.h; sourceTree = "<group>"; };
+		916A345D2831FF0000898E3C /* ShareGroupDetailInfoItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareGroupDetailInfoItemCell.h; sourceTree = "<group>"; };
+		916A345E2831FF0000898E3C /* ShareGroupDetailInfoToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareGroupDetailInfoToolBarView.m; sourceTree = "<group>"; };
+		916A345F2831FF0000898E3C /* ShareGroupDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareGroupDetailInfoViewController.m; sourceTree = "<group>"; };
+		916A34612831FF0000898E3C /* ShareMomentNormalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMomentNormalCell.h; sourceTree = "<group>"; };
+		916A34622831FF0000898E3C /* ShareMomentHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMomentHeadCell.m; sourceTree = "<group>"; };
+		916A34632831FF0000898E3C /* ShareMomentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMomentViewController.m; sourceTree = "<group>"; };
+		916A34642831FF0000898E3C /* ShareMomentNormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMomentNormalCell.m; sourceTree = "<group>"; };
+		916A34652831FF0000898E3C /* ShareMomentHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMomentHeadCell.h; sourceTree = "<group>"; };
+		916A34662831FF0000898E3C /* ShareMomentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMomentViewController.h; sourceTree = "<group>"; };
+		916A347F2831FFF800898E3C /* FileBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileBaseViewController.m; sourceTree = "<group>"; };
+		916A34812831FFF800898E3C /* FileBaseFlowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileBaseFlowCell.m; sourceTree = "<group>"; };
+		916A34822831FFF800898E3C /* FileBaseListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileBaseListCell.h; sourceTree = "<group>"; };
+		916A34832831FFF800898E3C /* FileBaseFlowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileBaseFlowCell.h; sourceTree = "<group>"; };
+		916A34842831FFF800898E3C /* FileBaseFlowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileBaseFlowCell.xib; sourceTree = "<group>"; };
+		916A34852831FFF800898E3C /* FileBaseListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileBaseListCell.m; sourceTree = "<group>"; };
+		916A34862831FFF800898E3C /* FileBaseListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileBaseListCell.xib; sourceTree = "<group>"; };
+		916A34872831FFF800898E3C /* FileBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileBaseViewController.h; sourceTree = "<group>"; };
+		916A34892831FFF800898E3C /* FileVerticalIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileVerticalIndicatorView.h; sourceTree = "<group>"; };
+		916A348A2831FFF800898E3C /* FileBaseReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileBaseReusableView.h; sourceTree = "<group>"; };
+		916A348B2831FFF800898E3C /* FileVerticalIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileVerticalIndicatorView.m; sourceTree = "<group>"; };
+		916A348C2831FFF800898E3C /* FileBaseReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileBaseReusableView.xib; sourceTree = "<group>"; };
+		916A348D2831FFF800898E3C /* FileBaseReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileBaseReusableView.m; sourceTree = "<group>"; };
+		916A34972832003900898E3C /* FileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileModel.m; sourceTree = "<group>"; };
+		916A34982832003900898E3C /* FileBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileBaseModel.m; sourceTree = "<group>"; };
+		916A34992832003900898E3C /* FileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileModel.h; sourceTree = "<group>"; };
+		916A349A2832003900898E3C /* FileBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileBaseModel.h; sourceTree = "<group>"; };
+		916A349D2832008300898E3C /* LCLongPressGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLongPressGestureRecognizer.m; sourceTree = "<group>"; };
+		916A349E2832008300898E3C /* LCLongPressGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLongPressGestureRecognizer.h; sourceTree = "<group>"; };
 		9198BF9D27F594C800BC069F /* OCTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9198BFA027F594C800BC069F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9198BFA127F594C800BC069F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -462,6 +560,195 @@
 			path = LMJHorizontalScrollText;
 			sourceTree = "<group>";
 		};
+		916A342E2831FEF000898E3C /* ShareGroup */ = {
+			isa = PBXGroup;
+			children = (
+				916A347E2831FFF800898E3C /* File */,
+				916A34472831FF0000898E3C /* CreateShareGroup */,
+				916A34522831FF0000898E3C /* ShareGroupDetailInfo */,
+				916A344F2831FF0000898E3C /* ShareGroupModel */,
+				916A342F2831FF0000898E3C /* ShareGroupSearch */,
+				916A344E2831FF0000898E3C /* ShareGroupViewController.h */,
+				916A344D2831FF0000898E3C /* ShareGroupViewController.m */,
+				916A34442831FF0000898E3C /* view */,
+			);
+			path = ShareGroup;
+			sourceTree = "<group>";
+		};
+		916A342F2831FF0000898E3C /* ShareGroupSearch */ = {
+			isa = PBXGroup;
+			children = (
+				916A34302831FF0000898E3C /* MCShareGroupSearchViewController.h */,
+				916A34312831FF0000898E3C /* model */,
+				916A34382831FF0000898E3C /* view */,
+				916A34432831FF0000898E3C /* MCShareGroupSearchViewController.m */,
+			);
+			path = ShareGroupSearch;
+			sourceTree = "<group>";
+		};
+		916A34312831FF0000898E3C /* model */ = {
+			isa = PBXGroup;
+			children = (
+				916A34322831FF0000898E3C /* MCSearchShareGroupModel.h */,
+				916A34332831FF0000898E3C /* MCSearchGroupFileModel.m */,
+				916A34342831FF0000898E3C /* MCCommonSearchTitleModel.h */,
+				916A34352831FF0000898E3C /* MCSearchShareGroupModel.m */,
+				916A34362831FF0000898E3C /* MCCommonSearchTitleModel.m */,
+				916A34372831FF0000898E3C /* MCSearchGroupFileModel.h */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		916A34382831FF0000898E3C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				916A34392831FF0000898E3C /* MCSearchShareGroupCell.h */,
+				916A343A2831FF0000898E3C /* MCCommonSearchNavView.h */,
+				916A343B2831FF0000898E3C /* MCCommonSearchHistoryView.m */,
+				916A343C2831FF0000898E3C /* MCCommonSearchTitleCell.m */,
+				916A343D2831FF0000898E3C /* MCShareGroupSearchTableView.m */,
+				916A343E2831FF0000898E3C /* MCSearchShareGroupCell.m */,
+				916A343F2831FF0000898E3C /* MCCommonSearchHistoryView.h */,
+				916A34402831FF0000898E3C /* MCCommonSearchNavView.m */,
+				916A34412831FF0000898E3C /* MCShareGroupSearchTableView.h */,
+				916A34422831FF0000898E3C /* MCCommonSearchTitleCell.h */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		916A34442831FF0000898E3C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				916A34452831FF0000898E3C /* ShareGroupTableViewCell.m */,
+				916A34462831FF0000898E3C /* ShareGroupTableViewCell.h */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		916A34472831FF0000898E3C /* CreateShareGroup */ = {
+			isa = PBXGroup;
+			children = (
+				916A34482831FF0000898E3C /* CreateShareGroupViewController.h */,
+				916A34492831FF0000898E3C /* View */,
+				916A344C2831FF0000898E3C /* CreateShareGroupViewController.m */,
+			);
+			path = CreateShareGroup;
+			sourceTree = "<group>";
+		};
+		916A34492831FF0000898E3C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				916A344A2831FF0000898E3C /* CreateShareGroupNavView.m */,
+				916A344B2831FF0000898E3C /* CreateShareGroupNavView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		916A344F2831FF0000898E3C /* ShareGroupModel */ = {
+			isa = PBXGroup;
+			children = (
+				916A34502831FF0000898E3C /* ShareGroupModel.h */,
+				916A34512831FF0000898E3C /* ShareGroupModel.m */,
+			);
+			path = ShareGroupModel;
+			sourceTree = "<group>";
+		};
+		916A34522831FF0000898E3C /* ShareGroupDetailInfo */ = {
+			isa = PBXGroup;
+			children = (
+				916A34532831FF0000898E3C /* GroupFile */,
+				916A34562831FF0000898E3C /* ShareGroupDetailInfoViewController.h */,
+				916A34572831FF0000898E3C /* View */,
+				916A345F2831FF0000898E3C /* ShareGroupDetailInfoViewController.m */,
+				916A34602831FF0000898E3C /* ShareMoment */,
+			);
+			path = ShareGroupDetailInfo;
+			sourceTree = "<group>";
+		};
+		916A34532831FF0000898E3C /* GroupFile */ = {
+			isa = PBXGroup;
+			children = (
+				916A34542831FF0000898E3C /* GroupFileViewController.h */,
+				916A34552831FF0000898E3C /* GroupFileViewController.m */,
+			);
+			path = GroupFile;
+			sourceTree = "<group>";
+		};
+		916A34572831FF0000898E3C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				916A34582831FF0000898E3C /* ShareGroupDetailInfoHeadSegementView.m */,
+				916A34592831FF0000898E3C /* ShareGroupDetailInfoItemCell.xib */,
+				916A345A2831FF0000898E3C /* ShareGroupDetailInfoItemCell.m */,
+				916A345B2831FF0000898E3C /* ShareGroupDetailInfoToolBarView.h */,
+				916A345C2831FF0000898E3C /* ShareGroupDetailInfoHeadSegementView.h */,
+				916A345D2831FF0000898E3C /* ShareGroupDetailInfoItemCell.h */,
+				916A345E2831FF0000898E3C /* ShareGroupDetailInfoToolBarView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		916A34602831FF0000898E3C /* ShareMoment */ = {
+			isa = PBXGroup;
+			children = (
+				916A34612831FF0000898E3C /* ShareMomentNormalCell.h */,
+				916A34622831FF0000898E3C /* ShareMomentHeadCell.m */,
+				916A34632831FF0000898E3C /* ShareMomentViewController.m */,
+				916A34642831FF0000898E3C /* ShareMomentNormalCell.m */,
+				916A34652831FF0000898E3C /* ShareMomentHeadCell.h */,
+				916A34662831FF0000898E3C /* ShareMomentViewController.h */,
+			);
+			path = ShareMoment;
+			sourceTree = "<group>";
+		};
+		916A347E2831FFF800898E3C /* File */ = {
+			isa = PBXGroup;
+			children = (
+				916A34962832003900898E3C /* model */,
+				916A347F2831FFF800898E3C /* FileBaseViewController.m */,
+				916A34802831FFF800898E3C /* cell */,
+				916A34872831FFF800898E3C /* FileBaseViewController.h */,
+				916A34882831FFF800898E3C /* view */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		916A34802831FFF800898E3C /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				916A34812831FFF800898E3C /* FileBaseFlowCell.m */,
+				916A34822831FFF800898E3C /* FileBaseListCell.h */,
+				916A34832831FFF800898E3C /* FileBaseFlowCell.h */,
+				916A34842831FFF800898E3C /* FileBaseFlowCell.xib */,
+				916A34852831FFF800898E3C /* FileBaseListCell.m */,
+				916A34862831FFF800898E3C /* FileBaseListCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		916A34882831FFF800898E3C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				916A34892831FFF800898E3C /* FileVerticalIndicatorView.h */,
+				916A348A2831FFF800898E3C /* FileBaseReusableView.h */,
+				916A348B2831FFF800898E3C /* FileVerticalIndicatorView.m */,
+				916A348C2831FFF800898E3C /* FileBaseReusableView.xib */,
+				916A348D2831FFF800898E3C /* FileBaseReusableView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		916A34962832003900898E3C /* model */ = {
+			isa = PBXGroup;
+			children = (
+				916A34972832003900898E3C /* FileModel.m */,
+				916A34982832003900898E3C /* FileBaseModel.m */,
+				916A34992832003900898E3C /* FileModel.h */,
+				916A349A2832003900898E3C /* FileBaseModel.h */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		9198BF9427F594C800BC069F = {
 			isa = PBXGroup;
 			children = (
@@ -669,6 +956,7 @@
 		9198C00227F6FEBF00BC069F /* otherTools */ = {
 			isa = PBXGroup;
 			children = (
+				916A342E2831FEF000898E3C /* ShareGroup */,
 				916A34232831FD8300898E3C /* WebViewTest */,
 				916A341C2831FB5200898E3C /* CommonService */,
 				916A340A2831F3BB00898E3C /* Discovery */,
@@ -732,6 +1020,8 @@
 				9198C02227F702E400BC069F /* TipProgress.m */,
 				9198C04527F7EC7600BC069F /* PathUtility.h */,
 				9198C04427F7EC7600BC069F /* PathUtility.m */,
+				916A349E2832008300898E3C /* LCLongPressGestureRecognizer.h */,
+				916A349D2832008300898E3C /* LCLongPressGestureRecognizer.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -865,8 +1155,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9198BFBF27F5992000BC069F /* launch.png in Resources */,
+				916A34922831FFF800898E3C /* FileBaseListCell.xib in Resources */,
+				916A34942831FFF800898E3C /* FileBaseReusableView.xib in Resources */,
 				916A33972829EE8900898E3C /* OTLPracticePianoTaskSecondPartCell.xib in Resources */,
+				916A34902831FFF800898E3C /* FileBaseFlowCell.xib in Resources */,
 				9198BFB027F594CA00BC069F /* LaunchScreen.storyboard in Resources */,
+				916A34772831FF0000898E3C /* ShareGroupDetailInfoItemCell.xib in Resources */,
 				916A33822828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.xib in Resources */,
 				916A33AB282A377000898E3C /* OTLStudentSidePracticePianoTaskMainView.xib in Resources */,
 				911E42E427F82E1F0088FCDF /* city.plist in Resources */,
@@ -927,16 +1221,24 @@
 				916A338C282909BC00898E3C /* OTLPracticePianoTaskVC.m in Sources */,
 				916A34182831F3D600898E3C /* BMDragCellCollectionView.m in Sources */,
 				916A33962829EE8900898E3C /* OTLPracticePianoTaskSecondPartCell.m in Sources */,
+				916A346B2831FF0000898E3C /* MCCommonSearchTitleCell.m in Sources */,
 				9198C02027F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordCell.m in Sources */,
 				911E42E627F82E1F0088FCDF /* ThreeLevelLinkageSelectView.m in Sources */,
+				916A34752831FF0000898E3C /* GroupFileViewController.m in Sources */,
 				9198BFA827F594C800BC069F /* ViewController.m in Sources */,
+				916A34692831FF0000898E3C /* MCCommonSearchTitleModel.m in Sources */,
+				916A347A2831FF0000898E3C /* ShareGroupDetailInfoViewController.m in Sources */,
 				9198BFFC27F6F97800BC069F /* OTLTeacherSideMainViewController.m in Sources */,
+				916A34742831FF0000898E3C /* ShareGroupModel.m in Sources */,
 				916A342B2831FD9200898E3C /* MCGetIPFromUrl.m in Sources */,
 				9198BFC927F6A11B00BC069F /* LCLoginViewController.m in Sources */,
+				916A346D2831FF0000898E3C /* MCSearchShareGroupCell.m in Sources */,
 				9198C03C27F7EC0E00BC069F /* NSString+Common.m in Sources */,
 				9198BFEB27F6F71300BC069F /* LCSquareTableViewCell.m in Sources */,
+				916A34682831FF0000898E3C /* MCSearchShareGroupModel.m in Sources */,
 				916A33A3282A10AC00898E3C /* OTLStudentSidePracticePianoTaskVC.m in Sources */,
 				9198BFDB27F6A92100BC069F /* LCSquareViewController.m in Sources */,
+				916A349F2832008300898E3C /* LCLongPressGestureRecognizer.m in Sources */,
 				9198BFE827F6ABD800BC069F /* UIImage+Tool.m in Sources */,
 				916A341A2831F3D600898E3C /* DiscoveryHeadSegmentView.m in Sources */,
 				91D64042282618AA00E132B6 /* OTLBackClassView.m in Sources */,
@@ -944,6 +1246,7 @@
 				9198C01F27F6FECF00BC069F /* MCVideoMoreDetailView.m in Sources */,
 				916A338F28290BC300898E3C /* OTLPracticePianoTaskFirstPartView.m in Sources */,
 				9198C03D27F7EC0E00BC069F /* NSAttributedString+LLMake.m in Sources */,
+				916A347B2831FF0000898E3C /* ShareMomentHeadCell.m in Sources */,
 				6D96906C27F932B800678EAD /* LCAIRoomLeftView.m in Sources */,
 				6D96906927F7248A00678EAD /* LCOtherToolsViewController.m in Sources */,
 				9198C03F27F7EC0E00BC069F /* UIView+PartRounded.m in Sources */,
@@ -953,18 +1256,27 @@
 				911E42E327F82E1F0088FCDF /* ThreeLevelLinkageViewController.m in Sources */,
 				9198C00027F6FAF800BC069F /* OTLPracticePianoTaskSecondCell.m in Sources */,
 				9198BFF927F6F97800BC069F /* OTLPracticePianoTaskViewController.m in Sources */,
+				916A34912831FFF800898E3C /* FileBaseListCell.m in Sources */,
+				916A34792831FF0000898E3C /* ShareGroupDetailInfoToolBarView.m in Sources */,
+				916A349B2832003900898E3C /* FileModel.m in Sources */,
+				916A347D2831FF0000898E3C /* ShareMomentNormalCell.m in Sources */,
 				9198BFFA27F6F97800BC069F /* OTLPracticePianoTaskFirstCell.m in Sources */,
+				916A34722831FF0000898E3C /* CreateShareGroupViewController.m in Sources */,
+				916A346A2831FF0000898E3C /* MCCommonSearchHistoryView.m in Sources */,
 				916A34212831FB6600898E3C /* CommonServiceViewController.m in Sources */,
 				916A337D2828B1EA00898E3C /* OTLAfterClassSheetVideoCollectionCell.m in Sources */,
 				9198C04327F7EC0E00BC069F /* UIImage+Common.m in Sources */,
 				9198C04C27F7F07600BC069F /* OTLWeekReportDetailTableViewCell.m in Sources */,
+				916A348F2831FFF800898E3C /* FileBaseFlowCell.m in Sources */,
 				9198C02427F702E400BC069F /* TipProgress.m in Sources */,
 				916A34222831FB6600898E3C /* CommonServiceCollectionViewCell.m in Sources */,
 				9198BFA227F594C800BC069F /* AppDelegate.m in Sources */,
+				916A34952831FFF800898E3C /* FileBaseReusableView.m in Sources */,
 				91D640512826680F00E132B6 /* OTLAfterClassSheetPianoTaskCell.m in Sources */,
 				9198C01C27F6FECF00BC069F /* MCCallLogsBackupFirstPartView.m in Sources */,
 				9198C03E27F7EC0E00BC069F /* UIImage+Alpha.m in Sources */,
 				9198C04027F7EC0E00BC069F /* NSData+Common.m in Sources */,
+				916A346C2831FF0000898E3C /* MCShareGroupSearchTableView.m in Sources */,
 				91D640392826024000E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassVC.m in Sources */,
 				9198C02827F7EB4900BC069F /* MainNavigationController.m in Sources */,
 				9198C05027F7F14C00BC069F /* OTLPracticeWeekReportViewController.m in Sources */,
@@ -974,17 +1286,21 @@
 				9198C05327F7F17300BC069F /* CPISegementView.m in Sources */,
 				91B5910E2823B761008690B4 /* OTLDDLogFileLogger.m in Sources */,
 				916A33812828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.m in Sources */,
+				916A346F2831FF0000898E3C /* MCShareGroupSearchViewController.m in Sources */,
 				9198C03B27F7EC0E00BC069F /* UIColor+LLRandomColor.m in Sources */,
 				916A342C2831FD9200898E3C /* WebViewTestController.m in Sources */,
 				9198C01927F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordModel.m in Sources */,
 				9198C01E27F6FECF00BC069F /* MCCallLogsBackupSecondPartView.m in Sources */,
 				9198C04D27F7F07600BC069F /* OTLWeekReportDetailViewController.m in Sources */,
 				9198C04627F7EC7600BC069F /* PathUtility.m in Sources */,
+				916A34932831FFF800898E3C /* FileVerticalIndicatorView.m in Sources */,
 				916A33922829108400898E3C /* OTLPracticePianoTaskSecondPartView.m in Sources */,
 				916A33AE282A48DA00898E3C /* OTLStudentSidePracticePianoTaskModel.m in Sources */,
 				91D640482826592900E132B6 /* OTLAfterClassSheetView.m in Sources */,
 				9198BFFB27F6F97800BC069F /* OTLPracticePianoCommonCellView.m in Sources */,
 				91B591112823BD61008690B4 /* OTLDDLogFileManagerDefault.m in Sources */,
+				916A346E2831FF0000898E3C /* MCCommonSearchNavView.m in Sources */,
+				916A347C2831FF0000898E3C /* ShareMomentViewController.m in Sources */,
 				9198BFC327F59CE100BC069F /* LCMainTabBar.m in Sources */,
 				9198C01A27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryRecordView.m in Sources */,
 				9198BFDE27F6A92D00BC069F /* LCDiscoveryViewController.m in Sources */,
@@ -996,15 +1312,23 @@
 				9198BFE427F6A94200BC069F /* LCMineViewController.m in Sources */,
 				9198BFD127F6A67B00BC069F /* LCMainTabBarController.m in Sources */,
 				916A342D2831FD9200898E3C /* LMJHorizontalScrollText.m in Sources */,
+				916A34762831FF0000898E3C /* ShareGroupDetailInfoHeadSegementView.m in Sources */,
 				916A33852828F05A00898E3C /* OTLPianoTaskChooseCommonView.m in Sources */,
+				916A348E2831FFF800898E3C /* FileBaseViewController.m in Sources */,
 				91D6403F282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m in Sources */,
+				916A34732831FF0000898E3C /* ShareGroupViewController.m in Sources */,
 				916A341B2831F3D600898E3C /* DiscoveryViewController.m in Sources */,
+				916A34712831FF0000898E3C /* CreateShareGroupNavView.m in Sources */,
 				911E42E527F82E1F0088FCDF /* SelectFirstView.m in Sources */,
 				91D6403C2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.m in Sources */,
 				91D640542826686800E132B6 /* OTLAfterClassSheetCommentCell.m in Sources */,
+				916A349C2832003900898E3C /* FileBaseModel.m in Sources */,
 				9198C01D27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryStyleView.m in Sources */,
+				916A34702831FF0000898E3C /* ShareGroupTableViewCell.m in Sources */,
 				6D96907027F93F5C00678EAD /* LCCaculatorViewController.m in Sources */,
+				916A34782831FF0000898E3C /* ShareGroupDetailInfoItemCell.m in Sources */,
 				916A33882829085600898E3C /* OTLPracticePianoTaskPartCell.m in Sources */,
+				916A34672831FF0000898E3C /* MCSearchGroupFileModel.m in Sources */,
 				91D6404B28265D0E00E132B6 /* OTLAfterClassSheetPerformanceCell.m in Sources */,
 				9198BFB327F594CA00BC069F /* main.m in Sources */,
 				916A34172831F3D600898E3C /* MCDiscoveryColumnCell.m in Sources */,
