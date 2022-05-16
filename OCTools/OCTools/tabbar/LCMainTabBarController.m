@@ -10,6 +10,7 @@
 #import "LCEntertainmentViewController.h"
 #import "LCDiscoveryViewController.h"
 #import "LCSquareViewController.h"
+#import "DiscoveryViewController.h"
 #import "MainNavigationController.h"
 
 @interface LCMainTabBarController () <UITabBarControllerDelegate>
@@ -83,7 +84,7 @@
     if (!_vcsArray) {
         _vcsArray = @[
             [LCSquareViewController new],
-            [LCDiscoveryViewController new],
+            [DiscoveryViewController new],
             [LCEntertainmentViewController new],
             [LCMineViewController new]
         ];

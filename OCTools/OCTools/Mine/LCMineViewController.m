@@ -17,7 +17,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"个人中心";
-    self.view.backgroundColor = UIColor.blueColor;
+    self.view.backgroundColor = UIColor.cyanColor;
     
     DDLogError(@"队长，别开枪，是我");
     DDLogWarn(@"哦，原来是狗屁贾队长");

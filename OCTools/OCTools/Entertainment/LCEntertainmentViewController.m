@@ -17,7 +17,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"娱乐中心";
-    self.view.backgroundColor = UIColor.yellowColor;
+    self.view.backgroundColor = UIColor.cyanColor;
 }
 
 /*

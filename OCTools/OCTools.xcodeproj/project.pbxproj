@@ -32,6 +32,11 @@
 		916A33A9282A373800898E3C /* OTLStudentSidePracticePianoTaskMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A33A8282A373800898E3C /* OTLStudentSidePracticePianoTaskMainView.m */; };
 		916A33AB282A377000898E3C /* OTLStudentSidePracticePianoTaskMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 916A33AA282A377000898E3C /* OTLStudentSidePracticePianoTaskMainView.xib */; };
 		916A33AE282A48DA00898E3C /* OTLStudentSidePracticePianoTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A33AD282A48DA00898E3C /* OTLStudentSidePracticePianoTaskModel.m */; };
+		916A34172831F3D600898E3C /* MCDiscoveryColumnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A340C2831F3D500898E3C /* MCDiscoveryColumnCell.m */; };
+		916A34182831F3D600898E3C /* BMDragCellCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34112831F3D500898E3C /* BMDragCellCollectionView.m */; };
+		916A34192831F3D600898E3C /* MCDiscoveryAllColumnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34122831F3D500898E3C /* MCDiscoveryAllColumnViewController.m */; };
+		916A341A2831F3D600898E3C /* DiscoveryHeadSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34152831F3D600898E3C /* DiscoveryHeadSegmentView.m */; };
+		916A341B2831F3D600898E3C /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 916A34162831F3D600898E3C /* DiscoveryViewController.m */; };
 		9198BFA227F594C800BC069F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA127F594C800BC069F /* AppDelegate.m */; };
 		9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA427F594C800BC069F /* SceneDelegate.m */; };
 		9198BFA827F594C800BC069F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9198BFA727F594C800BC069F /* ViewController.m */; };
@@ -142,6 +147,16 @@
 		916A33AA282A377000898E3C /* OTLStudentSidePracticePianoTaskMainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OTLStudentSidePracticePianoTaskMainView.xib; sourceTree = "<group>"; };
 		916A33AC282A48DA00898E3C /* OTLStudentSidePracticePianoTaskModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OTLStudentSidePracticePianoTaskModel.h; sourceTree = "<group>"; };
 		916A33AD282A48DA00898E3C /* OTLStudentSidePracticePianoTaskModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OTLStudentSidePracticePianoTaskModel.m; sourceTree = "<group>"; };
+		916A340B2831F3D500898E3C /* DiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryViewController.h; sourceTree = "<group>"; };
+		916A340C2831F3D500898E3C /* MCDiscoveryColumnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDiscoveryColumnCell.m; sourceTree = "<group>"; };
+		916A340D2831F3D500898E3C /* MCDiscoveryAllColumnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDiscoveryAllColumnViewController.h; sourceTree = "<group>"; };
+		916A340E2831F3D500898E3C /* MCDiscoveryColumnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDiscoveryColumnCell.h; sourceTree = "<group>"; };
+		916A34102831F3D500898E3C /* BMDragCellCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMDragCellCollectionView.h; sourceTree = "<group>"; };
+		916A34112831F3D500898E3C /* BMDragCellCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMDragCellCollectionView.m; sourceTree = "<group>"; };
+		916A34122831F3D500898E3C /* MCDiscoveryAllColumnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDiscoveryAllColumnViewController.m; sourceTree = "<group>"; };
+		916A34142831F3D600898E3C /* DiscoveryHeadSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryHeadSegmentView.h; sourceTree = "<group>"; };
+		916A34152831F3D600898E3C /* DiscoveryHeadSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryHeadSegmentView.m; sourceTree = "<group>"; };
+		916A34162831F3D600898E3C /* DiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryViewController.m; sourceTree = "<group>"; };
 		9198BF9D27F594C800BC069F /* OCTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9198BFA027F594C800BC069F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9198BFA127F594C800BC069F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -367,6 +382,39 @@
 			path = "练琴任务";
 			sourceTree = "<group>";
 		};
+		916A340A2831F3BB00898E3C /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				916A340F2831F3D500898E3C /* BMDragCellCollectionView */,
+				916A340B2831F3D500898E3C /* DiscoveryViewController.h */,
+				916A34162831F3D600898E3C /* DiscoveryViewController.m */,
+				916A340D2831F3D500898E3C /* MCDiscoveryAllColumnViewController.h */,
+				916A34122831F3D500898E3C /* MCDiscoveryAllColumnViewController.m */,
+				916A340E2831F3D500898E3C /* MCDiscoveryColumnCell.h */,
+				916A340C2831F3D500898E3C /* MCDiscoveryColumnCell.m */,
+				916A34132831F3D600898E3C /* view */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		916A340F2831F3D500898E3C /* BMDragCellCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				916A34102831F3D500898E3C /* BMDragCellCollectionView.h */,
+				916A34112831F3D500898E3C /* BMDragCellCollectionView.m */,
+			);
+			path = BMDragCellCollectionView;
+			sourceTree = "<group>";
+		};
+		916A34132831F3D600898E3C /* view */ = {
+			isa = PBXGroup;
+			children = (
+				916A34142831F3D600898E3C /* DiscoveryHeadSegmentView.h */,
+				916A34152831F3D600898E3C /* DiscoveryHeadSegmentView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		9198BF9427F594C800BC069F = {
 			isa = PBXGroup;
 			children = (
@@ -574,6 +622,7 @@
 		9198C00227F6FEBF00BC069F /* otherTools */ = {
 			isa = PBXGroup;
 			children = (
+				916A340A2831F3BB00898E3C /* Discovery */,
 				6D96906D27F93F2200678EAD /* Calculator */,
 				911E42D927F82E1F0088FCDF /* ThreeLevelLinkage */,
 				9198C00327F6FECF00BC069F /* CallLogsBackup */,
@@ -827,6 +876,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				916A338C282909BC00898E3C /* OTLPracticePianoTaskVC.m in Sources */,
+				916A34182831F3D600898E3C /* BMDragCellCollectionView.m in Sources */,
 				916A33962829EE8900898E3C /* OTLPracticePianoTaskSecondPartCell.m in Sources */,
 				9198C02027F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordCell.m in Sources */,
 				911E42E627F82E1F0088FCDF /* ThreeLevelLinkageSelectView.m in Sources */,
@@ -838,6 +888,7 @@
 				916A33A3282A10AC00898E3C /* OTLStudentSidePracticePianoTaskVC.m in Sources */,
 				9198BFDB27F6A92100BC069F /* LCSquareViewController.m in Sources */,
 				9198BFE827F6ABD800BC069F /* UIImage+Tool.m in Sources */,
+				916A341A2831F3D600898E3C /* DiscoveryHeadSegmentView.m in Sources */,
 				91D64042282618AA00E132B6 /* OTLBackClassView.m in Sources */,
 				916A339F282A0FAB00898E3C /* OTLStudentSideMainViewController.m in Sources */,
 				9198C01F27F6FECF00BC069F /* MCVideoMoreDetailView.m in Sources */,
@@ -867,6 +918,7 @@
 				9198C05027F7F14C00BC069F /* OTLPracticeWeekReportViewController.m in Sources */,
 				9198C01B27F6FECF00BC069F /* MCCallLogsBackupMainView.m in Sources */,
 				9198C04127F7EC0E00BC069F /* UILabel+Common.m in Sources */,
+				916A34192831F3D600898E3C /* MCDiscoveryAllColumnViewController.m in Sources */,
 				9198C05327F7F17300BC069F /* CPISegementView.m in Sources */,
 				91B5910E2823B761008690B4 /* OTLDDLogFileLogger.m in Sources */,
 				916A33812828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.m in Sources */,
@@ -892,6 +944,7 @@
 				9198BFD127F6A67B00BC069F /* LCMainTabBarController.m in Sources */,
 				916A33852828F05A00898E3C /* OTLPianoTaskChooseCommonView.m in Sources */,
 				91D6403F282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m in Sources */,
+				916A341B2831F3D600898E3C /* DiscoveryViewController.m in Sources */,
 				911E42E527F82E1F0088FCDF /* SelectFirstView.m in Sources */,
 				91D6403C2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.m in Sources */,
 				91D640542826686800E132B6 /* OTLAfterClassSheetCommentCell.m in Sources */,
@@ -900,6 +953,7 @@
 				916A33882829085600898E3C /* OTLPracticePianoTaskPartCell.m in Sources */,
 				91D6404B28265D0E00E132B6 /* OTLAfterClassSheetPerformanceCell.m in Sources */,
 				9198BFB327F594CA00BC069F /* main.m in Sources */,
+				916A34172831F3D600898E3C /* MCDiscoveryColumnCell.m in Sources */,
 				9198BFF827F6F97800BC069F /* OTLAddOrDeleteToolView.m in Sources */,
 				9198BFA527F594C800BC069F /* SceneDelegate.m in Sources */,
 			);
