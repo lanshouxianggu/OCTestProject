@@ -51,7 +51,7 @@
     imageV.backgroundColor = UIColor.cyanColor;
     [searchView addSubview:imageV];
     [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(25);
+        make.width.height.mas_equalTo(20);
         make.centerY.offset(0);
         make.right.equalTo(lab.mas_left).offset(-8);
     }];

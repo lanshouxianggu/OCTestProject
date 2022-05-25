@@ -1,5 +1,5 @@
 //
-//  BidLiveHomeViewController.h
+//  BidLiveHomeFirstCell.h
 //  OCTools
 //
 //  Created by bidlive on 2022/5/25.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BidLiveHomeViewController : UIViewController
+@interface BidLiveHomeFirstCell : UITableViewCell
 
 @end
 
