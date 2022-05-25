@@ -65,7 +65,7 @@
 }
 
 -(void)touchBtnAction {
-    
+    [TipProgress showText:@"搜索"];
 }
 
 @end

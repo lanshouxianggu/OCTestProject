@@ -98,4 +98,11 @@
     CGFloat offsetX = page*self.scrollView.frame.size.width+self.scrollView.frame.size.width;
     [self.scrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
 }
+
+-(void)dealloc {
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}
 @end

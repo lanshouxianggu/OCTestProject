@@ -340,9 +340,27 @@
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D45-dl-wyx">
                         <rect key="frame" x="0.0" y="320" width="320" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[动态]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaX-Ig-l5L">
+                                <rect key="frame" x="15" y="13" width="42" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYh-sF-ELb" customClass="SGAdvertScrollView">
+                                <rect key="frame" x="72" y="0.0" width="233" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="GC3-V9-Wc3"/>
+                            <constraint firstItem="nYh-sF-ELb" firstAttribute="top" secondItem="D45-dl-wyx" secondAttribute="top" id="Uvx-Wv-1u4"/>
+                            <constraint firstAttribute="bottom" secondItem="nYh-sF-ELb" secondAttribute="bottom" id="ZEh-zM-NbV"/>
+                            <constraint firstItem="nYh-sF-ELb" firstAttribute="leading" secondItem="EaX-Ig-l5L" secondAttribute="trailing" constant="15" id="cNO-sB-p3U"/>
+                            <constraint firstAttribute="trailing" secondItem="nYh-sF-ELb" secondAttribute="trailing" constant="15" id="dhu-we-nG9"/>
+                            <constraint firstItem="EaX-Ig-l5L" firstAttribute="leading" secondItem="D45-dl-wyx" secondAttribute="leading" constant="15" id="feb-Rb-jgk"/>
+                            <constraint firstItem="EaX-Ig-l5L" firstAttribute="centerY" secondItem="D45-dl-wyx" secondAttribute="centerY" id="jYd-Xa-HQp"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lno-Hw-7qR">
@@ -369,7 +387,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="scrollTitleView" destination="D45-dl-wyx" id="da0-RF-cbj"/>
+                <outlet property="scrollTitleView" destination="nYh-sF-ELb" id="h19-0e-aXc"/>
                 <outlet property="topBannerView" destination="TwM-hJ-kF9" id="uL2-76-xOa"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
