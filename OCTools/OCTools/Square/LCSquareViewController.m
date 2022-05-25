@@ -10,6 +10,7 @@
 #import "OTLTeacherSideMainViewController.h"
 #import "OTLStudentSideMainViewController.h"
 #import "LCOtherToolsViewController.h"
+#import "BidLievViewController.h"
 
 @interface LCSquareViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) NSArray *sectionArr;
@@ -24,7 +25,7 @@
     self.navigationItem.title = @"广场";
     self.view.backgroundColor = UIColor.cyanColor;
     
-    self.sectionArr = @[@"云上钢琴老师端",@"云上钢琴学生端",@"工具小玩意"];
+    self.sectionArr = @[@"联拍在线",@"云上钢琴老师端",@"云上钢琴学生端",@"工具小玩意"];
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -77,19 +78,26 @@
     switch (indexPath.section) {
         case 0:
         {
-            OTLTeacherSideMainViewController *vc = [OTLTeacherSideMainViewController new];
+            BidLievViewController *vc = [BidLievViewController new];
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 1:
         {
-            OTLStudentSideMainViewController *vc = [OTLStudentSideMainViewController new];
+            OTLTeacherSideMainViewController *vc = [OTLTeacherSideMainViewController new];
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 2:
+        {
+            OTLStudentSideMainViewController *vc = [OTLStudentSideMainViewController new];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 3:
         {
             LCOtherToolsViewController *vc = [LCOtherToolsViewController new];
             vc.hidesBottomBarWhenPushed = YES;

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22BD4070283DC9DB00854873 /* BidLievViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD406F283DC9DB00854873 /* BidLievViewController.m */; };
+		22BD4074283DCB4400854873 /* BidLiveHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4073283DCB4400854873 /* BidLiveHomeViewController.m */; };
+		22BD4077283DCE6300854873 /* BidLiveHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4076283DCE6300854873 /* BidLiveHomeHeadView.m */; };
 		34EFDAB3CDB904402C9A4921 /* libPods-OCTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0B4649436608D22BC47675 /* libPods-OCTools.a */; };
 		6D96906927F7248A00678EAD /* LCOtherToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D96906827F7248A00678EAD /* LCOtherToolsViewController.m */; };
 		6D96906C27F932B800678EAD /* LCAIRoomLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D96906B27F932B800678EAD /* LCAIRoomLeftView.m */; };
@@ -140,6 +143,12 @@
 
 /* Begin PBXFileReference section */
 		1D0B4649436608D22BC47675 /* libPods-OCTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22BD406E283DC9DB00854873 /* BidLievViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLievViewController.h; sourceTree = "<group>"; };
+		22BD406F283DC9DB00854873 /* BidLievViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLievViewController.m; sourceTree = "<group>"; };
+		22BD4072283DCB4400854873 /* BidLiveHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeViewController.h; sourceTree = "<group>"; };
+		22BD4073283DCB4400854873 /* BidLiveHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeViewController.m; sourceTree = "<group>"; };
+		22BD4075283DCE6300854873 /* BidLiveHomeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeHeadView.h; sourceTree = "<group>"; };
+		22BD4076283DCE6300854873 /* BidLiveHomeHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeHeadView.m; sourceTree = "<group>"; };
 		2AAFD91B260ED2B7DE4A206B /* Pods-OCTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCTools.release.xcconfig"; path = "Target Support Files/Pods-OCTools/Pods-OCTools.release.xcconfig"; sourceTree = "<group>"; };
 		57656EB50BF0E508CAB60E42 /* Pods-OCTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCTools.debug.xcconfig"; path = "Target Support Files/Pods-OCTools/Pods-OCTools.debug.xcconfig"; sourceTree = "<group>"; };
 		6D96906727F7248A00678EAD /* LCOtherToolsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCOtherToolsViewController.h; sourceTree = "<group>"; };
@@ -405,6 +414,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22BD406D283DC99C00854873 /* bidlive */ = {
+			isa = PBXGroup;
+			children = (
+				22BD4071283DCB2F00854873 /* 首页 */,
+				22BD406E283DC9DB00854873 /* BidLievViewController.h */,
+				22BD406F283DC9DB00854873 /* BidLievViewController.m */,
+			);
+			path = bidlive;
+			sourceTree = "<group>";
+		};
+		22BD4071283DCB2F00854873 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				22BD4072283DCB4400854873 /* BidLiveHomeViewController.h */,
+				22BD4073283DCB4400854873 /* BidLiveHomeViewController.m */,
+				22BD4075283DCE6300854873 /* BidLiveHomeHeadView.h */,
+				22BD4076283DCE6300854873 /* BidLiveHomeHeadView.m */,
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
 		5551AEA372F2F5EFF4287A9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -847,6 +877,7 @@
 		9198BFD527F6A89F00BC069F /* Square */ = {
 			isa = PBXGroup;
 			children = (
+				22BD406D283DC99C00854873 /* bidlive */,
 				9198C00227F6FEBF00BC069F /* otherTools */,
 				9198C00127F6FEB200BC069F /* studentSide */,
 				9198BFEC27F6F97800BC069F /* teacherSide */,
@@ -1235,6 +1266,7 @@
 				916A346D2831FF0000898E3C /* MCSearchShareGroupCell.m in Sources */,
 				9198C03C27F7EC0E00BC069F /* NSString+Common.m in Sources */,
 				9198BFEB27F6F71300BC069F /* LCSquareTableViewCell.m in Sources */,
+				22BD4074283DCB4400854873 /* BidLiveHomeViewController.m in Sources */,
 				916A34682831FF0000898E3C /* MCSearchShareGroupModel.m in Sources */,
 				916A33A3282A10AC00898E3C /* OTLStudentSidePracticePianoTaskVC.m in Sources */,
 				9198BFDB27F6A92100BC069F /* LCSquareViewController.m in Sources */,
@@ -1264,6 +1296,7 @@
 				916A34722831FF0000898E3C /* CreateShareGroupViewController.m in Sources */,
 				916A346A2831FF0000898E3C /* MCCommonSearchHistoryView.m in Sources */,
 				916A34212831FB6600898E3C /* CommonServiceViewController.m in Sources */,
+				22BD4077283DCE6300854873 /* BidLiveHomeHeadView.m in Sources */,
 				916A337D2828B1EA00898E3C /* OTLAfterClassSheetVideoCollectionCell.m in Sources */,
 				9198C04327F7EC0E00BC069F /* UIImage+Common.m in Sources */,
 				9198C04C27F7F07600BC069F /* OTLWeekReportDetailTableViewCell.m in Sources */,
@@ -1286,6 +1319,7 @@
 				9198C05327F7F17300BC069F /* CPISegementView.m in Sources */,
 				91B5910E2823B761008690B4 /* OTLDDLogFileLogger.m in Sources */,
 				916A33812828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.m in Sources */,
+				22BD4070283DC9DB00854873 /* BidLievViewController.m in Sources */,
 				916A346F2831FF0000898E3C /* MCShareGroupSearchViewController.m in Sources */,
 				9198C03B27F7EC0E00BC069F /* UIColor+LLRandomColor.m in Sources */,
 				916A342C2831FD9200898E3C /* WebViewTestController.m in Sources */,
