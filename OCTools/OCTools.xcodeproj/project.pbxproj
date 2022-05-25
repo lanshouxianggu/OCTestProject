@@ -16,6 +16,7 @@
 		22BD4088283E0D4E00854873 /* BidLiveHomeShufflingLableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4087283E0D4E00854873 /* BidLiveHomeShufflingLableView.m */; };
 		22BD408A283E164E00854873 /* launch1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BD4089283E164E00854873 /* launch1.png */; };
 		22BD408E283E167500854873 /* SGAdvertScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD408C283E167500854873 /* SGAdvertScrollView.m */; };
+		22BD4091283E1C9A00854873 /* BidLiveHomeFloatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4090283E1C9A00854873 /* BidLiveHomeFloatView.m */; };
 		34EFDAB3CDB904402C9A4921 /* libPods-OCTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0B4649436608D22BC47675 /* libPods-OCTools.a */; };
 		6D96906927F7248A00678EAD /* LCOtherToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D96906827F7248A00678EAD /* LCOtherToolsViewController.m */; };
 		6D96906C27F932B800678EAD /* LCAIRoomLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D96906B27F932B800678EAD /* LCAIRoomLeftView.m */; };
@@ -165,6 +166,8 @@
 		22BD4089283E164E00854873 /* launch1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch1.png; sourceTree = "<group>"; };
 		22BD408C283E167500854873 /* SGAdvertScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAdvertScrollView.m; sourceTree = "<group>"; };
 		22BD408D283E167500854873 /* SGAdvertScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAdvertScrollView.h; sourceTree = "<group>"; };
+		22BD408F283E1C9A00854873 /* BidLiveHomeFloatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeFloatView.h; sourceTree = "<group>"; };
+		22BD4090283E1C9A00854873 /* BidLiveHomeFloatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeFloatView.m; sourceTree = "<group>"; };
 		2AAFD91B260ED2B7DE4A206B /* Pods-OCTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCTools.release.xcconfig"; path = "Target Support Files/Pods-OCTools/Pods-OCTools.release.xcconfig"; sourceTree = "<group>"; };
 		57656EB50BF0E508CAB60E42 /* Pods-OCTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCTools.debug.xcconfig"; path = "Target Support Files/Pods-OCTools/Pods-OCTools.debug.xcconfig"; sourceTree = "<group>"; };
 		6D96906727F7248A00678EAD /* LCOtherToolsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCOtherToolsViewController.h; sourceTree = "<group>"; };
@@ -455,6 +458,8 @@
 				22BD4081283E027400854873 /* BidLiveTopBannerView.m */,
 				22BD4086283E0D4E00854873 /* BidLiveHomeShufflingLableView.h */,
 				22BD4087283E0D4E00854873 /* BidLiveHomeShufflingLableView.m */,
+				22BD408F283E1C9A00854873 /* BidLiveHomeFloatView.h */,
+				22BD4090283E1C9A00854873 /* BidLiveHomeFloatView.m */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -1355,6 +1360,7 @@
 				9198C01B27F6FECF00BC069F /* MCCallLogsBackupMainView.m in Sources */,
 				9198C04127F7EC0E00BC069F /* UILabel+Common.m in Sources */,
 				916A34192831F3D600898E3C /* MCDiscoveryAllColumnViewController.m in Sources */,
+				22BD4091283E1C9A00854873 /* BidLiveHomeFloatView.m in Sources */,
 				9198C05327F7F17300BC069F /* CPISegementView.m in Sources */,
 				91B5910E2823B761008690B4 /* OTLDDLogFileLogger.m in Sources */,
 				916A33812828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.m in Sources */,
@@ -1551,7 +1557,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TT9L7QSCDD;
+				DEVELOPMENT_TEAM = 88U6WCRXJ3;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OCTools/PrefixHeader/OCToolsPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OCTools/Info.plist;
@@ -1583,7 +1589,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TT9L7QSCDD;
+				DEVELOPMENT_TEAM = 88U6WCRXJ3;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OCTools/PrefixHeader/OCToolsPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OCTools/Info.plist;

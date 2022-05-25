@@ -8,10 +8,12 @@
 #import "BidLiveHomeViewController.h"
 #import "BidLiveHomeHeadView.h"
 #import "BidLiveHomeFirstCell.h"
+#import "BidLiveHomeFloatView.h"
 
 @interface BidLiveHomeViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) BidLiveHomeHeadView *topSearchView;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) BidLiveHomeFloatView *floatView;
 @end
 
 @implementation BidLiveHomeViewController
@@ -35,6 +37,8 @@
         self.tableView.sectionHeaderTopPadding = 0;
     }
     [self.view addSubview:self.topSearchView];
+    
+    [self.view addSubview:self.floatView];
 }
 
 #pragma mark - UITableViewDelegate
@@ -60,17 +64,19 @@
     return 80;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.000001f;
-}
-
--(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return [UIView new];
-}
-
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *headView = [UIView new];
     headView.backgroundColor = UIColorFromRGB(0xF8F8F8);
+    
+    UILabel *lab = [UILabel new];
+    lab.text = @[@"",@"直播专场",@"联拍讲堂",@"猜你喜欢"][section];
+    lab.textColor = UIColor.cyanColor;
+    lab.textAlignment = NSTextAlignmentCenter;
+    lab.font = [UIFont systemFontOfSize:20 weight:UIFontWeightBold];
+    [headView addSubview:lab];
+    [lab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.offset(0);
+    }];
     
     return headView;
 }
@@ -99,6 +105,26 @@
     }
 }
 
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [UIView animateWithDuration:0.15 animations:^{
+        self.floatView.transform = CGAffineTransformMakeScale(0.001, 0.001);
+    }];
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [UIView animateWithDuration:0.15 animations:^{
+        self.floatView.transform = CGAffineTransformMakeScale(1, 1);
+    }];
+}
+
+//-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+//    if (decelerate) {
+//        [UIView animateWithDuration:0.15 animations:^{
+//            self.floatView.transform = CGAffineTransformMakeScale(1, 1);
+//        }];
+//    }
+//}
+
 #pragma mark - lazy
 -(UITableView *)tableView {
     if (!_tableView) {
@@ -121,5 +147,12 @@
         _topSearchView = [[BidLiveHomeHeadView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
     }
     return _topSearchView;
+}
+
+-(BidLiveHomeFloatView *)floatView {
+    if (!_floatView) {
+        _floatView = [[BidLiveHomeFloatView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-60-40, SCREEN_HEIGHT-100, 60, 60)];
+    }
+    return _floatView;
 }
 @end
