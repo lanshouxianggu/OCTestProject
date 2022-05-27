@@ -38,28 +38,29 @@
         
         [self setupUI];
         
+        WS(weakSelf)
         [self.itemsView setGlobalSaleClickBlock:^{
-            [TipProgress showText:@"全球拍卖"];
+            !weakSelf.globalSaleClickBlock?:weakSelf.globalSaleClickBlock();
         }];
         
         [self.itemsView setAppraisalClickBlock:^{
-            [TipProgress showText:@"鉴定"];
+            !weakSelf.appraisalClickBlock?:weakSelf.appraisalClickBlock();
         }];
         
         [self.itemsView setCountrySaleClickBlock:^{
-            [TipProgress showText:@"国内拍卖"];
+            !weakSelf.countrySaleClickBlock?:weakSelf.countrySaleClickBlock();
         }];
         
         [self.itemsView setSendClickBlock:^{
-            [TipProgress showText:@"送拍"];
+            !weakSelf.sendClickBlock?:weakSelf.sendClickBlock();
         }];
         
         [self.itemsView setSpeechClassClickBlock:^{
-            [TipProgress showText:@"讲堂"];
+            !weakSelf.speechClassClickBlock?:weakSelf.speechClassClickBlock();
         }];
         
         [self.itemsView setInformationClickBlock:^{
-            [TipProgress showText:@"资讯"];
+            !weakSelf.informationClickBlock?:weakSelf.informationClickBlock();
         }];
     }
     return self;

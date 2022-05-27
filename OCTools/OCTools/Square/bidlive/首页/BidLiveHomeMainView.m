@@ -106,6 +106,30 @@
         if (!cell) {
             cell = [[BidLiveHomeFirstTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BidLiveHomeFirstTableViewCell"];
         }
+        WS(weakSelf)
+        [cell setGlobalSaleClickBlock:^{
+            !weakSelf.globalSaleClickBlock?:weakSelf.globalSaleClickBlock();
+        }];
+        
+        [cell setAppraisalClickBlock:^{
+            !weakSelf.appraisalClickBlock?:weakSelf.appraisalClickBlock();
+        }];
+        
+        [cell setCountrySaleClickBlock:^{
+            !weakSelf.countrySaleClickBlock?:weakSelf.countrySaleClickBlock();
+        }];
+        
+        [cell setSendClickBlock:^{
+            !weakSelf.sendClickBlock?:weakSelf.sendClickBlock();
+        }];
+        
+        [cell setSpeechClassClickBlock:^{
+            !weakSelf.speechClassClickBlock?:weakSelf.speechClassClickBlock();
+        }];
+        
+        [cell setInformationClickBlock:^{
+            !weakSelf.informationClickBlock?:weakSelf.informationClickBlock();
+        }];
         return cell;
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
