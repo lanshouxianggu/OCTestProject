@@ -17,6 +17,9 @@
 		22BD408A283E164E00854873 /* launch1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22BD4089283E164E00854873 /* launch1.png */; };
 		22BD408E283E167500854873 /* SGAdvertScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD408C283E167500854873 /* SGAdvertScrollView.m */; };
 		22BD4091283E1C9A00854873 /* BidLiveHomeFloatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4090283E1C9A00854873 /* BidLiveHomeFloatView.m */; };
+		22BD418D2840B02700854873 /* BidLiveHomeMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD418A2840B02600854873 /* BidLiveHomeMainView.m */; };
+		22BD418E2840B02700854873 /* BidLiveHomeFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD418C2840B02600854873 /* BidLiveHomeFirstTableViewCell.m */; };
+		22BD41912840B4AE00854873 /* BidLiveHomeBtnItemsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD41902840B4AE00854873 /* BidLiveHomeBtnItemsView.m */; };
 		34EFDAB3CDB904402C9A4921 /* libPods-OCTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0B4649436608D22BC47675 /* libPods-OCTools.a */; };
 		6D96906927F7248A00678EAD /* LCOtherToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D96906827F7248A00678EAD /* LCOtherToolsViewController.m */; };
 		6D96906C27F932B800678EAD /* LCAIRoomLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D96906B27F932B800678EAD /* LCAIRoomLeftView.m */; };
@@ -168,6 +171,12 @@
 		22BD408D283E167500854873 /* SGAdvertScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAdvertScrollView.h; sourceTree = "<group>"; };
 		22BD408F283E1C9A00854873 /* BidLiveHomeFloatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeFloatView.h; sourceTree = "<group>"; };
 		22BD4090283E1C9A00854873 /* BidLiveHomeFloatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeFloatView.m; sourceTree = "<group>"; };
+		22BD41892840B02600854873 /* BidLiveHomeMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BidLiveHomeMainView.h; path = "OCTools/Square/bidlive/首页/BidLiveHomeMainView.h"; sourceTree = SOURCE_ROOT; };
+		22BD418A2840B02600854873 /* BidLiveHomeMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BidLiveHomeMainView.m; path = "OCTools/Square/bidlive/首页/BidLiveHomeMainView.m"; sourceTree = SOURCE_ROOT; };
+		22BD418B2840B02600854873 /* BidLiveHomeFirstTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BidLiveHomeFirstTableViewCell.h; path = "OCTools/Square/bidlive/首页/BidLiveHomeFirstTableViewCell.h"; sourceTree = SOURCE_ROOT; };
+		22BD418C2840B02600854873 /* BidLiveHomeFirstTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BidLiveHomeFirstTableViewCell.m; path = "OCTools/Square/bidlive/首页/BidLiveHomeFirstTableViewCell.m"; sourceTree = SOURCE_ROOT; };
+		22BD418F2840B4AE00854873 /* BidLiveHomeBtnItemsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeBtnItemsView.h; sourceTree = "<group>"; };
+		22BD41902840B4AE00854873 /* BidLiveHomeBtnItemsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeBtnItemsView.m; sourceTree = "<group>"; };
 		2AAFD91B260ED2B7DE4A206B /* Pods-OCTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCTools.release.xcconfig"; path = "Target Support Files/Pods-OCTools/Pods-OCTools.release.xcconfig"; sourceTree = "<group>"; };
 		57656EB50BF0E508CAB60E42 /* Pods-OCTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCTools.debug.xcconfig"; path = "Target Support Files/Pods-OCTools/Pods-OCTools.debug.xcconfig"; sourceTree = "<group>"; };
 		6D96906727F7248A00678EAD /* LCOtherToolsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCOtherToolsViewController.h; sourceTree = "<group>"; };
@@ -446,20 +455,26 @@
 		22BD4071283DCB2F00854873 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
-				22BD408B283E167500854873 /* SGAdvertScrollView */,
-				22BD4083283E076300854873 /* BidLiveHomeViewController.h */,
-				22BD4084283E076300854873 /* BidLiveHomeViewController.m */,
-				22BD4075283DCE6300854873 /* BidLiveHomeHeadView.h */,
-				22BD4076283DCE6300854873 /* BidLiveHomeHeadView.m */,
 				22BD4078283DDBD900854873 /* BidLiveHomeFirstCell.h */,
 				22BD4079283DDBD900854873 /* BidLiveHomeFirstCell.m */,
 				22BD407A283DDBD900854873 /* BidLiveHomeFirstCell.xib */,
-				22BD4080283E027400854873 /* BidLiveTopBannerView.h */,
-				22BD4081283E027400854873 /* BidLiveTopBannerView.m */,
-				22BD4086283E0D4E00854873 /* BidLiveHomeShufflingLableView.h */,
-				22BD4087283E0D4E00854873 /* BidLiveHomeShufflingLableView.m */,
+				22BD418B2840B02600854873 /* BidLiveHomeFirstTableViewCell.h */,
+				22BD418C2840B02600854873 /* BidLiveHomeFirstTableViewCell.m */,
 				22BD408F283E1C9A00854873 /* BidLiveHomeFloatView.h */,
 				22BD4090283E1C9A00854873 /* BidLiveHomeFloatView.m */,
+				22BD4075283DCE6300854873 /* BidLiveHomeHeadView.h */,
+				22BD4076283DCE6300854873 /* BidLiveHomeHeadView.m */,
+				22BD41892840B02600854873 /* BidLiveHomeMainView.h */,
+				22BD418A2840B02600854873 /* BidLiveHomeMainView.m */,
+				22BD4086283E0D4E00854873 /* BidLiveHomeShufflingLableView.h */,
+				22BD4087283E0D4E00854873 /* BidLiveHomeShufflingLableView.m */,
+				22BD4083283E076300854873 /* BidLiveHomeViewController.h */,
+				22BD4084283E076300854873 /* BidLiveHomeViewController.m */,
+				22BD4080283E027400854873 /* BidLiveTopBannerView.h */,
+				22BD4081283E027400854873 /* BidLiveTopBannerView.m */,
+				22BD408B283E167500854873 /* SGAdvertScrollView */,
+				22BD418F2840B4AE00854873 /* BidLiveHomeBtnItemsView.h */,
+				22BD41902840B4AE00854873 /* BidLiveHomeBtnItemsView.m */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -1293,6 +1308,7 @@
 				916A338C282909BC00898E3C /* OTLPracticePianoTaskVC.m in Sources */,
 				916A34182831F3D600898E3C /* BMDragCellCollectionView.m in Sources */,
 				916A33962829EE8900898E3C /* OTLPracticePianoTaskSecondPartCell.m in Sources */,
+				22BD418D2840B02700854873 /* BidLiveHomeMainView.m in Sources */,
 				916A346B2831FF0000898E3C /* MCCommonSearchTitleCell.m in Sources */,
 				9198C02027F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordCell.m in Sources */,
 				911E42E627F82E1F0088FCDF /* ThreeLevelLinkageSelectView.m in Sources */,
@@ -1311,6 +1327,7 @@
 				916A34682831FF0000898E3C /* MCSearchShareGroupModel.m in Sources */,
 				916A33A3282A10AC00898E3C /* OTLStudentSidePracticePianoTaskVC.m in Sources */,
 				9198BFDB27F6A92100BC069F /* LCSquareViewController.m in Sources */,
+				22BD41912840B4AE00854873 /* BidLiveHomeBtnItemsView.m in Sources */,
 				916A349F2832008300898E3C /* LCLongPressGestureRecognizer.m in Sources */,
 				9198BFE827F6ABD800BC069F /* UIImage+Tool.m in Sources */,
 				916A341A2831F3D600898E3C /* DiscoveryHeadSegmentView.m in Sources */,
@@ -1402,6 +1419,7 @@
 				22BD407B283DDBD900854873 /* BidLiveHomeFirstCell.m in Sources */,
 				91D6403C2826052E00E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassLeftView.m in Sources */,
 				91D640542826686800E132B6 /* OTLAfterClassSheetCommentCell.m in Sources */,
+				22BD418E2840B02700854873 /* BidLiveHomeFirstTableViewCell.m in Sources */,
 				916A349C2832003900898E3C /* FileBaseModel.m in Sources */,
 				9198C01D27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryStyleView.m in Sources */,
 				916A34702831FF0000898E3C /* ShareGroupTableViewCell.m in Sources */,
