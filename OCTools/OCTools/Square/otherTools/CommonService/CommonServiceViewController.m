@@ -107,7 +107,7 @@ static NSString * const kServiceHeaderCell = @"kServiceHeaderCell";
         _layout.itemSize = CGSizeMake((SCREEN_WIDTH-24-20)/5, (SCREEN_WIDTH-24-10)/5);
         _layout.sectionInset = UIEdgeInsetsMake(0, 12, 0, 12);
         _layout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 50);
-        
+        _layout.sectionHeadersPinToVisibleBounds = YES;
     }
     return _layout;
 }
@@ -136,6 +136,7 @@ static NSString * const kServiceHeaderCell = @"kServiceHeaderCell";
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if (kind == UICollectionElementKindSectionHeader) {
         UICollectionReusableView *reuseableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kServiceHeaderCell forIndexPath:indexPath];
+        reuseableView.backgroundColor = DF_COLOR_BGMAIN;
         for (UIView *view in reuseableView.subviews) {
             [view removeFromSuperview];
         }
