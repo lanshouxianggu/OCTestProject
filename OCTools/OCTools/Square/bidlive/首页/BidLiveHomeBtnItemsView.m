@@ -6,6 +6,7 @@
 //
 
 #import "BidLiveHomeBtnItemsView.h"
+#import "BidLiveBundleRecourseManager.h"
 
 @interface BidLiveHomeBtnItemsView () <UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionViewFlowLayout *layout;
@@ -19,12 +20,13 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.titlesArr = @[@"全球拍卖",@"鉴定",@"国内拍卖",@"送拍",@"讲堂",@"资讯"];
-        self.imagesArr = @[[UIImage imageNamed:@"launch1.png"],
-                           [UIImage imageNamed:@"launch1.png"],
-                           [UIImage imageNamed:@"launch1.png"],
-                           [UIImage imageNamed:@"launch1.png"],
-                           [UIImage imageNamed:@"launch1.png"],
-                           [UIImage imageNamed:@"launch1.png"]];
+        UIImage *image1 = [BidLiveBundleRecourseManager getBundleImage:@"quanqiupai" type:@"png"];
+        UIImage *image2 = [BidLiveBundleRecourseManager getBundleImage:@"jianding" type:@"png"];
+        UIImage *image3 = [BidLiveBundleRecourseManager getBundleImage:@"guoneipai" type:@"png"];
+        UIImage *image4 = [BidLiveBundleRecourseManager getBundleImage:@"songpai" type:@"png"];
+        UIImage *image5 = [BidLiveBundleRecourseManager getBundleImage:@"lianpaijiangtang" type:@"png"];
+        UIImage *image6 = [BidLiveBundleRecourseManager getBundleImage:@"newsFeed" type:@"png"];
+        self.imagesArr = @[image1,image2,image3,image4,image5,image6];
         [self setupUI];
     }
     return self;

@@ -9,6 +9,7 @@
 #import "BidLiveTopBannerView.h"
 #import "BidLiveHomeShufflingLableView.h"
 #import "SGAdvertScrollView.h"
+#import "LCConfig.h"
 
 @interface BidLiveHomeFirstCell () <SGAdvertScrollViewDelegate>
 @property (nonatomic, strong) BidLiveTopBannerView *bannerView;
@@ -49,28 +50,28 @@
 }
 
 - (IBAction)domesticAuctionAction:(id)sender {
-    [TipProgress showText:@"国内拍卖"];
+    
 }
 
 - (IBAction)sendAuctionAction:(id)sender {
-    [TipProgress showText:@"送拍"];
+    
 }
 
 
 - (IBAction)lectureRoomAction:(id)sender {
-    [TipProgress showText:@"讲堂"];
+    
 }
 
 - (IBAction)globalAuctionAction:(id)sender {
-    [TipProgress showText:@"全球拍卖"];
+    
 }
 
 - (IBAction)appraisalAction:(id)sender {
-    [TipProgress showText:@"鉴定"];
+    
 }
 
 - (IBAction)informationAction:(id)sender {
-    [TipProgress showText:@"资讯"];
+    
 }
 
 #pragma mark - SGAdvertScrollViewDelegate

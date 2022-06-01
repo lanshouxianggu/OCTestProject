@@ -6,6 +6,7 @@
 //
 
 #import "BidLiveHomeHeadView.h"
+#import "BidLiveBundleRecourseManager.h"
 
 @interface BidLiveHomeHeadView ()
 
@@ -47,8 +48,8 @@
         make.centerX.offset(10);
     }];
     
-    UIImageView *imageV = [UIImageView new];
-    imageV.backgroundColor = UIColor.cyanColor;
+    UIImage *image = [BidLiveBundleRecourseManager getBundleImage:@"iconfont-sousuo" type:@"png"];
+    UIImageView *imageV = [[UIImageView alloc] initWithImage:image];
     [searchView addSubview:imageV];
     [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(20);
@@ -65,7 +66,7 @@
 }
 
 -(void)touchBtnAction {
-    [TipProgress showText:@"搜索"];
+    !self.searchClickBlock?:self.searchClickBlock();
 }
 
 @end

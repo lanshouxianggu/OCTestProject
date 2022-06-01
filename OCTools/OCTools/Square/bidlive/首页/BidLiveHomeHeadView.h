@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BidLiveHomeHeadView : UIView
-
+@property (nonatomic, copy) void (^searchClickBlock)(void);
 @end
 
 NS_ASSUME_NONNULL_END

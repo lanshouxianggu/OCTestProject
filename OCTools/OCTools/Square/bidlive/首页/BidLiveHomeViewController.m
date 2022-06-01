@@ -7,9 +7,11 @@
 
 #import "BidLiveHomeViewController.h"
 #import "BidLiveHomeMainView.h"
+#import "BidLiveHomeScrollMainView.h"
 
 @interface BidLiveHomeViewController ()
 @property (nonatomic, strong) BidLiveHomeMainView *mainView;
+@property (nonatomic, strong) BidLiveHomeScrollMainView *mainScrollView;
 @end
 
 @implementation BidLiveHomeViewController
@@ -29,7 +31,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = UIColor.whiteColor;
     
-    [self.view addSubview:self.mainView];
+//    [self.view addSubview:self.mainView];
+    [self.view addSubview:self.mainScrollView];
 }
 
 -(BidLiveHomeMainView *)mainView {
@@ -37,6 +40,13 @@
         _mainView = [[BidLiveHomeMainView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)];
     }
     return _mainView;
+}
+
+-(BidLiveHomeScrollMainView *)mainScrollView {
+    if (!_mainScrollView) {
+        _mainScrollView = [[BidLiveHomeScrollMainView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH,SCREEN_HEIGHT)];
+    }
+    return _mainScrollView;
 }
 
 @end

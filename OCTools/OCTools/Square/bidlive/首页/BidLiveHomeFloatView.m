@@ -6,6 +6,7 @@
 //
 
 #import "BidLiveHomeFloatView.h"
+#import "BidLiveBundleRecourseManager.h"
 
 @implementation BidLiveHomeFloatView
 
@@ -20,8 +21,8 @@
     self.layer.cornerRadius = 30;
     self.layer.shadowColor = UIColor.blackColor.CGColor;
     self.layer.shadowOffset = CGSizeMake(0, 0);
-    self.layer.shadowRadius = 4;
-    self.layer.shadowOpacity = 0.8;
+    self.layer.shadowRadius = 6;
+    self.layer.shadowOpacity = 0.4;
     
     UIView *mainView = [UIView new];
     mainView.layer.cornerRadius = 30;
@@ -31,7 +32,8 @@
         make.edges.insets(UIEdgeInsetsZero);
     }];
     
-    UIImageView *imageV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"launch1.png"]];
+    UIImage *image = [BidLiveBundleRecourseManager getBundleImage:@"newauctionicon" type:@"png"];
+    UIImageView *imageV = [[UIImageView alloc] initWithImage:image];
     imageV.contentMode = UIViewContentModeScaleAspectFill;
     [mainView addSubview:imageV];
     [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
