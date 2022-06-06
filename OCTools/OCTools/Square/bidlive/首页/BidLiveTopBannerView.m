@@ -19,9 +19,9 @@
 -(instancetype)initWithFrame:(CGRect)frame imgArray:(NSArray *)array {
     if (self = [super initWithFrame:frame]) {
         self.imgArray = [NSMutableArray array];
-        [self.imgArray addObject:[array lastObject]];
-        [self.imgArray addObjectsFromArray:array];
-        [self.imgArray addObject:[array firstObject]];
+//        [self.imgArray addObject:[array lastObject]];
+//        [self.imgArray addObjectsFromArray:array];
+//        [self.imgArray addObject:[array firstObject]];
         
         self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         self.scrollView.contentSize = CGSizeMake(frame.size.width*self.imgArray.count, frame.size.height);
@@ -32,26 +32,34 @@
         self.scrollView.delegate = self;
         [self.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
         
-        for (int i = 0; i<self.imgArray.count; i++) {
-            CGRect imgFrame = CGRectMake(frame.size.width*i, 0, frame.size.width, frame.size.height);
-            UIImageView *imgView = [[UIImageView alloc] initWithFrame:imgFrame];
-            imgView.backgroundColor = self.imgArray[i];
-            [self.scrollView addSubview:imgView];
-        }
         
-        self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, frame.size.height-30, frame.size.width, 30)];
-        self.pageControl.numberOfPages = array.count;
-        self.pageControl.currentPage = 0;
-        self.pageControl.tintColor = UIColor.whiteColor;
-        
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(scrollIamge) userInfo:nil repeats:YES];
-        NSRunLoop *runloop = [NSRunLoop currentRunLoop];
-        [runloop addTimer:self.timer forMode:NSRunLoopCommonModes];
         
         [self addSubview:self.scrollView];
         [self addSubview:self.pageControl];
     }
     return self;
+}
+
+-(void)updateBannerArray:(NSArray<BidLiveHomeBannerModel *> *)bannerArray {
+    [self.imgArray addObject:[bannerArray lastObject]];
+    [self.imgArray addObjectsFromArray:bannerArray];
+    [self.imgArray addObject:[bannerArray firstObject]];
+    
+    for (int i = 0; i<self.imgArray.count; i++) {
+        CGRect imgFrame = CGRectMake(self.frame.size.width*i, 0, self.frame.size.width, self.frame.size.height);
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:imgFrame];
+//        imgView.backgroundColor = self.imgArray[i];
+        [self.scrollView addSubview:imgView];
+    }
+    
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.frame.size.height-30, self.frame.size.width, 30)];
+    self.pageControl.numberOfPages = bannerArray.count;
+    self.pageControl.currentPage = 0;
+    self.pageControl.tintColor = UIColor.whiteColor;
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(scrollIamge) userInfo:nil repeats:YES];
+    NSRunLoop *runloop = [NSRunLoop currentRunLoop];
+    [runloop addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {

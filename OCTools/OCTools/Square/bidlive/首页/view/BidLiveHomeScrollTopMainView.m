@@ -72,6 +72,10 @@
     [self addSubview:self.liveView];
 }
 
+-(void)updateBanners:(NSArray<BidLiveHomeBannerModel *> *)banners {
+    [self.bannerView updateBannerArray:banners];
+}
+
 #pragma mark - SGAdvertScrollViewDelegate
 -(void)advertScrollView:(SGAdvertScrollView *)advertScrollView didSelectedItemAtIndex:(NSInteger)index {
     
