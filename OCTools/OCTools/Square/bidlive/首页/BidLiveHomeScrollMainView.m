@@ -16,6 +16,7 @@
 #import "BidLiveHomeScrollLiveMainView.h"
 #import "BidLiveHomeScrollSpeechMainView.h"
 #import "BidLiveHomeScrollYouLikeMainView.h"
+#import "BidLiveHomeNetworkModel.h"
 
 #define kTopMainViewHeight 550
 #define kLiveMainViewHeight (140*8+90+90+70+110)
@@ -98,8 +99,16 @@
             CGFloat offsetY = CGRectGetMaxY(weakSelf.liveMainView.frame)+(weakSelf.lastVideosCount-5)*280-150;
             [weakSelf.mainScrollView setContentOffset:CGPointMake(0, offsetY) animated:YES];
         }];
+        
+        [self loadData];
     }
     return self;
+}
+
+-(void)loadData {
+    [BidLiveHomeNetworkModel getHomePageBannerList:22 client:@"app" completion:^(NSArray<BidLiveHomeBannerModel *> * _Nonnull bannerList) {
+        
+    }];
 }
 
 -(void)setupUI {
