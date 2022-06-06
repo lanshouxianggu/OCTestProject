@@ -8,6 +8,5 @@ pod 'SVProgressHUD'
 pod "GTMBase64"
 pod "Masonry"
 pod "CocoaLumberjack"
-pod "SDWebImage"
 
 end

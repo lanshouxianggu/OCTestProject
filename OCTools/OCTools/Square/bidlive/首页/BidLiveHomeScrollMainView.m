@@ -107,7 +107,7 @@
 
 -(void)loadData {
     WS(weakSelf)
-    [BidLiveHomeNetworkModel getHomePageBannerList:22 client:@"app" completion:^(NSArray<BidLiveHomeBannerModel *> * _Nonnull bannerList) {
+    [BidLiveHomeNetworkModel getHomePageBannerList:11 client:@"wx" completion:^(NSArray<BidLiveHomeBannerModel *> * _Nonnull bannerList) {
         [weakSelf.topMainView updateBanners:bannerList];
     }];
 }
