@@ -21,6 +21,8 @@
     [btn setTitle:@"登录" forState:UIControlStateNormal];
     [btn.titleLabel setFont:[UIFont systemFontOfSize:30 weight:UIFontWeightBold]];
     [btn setBackgroundColor:UIColor.darkTextColor];
+    [btn setBackgroundImage:[UIImage imageNamed:@"launch1.png"] forState:UIControlStateNormal];
+    btn.layer.masksToBounds = YES;
     btn.layer.cornerRadius = 75;
     btn.layer.shadowColor = UIColor.orangeColor.CGColor;
     btn.layer.shadowRadius = 20;
