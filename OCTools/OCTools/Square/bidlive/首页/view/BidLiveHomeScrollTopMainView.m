@@ -89,6 +89,10 @@
             height = 210;
         }
         _bannerView = [[BidLiveTopBannerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, height) imgArray:self.imageArray];
+        WS(weakSelf)
+        [_bannerView setBannerClick:^(BidLiveHomeBannerModel * _Nonnull model) {
+            !weakSelf.bannerClick?:weakSelf.bannerClick(model);
+        }];
     }
     return _bannerView;
 }

@@ -39,6 +39,10 @@
 
 -(void)updateBannerArray:(NSArray<BidLiveHomeBannerModel *> *)bannerArray {
     [self.imgArray removeAllObjects];
+    [self.scrollView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperview];
+    }];
+    
     [self.imgArray addObject:[bannerArray lastObject]];
     [self.imgArray addObjectsFromArray:bannerArray];
     [self.imgArray addObject:[bannerArray firstObject]];
@@ -49,8 +53,14 @@
         CGRect imgFrame = CGRectMake(self.frame.size.width*i, 0, self.frame.size.width, self.frame.size.height);
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:imgFrame];
 //        imgView.contentMode = UIViewContentModeScaleAspectFill;
+        imgView.tag = i;
         [imgView sd_setImageWithURL:[NSURL URLWithString:mode.imageUrl] placeholderImage:nil];
         [self.scrollView addSubview:imgView];
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.tag = i;
+        btn.frame = imgFrame;
+        [btn addTarget:self action:@selector(imageViewTapGes:) forControlEvents:UIControlEventTouchUpInside];
+        [self.scrollView addSubview:btn];
     }
 
     [self.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
@@ -64,6 +74,9 @@
     [runloop addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
+-(void)imageViewTapGes:(UIButton *)btn {
+    !self.bannerClick?:self.bannerClick(self.imgArray[btn.tag-1]);
+}
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat offsetX = scrollView.contentOffset.x;
     offsetX+=scrollView.frame.size.width*0.5;

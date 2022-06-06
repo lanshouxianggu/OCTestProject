@@ -105,7 +105,13 @@
     return self;
 }
 
+#pragma mark - 加载数据
 -(void)loadData {
+    [self loadBannerData];
+}
+
+#pragma mark - 加载广告轮播数据
+-(void)loadBannerData {
     WS(weakSelf)
     [BidLiveHomeNetworkModel getHomePageBannerList:11 client:@"wx" completion:^(NSArray<BidLiveHomeBannerModel *> * _Nonnull bannerList) {
         [weakSelf.topMainView updateBanners:bannerList];
@@ -263,6 +269,11 @@
     if (!_topMainView) {
         _topMainView  = [[BidLiveHomeScrollTopMainView alloc] initWithFrame:CGRectZero];
         _topMainView.backgroundColor = UIColorFromRGB(0xf8f8f8);
+        
+        WS(weakSelf)
+        [_topMainView setBannerClick:^(BidLiveHomeBannerModel * _Nonnull model) {
+            !weakSelf.bannerClick?:weakSelf.bannerClick(model);
+        }];
     }
     return _topMainView;
 }
