@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "BidLiveHomeBannerModel.h"
 #import "BidLiveHomeCMSArticleModel.h"
+#import "BidLiveHomeGlobalLiveModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///获取首页动态列表
 +(void)getHomePageArticleList:(int)pageIndex pageSize:(int)pageSize completion:(void (^)(NSArray<BidLiveHomeCMSArticleModel *> *cmsArticleList))completionBlock;
+
+///获取首页全球直播列表
++(void)getHomePageGlobalLiveList:(NSString *)source completion:(void (^)(NSArray <BidLiveHomeGlobalLiveModel *> *liveList))completionBlock;
 @end
 
 NS_ASSUME_NONNULL_END

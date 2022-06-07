@@ -45,4 +45,23 @@
         }
     }];
 }
+
++(void)getHomePageGlobalLiveList:(NSString *)source completion:(void (^)(NSArray<BidLiveHomeGlobalLiveModel *> * _Nonnull))completionBlock {
+    NSString *url = [NSString stringWithFormat:@"%@%@",kAppWebApiAddress,kGetListForIndex];
+    NSDictionary *params = @{@"source":source};
+    
+    [HJNetwork POSTWithURL:url parameters:params callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (error) {
+            !completionBlock?:completionBlock(@[]);
+        }else {
+            if ([responseObject isKindOfClass:NSDictionary.class]) {
+                NSArray *list = [BidLiveHomeGlobalLiveModel mj_objectArrayWithKeyValuesArray:responseObject[@"result"]];
+                !completionBlock?:completionBlock(list);
+            }else{
+                !completionBlock?:completionBlock(@[]);
+            }
+        }
+    }];
+}
+
 @end

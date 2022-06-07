@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) void (^abroadClickBlock)(void);
 @property (nonatomic, copy) void (^internalClickBlock)(void);
+
+-(void)reloadData;
 @end
 
 NS_ASSUME_NONNULL_END

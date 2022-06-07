@@ -109,6 +109,7 @@
 -(void)loadData {
     [self loadBannerData];
     [self loadCMSArticleData];
+    [self loadGlobalLiveData];
 }
 
 #pragma mark - 加载广告轮播数据
@@ -124,6 +125,22 @@
     WS(weakSelf)
     [BidLiveHomeNetworkModel getHomePageArticleList:1 pageSize:5 completion:^(NSArray * _Nonnull cmsArticleList) {
         [weakSelf.topMainView updateCMSArticleList:cmsArticleList];
+    }];
+}
+
+#pragma mark - 加载全球直播列表数据
+-(void)loadGlobalLiveData {
+    WS(weakSelf)
+    [BidLiveHomeNetworkModel getHomePageGlobalLiveList:@"all" completion:^(NSArray<BidLiveHomeGlobalLiveModel *> * _Nonnull liveList) {
+        NSMutableArray *totalArray = [NSMutableArray arrayWithArray:liveList];
+        NSRange range1 = NSMakeRange(0, totalArray.count/2);
+        NSRange range2 = NSMakeRange(totalArray.count/2, totalArray.count/2);
+        NSArray *array1 = [totalArray subarrayWithRange:range1];
+        NSArray *array2 = [totalArray subarrayWithRange:range2];
+        weakSelf.liveMainView.firstPartLiveArray = array1;
+        weakSelf.liveMainView.secondPartLiveArray = array2;
+        
+        [weakSelf.liveMainView reloadData];
     }];
 }
 

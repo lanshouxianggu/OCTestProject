@@ -11,6 +11,7 @@
 #import "BidLiveBundleRecourseManager.h"
 #import "BidLiveHomeScollLiveNormalCell.h"
 #import "BidLiveHomeScrollLiveBtnView.h"
+#import "BidLiveHomeGlobalLiveModel.h"
 
 @interface BidLiveHomeScrollLiveMainView () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -20,8 +21,8 @@
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.firstPartLiveArray = @[@"",@"",@"",@""];
-        self.secondPartLiveArray = @[@"",@"",@"",@""];
+//        self.firstPartLiveArray = @[@"",@"",@"",@""];
+//        self.secondPartLiveArray = @[@"",@"",@"",@""];
         [self setupUI];
     }
     return self;
@@ -32,6 +33,10 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.insets(UIEdgeInsetsZero);
     }];
+}
+
+-(void)reloadData {
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDelegate
@@ -122,7 +127,11 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section==0||indexPath.section==1) {
         BidLiveHomeScollLiveNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BidLiveHomeScollLiveNormalCell" forIndexPath:indexPath];
-        
+        if (indexPath.section==0) {
+            cell.model = self.firstPartLiveArray[indexPath.row];
+        }else if (indexPath.section==1) {
+            cell.model = self.secondPartLiveArray[indexPath.row];
+        }
         return cell;
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
