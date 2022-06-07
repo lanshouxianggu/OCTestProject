@@ -12,7 +12,7 @@
 @implementation BidLiveHomeNetworkModel
 
 +(void)getHomePageBannerList:(NSInteger)bannerId client:(NSString *)client completion:(nonnull void (^)(NSArray<BidLiveHomeBannerModel *> * _Nonnull))completionBlock {
-    NSString *url = [NSString stringWithFormat:@"%@%@",kAppUrlAddress,kBidLiveHomeGetBannerList];
+    NSString *url = [NSString stringWithFormat:@"%@%@",kAppWebApiAddress,kGetBannerList];
     NSDictionary *params = @{@"id":@(bannerId),@"client":client};
     
     [HJNetwork POSTWithURL:url parameters:params callback:^(id responseObject, BOOL isCache, NSError *error) {
