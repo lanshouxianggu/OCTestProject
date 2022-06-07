@@ -44,11 +44,16 @@
     self.detailLabel.text = model.LotRange;
     
     if (model.Status==4) {
-        self.liveBtn.titleLabel.text = @"正在直播";
+        [self.liveBtn setTitle:@"正在直播" forState:UIControlStateNormal];
         self.liveBtn.backgroundColor = UIColorFromRGB(0xC6746C);
+        self.changeLabel.text = [NSString stringWithFormat:@"第%ld件/%ld件",model.NowItemCount,model.AuctionItemCount];
+        self.changeLabel.textColor = UIColorFromRGB(0xC6746C);
     }else if (model.Status==3) {
-        self.liveBtn.titleLabel.text = @"即将开拍";
+        [self.liveBtn setTitle:@"即将开拍" forState:UIControlStateNormal];
         self.liveBtn.backgroundColor = UIColorFromRGB(0x7BB1CF);
+        self.changeLabel.text = [NSString stringWithFormat:@"距开拍 16时58分"];
+        self.changeLabel.textColor = UIColorFromRGB(0x666666);
+        self.detailLabel.text = [NSString stringWithFormat:@"共%ld场 %ld件",model.AuctionCount,model.AuctionItemCount];
     }
 }
 

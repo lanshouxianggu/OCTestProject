@@ -25,7 +25,7 @@
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.videosArray = [NSMutableArray arrayWithArray:@[@"",@"",@"",@"",@""]];
+        self.videosArray = [NSMutableArray array];
         self.isClickBack = YES;
         [self setupUI];
     }
@@ -37,6 +37,10 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.insets(UIEdgeInsetsZero);
     }];
+}
+
+-(void)reloadData {
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDelegate
@@ -153,7 +157,8 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BidLiveHomeScrollSpeechCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BidLiveHomeScrollSpeechCell" forIndexPath:indexPath];
     cell.backgroundColor = UIColorFromRGB(0xf8f8f8);
-
+    cell.model = self.videosArray[indexPath.row];
+    
     return cell;
 }
 

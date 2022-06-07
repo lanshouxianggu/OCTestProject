@@ -6,14 +6,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BidLiveHomeHotCourseModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BidLiveHomeScrollSpeechMainView : UIView
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *videosArray;
+@property (nonatomic, strong) NSMutableArray <BidLiveHomeHotCourseListModel *>*videosArray;
 @property (nonatomic, copy) void (^moreClickBlock)(void);
 @property (nonatomic, copy) void (^retractingClickBlock)(void);
+
+-(void)reloadData;
 @end
 
 NS_ASSUME_NONNULL_END

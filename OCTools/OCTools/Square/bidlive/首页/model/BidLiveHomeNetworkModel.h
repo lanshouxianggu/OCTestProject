@@ -9,6 +9,7 @@
 #import "BidLiveHomeBannerModel.h"
 #import "BidLiveHomeCMSArticleModel.h"
 #import "BidLiveHomeGlobalLiveModel.h"
+#import "BidLiveHomeHotCourseModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,6 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///获取首页全球直播列表
 +(void)getHomePageGlobalLiveList:(NSString *)source completion:(void (^)(NSArray <BidLiveHomeGlobalLiveModel *> *liveList))completionBlock;
+
+///获取首页名家讲堂列表
++(void)getHomePageHotCourse:(int)pageIndex pageSize:(int)pageSize pageCount:(int)pageCount completion:(void (^)(BidLiveHomeHotCourseModel * courseModel))completionBlock;
 @end
 
 NS_ASSUME_NONNULL_END

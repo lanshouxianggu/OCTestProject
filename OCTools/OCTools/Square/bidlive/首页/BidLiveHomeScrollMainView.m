@@ -20,7 +20,7 @@
 
 #define kTopMainViewHeight 550
 #define kLiveMainViewHeight (140*8+90+90+70+110)
-#define kSpeechMainViewHeight (90+5*280+60)
+#define kSpeechMainViewHeight (90+4*280+60)
 #define kYouLikeMainViewHeight (110+5*280+4*10)
 
 @interface BidLiveHomeScrollMainView () <UIScrollViewDelegate>
@@ -110,6 +110,7 @@
     [self loadBannerData];
     [self loadCMSArticleData];
     [self loadGlobalLiveData];
+    [self loadHomeHotCourseData];
 }
 
 #pragma mark - 加载广告轮播数据
@@ -141,6 +142,15 @@
         weakSelf.liveMainView.secondPartLiveArray = array2;
         
         [weakSelf.liveMainView reloadData];
+    }];
+}
+
+#pragma mark - 加载名家讲堂列表数据
+-(void)loadHomeHotCourseData {
+    WS(weakSelf)
+    [BidLiveHomeNetworkModel getHomePageHotCourse:1 pageSize:4 pageCount:0 completion:^(BidLiveHomeHotCourseModel * _Nonnull courseModel) {
+        [weakSelf.speechMainView.videosArray addObjectsFromArray:courseModel.list];
+        [weakSelf.speechMainView reloadData];
     }];
 }
 

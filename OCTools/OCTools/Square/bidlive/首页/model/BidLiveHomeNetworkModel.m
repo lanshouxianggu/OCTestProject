@@ -64,4 +64,27 @@
     }];
 }
 
++(void)getHomePageHotCourse:(int)pageIndex pageSize:(int)pageSize pageCount:(int)pageCount completion:(nonnull void (^)(BidLiveHomeHotCourseModel * _Nonnull))completionBlock {
+    NSString *url = [NSString stringWithFormat:@"%@%@",kAppNewttpApiAddress,kGetHomeHotCourse];
+    NSDictionary *params = @{@"pageIndex":@(pageIndex),
+                             @"pageSize":@(pageSize),
+                             @"pageCount":@(pageCount)
+    };
+    
+    [HJNetwork POSTWithURL:url parameters:params callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (error) {
+            !completionBlock?:completionBlock([BidLiveHomeHotCourseModel new]);
+        }else {
+            if ([responseObject isKindOfClass:NSDictionary.class]) {
+                if ([responseObject[@"result"] isKindOfClass:NSDictionary.class]) {
+                    BidLiveHomeHotCourseModel *model = [BidLiveHomeHotCourseModel mj_objectWithKeyValues:responseObject[@"result"]];
+                    !completionBlock?:completionBlock(model);
+                }
+            }else{
+                !completionBlock?:completionBlock([BidLiveHomeHotCourseModel new]);
+            }
+        }
+    }];
+}
+
 @end
