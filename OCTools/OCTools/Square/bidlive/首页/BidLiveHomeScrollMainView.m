@@ -108,6 +108,7 @@
 #pragma mark - 加载数据
 -(void)loadData {
     [self loadBannerData];
+    [self loadCMSArticleData];
 }
 
 #pragma mark - 加载广告轮播数据
@@ -115,6 +116,14 @@
     WS(weakSelf)
     [BidLiveHomeNetworkModel getHomePageBannerList:11 client:@"wx" completion:^(NSArray<BidLiveHomeBannerModel *> * _Nonnull bannerList) {
         [weakSelf.topMainView updateBanners:bannerList];
+    }];
+}
+
+#pragma mark - 加载动态滚动数据
+-(void)loadCMSArticleData {
+    WS(weakSelf)
+    [BidLiveHomeNetworkModel getHomePageArticleList:1 pageSize:5 completion:^(NSArray * _Nonnull cmsArticleList) {
+        [weakSelf.topMainView updateCMSArticleList:cmsArticleList];
     }];
 }
 

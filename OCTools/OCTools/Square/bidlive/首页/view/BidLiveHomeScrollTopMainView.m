@@ -12,6 +12,7 @@
 #import "BidLiveHomeBtnItemsView.h"
 #import "LCConfig.h"
 #import "Masonry.h"
+#import "BidLiveHomeCMSArticleModel.h"
 
 @interface BidLiveHomeScrollTopMainView () <SGAdvertScrollViewDelegate>
 @property (nonatomic, strong) BidLiveTopBannerView *bannerView;
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) UIView *scrollTitleSuperView;
 @property (strong, nonatomic) SGAdvertScrollView *scrollTitleView;
 @property (nonatomic, strong) UIView *liveView;
+@property (nonatomic, strong) NSArray <BidLiveHomeCMSArticleModel *> *cmsArticleArray;
 
 @end
 
@@ -28,9 +30,9 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.imageArray = @[UIColor.cyanColor,UIColor.blueColor,UIColor.yellowColor,UIColor.redColor];
-        self.scrollTitleView.titles = @[@"1.上岛咖啡就是看劳动法就是盛开的积分是劳动法",
-                                        @"2.SDK和索拉卡的附近是了的开发房贷",
-                                        @"3.收快递费就SDK废旧塑料的发三楼的靠近非塑料袋开发计算量大开发就"];
+//        self.scrollTitleView.titles = @[@"1.上岛咖啡就是看劳动法就是盛开的积分是劳动法",
+//                                        @"2.SDK和索拉卡的附近是了的开发房贷",
+//                                        @"3.收快递费就SDK废旧塑料的发三楼的靠近非塑料袋开发计算量大开发就"];
         self.scrollTitleView.titleColor = UIColorFromRGB(0x3b3b3b);
         self.scrollTitleView.titleFont = [UIFont systemFontOfSize:14];
         self.scrollTitleView.delegate = self;
@@ -76,9 +78,18 @@
     [self.bannerView updateBannerArray:banners];
 }
 
+-(void)updateCMSArticleList:(NSArray<BidLiveHomeCMSArticleModel *> *)list {
+    NSMutableArray *titles = [NSMutableArray array];
+    self.cmsArticleArray = list;
+    [list enumerateObjectsUsingBlock:^(BidLiveHomeCMSArticleModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [titles addObject:obj.Title];
+    }];
+    self.scrollTitleView.titles = titles;
+}
+
 #pragma mark - SGAdvertScrollViewDelegate
 -(void)advertScrollView:(SGAdvertScrollView *)advertScrollView didSelectedItemAtIndex:(NSInteger)index {
-    
+    !self.cmsArticleClickBlock?:self.cmsArticleClickBlock(self.cmsArticleArray[index]);
 }
 
 #pragma mark - lazy
@@ -121,7 +132,7 @@
 
 -(SGAdvertScrollView *)scrollTitleView {
     if (!_scrollTitleView) {
-        _scrollTitleView = [[SGAdvertScrollView alloc] initWithFrame:CGRectMake(70, 0, SCREEN_WIDTH-100, 44)];
+        _scrollTitleView = [[SGAdvertScrollView alloc] initWithFrame:CGRectMake(60, 0, SCREEN_WIDTH-70, 44)];
     }
     return _scrollTitleView;
 }

@@ -81,6 +81,7 @@
 		22B54842284DC9C100525686 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54823284DC9C100525686 /* UIView+WebCache.m */; };
 		22B54843284DC9C100525686 /* SDWebImageImageIOCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54825284DC9C100525686 /* SDWebImageImageIOCoder.m */; };
 		22B54844284DC9C100525686 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54829284DC9C100525686 /* UIButton+WebCache.m */; };
+		22B548E7284F2C4D00525686 /* BidLiveHomeCMSArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B548E6284F2C4D00525686 /* BidLiveHomeCMSArticleModel.m */; };
 		22BD4070283DC9DB00854873 /* BidLievViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD406F283DC9DB00854873 /* BidLievViewController.m */; };
 		22BD4077283DCE6300854873 /* BidLiveHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4076283DCE6300854873 /* BidLiveHomeHeadView.m */; };
 		22BD4082283E027400854873 /* BidLiveTopBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4081283E027400854873 /* BidLiveTopBannerView.m */; };
@@ -375,6 +376,8 @@
 		22B54828284DC9C100525686 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
 		22B54829284DC9C100525686 /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
 		22B5482A284DC9C100525686 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		22B548E5284F2C4D00525686 /* BidLiveHomeCMSArticleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeCMSArticleModel.h; sourceTree = "<group>"; };
+		22B548E6284F2C4D00525686 /* BidLiveHomeCMSArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeCMSArticleModel.m; sourceTree = "<group>"; };
 		22BD406E283DC9DB00854873 /* BidLievViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLievViewController.h; sourceTree = "<group>"; };
 		22BD406F283DC9DB00854873 /* BidLievViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLievViewController.m; sourceTree = "<group>"; };
 		22BD4075283DCE6300854873 /* BidLiveHomeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeHeadView.h; sourceTree = "<group>"; };
@@ -825,6 +828,8 @@
 				22B547CA284DAAFA00525686 /* BidLiveHomeNetworkModel.m */,
 				22B547CD284DB21C00525686 /* BidLiveHomeBannerModel.h */,
 				22B547CE284DB21C00525686 /* BidLiveHomeBannerModel.m */,
+				22B548E5284F2C4D00525686 /* BidLiveHomeCMSArticleModel.h */,
+				22B548E6284F2C4D00525686 /* BidLiveHomeCMSArticleModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1834,6 +1839,7 @@
 				9198BFDB27F6A92100BC069F /* LCSquareViewController.m in Sources */,
 				22BD41912840B4AE00854873 /* BidLiveHomeBtnItemsView.m in Sources */,
 				916A349F2832008300898E3C /* LCLongPressGestureRecognizer.m in Sources */,
+				22B548E7284F2C4D00525686 /* BidLiveHomeCMSArticleModel.m in Sources */,
 				9198BFE827F6ABD800BC069F /* UIImage+Tool.m in Sources */,
 				916A341A2831F3D600898E3C /* DiscoveryHeadSegmentView.m in Sources */,
 				91D64042282618AA00E132B6 /* OTLBackClassView.m in Sources */,
