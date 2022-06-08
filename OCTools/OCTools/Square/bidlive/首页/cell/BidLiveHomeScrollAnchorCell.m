@@ -39,13 +39,13 @@
     self.bottomView.frame = CGRectMake(0, self.frame.size.height, SCREEN_WIDTH-30, 72);
     
     //设置渐变
-    UIColor *one = UIColorFromRGBA(0x000000, 1.0);
-    UIColor *two = UIColorFromRGBA(0x000000, 0);
+    UIColor *one = UIColorFromRGBA(0x3b3b3b, 0);
+    UIColor *two = UIColorFromRGBA(0x3b3b3b, 1);
     NSArray *colors = [NSArray arrayWithObjects:(id)one.CGColor,two.CGColor, nil];
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.startPoint = CGPointMake(1, 1);
-    gradient.endPoint = CGPointMake(0, 0);
+    gradient.startPoint = CGPointMake(0, 0);
+    gradient.endPoint = CGPointMake(0, 1);
     gradient.colors = colors;
     gradient.frame = self.bottomView.bounds;
     
