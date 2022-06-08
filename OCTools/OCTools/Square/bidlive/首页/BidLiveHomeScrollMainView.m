@@ -17,10 +17,11 @@
 #import "BidLiveHomeScrollSpeechMainView.h"
 #import "BidLiveHomeScrollYouLikeMainView.h"
 #import "BidLiveHomeNetworkModel.h"
+#import "BidLiveHomeVideoGuaideModel.h"
 
 #define kTopMainBannerViewHeight (UIApplication.sharedApplication.statusBarFrame.size.height>20?210:180)
 
-#define kTopMainViewHeight (kTopMainBannerViewHeight+100+10+30+10+200)
+#define kTopMainViewHeight (kTopMainBannerViewHeight+100+10+30+10+SCREEN_HEIGHT*0.18)
 #define kLiveMainViewHeight (140*8+90+90+70+110)
 #define kSpeechMainViewHeight (90+4*280+60)
 #define kYouLikeMainViewHeight (110+5*280+4*10)
@@ -113,6 +114,7 @@
     [self loadCMSArticleData];
     [self loadGlobalLiveData];
     [self loadHomeHotCourseData];
+    [self loadHomeVideoGuaideData];
 }
 
 #pragma mark - 加载广告轮播数据
@@ -153,6 +155,14 @@
     [BidLiveHomeNetworkModel getHomePageHotCourse:1 pageSize:4 pageCount:0 completion:^(BidLiveHomeHotCourseModel * _Nonnull courseModel) {
         [weakSelf.speechMainView.videosArray addObjectsFromArray:courseModel.list];
         [weakSelf.speechMainView reloadData];
+    }];
+}
+
+#pragma mark - 加载视频导览列表数据
+-(void)loadHomeVideoGuaideData {
+    WS(weakSelf)
+    [BidLiveHomeNetworkModel getHomePageVideoGuaideList:1 pageSize:20 isNoMore:false isLoad:true scrollLeft:@"" completion:^(BidLiveHomeVideoGuaideModel * _Nonnull courseModel) {
+        [weakSelf.topMainView updateVideoGuaideList:courseModel.list];
     }];
 }
 

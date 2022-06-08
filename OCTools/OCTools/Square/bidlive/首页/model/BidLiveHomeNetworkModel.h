@@ -10,22 +10,39 @@
 #import "BidLiveHomeCMSArticleModel.h"
 #import "BidLiveHomeGlobalLiveModel.h"
 #import "BidLiveHomeHotCourseModel.h"
+#import "BidLiveHomeVideoGuaideModel.h""
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BidLiveHomeNetworkModel : NSObject
 
 ///获取首页顶部banner列表
-+(void)getHomePageBannerList:(NSInteger)bannerId client:(NSString *)client completion:(void (^)(NSArray<BidLiveHomeBannerModel *> *bannerList))completionBlock;
++(void)getHomePageBannerList:(NSInteger)bannerId
+                      client:(NSString *)client
+                  completion:(void (^)(NSArray<BidLiveHomeBannerModel *> *bannerList))completionBlock;
 
 ///获取首页动态列表
-+(void)getHomePageArticleList:(int)pageIndex pageSize:(int)pageSize completion:(void (^)(NSArray<BidLiveHomeCMSArticleModel *> *cmsArticleList))completionBlock;
++(void)getHomePageArticleList:(int)pageIndex
+                     pageSize:(int)pageSize
+                   completion:(void (^)(NSArray<BidLiveHomeCMSArticleModel *> *cmsArticleList))completionBlock;
 
 ///获取首页全球直播列表
-+(void)getHomePageGlobalLiveList:(NSString *)source completion:(void (^)(NSArray <BidLiveHomeGlobalLiveModel *> *liveList))completionBlock;
++(void)getHomePageGlobalLiveList:(NSString *)source
+                      completion:(void (^)(NSArray <BidLiveHomeGlobalLiveModel *> *liveList))completionBlock;
 
 ///获取首页名家讲堂列表
-+(void)getHomePageHotCourse:(int)pageIndex pageSize:(int)pageSize pageCount:(int)pageCount completion:(void (^)(BidLiveHomeHotCourseModel * courseModel))completionBlock;
++(void)getHomePageHotCourse:(int)pageIndex
+                   pageSize:(int)pageSize
+                  pageCount:(int)pageCount
+                 completion:(void (^)(BidLiveHomeHotCourseModel * courseModel))completionBlock;
+
+///获取首页视频导览列表
++(void)getHomePageVideoGuaideList:(int)pageIndex
+                         pageSize:(int)pageSize
+                         isNoMore:(bool)isNoMore
+                           isLoad:(bool)isLoad
+                       scrollLeft:(NSString *)scrollLeft
+                       completion:(void (^)(BidLiveHomeVideoGuaideModel * courseModel))completionBlock;
 @end
 
 NS_ASSUME_NONNULL_END

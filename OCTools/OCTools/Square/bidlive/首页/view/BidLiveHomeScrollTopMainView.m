@@ -12,6 +12,7 @@
 #import "LCConfig.h"
 #import "Masonry.h"
 #import "BidLiveHomeCMSArticleModel.h"
+#import "BidLiveHomeVideoGuideView.h"
 
 @interface BidLiveHomeScrollTopMainView () <SGAdvertScrollViewDelegate>
 @property (nonatomic, strong) BidLiveTopBannerView *bannerView;
@@ -19,7 +20,7 @@
 @property (nonatomic, strong) NSArray *imageArray;
 @property (nonatomic, strong) UIView *scrollTitleSuperView;
 @property (strong, nonatomic) SGAdvertScrollView *scrollTitleView;
-@property (nonatomic, strong) UIView *liveGuideView;
+@property (nonatomic, strong) BidLiveHomeVideoGuideView *videoGuideView;
 @property (nonatomic, strong) NSArray <BidLiveHomeCMSArticleModel *> *cmsArticleArray;
 
 @end
@@ -70,7 +71,7 @@
     [self addSubview:self.bannerView];
     [self addSubview:self.itemsView];
     [self addSubview:self.scrollTitleSuperView];
-    [self addSubview:self.liveGuideView];
+    [self addSubview:self.videoGuideView];
 }
 
 -(void)updateBanners:(NSArray<BidLiveHomeBannerModel *> *)banners {
@@ -84,6 +85,10 @@
         [titles addObject:obj.Title];
     }];
     self.scrollTitleView.titles = titles;
+}
+
+-(void)updateVideoGuaideList:(NSArray<BidLiveHomeVideoGuaideListModel *> *)list {
+    [self.videoGuideView updateVideoGuideList:list];
 }
 
 #pragma mark - SGAdvertScrollViewDelegate
@@ -136,12 +141,12 @@
     return _scrollTitleView;
 }
 
--(UIView *)liveGuideView {
-    if (!_liveGuideView) {
-        _liveGuideView = [[UIView alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(self.scrollTitleSuperView.frame)+10, SCREEN_WIDTH-30, 200)];
-        _liveGuideView.backgroundColor = UIColor.cyanColor;
+-(BidLiveHomeVideoGuideView *)videoGuideView {
+    if (!_videoGuideView) {
+        _videoGuideView = [[BidLiveHomeVideoGuideView alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(self.scrollTitleSuperView.frame)+10, SCREEN_WIDTH-30, SCREEN_HEIGHT*0.25)];
+        _videoGuideView.backgroundColor = UIColorFromRGB(0xf8f8f8);
     }
-    return _liveGuideView;
+    return _videoGuideView;
 }
 
 @end

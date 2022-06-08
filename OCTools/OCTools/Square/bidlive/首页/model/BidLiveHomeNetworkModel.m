@@ -87,4 +87,29 @@
     }];
 }
 
++(void)getHomePageVideoGuaideList:(int)pageIndex pageSize:(int)pageSize isNoMore:(bool)isNoMore isLoad:(bool)isLoad scrollLeft:(NSString *)scrollLeft completion:(void (^)(BidLiveHomeVideoGuaideModel * _Nonnull))completionBlock {
+    NSString *url = [NSString stringWithFormat:@"%@%@",kAppWebApiAddress,kGetLiveRoomPromotionList];
+    NSDictionary *params = @{@"pageIndex":@(pageIndex),
+                             @"pageSize":@(pageSize),
+                             @"isNoMore":@(isNoMore),
+                             @"isLoad":@(isLoad),
+                             @"scrollLeft":scrollLeft
+    };
+    
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (error) {
+            !completionBlock?:completionBlock([BidLiveHomeVideoGuaideModel new]);
+        }else {
+            if ([responseObject isKindOfClass:NSDictionary.class]) {
+                if ([responseObject[@"result"] isKindOfClass:NSDictionary.class]) {
+                    BidLiveHomeVideoGuaideModel *model = [BidLiveHomeVideoGuaideModel mj_objectWithKeyValues:responseObject[@"result"]];
+                    !completionBlock?:completionBlock(model);
+                }
+            }else{
+                !completionBlock?:completionBlock([BidLiveHomeVideoGuaideModel new]);
+            }
+        }
+    }];
+}
+
 @end

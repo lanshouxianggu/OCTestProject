@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class BidLiveHomeBannerModel;
 @class BidLiveHomeCMSArticleModel;
+@class BidLiveHomeVideoGuaideListModel;
 @interface BidLiveHomeScrollTopMainView : UIView
 ///全球拍卖block
 @property (nonatomic, copy) void (^globalSaleClickBlock)(void);
@@ -31,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)updateBanners:(NSArray<BidLiveHomeBannerModel *> *)banners;
 -(void)updateCMSArticleList:(NSArray<BidLiveHomeCMSArticleModel *> *)list;
+-(void)updateVideoGuaideList:(NSArray<BidLiveHomeVideoGuaideListModel *> *)list;
 @end
 
 NS_ASSUME_NONNULL_END
