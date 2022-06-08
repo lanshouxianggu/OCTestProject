@@ -7,7 +7,6 @@
 
 #import "BidLiveHomeScrollTopMainView.h"
 #import "BidLiveTopBannerView.h"
-#import "BidLiveHomeShufflingLableView.h"
 #import "SGAdvertScrollView.h"
 #import "BidLiveHomeBtnItemsView.h"
 #import "LCConfig.h"
@@ -20,7 +19,7 @@
 @property (nonatomic, strong) NSArray *imageArray;
 @property (nonatomic, strong) UIView *scrollTitleSuperView;
 @property (strong, nonatomic) SGAdvertScrollView *scrollTitleView;
-@property (nonatomic, strong) UIView *liveView;
+@property (nonatomic, strong) UIView *liveGuideView;
 @property (nonatomic, strong) NSArray <BidLiveHomeCMSArticleModel *> *cmsArticleArray;
 
 @end
@@ -71,7 +70,7 @@
     [self addSubview:self.bannerView];
     [self addSubview:self.itemsView];
     [self addSubview:self.scrollTitleSuperView];
-    [self addSubview:self.liveView];
+    [self addSubview:self.liveGuideView];
 }
 
 -(void)updateBanners:(NSArray<BidLiveHomeBannerModel *> *)banners {
@@ -118,9 +117,9 @@
 
 -(UIView *)scrollTitleSuperView {
     if (!_scrollTitleSuperView) {
-        _scrollTitleSuperView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.itemsView.frame)+10, SCREEN_WIDTH, 44)];
+        _scrollTitleSuperView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.itemsView.frame)+10, SCREEN_WIDTH, 30)];
         _scrollTitleSuperView.backgroundColor = UIColor.whiteColor;
-        UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 60, 44)];
+        UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 60, 30)];
         lab.text = @"[动态]";
         lab.textColor = UIColorFromRGB(0x999999);
         lab.font = [UIFont systemFontOfSize:14];
@@ -132,17 +131,17 @@
 
 -(SGAdvertScrollView *)scrollTitleView {
     if (!_scrollTitleView) {
-        _scrollTitleView = [[SGAdvertScrollView alloc] initWithFrame:CGRectMake(60, 0, SCREEN_WIDTH-70, 44)];
+        _scrollTitleView = [[SGAdvertScrollView alloc] initWithFrame:CGRectMake(60, 0, SCREEN_WIDTH-70, 30)];
     }
     return _scrollTitleView;
 }
 
--(UIView *)liveView {
-    if (!_liveView) {
-        _liveView = [[UIView alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(self.scrollTitleSuperView.frame)+10, SCREEN_WIDTH-30, 200)];
-        _liveView.backgroundColor = UIColor.cyanColor;
+-(UIView *)liveGuideView {
+    if (!_liveGuideView) {
+        _liveGuideView = [[UIView alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(self.scrollTitleSuperView.frame)+10, SCREEN_WIDTH-30, 200)];
+        _liveGuideView.backgroundColor = UIColor.cyanColor;
     }
-    return _liveView;
+    return _liveGuideView;
 }
 
 @end

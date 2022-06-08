@@ -16,7 +16,7 @@
     NSString *url = [NSString stringWithFormat:@"%@%@",kAppWebApiAddress,kGetBannerList];
     NSDictionary *params = @{@"id":@(bannerId),@"client":client};
     
-    [HJNetwork POSTWithURL:url parameters:params callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyNetworkElseCache callback:^(id responseObject, BOOL isCache, NSError *error) {
         if ([responseObject isKindOfClass:NSDictionary.class]) {
             if ([responseObject[@"success"] boolValue]) {
                 NSArray *list = [BidLiveHomeBannerModel mj_objectArrayWithKeyValuesArray:responseObject[@"result"]];
@@ -32,7 +32,7 @@
 +(void)getHomePageArticleList:(int)pageIndex pageSize:(int)pageSize completion:(nonnull void (^)(NSArray<BidLiveHomeCMSArticleModel *> * _Nonnull))completionBlock {
     NSString *url = [NSString stringWithFormat:@"%@%@?pageIndex=%d&pageSize=%d",kAppEnApiAddress,kGetCMSArticleList,pageIndex,pageSize];
     
-    [HJNetwork POSTWithURL:url parameters:nil callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [HJNetwork POSTWithURL:url parameters:nil cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (error) {
             !completionBlock?:completionBlock(@[]);
         }else {
@@ -50,7 +50,7 @@
     NSString *url = [NSString stringWithFormat:@"%@%@",kAppWebApiAddress,kGetListForIndex];
     NSDictionary *params = @{@"source":source};
     
-    [HJNetwork POSTWithURL:url parameters:params callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (error) {
             !completionBlock?:completionBlock(@[]);
         }else {
@@ -71,7 +71,7 @@
                              @"pageCount":@(pageCount)
     };
     
-    [HJNetwork POSTWithURL:url parameters:params callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (error) {
             !completionBlock?:completionBlock([BidLiveHomeHotCourseModel new]);
         }else {

@@ -18,7 +18,9 @@
 #import "BidLiveHomeScrollYouLikeMainView.h"
 #import "BidLiveHomeNetworkModel.h"
 
-#define kTopMainViewHeight 550
+#define kTopMainBannerViewHeight (UIApplication.sharedApplication.statusBarFrame.size.height>20?210:180)
+
+#define kTopMainViewHeight (kTopMainBannerViewHeight+100+10+30+10+200)
 #define kLiveMainViewHeight (140*8+90+90+70+110)
 #define kSpeechMainViewHeight (90+4*280+60)
 #define kYouLikeMainViewHeight (110+5*280+4*10)
