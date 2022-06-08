@@ -71,7 +71,7 @@
                              @"pageCount":@(pageCount)
     };
     
-    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyNetworkElseCache callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (error) {
             !completionBlock?:completionBlock([BidLiveHomeHotCourseModel new]);
         }else {

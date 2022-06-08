@@ -41,12 +41,17 @@
 @property (nonatomic, strong) BidLiveHomeScrollYouLikeMainView *youlikeMainView;
 ///上一次讲堂视频的数量
 @property (nonatomic, assign) NSInteger lastVideosCount;
+///名家讲堂当前页码
+@property (nonatomic, assign) int speechPageIndex;
+///第一页名家讲堂列表数据
+@property (nonatomic, strong) NSArray *speechOrigionArray;
 @end
 
 @implementation BidLiveHomeScrollMainView
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        self.speechPageIndex = 1;
         [self setupUI];
         
         WS(weakSelf)
@@ -85,16 +90,13 @@
         
 #pragma mark - 联拍讲堂更多点击事件
         [self.speechMainView setMoreClickBlock:^{
-            [weakSelf.speechMainView.videosArray addObjectsFromArray:@[@"",@"",@"",@"",@""]];
-            [weakSelf.speechMainView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.height.mas_equalTo(90+weakSelf.speechMainView.videosArray.count*280+60);
-            }];
-            weakSelf.lastVideosCount = weakSelf.speechMainView.videosArray.count;
-            [weakSelf.speechMainView.tableView reloadData];
+            weakSelf.speechPageIndex++;
+            [weakSelf loadHomeHotCourseData];
         }];
 #pragma mark - 联拍讲堂收起点击事件
         [self.speechMainView setRetractingClickBlock:^{
-            weakSelf.speechMainView.videosArray = [NSMutableArray arrayWithArray:@[@"",@"",@"",@"",@""]];
+            weakSelf.speechPageIndex = 1;
+            weakSelf.speechMainView.videosArray = [NSMutableArray arrayWithArray:weakSelf.speechOrigionArray];
             [weakSelf.speechMainView mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.height.mas_equalTo(90+weakSelf.speechMainView.videosArray.count*280+60);
             }];
@@ -152,8 +154,15 @@
 #pragma mark - 加载名家讲堂列表数据
 -(void)loadHomeHotCourseData {
     WS(weakSelf)
-    [BidLiveHomeNetworkModel getHomePageHotCourse:1 pageSize:4 pageCount:0 completion:^(BidLiveHomeHotCourseModel * _Nonnull courseModel) {
+    [BidLiveHomeNetworkModel getHomePageHotCourse:self.speechPageIndex pageSize:4 pageCount:0 completion:^(BidLiveHomeHotCourseModel * _Nonnull courseModel) {
         [weakSelf.speechMainView.videosArray addObjectsFromArray:courseModel.list];
+        if (weakSelf.speechPageIndex==1) {
+            weakSelf.speechOrigionArray = courseModel.list;
+        }
+        [weakSelf.speechMainView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(90+weakSelf.speechMainView.videosArray.count*280+60);
+        }];
+        weakSelf.lastVideosCount = weakSelf.speechMainView.videosArray.count;
         [weakSelf.speechMainView reloadData];
     }];
 }
