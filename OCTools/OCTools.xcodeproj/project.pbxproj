@@ -87,6 +87,9 @@
 		22B5494628506BA700525686 /* BidLiveHomeVideoGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5494528506BA700525686 /* BidLiveHomeVideoGuideView.m */; };
 		22B549502850731300525686 /* BidLiveHomeScrollVideoGuaideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5494F2850731300525686 /* BidLiveHomeScrollVideoGuaideCell.m */; };
 		22B5495328507B7000525686 /* BidLiveHomeVideoGuaideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5495228507B7000525686 /* BidLiveHomeVideoGuaideModel.m */; };
+		22B5495928508CD600525686 /* BidLiveHomeScrollAnchorMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5495828508CD600525686 /* BidLiveHomeScrollAnchorMainView.m */; };
+		22B5495D28508DAF00525686 /* BidLiveHomeScrollAnchorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5495B28508DAF00525686 /* BidLiveHomeScrollAnchorCell.m */; };
+		22B5495E28508DAF00525686 /* BidLiveHomeScrollAnchorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B5495C28508DAF00525686 /* BidLiveHomeScrollAnchorCell.xib */; };
 		22BD4070283DC9DB00854873 /* BidLievViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD406F283DC9DB00854873 /* BidLievViewController.m */; };
 		22BD4077283DCE6300854873 /* BidLiveHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4076283DCE6300854873 /* BidLiveHomeHeadView.m */; };
 		22BD4082283E027400854873 /* BidLiveTopBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4081283E027400854873 /* BidLiveTopBannerView.m */; };
@@ -392,6 +395,11 @@
 		22B5494F2850731300525686 /* BidLiveHomeScrollVideoGuaideCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeScrollVideoGuaideCell.m; sourceTree = "<group>"; };
 		22B5495128507B7000525686 /* BidLiveHomeVideoGuaideModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeVideoGuaideModel.h; sourceTree = "<group>"; };
 		22B5495228507B7000525686 /* BidLiveHomeVideoGuaideModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeVideoGuaideModel.m; sourceTree = "<group>"; };
+		22B5495728508CD600525686 /* BidLiveHomeScrollAnchorMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeScrollAnchorMainView.h; sourceTree = "<group>"; };
+		22B5495828508CD600525686 /* BidLiveHomeScrollAnchorMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeScrollAnchorMainView.m; sourceTree = "<group>"; };
+		22B5495A28508DAF00525686 /* BidLiveHomeScrollAnchorCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeScrollAnchorCell.h; sourceTree = "<group>"; };
+		22B5495B28508DAF00525686 /* BidLiveHomeScrollAnchorCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeScrollAnchorCell.m; sourceTree = "<group>"; };
+		22B5495C28508DAF00525686 /* BidLiveHomeScrollAnchorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BidLiveHomeScrollAnchorCell.xib; sourceTree = "<group>"; };
 		22BD406E283DC9DB00854873 /* BidLievViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLievViewController.h; sourceTree = "<group>"; };
 		22BD406F283DC9DB00854873 /* BidLievViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLievViewController.m; sourceTree = "<group>"; };
 		22BD4075283DCE6300854873 /* BidLiveHomeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeHeadView.h; sourceTree = "<group>"; };
@@ -796,6 +804,8 @@
 				22B54781284709BA00525686 /* BidLiveHomeScrollYouLikeCell.m */,
 				22B5494E2850731300525686 /* BidLiveHomeScrollVideoGuaideCell.h */,
 				22B5494F2850731300525686 /* BidLiveHomeScrollVideoGuaideCell.m */,
+				22B5495A28508DAF00525686 /* BidLiveHomeScrollAnchorCell.h */,
+				22B5495B28508DAF00525686 /* BidLiveHomeScrollAnchorCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -815,6 +825,8 @@
 				22B5479128470A1C00525686 /* BidLiveHomeScrollYouLikeMainView.m */,
 				22B5494428506BA700525686 /* BidLiveHomeVideoGuideView.h */,
 				22B5494528506BA700525686 /* BidLiveHomeVideoGuideView.m */,
+				22B5495728508CD600525686 /* BidLiveHomeScrollAnchorMainView.h */,
+				22B5495828508CD600525686 /* BidLiveHomeScrollAnchorMainView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -825,6 +837,7 @@
 				22B547A028470A3100525686 /* BidLiveHomeFirstCell.xib */,
 				22B547A128470A3100525686 /* BidLiveHomeScrollSpeechCell.xib */,
 				22B547A228470A3100525686 /* BidLiveHomeScollLiveNormalCell.xib */,
+				22B5495C28508DAF00525686 /* BidLiveHomeScrollAnchorCell.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -1763,6 +1776,7 @@
 				22B547A528470A3200525686 /* BidLiveHomeScollLiveNormalCell.xib in Resources */,
 				916A34902831FFF800898E3C /* FileBaseFlowCell.xib in Resources */,
 				9198BFB027F594CA00BC069F /* LaunchScreen.storyboard in Resources */,
+				22B5495E28508DAF00525686 /* BidLiveHomeScrollAnchorCell.xib in Resources */,
 				916A34772831FF0000898E3C /* ShareGroupDetailInfoItemCell.xib in Resources */,
 				916A33822828E80600898E3C /* OTLAfterClassSheetPianoTaskCollectionCell.xib in Resources */,
 				22B547A328470A3200525686 /* BidLiveHomeFirstCell.xib in Resources */,
@@ -1952,6 +1966,7 @@
 				916A346F2831FF0000898E3C /* MCShareGroupSearchViewController.m in Sources */,
 				9198C03B27F7EC0E00BC069F /* UIColor+LLRandomColor.m in Sources */,
 				916A342C2831FD9200898E3C /* WebViewTestController.m in Sources */,
+				22B5495928508CD600525686 /* BidLiveHomeScrollAnchorMainView.m in Sources */,
 				22B547E9284DB39500525686 /* MJPropertyType.m in Sources */,
 				22B54841284DC9C100525686 /* UIView+WebCacheOperation.m in Sources */,
 				9198C01927F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordModel.m in Sources */,
@@ -1997,6 +2012,7 @@
 				91D6403F282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m in Sources */,
 				22B548EF284F417F00525686 /* BidLiveHomeHotCourseModel.m in Sources */,
 				916A34732831FF0000898E3C /* ShareGroupViewController.m in Sources */,
+				22B5495D28508DAF00525686 /* BidLiveHomeScrollAnchorCell.m in Sources */,
 				916A341B2831F3D600898E3C /* DiscoveryViewController.m in Sources */,
 				916A34712831FF0000898E3C /* CreateShareGroupNavView.m in Sources */,
 				911E42E527F82E1F0088FCDF /* SelectFirstView.m in Sources */,

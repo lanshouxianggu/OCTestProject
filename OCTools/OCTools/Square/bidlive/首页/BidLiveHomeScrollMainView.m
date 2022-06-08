@@ -16,6 +16,7 @@
 #import "BidLiveHomeScrollLiveMainView.h"
 #import "BidLiveHomeScrollSpeechMainView.h"
 #import "BidLiveHomeScrollYouLikeMainView.h"
+#import "BidLiveHomeScrollAnchorMainView.h"
 #import "BidLiveHomeNetworkModel.h"
 #import "BidLiveHomeVideoGuaideModel.h"
 
@@ -23,6 +24,7 @@
 
 #define kTopMainViewHeight (kTopMainBannerViewHeight+100+10+30+10+SCREEN_HEIGHT*0.18)
 #define kLiveMainViewHeight (140*8+90+90+70+110)
+#define kAnchorMainViewHeight (90+4*200+60)
 #define kSpeechMainViewHeight (90+4*280+60)
 #define kYouLikeMainViewHeight (110+5*280+4*10)
 
@@ -35,6 +37,8 @@
 @property (nonatomic, strong) BidLiveHomeScrollTopMainView *topMainView;
 ///直播专场
 @property (nonatomic, strong) BidLiveHomeScrollLiveMainView *liveMainView;
+///精选主播
+@property (nonatomic, strong) BidLiveHomeScrollAnchorMainView *anchorMainView;
 ///联拍讲堂
 @property (nonatomic, strong) BidLiveHomeScrollSpeechMainView *speechMainView;
 ///猜你喜欢
@@ -210,10 +214,17 @@
         make.height.mas_equalTo(kLiveMainViewHeight);
     }];
     
+    [self.mainView addSubview:self.anchorMainView];
+    [self.anchorMainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.offset(0);
+        make.top.equalTo(self.liveMainView.mas_bottom);
+        make.height.mas_equalTo(kAnchorMainViewHeight);
+    }];
+    
     [self.mainView addSubview:self.speechMainView];
     [self.speechMainView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.offset(0);
-        make.top.equalTo(self.liveMainView.mas_bottom);
+        make.top.equalTo(self.anchorMainView.mas_bottom);
         make.height.mas_equalTo(kSpeechMainViewHeight);
     }];
     
@@ -341,6 +352,14 @@
         _liveMainView.backgroundColor = UIColorFromRGB(0xf8f8f8);
     }
     return _liveMainView;
+}
+
+-(BidLiveHomeScrollAnchorMainView *)anchorMainView {
+    if (!_anchorMainView) {
+        _anchorMainView = [[BidLiveHomeScrollAnchorMainView alloc] initWithFrame:CGRectZero];
+        _anchorMainView.backgroundColor = UIColorFromRGB(0xf8f8f8);
+    }
+    return _anchorMainView;
 }
 
 -(BidLiveHomeScrollSpeechMainView *)speechMainView {
