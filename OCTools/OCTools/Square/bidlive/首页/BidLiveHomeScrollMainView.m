@@ -49,6 +49,18 @@
 @property (nonatomic, assign) int speechPageIndex;
 ///第一页名家讲堂列表数据
 @property (nonatomic, strong) NSArray *speechOrigionArray;
+
+///上一次精选主播的数量
+@property (nonatomic, assign) NSInteger lastAnchorsCount;
+///精选主播当前页码
+@property (nonatomic, assign) int anchorPageIndex;
+///第一页精选主播列表数据
+@property (nonatomic, strong) NSArray *anchorOrigionArray;
+
+///猜你喜欢当前页码
+@property (nonatomic, assign) int youlikePageIndex;
+
+@property (nonatomic, strong) NSMutableArray *youlikePageIndexArray;
 @end
 
 @implementation BidLiveHomeScrollMainView
@@ -56,6 +68,9 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.speechPageIndex = 1;
+        self.anchorPageIndex = 1;
+        self.youlikePageIndex = 0;
+        self.youlikePageIndexArray = [NSMutableArray arrayWithArray:@[@(0),@(82),@(81),@(67),@(3)]];
         [self setupUI];
         
         WS(weakSelf)
@@ -108,6 +123,23 @@
             CGFloat offsetY = CGRectGetMaxY(weakSelf.liveMainView.frame)+(weakSelf.lastVideosCount-5)*280-150;
             [weakSelf.mainScrollView setContentOffset:CGPointMake(0, offsetY) animated:YES];
         }];
+#pragma mark - 精选主播更多点击事件
+        [self.anchorMainView setMoreClickBlock:^{
+            weakSelf.anchorPageIndex++;
+            [weakSelf loadHomeAnchorListData];
+        }];
+#pragma mark - 精选主播收起点击事件
+        [self.anchorMainView setRetractingClickBlock:^{
+            weakSelf.anchorPageIndex = 1;
+            weakSelf.anchorMainView.anchorsArray = [NSMutableArray arrayWithArray:weakSelf.anchorOrigionArray];
+            [weakSelf.anchorMainView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.height.mas_equalTo(90+weakSelf.anchorMainView.anchorsArray.count*200+60);
+            }];
+            [weakSelf.anchorMainView reloadData];
+            
+            CGFloat offsetY = CGRectGetMaxY(weakSelf.liveMainView.frame)+(weakSelf.lastAnchorsCount-5)*200-150;
+            [weakSelf.mainScrollView setContentOffset:CGPointMake(0, offsetY) animated:YES];
+        }];
         
         [self loadData];
     }
@@ -121,6 +153,8 @@
     [self loadGlobalLiveData];
     [self loadHomeHotCourseData];
     [self loadHomeVideoGuaideData];
+    [self loadHomeAnchorListData];
+//    [self loadGuessYouLikeListData];
 }
 
 #pragma mark - 加载广告轮播数据
@@ -179,6 +213,49 @@
     }];
 }
 
+#pragma mark - 加载精选主播列表数据
+-(void)loadHomeAnchorListData {
+    WS(weakSelf)
+    [BidLiveHomeNetworkModel getHomePageAnchorList:self.anchorPageIndex pageSize:4 pageCount:0 isContainBeforePage:false completion:^(BidLiveHomeAnchorModel * _Nonnull model) {
+        [weakSelf.anchorMainView.anchorsArray addObjectsFromArray:model.list];
+        if (weakSelf.anchorPageIndex==1) {
+            weakSelf.anchorOrigionArray = model.list;
+        }
+        [weakSelf.anchorMainView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(90+weakSelf.anchorMainView.anchorsArray.count*200+60);
+        }];
+        weakSelf.lastAnchorsCount = weakSelf.anchorMainView.anchorsArray.count;
+        [weakSelf.anchorMainView reloadData];
+    }];
+}
+
+#pragma mark - 加载猜你喜欢列表数据
+-(void)loadGuessYouLikeListData {
+    WS(weakSelf)
+    [BidLiveHomeNetworkModel getHomePageGuessYouLikeList:self.youlikePageIndex completion:^(BidLiveHomeGuessYouLikeModel * _Nonnull model) {
+        NSMutableArray *tempArray = [NSMutableArray arrayWithArray:model.list];
+        if (weakSelf.youlikePageIndex==0 && model.list.count>10) {
+            [weakSelf.youlikeMainView.likesArray removeAllObjects];
+            NSRange range1 = NSMakeRange(0, 10);
+            NSRange range2 = NSMakeRange(10, model.list.count-10);
+            NSArray *array1 = [tempArray subarrayWithRange:range1];
+            NSArray *array2 = [tempArray subarrayWithRange:range2];
+            [weakSelf.youlikeMainView.likesArray addObject:array1];
+            [weakSelf.youlikeMainView.likesArray addObject:array2];
+        }else {
+            if (model.list) {
+                [weakSelf.youlikeMainView.likesArray addObject:model.list];
+            }
+        }
+        NSInteger likesArrayCount = weakSelf.youlikeMainView.likesArray.count;
+        [weakSelf.youlikeMainView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(likesArrayCount*kYouLikeMainViewHeight);
+        }];
+        [weakSelf.youlikeMainView.collectionView reloadData];
+    }];
+}
+
+#pragma mark - 设置UI
 -(void)setupUI {
     [self addSubview:self.mainScrollView];
     CGFloat origionY = -UIApplication.sharedApplication.statusBarFrame.size.height;
@@ -251,12 +328,20 @@
     }
     CGFloat likeViewMaxY = CGRectGetMaxY(self.youlikeMainView.frame)-kYouLikeMainViewHeight/2;
     if (offsetY>=likeViewMaxY) {
-        [self.youlikeMainView.likesArray addObject:@[@"",@"",@"",@"",@"",@"",@"",@"",@"",@""]];
-        NSInteger likesArrayCount = self.youlikeMainView.likesArray.count;
-        [self.youlikeMainView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(likesArrayCount*kYouLikeMainViewHeight);
-        }];
-        [self.youlikeMainView.collectionView reloadData];
+        int currentPage = [[self.youlikePageIndexArray firstObject] intValue];
+        self.youlikePageIndex = currentPage;
+        
+        [self.youlikePageIndexArray removeObjectAtIndex:0];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [self loadGuessYouLikeListData];
+        });
+        
+//        [self.youlikeMainView.likesArray addObject:@[@"",@"",@"",@"",@"",@"",@"",@"",@"",@""]];
+//        NSInteger likesArrayCount = self.youlikeMainView.likesArray.count;
+//        [self.youlikeMainView mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(likesArrayCount*kYouLikeMainViewHeight);
+//        }];
+//        [self.youlikeMainView.collectionView reloadData];
     }
 }
 

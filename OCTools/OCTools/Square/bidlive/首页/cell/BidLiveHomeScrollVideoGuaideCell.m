@@ -25,6 +25,7 @@
 
 -(void)setupUI {
     UIView *topView = [UIView new];
+    topView.layer.masksToBounds = YES;
     [self.contentView addSubview:topView];
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.offset(0);

@@ -90,6 +90,9 @@
 		22B5495928508CD600525686 /* BidLiveHomeScrollAnchorMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5495828508CD600525686 /* BidLiveHomeScrollAnchorMainView.m */; };
 		22B5495D28508DAF00525686 /* BidLiveHomeScrollAnchorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5495B28508DAF00525686 /* BidLiveHomeScrollAnchorCell.m */; };
 		22B5495E28508DAF00525686 /* BidLiveHomeScrollAnchorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B5495C28508DAF00525686 /* BidLiveHomeScrollAnchorCell.xib */; };
+		22B549692850A27100525686 /* NSString+LLStringConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B549672850A27100525686 /* NSString+LLStringConnection.m */; };
+		22B5496C28517D4600525686 /* BidLiveHomeAnchorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5496B28517D4600525686 /* BidLiveHomeAnchorModel.m */; };
+		22B5496F28518A3200525686 /* BidLiveHomeGuessYouLikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5496E28518A3200525686 /* BidLiveHomeGuessYouLikeModel.m */; };
 		22BD4070283DC9DB00854873 /* BidLievViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD406F283DC9DB00854873 /* BidLievViewController.m */; };
 		22BD4077283DCE6300854873 /* BidLiveHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4076283DCE6300854873 /* BidLiveHomeHeadView.m */; };
 		22BD4082283E027400854873 /* BidLiveTopBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4081283E027400854873 /* BidLiveTopBannerView.m */; };
@@ -400,6 +403,12 @@
 		22B5495A28508DAF00525686 /* BidLiveHomeScrollAnchorCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeScrollAnchorCell.h; sourceTree = "<group>"; };
 		22B5495B28508DAF00525686 /* BidLiveHomeScrollAnchorCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeScrollAnchorCell.m; sourceTree = "<group>"; };
 		22B5495C28508DAF00525686 /* BidLiveHomeScrollAnchorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BidLiveHomeScrollAnchorCell.xib; sourceTree = "<group>"; };
+		22B549672850A27100525686 /* NSString+LLStringConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LLStringConnection.m"; sourceTree = "<group>"; };
+		22B549682850A27100525686 /* NSString+LLStringConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LLStringConnection.h"; sourceTree = "<group>"; };
+		22B5496A28517D4600525686 /* BidLiveHomeAnchorModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeAnchorModel.h; sourceTree = "<group>"; };
+		22B5496B28517D4600525686 /* BidLiveHomeAnchorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeAnchorModel.m; sourceTree = "<group>"; };
+		22B5496D28518A3200525686 /* BidLiveHomeGuessYouLikeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeGuessYouLikeModel.h; sourceTree = "<group>"; };
+		22B5496E28518A3200525686 /* BidLiveHomeGuessYouLikeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeGuessYouLikeModel.m; sourceTree = "<group>"; };
 		22BD406E283DC9DB00854873 /* BidLievViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLievViewController.h; sourceTree = "<group>"; };
 		22BD406F283DC9DB00854873 /* BidLievViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLievViewController.m; sourceTree = "<group>"; };
 		22BD4075283DCE6300854873 /* BidLiveHomeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeHeadView.h; sourceTree = "<group>"; };
@@ -865,6 +874,10 @@
 				22B548EE284F417F00525686 /* BidLiveHomeHotCourseModel.m */,
 				22B5495128507B7000525686 /* BidLiveHomeVideoGuaideModel.h */,
 				22B5495228507B7000525686 /* BidLiveHomeVideoGuaideModel.m */,
+				22B5496A28517D4600525686 /* BidLiveHomeAnchorModel.h */,
+				22B5496B28517D4600525686 /* BidLiveHomeAnchorModel.m */,
+				22B5496D28518A3200525686 /* BidLiveHomeGuessYouLikeModel.h */,
+				22B5496E28518A3200525686 /* BidLiveHomeGuessYouLikeModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1508,6 +1521,8 @@
 				9198C02A27F7EC0D00BC069F /* NSString+Common.m */,
 				9198C03227F7EC0D00BC069F /* UIColor+LLRandomColor.h */,
 				9198C02927F7EC0D00BC069F /* UIColor+LLRandomColor.m */,
+				22B549682850A27100525686 /* NSString+LLStringConnection.h */,
+				22B549672850A27100525686 /* NSString+LLStringConnection.m */,
 				9198C02E27F7EC0D00BC069F /* UIImage+Alpha.h */,
 				9198C02F27F7EC0D00BC069F /* UIImage+Alpha.m */,
 				9198C03927F7EC0E00BC069F /* UIImage+Common.h */,
@@ -1845,6 +1860,7 @@
 				22BD418D2840B02700854873 /* BidLiveHomeMainView.m in Sources */,
 				22B54763284700C500525686 /* AFNetworkReachabilityManager.m in Sources */,
 				22B5483D284DC9C100525686 /* UIImageView+WebCache.m in Sources */,
+				22B5496C28517D4600525686 /* BidLiveHomeAnchorModel.m in Sources */,
 				916A346B2831FF0000898E3C /* MCCommonSearchTitleCell.m in Sources */,
 				9198C02027F6FECF00BC069F /* MCCallLogsBackupRecoveryRecordCell.m in Sources */,
 				22B5475F284700C500525686 /* AFURLResponseSerialization.m in Sources */,
@@ -1984,6 +2000,7 @@
 				22B5483E284DC9C100525686 /* NSImage+WebCache.m in Sources */,
 				91B591112823BD61008690B4 /* OTLDDLogFileManagerDefault.m in Sources */,
 				916A346E2831FF0000898E3C /* MCCommonSearchNavView.m in Sources */,
+				22B5496F28518A3200525686 /* BidLiveHomeGuessYouLikeModel.m in Sources */,
 				916A347C2831FF0000898E3C /* ShareMomentViewController.m in Sources */,
 				9198BFC327F59CE100BC069F /* LCMainTabBar.m in Sources */,
 				22B548EA284F32DE00525686 /* BidLiveHomeGlobalLiveModel.m in Sources */,
@@ -2008,6 +2025,7 @@
 				916A342D2831FD9200898E3C /* LMJHorizontalScrollText.m in Sources */,
 				916A34762831FF0000898E3C /* ShareGroupDetailInfoHeadSegementView.m in Sources */,
 				916A33852828F05A00898E3C /* OTLPianoTaskChooseCommonView.m in Sources */,
+				22B549692850A27100525686 /* NSString+LLStringConnection.m in Sources */,
 				916A348E2831FFF800898E3C /* FileBaseViewController.m in Sources */,
 				91D6403F282612D700E132B6 /* OTLOfflineOneToOneSmartMajorBeforeClassRightView.m in Sources */,
 				22B548EF284F417F00525686 /* BidLiveHomeHotCourseModel.m in Sources */,

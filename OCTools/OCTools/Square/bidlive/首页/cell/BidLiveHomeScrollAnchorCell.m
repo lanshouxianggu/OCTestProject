@@ -6,6 +6,8 @@
 //
 
 #import "BidLiveHomeScrollAnchorCell.h"
+#import "UIImageView+WebCache.h"
+#import "NSString+LLStringConnection.h"
 
 @interface BidLiveHomeScrollAnchorCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
@@ -37,7 +39,7 @@
     self.bottomCoverImageView.layer.masksToBounds = YES;
     self.bottomView.backgroundColor = UIColor.clearColor;
     self.bottomView.frame = CGRectMake(0, self.frame.size.height, SCREEN_WIDTH-30, 72);
-    
+        
     //设置渐变
     UIColor *one = UIColorFromRGBA(0x3b3b3b, 0);
     UIColor *two = UIColorFromRGBA(0x3b3b3b, 1);
@@ -50,6 +52,23 @@
     gradient.frame = self.bottomView.bounds;
     
     [self.bottomView.layer insertSublayer:gradient atIndex:0];
+}
+
+-(void)setModel:(BidLiveHomeAnchorListModel *)model {
+    _model = model;
+    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:model.coverImage] placeholderImage:nil];
+    if (model.liveStatus==5) {
+        self.topLeftLabel.text = @"预告";
+    }else if (model.liveStatus==0) {
+        self.topLeftLabel.text = @"预展";
+    }
+    self.topRightLabel.text = @""[model.liveDateTimeStr][@" 开播"];
+    self.bottomView.hidden = !model.isShowAvater;
+    if (model.isShowAvater) {
+        [self.bottomCoverImageView sd_setImageWithURL:[NSURL URLWithString:model.logo] placeholderImage:nil];
+        self.bottomTitleLabel.text = @""[model.storeName];
+        self.bottomSubTitleLabel.text = @""[model.subjectName];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

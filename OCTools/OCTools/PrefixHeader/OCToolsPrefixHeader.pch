@@ -24,6 +24,7 @@
 #import "NSString+Common.h"
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import "NSAttributedString+LLMake.h"
+#import "NSString+LLStringConnection.h"
 #import "HJNetwork.h"
 
 #ifdef __OBJC__

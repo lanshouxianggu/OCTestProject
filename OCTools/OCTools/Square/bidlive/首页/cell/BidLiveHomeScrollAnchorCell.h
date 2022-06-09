@@ -6,11 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BidLiveHomeAnchorModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BidLiveHomeScrollAnchorCell : UITableViewCell
-
+@property (nonatomic, strong) BidLiveHomeAnchorListModel *model;
 @end
 
 NS_ASSUME_NONNULL_END

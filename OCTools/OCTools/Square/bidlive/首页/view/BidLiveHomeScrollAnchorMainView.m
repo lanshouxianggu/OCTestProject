@@ -26,7 +26,7 @@
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.videosArray = [NSMutableArray arrayWithArray:@[@"",@"",@"",@""]];
+        self.anchorsArray = [NSMutableArray array];
         self.isClickBack = YES;
         [self setupUI];
     }
@@ -50,7 +50,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.videosArray.count;
+    return self.anchorsArray.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -158,7 +158,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BidLiveHomeScrollAnchorCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BidLiveHomeScrollAnchorCell" forIndexPath:indexPath];
     cell.backgroundColor = UIColorFromRGB(0xf8f8f8);
-//    cell.model = self.videosArray[indexPath.row];
+    cell.model = self.anchorsArray[indexPath.row];
     
     return cell;
 }

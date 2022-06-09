@@ -112,4 +112,51 @@
     }];
 }
 
++(void)getHomePageAnchorList:(int)pageIndex
+                    pageSize:(int)pageSize
+                   pageCount:(int)pageCount
+         isContainBeforePage:(bool)isContainBeforePage
+                  completion:(void (^)(BidLiveHomeAnchorModel * _Nonnull))completionBlock {
+    NSString *url = [NSString stringWithFormat:@"%@%@",kAppNewttpApiAddress,kGetHomeHotLiveV2];
+    NSDictionary *params = @{@"pageIndex":@(pageIndex),
+                             @"pageSize":@(pageSize),
+                             @"pageCount":@(pageCount),
+                             @"isContainBeforePage":@(isContainBeforePage)
+    };
+    
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (error) {
+            !completionBlock?:completionBlock([BidLiveHomeAnchorModel new]);
+        }else {
+            if ([responseObject isKindOfClass:NSDictionary.class]) {
+                if ([responseObject[@"result"] isKindOfClass:NSDictionary.class]) {
+                    BidLiveHomeAnchorModel *model = [BidLiveHomeAnchorModel mj_objectWithKeyValues:responseObject[@"result"]];
+                    !completionBlock?:completionBlock(model);
+                }
+            }else{
+                !completionBlock?:completionBlock([BidLiveHomeAnchorModel new]);
+            }
+        }
+    }];
+}
+
++(void)getHomePageGuessYouLikeList:(int)pageIndex completion:(void (^)(BidLiveHomeGuessYouLikeModel * _Nonnull))completionBlock {
+    NSString *url = [NSString stringWithFormat:@"%@%@",kAppWebApiAddress,kGetGuangGuangPagedList];
+    NSDictionary *params = @{@"pageIndex":@(pageIndex)};
+    
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (error) {
+            !completionBlock?:completionBlock([BidLiveHomeGuessYouLikeModel new]);
+        }else {
+            if ([responseObject isKindOfClass:NSDictionary.class]) {
+                if ([responseObject[@"result"] isKindOfClass:NSDictionary.class]) {
+                    BidLiveHomeGuessYouLikeModel *model = [BidLiveHomeGuessYouLikeModel mj_objectWithKeyValues:responseObject[@"result"]];
+                    !completionBlock?:completionBlock(model);
+                }
+            }else{
+                !completionBlock?:completionBlock([BidLiveHomeGuessYouLikeModel new]);
+            }
+        }
+    }];
+}
 @end
