@@ -17,6 +17,7 @@
 #import "BidLiveHomeScrollSpeechMainView.h"
 #import "BidLiveHomeScrollYouLikeMainView.h"
 #import "BidLiveHomeScrollAnchorMainView.h"
+#import "BidLiveHomeScrollHighlightLotsView.h"
 #import "BidLiveHomeNetworkModel.h"
 #import "BidLiveHomeVideoGuaideModel.h"
 
@@ -31,6 +32,8 @@
 #define kSpeechMainViewHeight (90+4*280+60)
 #define kYouLikeMainViewHeight (110+5*280+4*10)
 
+#define kHightlightLotsMainViewHeight (SCREEN_HEIGHT*1/3+20+90)
+
 @interface BidLiveHomeScrollMainView () <UIScrollViewDelegate>
 @property (nonatomic, strong) BidLiveHomeHeadView *topSearchView;
 @property (nonatomic, strong) BidLiveHomeFloatView *floatView;
@@ -44,6 +47,9 @@
 @property (nonatomic, strong) BidLiveHomeScrollAnchorMainView *anchorMainView;
 ///联拍讲堂
 @property (nonatomic, strong) BidLiveHomeScrollSpeechMainView *speechMainView;
+///焦点拍品
+@property (nonatomic, strong) BidLiveHomeScrollHighlightLotsView *highlightLotsMainView;
+
 ///猜你喜欢
 @property (nonatomic, strong) BidLiveHomeScrollYouLikeMainView *youlikeMainView;
 ///上一次讲堂视频的数量
@@ -184,6 +190,75 @@
     [self loadHomeVideoGuaideData];
     [self loadHomeAnchorListData];
     [self loadGuessYouLikeListData];
+    [self loadHomeHighliahtLotsListData];
+}
+
+#pragma mark - 设置UI
+-(void)setupUI {
+    [self addSubview:self.mainScrollView];
+    CGFloat origionY = -UIApplication.sharedApplication.statusBarFrame.size.height;
+//    if (UIApplication.sharedApplication.statusBarFrame.size.height>20) {
+//        origionY = -UIApplication.sharedApplication.statusBarFrame.size.height;
+//    }
+    [self.mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.insets(UIEdgeInsetsMake(origionY, 0, 0, 0));
+        make.width.mas_equalTo(SCREEN_WIDTH);
+        make.height.mas_equalTo(SCREEN_HEIGHT);
+    }];
+    
+    [self addSubview:self.topSearchView];
+    [self addSubview:self.floatView];
+    
+    [self.mainScrollView addSubview:self.mainView];
+    [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.bottom.offset(0);
+        make.width.equalTo(self.mainScrollView);
+        make.height.mas_greaterThanOrEqualTo(self.mainScrollView);
+    }];
+    
+    [self.mainView addSubview:self.topMainView];
+    [self.topMainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.offset(0);
+        make.height.mas_equalTo(kTopMainViewHeight);
+    }];
+    
+    [self.mainView addSubview:self.liveMainView];
+    [self.liveMainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.offset(0);
+        make.top.equalTo(self.topMainView.mas_bottom);
+        make.height.mas_equalTo(kLiveMainViewHeight);
+    }];
+    
+    [self.mainView addSubview:self.anchorMainView];
+    [self.anchorMainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.offset(0);
+        make.top.equalTo(self.liveMainView.mas_bottom);
+        make.height.mas_equalTo(kAnchorMainViewHeight);
+    }];
+    
+    [self.mainView addSubview:self.speechMainView];
+    [self.speechMainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.offset(0);
+        make.top.equalTo(self.anchorMainView.mas_bottom);
+        make.height.mas_equalTo(kSpeechMainViewHeight);
+    }];
+    
+    [self.mainView addSubview:self.highlightLotsMainView];
+    [self.highlightLotsMainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.offset(0);
+        make.top.equalTo(self.speechMainView.mas_bottom);
+        make.height.mas_equalTo(kHightlightLotsMainViewHeight);
+    }];
+    
+    [self.mainView addSubview:self.youlikeMainView];
+    [self.youlikeMainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.offset(0);
+        make.top.equalTo(self.highlightLotsMainView.mas_bottom).offset(-40);
+        make.height.mas_equalTo(kYouLikeMainViewHeight);
+        make.bottom.offset(-10);
+    }];
+    
+    [self.mainView insertSubview:self.youlikeMainView belowSubview:self.speechMainView];
 }
 
 #pragma mark - 加载广告轮播数据
@@ -260,6 +335,14 @@
     }];
 }
 
+#pragma mark - 加载焦点拍品列表数据
+-(void)loadHomeHighliahtLotsListData {
+    WS(weakSelf)
+    [BidLiveHomeNetworkModel getHomePageHighlightLotsList:1 pageSize:20 isNoMore:false isLoad:true scrollLeft:@"" completion:^(BidLiveHomeHighlightLotsModel * _Nonnull courseModel) {
+        [weakSelf.highlightLotsMainView updateHighlightLotsList:courseModel.list];
+    }];
+}
+
 #pragma mark - 加载猜你喜欢列表数据
 -(void)loadGuessYouLikeListData {
     WS(weakSelf)
@@ -284,67 +367,6 @@
         }];
         [weakSelf.youlikeMainView.collectionView reloadData];
     }];
-}
-
-#pragma mark - 设置UI
--(void)setupUI {
-    [self addSubview:self.mainScrollView];
-    CGFloat origionY = -UIApplication.sharedApplication.statusBarFrame.size.height;
-//    if (UIApplication.sharedApplication.statusBarFrame.size.height>20) {
-//        origionY = -UIApplication.sharedApplication.statusBarFrame.size.height;
-//    }
-    [self.mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.insets(UIEdgeInsetsMake(origionY, 0, 0, 0));
-        make.width.mas_equalTo(SCREEN_WIDTH);
-        make.height.mas_equalTo(SCREEN_HEIGHT);
-    }];
-    
-    [self addSubview:self.topSearchView];
-    [self addSubview:self.floatView];
-    
-    [self.mainScrollView addSubview:self.mainView];
-    [self.mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.bottom.offset(0);
-        make.width.equalTo(self.mainScrollView);
-        make.height.mas_greaterThanOrEqualTo(self.mainScrollView);
-    }];
-    
-    [self.mainView addSubview:self.topMainView];
-    [self.topMainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.offset(0);
-        make.height.mas_equalTo(kTopMainViewHeight);
-    }];
-    
-    [self.mainView addSubview:self.liveMainView];
-    [self.liveMainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.offset(0);
-        make.top.equalTo(self.topMainView.mas_bottom);
-        make.height.mas_equalTo(kLiveMainViewHeight);
-    }];
-    
-    [self.mainView addSubview:self.anchorMainView];
-    [self.anchorMainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.offset(0);
-        make.top.equalTo(self.liveMainView.mas_bottom);
-        make.height.mas_equalTo(kAnchorMainViewHeight);
-    }];
-    
-    [self.mainView addSubview:self.speechMainView];
-    [self.speechMainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.offset(0);
-        make.top.equalTo(self.anchorMainView.mas_bottom);
-        make.height.mas_equalTo(kSpeechMainViewHeight);
-    }];
-    
-    [self.mainView addSubview:self.youlikeMainView];
-    [self.youlikeMainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.offset(0);
-        make.top.equalTo(self.speechMainView.mas_bottom).offset(-40);
-        make.height.mas_equalTo(kYouLikeMainViewHeight);
-        make.bottom.offset(-10);
-    }];
-    
-    [self.mainView insertSubview:self.youlikeMainView belowSubview:self.speechMainView];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -500,6 +522,14 @@
         _speechMainView.backgroundColor = UIColorFromRGB(0xf8f8f8);
     }
     return _speechMainView;
+}
+
+-(BidLiveHomeScrollHighlightLotsView *)highlightLotsMainView {
+    if (!_highlightLotsMainView) {
+        _highlightLotsMainView = [[BidLiveHomeScrollHighlightLotsView alloc] initWithFrame:CGRectZero];
+        _highlightLotsMainView.backgroundColor = UIColorFromRGB(0xf8f8f8);
+    }
+    return _highlightLotsMainView;
 }
 
 -(BidLiveHomeScrollYouLikeMainView *)youlikeMainView {

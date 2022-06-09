@@ -95,6 +95,8 @@
 		22B5496F28518A3200525686 /* BidLiveHomeGuessYouLikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5496E28518A3200525686 /* BidLiveHomeGuessYouLikeModel.m */; };
 		22B549722851C8C400525686 /* BidLiveLiveMainArticleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B549712851C8C400525686 /* BidLiveLiveMainArticleScrollView.m */; };
 		22B549752851CE1700525686 /* BidLiveHomeHighlightLotsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B549742851CE1700525686 /* BidLiveHomeHighlightLotsModel.m */; };
+		22B549782851D61B00525686 /* BidLiveHomeScrollHighlightLotsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B549772851D61B00525686 /* BidLiveHomeScrollHighlightLotsView.m */; };
+		22B5497B2851DB9800525686 /* BidLiveHomeScrollHighlightLotsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5497A2851DB9800525686 /* BidLiveHomeScrollHighlightLotsCell.m */; };
 		22BD4070283DC9DB00854873 /* BidLievViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD406F283DC9DB00854873 /* BidLievViewController.m */; };
 		22BD4077283DCE6300854873 /* BidLiveHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4076283DCE6300854873 /* BidLiveHomeHeadView.m */; };
 		22BD4082283E027400854873 /* BidLiveTopBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4081283E027400854873 /* BidLiveTopBannerView.m */; };
@@ -415,6 +417,10 @@
 		22B549712851C8C400525686 /* BidLiveLiveMainArticleScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveLiveMainArticleScrollView.m; sourceTree = "<group>"; };
 		22B549732851CE1700525686 /* BidLiveHomeHighlightLotsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeHighlightLotsModel.h; sourceTree = "<group>"; };
 		22B549742851CE1700525686 /* BidLiveHomeHighlightLotsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeHighlightLotsModel.m; sourceTree = "<group>"; };
+		22B549762851D61B00525686 /* BidLiveHomeScrollHighlightLotsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeScrollHighlightLotsView.h; sourceTree = "<group>"; };
+		22B549772851D61B00525686 /* BidLiveHomeScrollHighlightLotsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeScrollHighlightLotsView.m; sourceTree = "<group>"; };
+		22B549792851DB9800525686 /* BidLiveHomeScrollHighlightLotsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeScrollHighlightLotsCell.h; sourceTree = "<group>"; };
+		22B5497A2851DB9800525686 /* BidLiveHomeScrollHighlightLotsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeScrollHighlightLotsCell.m; sourceTree = "<group>"; };
 		22BD406E283DC9DB00854873 /* BidLievViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLievViewController.h; sourceTree = "<group>"; };
 		22BD406F283DC9DB00854873 /* BidLievViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLievViewController.m; sourceTree = "<group>"; };
 		22BD4075283DCE6300854873 /* BidLiveHomeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeHeadView.h; sourceTree = "<group>"; };
@@ -821,6 +827,8 @@
 				22B5494F2850731300525686 /* BidLiveHomeScrollVideoGuaideCell.m */,
 				22B5495A28508DAF00525686 /* BidLiveHomeScrollAnchorCell.h */,
 				22B5495B28508DAF00525686 /* BidLiveHomeScrollAnchorCell.m */,
+				22B549792851DB9800525686 /* BidLiveHomeScrollHighlightLotsCell.h */,
+				22B5497A2851DB9800525686 /* BidLiveHomeScrollHighlightLotsCell.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -844,6 +852,8 @@
 				22B5495828508CD600525686 /* BidLiveHomeScrollAnchorMainView.m */,
 				22B549702851C8C400525686 /* BidLiveLiveMainArticleScrollView.h */,
 				22B549712851C8C400525686 /* BidLiveLiveMainArticleScrollView.m */,
+				22B549762851D61B00525686 /* BidLiveHomeScrollHighlightLotsView.h */,
+				22B549772851D61B00525686 /* BidLiveHomeScrollHighlightLotsView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1867,6 +1877,7 @@
 				916A34182831F3D600898E3C /* BMDragCellCollectionView.m in Sources */,
 				22B5478A284709BA00525686 /* BidLiveHomeScollLiveNormalCell.m in Sources */,
 				916A33962829EE8900898E3C /* OTLPracticePianoTaskSecondPartCell.m in Sources */,
+				22B5497B2851DB9800525686 /* BidLiveHomeScrollHighlightLotsCell.m in Sources */,
 				22BD418D2840B02700854873 /* BidLiveHomeMainView.m in Sources */,
 				22B54763284700C500525686 /* AFNetworkReachabilityManager.m in Sources */,
 				22B5483D284DC9C100525686 /* UIImageView+WebCache.m in Sources */,
@@ -2018,6 +2029,7 @@
 				22B548EA284F32DE00525686 /* BidLiveHomeGlobalLiveModel.m in Sources */,
 				22B547F1284DB39500525686 /* MJPropertyKey.m in Sources */,
 				9198C01A27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryRecordView.m in Sources */,
+				22B549782851D61B00525686 /* BidLiveHomeScrollHighlightLotsView.m in Sources */,
 				9198BFDE27F6A92D00BC069F /* LCDiscoveryViewController.m in Sources */,
 				22B54842284DC9C100525686 /* UIView+WebCache.m in Sources */,
 				22B54838284DC9C100525686 /* SDAnimatedImageRep.m in Sources */,
