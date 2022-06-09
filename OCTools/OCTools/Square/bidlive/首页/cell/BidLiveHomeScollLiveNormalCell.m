@@ -8,6 +8,8 @@
 #import "BidLiveHomeScollLiveNormalCell.h"
 #import "LCConfig.h"
 #import "UIImageView+WebCache.h"
+#import "NSAttributedString+LLMake.h"
+#import "NSString+LLStringConnection.h"
 
 @interface BidLiveHomeScollLiveNormalCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageV;
@@ -51,8 +53,10 @@
     }else if (model.Status==3) {
         [self.liveBtn setTitle:@"即将开拍" forState:UIControlStateNormal];
         self.liveBtn.backgroundColor = UIColorFromRGB(0x7BB1CF);
-        self.changeLabel.text = [NSString stringWithFormat:@"距开拍 16时58分"];
-        self.changeLabel.textColor = UIColorFromRGB(0x666666);
+        self.changeLabel.attributedText = [NSAttributedString makeAttributedString:^(LLAttributedStringMaker * _Nonnull make) {
+            make.text(@"距开拍 ").foregroundColor(UIColorFromRGB(0x666666));
+            make.text(@""[model.RemainTime]).foregroundColor(UIColorFromRGB(0x7BB1CF));
+        }];
         self.detailLabel.text = [NSString stringWithFormat:@"共%ld场 %ld件",model.AuctionCount,model.AuctionItemCount];
     }
 }

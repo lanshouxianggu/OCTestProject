@@ -93,6 +93,8 @@
 		22B549692850A27100525686 /* NSString+LLStringConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B549672850A27100525686 /* NSString+LLStringConnection.m */; };
 		22B5496C28517D4600525686 /* BidLiveHomeAnchorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5496B28517D4600525686 /* BidLiveHomeAnchorModel.m */; };
 		22B5496F28518A3200525686 /* BidLiveHomeGuessYouLikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B5496E28518A3200525686 /* BidLiveHomeGuessYouLikeModel.m */; };
+		22B549722851C8C400525686 /* BidLiveLiveMainArticleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B549712851C8C400525686 /* BidLiveLiveMainArticleScrollView.m */; };
+		22B549752851CE1700525686 /* BidLiveHomeHighlightLotsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B549742851CE1700525686 /* BidLiveHomeHighlightLotsModel.m */; };
 		22BD4070283DC9DB00854873 /* BidLievViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD406F283DC9DB00854873 /* BidLievViewController.m */; };
 		22BD4077283DCE6300854873 /* BidLiveHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4076283DCE6300854873 /* BidLiveHomeHeadView.m */; };
 		22BD4082283E027400854873 /* BidLiveTopBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4081283E027400854873 /* BidLiveTopBannerView.m */; };
@@ -409,6 +411,10 @@
 		22B5496B28517D4600525686 /* BidLiveHomeAnchorModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeAnchorModel.m; sourceTree = "<group>"; };
 		22B5496D28518A3200525686 /* BidLiveHomeGuessYouLikeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeGuessYouLikeModel.h; sourceTree = "<group>"; };
 		22B5496E28518A3200525686 /* BidLiveHomeGuessYouLikeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeGuessYouLikeModel.m; sourceTree = "<group>"; };
+		22B549702851C8C400525686 /* BidLiveLiveMainArticleScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveLiveMainArticleScrollView.h; sourceTree = "<group>"; };
+		22B549712851C8C400525686 /* BidLiveLiveMainArticleScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveLiveMainArticleScrollView.m; sourceTree = "<group>"; };
+		22B549732851CE1700525686 /* BidLiveHomeHighlightLotsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeHighlightLotsModel.h; sourceTree = "<group>"; };
+		22B549742851CE1700525686 /* BidLiveHomeHighlightLotsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeHighlightLotsModel.m; sourceTree = "<group>"; };
 		22BD406E283DC9DB00854873 /* BidLievViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLievViewController.h; sourceTree = "<group>"; };
 		22BD406F283DC9DB00854873 /* BidLievViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLievViewController.m; sourceTree = "<group>"; };
 		22BD4075283DCE6300854873 /* BidLiveHomeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeHeadView.h; sourceTree = "<group>"; };
@@ -836,6 +842,8 @@
 				22B5494528506BA700525686 /* BidLiveHomeVideoGuideView.m */,
 				22B5495728508CD600525686 /* BidLiveHomeScrollAnchorMainView.h */,
 				22B5495828508CD600525686 /* BidLiveHomeScrollAnchorMainView.m */,
+				22B549702851C8C400525686 /* BidLiveLiveMainArticleScrollView.h */,
+				22B549712851C8C400525686 /* BidLiveLiveMainArticleScrollView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -878,6 +886,8 @@
 				22B5496B28517D4600525686 /* BidLiveHomeAnchorModel.m */,
 				22B5496D28518A3200525686 /* BidLiveHomeGuessYouLikeModel.h */,
 				22B5496E28518A3200525686 /* BidLiveHomeGuessYouLikeModel.m */,
+				22B549732851CE1700525686 /* BidLiveHomeHighlightLotsModel.h */,
+				22B549742851CE1700525686 /* BidLiveHomeHighlightLotsModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1872,6 +1882,7 @@
 				916A347A2831FF0000898E3C /* ShareGroupDetailInfoViewController.m in Sources */,
 				9198BFFC27F6F97800BC069F /* OTLTeacherSideMainViewController.m in Sources */,
 				916A34742831FF0000898E3C /* ShareGroupModel.m in Sources */,
+				22B549722851C8C400525686 /* BidLiveLiveMainArticleScrollView.m in Sources */,
 				916A342B2831FD9200898E3C /* MCGetIPFromUrl.m in Sources */,
 				9198BFC927F6A11B00BC069F /* LCLoginViewController.m in Sources */,
 				22B54843284DC9C100525686 /* SDWebImageImageIOCoder.m in Sources */,
@@ -1971,6 +1982,7 @@
 				916A34192831F3D600898E3C /* MCDiscoveryAllColumnViewController.m in Sources */,
 				22B5477E2847099700525686 /* BidLiveHomeScrollMainView.m in Sources */,
 				22BD4091283E1C9A00854873 /* BidLiveHomeFloatView.m in Sources */,
+				22B549752851CE1700525686 /* BidLiveHomeHighlightLotsModel.m in Sources */,
 				22B54758284700C500525686 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				22B54757284700C500525686 /* UIRefreshControl+AFNetworking.m in Sources */,
 				9198C05327F7F17300BC069F /* CPISegementView.m in Sources */,

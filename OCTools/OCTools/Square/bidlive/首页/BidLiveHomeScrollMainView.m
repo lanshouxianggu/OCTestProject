@@ -74,7 +74,32 @@
         self.speechPageIndex = 1;
         self.anchorPageIndex = 1;
         self.youlikePageIndex = 0;
-        self.youlikePageIndexArray = [NSMutableArray arrayWithArray:@[@(0),@(82),@(81),@(67),@(3)]];
+        self.youlikePageIndexArray = [NSMutableArray arrayWithArray:@[@(82),@(81),@(67),@(3),
+                                                                      @(71),@(44),@(8),@(40),@(106),
+                                                                      @(47),@(94),@(19),@(7),@(87),
+                                                                      @(26),@(21),@(111),@(63),@(28),
+                                                                      @(39),@(17),@(60),@(9),@(15),
+                                                                      @(54),@(68),@(101),@(84),@(2),
+                                                                      @(57),@(12),@(85),@(61),@(16),
+                                                                      @(5),@(73),@(41),@(34),@(29),
+                                                                      @(62),@(89),@(6),@(30),@(27),
+                                                                      @(32),@(108),@(117),@(91),@(116),
+                                                                      @(11),@(114),@(115),@(72),@(97),
+                                                                      @(90),@(88),@(107),@(92),@(86),
+                                                                      @(53),@(36),@(22),@(56),@(59),
+                                                                      @(75),@(55),@(105),@(112),@(70),
+                                                                      @(58),@(110),@(38),@(104),@(65),
+                                                                      @(1),@(45),@(98),@(24),@(10),
+                                                                      @(83),@(33),@(35),@(43),@(48),
+                                                                      @(49),@(100),@(93),@(14),@(50),
+                                                                      @(37),@(31),@(96),@(79),@(46),
+                                                                      @(103),@(64),@(13),@(76),@(118),
+                                                                      @(66),@(99),@(102),@(51),@(52),
+                                                                      @(25),@(18),@(4),@(109),@(95),
+                                                                      @(23),@(74),@(78),@(80),@(77),
+                                                                      @(113),@(20),@(69),@(31),@(15),
+                                                                      @(77),@(19),@(117),@(28),@(21),
+                                                                      @(91),@(70),@(78),@(56),@(27),]];
         [self setupUI];
         
         WS(weakSelf)
@@ -158,7 +183,7 @@
     [self loadHomeHotCourseData];
     [self loadHomeVideoGuaideData];
     [self loadHomeAnchorListData];
-//    [self loadGuessYouLikeListData];
+    [self loadGuessYouLikeListData];
 }
 
 #pragma mark - 加载广告轮播数据
@@ -172,8 +197,9 @@
 #pragma mark - 加载动态滚动数据
 -(void)loadCMSArticleData {
     WS(weakSelf)
-    [BidLiveHomeNetworkModel getHomePageArticleList:1 pageSize:5 completion:^(NSArray * _Nonnull cmsArticleList) {
+    [BidLiveHomeNetworkModel getHomePageArticleList:1 pageSize:5 completion:^(NSArray<BidLiveHomeCMSArticleModel *> * _Nonnull cmsArticleList) {
         [weakSelf.topMainView updateCMSArticleList:cmsArticleList];
+        [weakSelf.liveMainView updateBannerArray:cmsArticleList];
     }];
 }
 
@@ -326,13 +352,20 @@
     CGFloat offsetY = scrollView.contentOffset.y;
     if (offsetY<CGRectGetHeight(self.topSearchView.frame)) {
         CGFloat alpha = offsetY/CGRectGetHeight(self.topSearchView.frame);
-        NSLog(@"alpha = %f",alpha);
         self.topSearchView.backgroundColor = UIColorFromRGBA(0xf2f2f2, alpha);
     }else {
         self.topSearchView.backgroundColor = UIColorFromRGBA(0xf2f2f2,1);
     }
-    CGFloat likeViewMaxY = CGRectGetMaxY(self.youlikeMainView.frame)-kYouLikeMainViewHeight/2;
-    if (offsetY>=likeViewMaxY) {
+    CGFloat likeViewMaxY = CGRectGetMaxY(self.youlikeMainView.frame)-kYouLikeMainViewHeight/2-90;
+    
+    CGPoint offset = scrollView.contentOffset;
+    CGRect bounds = scrollView.bounds;
+    CGSize size = scrollView.contentSize;
+    UIEdgeInsets inset = scrollView.contentInset;
+    CGFloat currentOffset = offset.y + bounds.size.height - inset.bottom;
+    CGFloat maximumOffset = size.height;
+    
+    if (currentOffset>=maximumOffset) {
         NSLog(@"划到底部了");
         if (self.youlikePageIndexArray.firstObject) {
             int currentPage = [[self.youlikePageIndexArray firstObject] intValue];
@@ -341,12 +374,27 @@
             [self.youlikePageIndexArray removeObjectAtIndex:0];
         }
     }
+    
+    CGFloat statusBarHeight = UIApplication.sharedApplication.statusBarFrame.size.height;
+    if (fabs(offsetY)==statusBarHeight) {
+        return;
+    }
+    [UIView animateWithDuration:0.35 animations:^{
+//        self.floatView.transform = CGAffineTransformMakeScale(0.001, 0.001);
+        self.floatView.alpha = 0;
+    }];
 }
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    [UIView animateWithDuration:0.15 animations:^{
-        self.floatView.transform = CGAffineTransformMakeScale(0.001, 0.001);
-    }];
+//    CGFloat offsetY = scrollView.contentOffset.y;
+//    CGFloat statusBarHeight = UIApplication.sharedApplication.statusBarFrame.size.height;
+//    if (fabs(offsetY)==statusBarHeight) {
+//        return;
+//    }
+//    [UIView animateWithDuration:0.15 animations:^{
+////        self.floatView.transform = CGAffineTransformMakeScale(0.001, 0.001);
+//        self.floatView.alpha = 0;
+//    }];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -369,11 +417,12 @@
 
 #pragma mark - scrollView 停止滚动监测
 - (void)scrollViewDidEndScroll {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:0.15 animations:^{
-            self.floatView.transform = CGAffineTransformMakeScale(1, 1);
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:0.35 animations:^{
+//            self.floatView.transform = CGAffineTransformMakeScale(1, 1);
+            self.floatView.alpha = 1;
         }];
-    });
+//    });
 }
 
 #pragma mark - lazy
@@ -381,7 +430,7 @@
     if (!_mainScrollView) {
         _mainScrollView = [[UIScrollView alloc] init];
         _mainScrollView.delegate = self;
-//        _mainScrollView.bounces = NO;
+        _mainScrollView.bounces = NO;
     }
     return _mainScrollView;
 }

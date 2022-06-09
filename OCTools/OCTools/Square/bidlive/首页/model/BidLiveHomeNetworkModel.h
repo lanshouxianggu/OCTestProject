@@ -13,6 +13,7 @@
 #import "BidLiveHomeVideoGuaideModel.h"
 #import "BidLiveHomeAnchorModel.h"
 #import "BidLiveHomeGuessYouLikeModel.h"
+#import "BidLiveHomeHighlightLotsModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -56,6 +57,14 @@ NS_ASSUME_NONNULL_BEGIN
 ///获取首页猜你喜欢列表
 +(void)getHomePageGuessYouLikeList:(int)pageIndex
                         completion:(void (^)(BidLiveHomeGuessYouLikeModel *model))completionBlock;
+
+///获取首页焦点拍品列表
++(void)getHomePageHighlightLotsList:(int)pageIndex
+                         pageSize:(int)pageSize
+                         isNoMore:(bool)isNoMore
+                           isLoad:(bool)isLoad
+                       scrollLeft:(NSString *)scrollLeft
+                       completion:(void (^)(BidLiveHomeHighlightLotsModel * courseModel))completionBlock;
 @end
 
 NS_ASSUME_NONNULL_END

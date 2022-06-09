@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BidLiveHomeCMSArticleModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) void (^abroadClickBlock)(void);
 @property (nonatomic, copy) void (^internalClickBlock)(void);
+
+-(void)updateBannerArray:(NSArray <BidLiveHomeCMSArticleModel *> *)bannerArray;
 
 -(void)reloadData;
 @end

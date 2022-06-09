@@ -12,9 +12,11 @@
 #import "BidLiveHomeScollLiveNormalCell.h"
 #import "BidLiveHomeScrollLiveBtnView.h"
 #import "BidLiveHomeGlobalLiveModel.h"
+#import "BidLiveLiveMainArticleScrollView.h"
 
 @interface BidLiveHomeScrollLiveMainView () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) BidLiveLiveMainArticleScrollView *articleScrollView;
 @end
 
 @implementation BidLiveHomeScrollLiveMainView
@@ -37,6 +39,11 @@
 
 -(void)reloadData {
     [self.tableView reloadData];
+}
+
+-(void)updateBannerArray:(NSArray<BidLiveHomeCMSArticleModel *> *)bannerArray {
+    [self.articleScrollView updateBannerArray:bannerArray];
+    [self reloadData];
 }
 
 #pragma mark - UITableViewDelegate
@@ -85,14 +92,13 @@
     }
     if (section==1) {
         UIView *view = [UIView new];
-        view.backgroundColor = UIColor.orangeColor;
-        [headView addSubview:view];
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.offset(15);
-            make.right.offset(-15);
-            make.top.offset(5);
-            make.bottom.offset(-5);
-        }];
+        [headView addSubview:self.articleScrollView];
+//        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.offset(15);
+//            make.right.offset(-15);
+//            make.top.offset(5);
+//            make.bottom.offset(-5);
+//        }];
     }
     if (section==2) {
         BidLiveHomeScrollLiveBtnView *leftView = [[BidLiveHomeScrollLiveBtnView alloc] initWithFrame:CGRectZero title:@"海外" direction:ArrowDirectionRight];
@@ -174,6 +180,13 @@
         [_tableView registerNib:nib forCellReuseIdentifier:@"BidLiveHomeScollLiveNormalCell"];
     }
     return _tableView;
+}
+
+-(BidLiveLiveMainArticleScrollView *)articleScrollView {
+    if (!_articleScrollView) {
+        _articleScrollView = [[BidLiveLiveMainArticleScrollView alloc] initWithFrame:CGRectMake(15, 5, SCREEN_WIDTH-30, 80)];
+    }
+    return _articleScrollView;
 }
 @end
 

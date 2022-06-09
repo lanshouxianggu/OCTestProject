@@ -87,7 +87,13 @@
     }];
 }
 
-+(void)getHomePageVideoGuaideList:(int)pageIndex pageSize:(int)pageSize isNoMore:(bool)isNoMore isLoad:(bool)isLoad scrollLeft:(NSString *)scrollLeft completion:(void (^)(BidLiveHomeVideoGuaideModel * _Nonnull))completionBlock {
++(void)getHomePageVideoGuaideList:(int)pageIndex
+                         pageSize:(int)pageSize
+                         isNoMore:(bool)isNoMore
+                           isLoad:(bool)isLoad
+                       scrollLeft:(NSString *)scrollLeft
+                       completion:(void (^)(BidLiveHomeVideoGuaideModel * _Nonnull))completionBlock
+{
     NSString *url = [NSString stringWithFormat:@"%@%@",kAppWebApiAddress,kGetLiveRoomPromotionList];
     NSDictionary *params = @{@"pageIndex":@(pageIndex),
                              @"pageSize":@(pageSize),
@@ -116,7 +122,8 @@
                     pageSize:(int)pageSize
                    pageCount:(int)pageCount
          isContainBeforePage:(bool)isContainBeforePage
-                  completion:(void (^)(BidLiveHomeAnchorModel * _Nonnull))completionBlock {
+                  completion:(void (^)(BidLiveHomeAnchorModel * _Nonnull))completionBlock
+{
     NSString *url = [NSString stringWithFormat:@"%@%@",kAppNewttpApiAddress,kGetHomeHotLiveV2];
     NSDictionary *params = @{@"pageIndex":@(pageIndex),
                              @"pageSize":@(pageSize),
@@ -140,7 +147,9 @@
     }];
 }
 
-+(void)getHomePageGuessYouLikeList:(int)pageIndex completion:(void (^)(BidLiveHomeGuessYouLikeModel * _Nonnull))completionBlock {
++(void)getHomePageGuessYouLikeList:(int)pageIndex
+                        completion:(void (^)(BidLiveHomeGuessYouLikeModel * _Nonnull))completionBlock
+{
     NSString *url = [NSString stringWithFormat:@"%@%@",kAppWebApiAddress,kGetGuangGuangPagedList];
     NSDictionary *params = @{@"pageIndex":@(pageIndex)};
     
@@ -155,6 +164,37 @@
                 }
             }else{
                 !completionBlock?:completionBlock([BidLiveHomeGuessYouLikeModel new]);
+            }
+        }
+    }];
+}
+
++(void)getHomePageHighlightLotsList:(int)pageIndex
+                           pageSize:(int)pageSize
+                           isNoMore:(bool)isNoMore
+                             isLoad:(bool)isLoad
+                         scrollLeft:(NSString *)scrollLeft
+                         completion:(void (^)(BidLiveHomeHighlightLotsModel * _Nonnull))completionBlock
+{
+    NSString *url = [NSString stringWithFormat:@"%@%@",kAppWebApiAddress,kGetAuctionPromotionItems];
+    NSDictionary *params = @{@"pageIndex":@(pageIndex),
+                             @"pageSize":@(pageSize),
+                             @"isNoMore":@(isNoMore),
+                             @"isLoad":@(isLoad),
+                             @"scrollLeft":scrollLeft
+    };
+    
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (error) {
+            !completionBlock?:completionBlock([BidLiveHomeHighlightLotsModel new]);
+        }else {
+            if ([responseObject isKindOfClass:NSDictionary.class]) {
+                if ([responseObject[@"result"] isKindOfClass:NSDictionary.class]) {
+                    BidLiveHomeHighlightLotsModel *model = [BidLiveHomeHighlightLotsModel mj_objectWithKeyValues:responseObject[@"result"]];
+                    !completionBlock?:completionBlock(model);
+                }
+            }else{
+                !completionBlock?:completionBlock([BidLiveHomeHighlightLotsModel new]);
             }
         }
     }];
