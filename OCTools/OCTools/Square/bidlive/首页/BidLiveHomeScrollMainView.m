@@ -24,7 +24,10 @@
 
 #define kTopMainViewHeight (kTopMainBannerViewHeight+100+10+30+10+SCREEN_HEIGHT*0.18)
 #define kLiveMainViewHeight (140*8+90+90+70+110)
-#define kAnchorMainViewHeight (90+4*200+60)
+
+#define kAnchorCellHeight (SCREEN_WIDTH-30)*11/18
+
+#define kAnchorMainViewHeight (90+4*kAnchorCellHeight+60)
 #define kSpeechMainViewHeight (90+4*280+60)
 #define kYouLikeMainViewHeight (110+5*280+4*10)
 
@@ -61,6 +64,7 @@
 @property (nonatomic, assign) int youlikePageIndex;
 
 @property (nonatomic, strong) NSMutableArray *youlikePageIndexArray;
+
 @end
 
 @implementation BidLiveHomeScrollMainView
@@ -133,11 +137,11 @@
             weakSelf.anchorPageIndex = 1;
             weakSelf.anchorMainView.anchorsArray = [NSMutableArray arrayWithArray:weakSelf.anchorOrigionArray];
             [weakSelf.anchorMainView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.height.mas_equalTo(90+weakSelf.anchorMainView.anchorsArray.count*200+60);
+                make.height.mas_equalTo(90+weakSelf.anchorMainView.anchorsArray.count*kAnchorCellHeight+60);
             }];
             [weakSelf.anchorMainView reloadData];
             
-            CGFloat offsetY = CGRectGetMaxY(weakSelf.liveMainView.frame)+(weakSelf.lastAnchorsCount-5)*200-150;
+            CGFloat offsetY = CGRectGetMaxY(weakSelf.liveMainView.frame)+(weakSelf.lastAnchorsCount-5)*kAnchorCellHeight-150;
             [weakSelf.mainScrollView setContentOffset:CGPointMake(0, offsetY) animated:YES];
         }];
         
@@ -216,13 +220,14 @@
 #pragma mark - 加载精选主播列表数据
 -(void)loadHomeAnchorListData {
     WS(weakSelf)
+    
     [BidLiveHomeNetworkModel getHomePageAnchorList:self.anchorPageIndex pageSize:4 pageCount:0 isContainBeforePage:false completion:^(BidLiveHomeAnchorModel * _Nonnull model) {
         [weakSelf.anchorMainView.anchorsArray addObjectsFromArray:model.list];
         if (weakSelf.anchorPageIndex==1) {
             weakSelf.anchorOrigionArray = model.list;
         }
         [weakSelf.anchorMainView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(90+weakSelf.anchorMainView.anchorsArray.count*200+60);
+            make.height.mas_equalTo(90+weakSelf.anchorMainView.anchorsArray.count*kAnchorCellHeight+60);
         }];
         weakSelf.lastAnchorsCount = weakSelf.anchorMainView.anchorsArray.count;
         [weakSelf.anchorMainView reloadData];
@@ -327,21 +332,14 @@
         self.topSearchView.backgroundColor = UIColorFromRGBA(0xf2f2f2,1);
     }
     CGFloat likeViewMaxY = CGRectGetMaxY(self.youlikeMainView.frame)-kYouLikeMainViewHeight/2;
-    if (offsetY>=likeViewMaxY) {
-        int currentPage = [[self.youlikePageIndexArray firstObject] intValue];
-        self.youlikePageIndex = currentPage;
-        
-        [self.youlikePageIndexArray removeObjectAtIndex:0];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    if (offsetY>=likeViewMaxY-50) {
+        NSLog(@"划到底部了");
+        if (self.youlikePageIndexArray.firstObject) {
+            int currentPage = [[self.youlikePageIndexArray firstObject] intValue];
+            self.youlikePageIndex = currentPage;
             [self loadGuessYouLikeListData];
-        });
-        
-//        [self.youlikeMainView.likesArray addObject:@[@"",@"",@"",@"",@"",@"",@"",@"",@"",@""]];
-//        NSInteger likesArrayCount = self.youlikeMainView.likesArray.count;
-//        [self.youlikeMainView mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(likesArrayCount*kYouLikeMainViewHeight);
-//        }];
-//        [self.youlikeMainView.collectionView reloadData];
+            [self.youlikePageIndexArray removeObjectAtIndex:0];
+        }
     }
 }
 

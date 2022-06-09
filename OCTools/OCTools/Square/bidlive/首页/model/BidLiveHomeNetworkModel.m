@@ -124,7 +124,7 @@
                              @"isContainBeforePage":@(isContainBeforePage)
     };
     
-    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyIgnoreCache callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (error) {
             !completionBlock?:completionBlock([BidLiveHomeAnchorModel new]);
         }else {
@@ -144,7 +144,7 @@
     NSString *url = [NSString stringWithFormat:@"%@%@",kAppWebApiAddress,kGetGuangGuangPagedList];
     NSDictionary *params = @{@"pageIndex":@(pageIndex)};
     
-    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyIgnoreCache callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (error) {
             !completionBlock?:completionBlock([BidLiveHomeGuessYouLikeModel new]);
         }else {

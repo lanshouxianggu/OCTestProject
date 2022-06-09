@@ -27,8 +27,9 @@
     [super awakeFromNib];
     // Initialization code
     
-    self.coverImageView.backgroundColor = UIColor.cyanColor;
+//    self.coverImageView.backgroundColor = UIColor.cyanColor;
     
+    self.coverImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.topView.backgroundColor = UIColor.clearColor;
     self.topView.layer.cornerRadius = 4;
     self.topView.layer.masksToBounds = YES;
