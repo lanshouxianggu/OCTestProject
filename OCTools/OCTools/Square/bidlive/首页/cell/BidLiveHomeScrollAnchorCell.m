@@ -30,6 +30,7 @@
 //    self.coverImageView.backgroundColor = UIColor.cyanColor;
     
     self.coverImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.bottomCoverImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.topView.backgroundColor = UIColor.clearColor;
     self.topView.layer.cornerRadius = 4;
     self.topView.layer.masksToBounds = YES;

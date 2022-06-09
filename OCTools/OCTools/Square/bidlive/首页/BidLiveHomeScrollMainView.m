@@ -332,7 +332,7 @@
         self.topSearchView.backgroundColor = UIColorFromRGBA(0xf2f2f2,1);
     }
     CGFloat likeViewMaxY = CGRectGetMaxY(self.youlikeMainView.frame)-kYouLikeMainViewHeight/2;
-    if (offsetY>=likeViewMaxY-50) {
+    if (offsetY>=likeViewMaxY) {
         NSLog(@"划到底部了");
         if (self.youlikePageIndexArray.firstObject) {
             int currentPage = [[self.youlikePageIndexArray firstObject] intValue];
