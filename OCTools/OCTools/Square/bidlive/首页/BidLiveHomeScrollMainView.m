@@ -29,7 +29,9 @@
 #define kAnchorCellHeight (SCREEN_WIDTH-30)*11/18
 
 #define kAnchorMainViewHeight (90+4*kAnchorCellHeight+60)
-#define kSpeechMainViewHeight (90+4*280+60)
+
+#define kSpeechCellHeight (SCREEN_WIDTH-30)*405.5/537
+#define kSpeechMainViewHeight (90+4*kSpeechCellHeight+60)
 #define kYouLikeMainViewHeight (110+5*280+4*10)
 
 #define kHightlightLotsMainViewHeight (SCREEN_HEIGHT*1/3+20+90)
@@ -152,10 +154,10 @@
             weakSelf.speechPageIndex = 1;
             weakSelf.speechMainView.videosArray = [NSMutableArray arrayWithArray:weakSelf.speechOrigionArray];
             [weakSelf.speechMainView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.height.mas_equalTo(90+weakSelf.speechMainView.videosArray.count*280+60);
+                make.height.mas_equalTo(90+weakSelf.speechMainView.videosArray.count*kSpeechCellHeight+60);
             }];
             [weakSelf.speechMainView.tableView reloadData];
-            CGFloat offsetY = CGRectGetMaxY(weakSelf.liveMainView.frame)+(weakSelf.lastVideosCount-5)*280-150;
+            CGFloat offsetY = CGRectGetMaxY(weakSelf.liveMainView.frame)+(weakSelf.lastVideosCount-5)*kSpeechCellHeight-150;
             [weakSelf.mainScrollView setContentOffset:CGPointMake(0, offsetY) animated:YES];
         }];
 #pragma mark - 精选主播更多点击事件
@@ -303,7 +305,7 @@
             weakSelf.speechOrigionArray = courseModel.list;
         }
         [weakSelf.speechMainView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(90+weakSelf.speechMainView.videosArray.count*280+60);
+            make.height.mas_equalTo(90+weakSelf.speechMainView.videosArray.count*kSpeechCellHeight+60);
         }];
         weakSelf.lastVideosCount = weakSelf.speechMainView.videosArray.count;
         [weakSelf.speechMainView reloadData];
