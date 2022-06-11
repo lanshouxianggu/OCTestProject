@@ -11,6 +11,7 @@
 #import "Masonry.h"
 #import "LCConfig.h"
 #import "BidLiveBundleRecourseManager.h"
+#import "MJRefresh.h"
 
 #import "BidLiveHomeScrollTopMainView.h"
 #import "BidLiveHomeScrollLiveMainView.h"
@@ -195,6 +196,27 @@
     [self loadHomeHighliahtLotsListData];
 }
 
+-(void)refreshData {
+    [self loadData];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.mainScrollView.mj_header endRefreshing];
+    });
+}
+
+-(void)loadMoreData {
+//    [self loadGuessYouLikeListData];
+    if (self.youlikePageIndexArray.firstObject) {
+        int currentPage = [[self.youlikePageIndexArray firstObject] intValue];
+        self.youlikePageIndex = currentPage;
+        [self loadGuessYouLikeListData];
+        [self.youlikePageIndexArray removeObjectAtIndex:0];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.mainScrollView.mj_footer endRefreshing];
+        });
+        
+    }
+}
+
 #pragma mark - 设置UI
 -(void)setupUI {
     [self addSubview:self.mainScrollView];
@@ -350,6 +372,7 @@
     WS(weakSelf)
     [BidLiveHomeNetworkModel getHomePageGuessYouLikeList:self.youlikePageIndex completion:^(BidLiveHomeGuessYouLikeModel * _Nonnull model) {
         NSMutableArray *tempArray = [NSMutableArray arrayWithArray:model.list];
+        CGFloat origionHight = CGRectGetHeight(weakSelf.youlikeMainView.frame);
         if (weakSelf.youlikePageIndex==0 && model.list.count>10) {
             [weakSelf.youlikeMainView.likesArray removeAllObjects];
             NSRange range1 = NSMakeRange(0, 10);
@@ -362,10 +385,12 @@
             if (model.list) {
                 [weakSelf.youlikeMainView.likesArray addObject:model.list];
             }
+            origionHight+= (110+(model.list.count/2)*280+4*10);
         }
         NSInteger likesArrayCount = weakSelf.youlikeMainView.likesArray.count;
+        
         [weakSelf.youlikeMainView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(likesArrayCount*kYouLikeMainViewHeight);
+            make.height.mas_equalTo(origionHight);
         }];
         [weakSelf.youlikeMainView.collectionView reloadData];
     }];
@@ -390,13 +415,13 @@
     CGFloat maximumOffset = size.height;
     
     if (currentOffset>=maximumOffset) {
-        NSLog(@"划到底部了");
-        if (self.youlikePageIndexArray.firstObject) {
-            int currentPage = [[self.youlikePageIndexArray firstObject] intValue];
-            self.youlikePageIndex = currentPage;
-            [self loadGuessYouLikeListData];
-            [self.youlikePageIndexArray removeObjectAtIndex:0];
-        }
+//        NSLog(@"划到底部了");
+//        if (self.youlikePageIndexArray.firstObject) {
+//            int currentPage = [[self.youlikePageIndexArray firstObject] intValue];
+//            self.youlikePageIndex = currentPage;
+//            [self loadGuessYouLikeListData];
+//            [self.youlikePageIndexArray removeObjectAtIndex:0];
+//        }
     }
     
     CGFloat statusBarHeight = UIApplication.sharedApplication.statusBarFrame.size.height;
@@ -454,7 +479,24 @@
     if (!_mainScrollView) {
         _mainScrollView = [[UIScrollView alloc] init];
         _mainScrollView.delegate = self;
-        _mainScrollView.bounces = NO;
+//        _mainScrollView.bounces = NO;
+        
+        WS(weakSelf)
+        MJRefreshNormalHeader *refreshHead = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [weakSelf refreshData];
+        }];
+        refreshHead.backgroundColor = [UIColor clearColor];
+        
+        refreshHead.lastUpdatedTimeLabel.hidden = YES;
+        refreshHead.stateLabel.hidden = YES;
+        _mainScrollView.mj_header = refreshHead;
+        
+        MJRefreshAutoNormalFooter *refreshFoot = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            [weakSelf loadMoreData];
+        }];
+        refreshFoot.refreshingTitleHidden = YES;
+        refreshFoot.onlyRefreshPerDrag = YES;
+        _mainScrollView.mj_footer = refreshFoot;
     }
     return _mainScrollView;
 }
