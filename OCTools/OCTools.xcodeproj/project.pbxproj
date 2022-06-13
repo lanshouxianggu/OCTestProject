@@ -117,6 +117,8 @@
 		22B54AC128546CFB00525686 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54AAA28546CFB00525686 /* MJRefreshBackFooter.m */; };
 		22B54AC228546CFB00525686 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54AAB28546CFB00525686 /* MJRefreshAutoFooter.m */; };
 		22B54AC328546CFB00525686 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54AAD28546CFB00525686 /* MJRefreshComponent.m */; };
+		22B54B222856EBD700525686 /* YFGIFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54B202856EBD700525686 /* YFGIFImageView.m */; };
+		22B54B252856EC7100525686 /* UIView+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54B232856EC7100525686 /* UIView+GradientColor.m */; };
 		22BD4070283DC9DB00854873 /* BidLievViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD406F283DC9DB00854873 /* BidLievViewController.m */; };
 		22BD4077283DCE6300854873 /* BidLiveHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4076283DCE6300854873 /* BidLiveHomeHeadView.m */; };
 		22BD4082283E027400854873 /* BidLiveTopBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22BD4081283E027400854873 /* BidLiveTopBannerView.m */; };
@@ -481,6 +483,10 @@
 		22B54AAD28546CFB00525686 /* MJRefreshComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshComponent.m; sourceTree = "<group>"; };
 		22B54AAE28546CFB00525686 /* MJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooter.h; sourceTree = "<group>"; };
 		22B54AAF28546CFB00525686 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
+		22B54B202856EBD700525686 /* YFGIFImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFGIFImageView.m; sourceTree = "<group>"; };
+		22B54B212856EBD700525686 /* YFGIFImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFGIFImageView.h; sourceTree = "<group>"; };
+		22B54B232856EC7100525686 /* UIView+GradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GradientColor.m"; sourceTree = "<group>"; };
+		22B54B242856EC7100525686 /* UIView+GradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GradientColor.h"; sourceTree = "<group>"; };
 		22BD406E283DC9DB00854873 /* BidLievViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLievViewController.h; sourceTree = "<group>"; };
 		22BD406F283DC9DB00854873 /* BidLievViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLievViewController.m; sourceTree = "<group>"; };
 		22BD4075283DCE6300854873 /* BidLiveHomeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeHeadView.h; sourceTree = "<group>"; };
@@ -1822,6 +1828,10 @@
 		9198C02127F702AD00BC069F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				22B54B242856EC7100525686 /* UIView+GradientColor.h */,
+				22B54B232856EC7100525686 /* UIView+GradientColor.m */,
+				22B54B212856EBD700525686 /* YFGIFImageView.h */,
+				22B54B202856EBD700525686 /* YFGIFImageView.m */,
 				22B547F5284DC9C100525686 /* SDWebImage */,
 				22B547AA28470AC700525686 /* BidLiveBundleRecourseManager.h */,
 				22B547A928470AC700525686 /* BidLiveBundleRecourseManager.m */,
@@ -2130,6 +2140,7 @@
 				22B54AB628546CFB00525686 /* MJRefreshBackGifFooter.m in Sources */,
 				22B54833284DC9C100525686 /* SDWebImageCoderHelper.m in Sources */,
 				22B547772847026C00525686 /* YYCache.m in Sources */,
+				22B54B222856EBD700525686 /* YFGIFImageView.m in Sources */,
 				22B54839284DC9C100525686 /* SDImageCache.m in Sources */,
 				22B5479B28470A1D00525686 /* BidLiveHomeScrollSpeechMainView.m in Sources */,
 				916A337D2828B1EA00898E3C /* OTLAfterClassSheetVideoCollectionCell.m in Sources */,
@@ -2175,6 +2186,7 @@
 				22B54758284700C500525686 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				22B54757284700C500525686 /* UIRefreshControl+AFNetworking.m in Sources */,
 				9198C05327F7F17300BC069F /* CPISegementView.m in Sources */,
+				22B54B252856EC7100525686 /* UIView+GradientColor.m in Sources */,
 				22B54759284700C500525686 /* UIImageView+AFNetworking.m in Sources */,
 				22B547EC284DB39500525686 /* NSObject+MJCoding.m in Sources */,
 				91B5910E2823B761008690B4 /* OTLDDLogFileLogger.m in Sources */,

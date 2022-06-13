@@ -26,6 +26,8 @@
 #import "NSAttributedString+LLMake.h"
 #import "NSString+LLStringConnection.h"
 #import "HJNetwork.h"
+#import "YFGIFImageView.h"
+#import "UIView+GradientColor.h"
 
 #ifdef __OBJC__
 // 配置头文件

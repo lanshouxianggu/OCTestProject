@@ -37,6 +37,8 @@
         make.edges.insets(UIEdgeInsetsZero);
     }];
     
+    [topView addSubview:self.livingView];
+    
     UIImage *image = [BidLiveBundleRecourseManager getBundleImage:@"lianpaijiangtangvideobg" type:@"png"];
     
     UIImageView *iconImageV = [[UIImageView alloc] initWithImage:image];
@@ -68,6 +70,7 @@
     _model = model;
     [self.videoImageView sd_setImageWithURL:[NSURL URLWithString:model.coverUrl] placeholderImage:nil];
     self.videoTitleLabel.text = model.name;
+//    self.livingView.hidden = !(model.isLiveroom && model.roomType==2);
 }
 
 #pragma mark - lazy
@@ -88,5 +91,52 @@
         _videoTitleLabel.text = @"精彩亚洲艺术专拍上线 艾德预展现场打卡打卡打卡打卡打卡打卡";
     }
     return _videoTitleLabel;
+}
+
+-(BidLiveLivingView *)livingView {
+    if (!_livingView) {
+        _livingView = [[BidLiveLivingView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width*0.4, self.frame.size.height*0.13)];
+        _livingView.backgroundColor = UIColor.cyanColor;
+    }
+    return _livingView;
+}
+@end
+
+@implementation BidLiveLivingView
+
+-(instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self setupUI];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self gradientFromColor:UIColorFromRGB(0xF8523B) toColor:UIColorFromRGB(0xF9B194) directionType:GradientDirectionToRight];
+            [self addRoundedCorners:UIRectCornerBottomRight withSize:CGSizeMake(8, 8)];
+//        });
+    }
+    return self;
+}
+
+-(void)setupUI {
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"BidLiveBundle" ofType:@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    NSString *imagePath = [bundle pathForResource:@"animation_live" ofType:@"gif"];
+    NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
+//    UIImage *gifImage = [UIImage sd_imag eWithGIFData:imageData];
+    
+    YFGIFImageView *imageV = [[YFGIFImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+//    imageV.image = gifImage;
+    imageV.gifData = imageData;
+    [imageV startGIF];
+    self.animationImageView = imageV;
+    [self addSubview:imageV];
+    
+    UILabel *lab = [UILabel new];
+    lab.text = @"直播中";
+    lab.textColor = UIColor.whiteColor;
+    lab.font = [UIFont systemFontOfSize:11];
+    [self addSubview:lab];
+    [lab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.offset(0);
+        make.left.equalTo(imageV.mas_right);
+    }];
 }
 @end
