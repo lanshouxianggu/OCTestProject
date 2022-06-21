@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2289BA362861A13500EFCC0E /* LiveEB_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2289BA312861A06A00EFCC0E /* LiveEB_IOS.framework */; };
+		2289BA372861A13500EFCC0E /* LiveEB_IOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2289BA312861A06A00EFCC0E /* LiveEB_IOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2289BA392861A13800EFCC0E /* TWEBRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2289BA322861A06A00EFCC0E /* TWEBRTC.framework */; };
+		2289BA3A2861A13800EFCC0E /* TWEBRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2289BA322861A06A00EFCC0E /* TWEBRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2289BA3E2861AC8300EFCC0E /* BidLivePIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289BA3D2861AC8300EFCC0E /* BidLivePIPViewController.m */; };
 		22B54756284700C500525686 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54731284700C500525686 /* UIProgressView+AFNetworking.m */; };
 		22B54757284700C500525686 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54733284700C500525686 /* UIRefreshControl+AFNetworking.m */; };
 		22B54758284700C500525686 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54736284700C500525686 /* AFNetworkActivityIndicatorManager.m */; };
@@ -259,8 +264,27 @@
 		91D640572826688D00E132B6 /* OTLAfterClassSheetEndClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D640562826688D00E132B6 /* OTLAfterClassSheetEndClassCell.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2289BA382861A13600EFCC0E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2289BA3A2861A13800EFCC0E /* TWEBRTC.framework in Embed Frameworks */,
+				2289BA372861A13500EFCC0E /* LiveEB_IOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1D0B4649436608D22BC47675 /* libPods-OCTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2289BA312861A06A00EFCC0E /* LiveEB_IOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LiveEB_IOS.framework; sourceTree = "<group>"; };
+		2289BA322861A06A00EFCC0E /* TWEBRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TWEBRTC.framework; sourceTree = "<group>"; };
+		2289BA3C2861AC8300EFCC0E /* BidLivePIPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLivePIPViewController.h; sourceTree = "<group>"; };
+		2289BA3D2861AC8300EFCC0E /* BidLivePIPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLivePIPViewController.m; sourceTree = "<group>"; };
 		22B54731284700C500525686 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		22B54732284700C500525686 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
 		22B54733284700C500525686 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
@@ -763,12 +787,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				34EFDAB3CDB904402C9A4921 /* libPods-OCTools.a in Frameworks */,
+				2289BA362861A13500EFCC0E /* LiveEB_IOS.framework in Frameworks */,
+				2289BA392861A13800EFCC0E /* TWEBRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2289BA302861A06A00EFCC0E /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2289BA312861A06A00EFCC0E /* LiveEB_IOS.framework */,
+				2289BA322861A06A00EFCC0E /* TWEBRTC.framework */,
+			);
+			path = frameworks;
+			sourceTree = "<group>";
+		};
+		2289BA3B2861AC6400EFCC0E /* 画中画 */ = {
+			isa = PBXGroup;
+			children = (
+				2289BA3C2861AC8300EFCC0E /* BidLivePIPViewController.h */,
+				2289BA3D2861AC8300EFCC0E /* BidLivePIPViewController.m */,
+			);
+			path = "画中画";
+			sourceTree = "<group>";
+		};
 		22B5472C284700B100525686 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -1171,6 +1215,7 @@
 		22BD406D283DC99C00854873 /* bidlive */ = {
 			isa = PBXGroup;
 			children = (
+				2289BA3B2861AC6400EFCC0E /* 画中画 */,
 				22BD4071283DCB2F00854873 /* 首页 */,
 				22BD406E283DC9DB00854873 /* BidLievViewController.h */,
 				22BD406F283DC9DB00854873 /* BidLievViewController.m */,
@@ -1578,6 +1623,7 @@
 		9198BF9F27F594C800BC069F /* OCTools */ = {
 			isa = PBXGroup;
 			children = (
+				2289BA302861A06A00EFCC0E /* frameworks */,
 				22B5472C284700B100525686 /* Library */,
 				91B591082823A11A008690B4 /* DDLogManager */,
 				9198BFE527F6ABC100BC069F /* Category */,
@@ -1930,6 +1976,7 @@
 				9198BF9A27F594C800BC069F /* Frameworks */,
 				9198BF9B27F594C800BC069F /* Resources */,
 				EC470FD383E69D3103D715FF /* [CP] Copy Pods Resources */,
+				2289BA382861A13600EFCC0E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2111,6 +2158,7 @@
 				91B5910B2823A149008690B4 /* OTLDDLogFormatter.m in Sources */,
 				22B547CB284DAAFA00525686 /* BidLiveHomeNetworkModel.m in Sources */,
 				22BD4082283E027400854873 /* BidLiveTopBannerView.m in Sources */,
+				2289BA3E2861AC8300EFCC0E /* BidLivePIPViewController.m in Sources */,
 				22B5475A284700C500525686 /* UIButton+AFNetworking.m in Sources */,
 				22B5494628506BA700525686 /* BidLiveHomeVideoGuideView.m in Sources */,
 				916A33A9282A373800898E3C /* OTLStudentSidePracticePianoTaskMainView.m in Sources */,
@@ -2337,6 +2385,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2395,6 +2444,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -2423,6 +2473,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 88U6WCRXJ3;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OCTools/frameworks",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OCTools/PrefixHeader/OCToolsPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OCTools/Info.plist;
@@ -2444,6 +2499,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
@@ -2457,6 +2513,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 88U6WCRXJ3;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OCTools/frameworks",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/OCTools/PrefixHeader/OCToolsPrefixHeader.pch";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OCTools/Info.plist;
@@ -2478,6 +2539,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};

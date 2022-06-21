@@ -8,6 +8,7 @@
 #import "BidLievViewController.h"
 #import "LCSquareTableViewCell.h"
 #import "BidLiveHomeViewController.h"
+#import "BidLivePIPViewController.h"
 
 @interface BidLievViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -21,7 +22,7 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"联拍在线";
     self.view.backgroundColor = UIColorFromRGB(0xf2f2f2);
-    self.dataArray = @[@"首页",@"分类",@"拍卖结果",@"我的"];
+    self.dataArray = @[@"首页",@"画中画"];
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -68,19 +69,7 @@
             break;
         case 1:
         {
-            UIViewController *vc = [UIViewController new];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-        case 2:
-        {
-            UIViewController *vc = [UIViewController new];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-        case 3:
-        {
-            UIViewController *vc = [UIViewController new];
+            BidLivePIPViewController *vc = [BidLivePIPViewController new];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
