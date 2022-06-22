@@ -6,7 +6,7 @@
 //
 
 #import "BidLiveTopBannerView.h"
-#import "UIImageView+WebCache.h"
+#import "LCConfig.h"
 
 @interface BidLiveTopBannerView () <UIScrollViewDelegate>
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -27,14 +27,31 @@
         self.scrollView.showsVerticalScrollIndicator = NO;
         self.scrollView.showsHorizontalScrollIndicator = NO;
         self.scrollView.delegate = self;
-        
+        [self.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
         
         self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.frame.size.height-30, self.frame.size.width, 30)];
         
         [self addSubview:self.scrollView];
         [self addSubview:self.pageControl];
+        
+        self.pageControl.currentPage = 0;
+        self.pageControl.pageIndicatorTintColor = UIColorFromRGB(0x666666);
+        self.pageControl.currentPageIndicatorTintColor = UIColorFromRGB(0x69B2D2);
+        self.pageControl.userInteractionEnabled = NO;
+        
+        [self startTimer];
     }
     return self;
+}
+
+-(void)startTimer {
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(scrollIamge) userInfo:nil repeats:YES];
+    NSRunLoop *runloop = [NSRunLoop currentRunLoop];
+    [runloop addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
 -(void)updateBannerArray:(NSArray<BidLiveHomeBannerModel *> *)bannerArray {
@@ -48,35 +65,44 @@
     [self.imgArray addObject:[bannerArray firstObject]];
     
     self.scrollView.contentSize = CGSizeMake(self.frame.size.width*self.imgArray.count, self.frame.size.height);
+    UIImage *placeholderImage = [BidLiveBundleResourceManager getBundleImage:@"banner_lodding" type:@"png"];
     for (int i = 0; i<self.imgArray.count; i++) {
         BidLiveHomeBannerModel *mode = self.imgArray[i];
         CGRect imgFrame = CGRectMake(self.frame.size.width*i, 0, self.frame.size.width, self.frame.size.height);
         UIImageView *imgView = [[UIImageView alloc] initWithFrame:imgFrame];
-//        imgView.contentMode = UIViewContentModeScaleAspectFill;
-        imgView.tag = i;
-        [imgView sd_setImageWithURL:[NSURL URLWithString:mode.imageUrl] placeholderImage:nil];
+        [imgView sd_setImageWithURL:[NSURL URLWithString:mode.imageUrl] placeholderImage:placeholderImage];
         [self.scrollView addSubview:imgView];
+        
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.tag = i;
         btn.frame = imgFrame;
         [btn addTarget:self action:@selector(imageViewTapGes:) forControlEvents:UIControlEventTouchUpInside];
         [self.scrollView addSubview:btn];
     }
-
-    [self.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
-    
     self.pageControl.numberOfPages = bannerArray.count;
-    self.pageControl.currentPage = 0;
-    self.pageControl.tintColor = UIColor.whiteColor;
     
+    [self startTimer];
+}
+
+-(void)destroyTimer {
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}
+
+-(void)resumeTimer {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(scrollIamge) userInfo:nil repeats:YES];
     NSRunLoop *runloop = [NSRunLoop currentRunLoop];
     [runloop addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
+#pragma mark - banner点击
 -(void)imageViewTapGes:(UIButton *)btn {
-    !self.bannerClick?:self.bannerClick(self.imgArray[btn.tag-1]);
+    !self.bannerClick?:self.bannerClick(self.imgArray[btn.tag]);
 }
+
+#pragma mark - UIScrollViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat offsetX = scrollView.contentOffset.x;
     offsetX+=scrollView.frame.size.width*0.5;
@@ -102,10 +128,8 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"contentOffset"]) {
         CGPoint offset = [[change objectForKey:NSKeyValueChangeNewKey] CGPointValue];
-        CGFloat contentSizeWidth = self.scrollView.contentSize.width;
-        CGFloat scrollWidth = self.scrollView.frame.size.width;
         //当滑倒3后面的1时
-        if (offset.x >= contentSizeWidth-scrollWidth) {
+        if (offset.x >= self.scrollView.contentSize.width-self.scrollView.frame.size.width) {
             [self.scrollView setContentOffset:CGPointMake(self.scrollView.frame.size.width, 0)];
             self.pageControl.currentPage = 0;
         }

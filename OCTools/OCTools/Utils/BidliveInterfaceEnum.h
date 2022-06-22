@@ -27,6 +27,9 @@ static NSString *const kGetAuctionPromotionItems = @"/api/services/app/AuctionPr
 ///猜你喜欢
 static NSString *const kGetGuangGuangPagedList = @"/api/services/app/AuctionItemQuery/GetGuangGuangPagedList";
 
+///获取播流地址
+static NSString *const kGetTXTtpPlayUrl = @"/api/services/app/TtpMember/GetTXTtpPlayUrl";
+
 /*************************************************************************************/
 static NSString *const kAppNewttpApiAddress = @"http://newttp_api.51bidlive.com";
 
@@ -34,6 +37,8 @@ static NSString *const kAppNewttpApiAddress = @"http://newttp_api.51bidlive.com"
 static NSString *const kGetHomeHotLiveV2 = @"/api/services/app/Home/GetHomeHotLiveV2";
 ///名家讲堂
 static NSString *const kGetHomeHotCourse = @"/api/services/app/Home/GetHomeHotCourse";
+///直播状态
+static NSString *const kGetLiveRoomStatus = @"/api/services/app/LiveRoom/GetLiveRoomStatus";
 
 /*************************************************************************************/
 static NSString *const kAppEnApiAddress = @"http://en.m.51bidlive.com";

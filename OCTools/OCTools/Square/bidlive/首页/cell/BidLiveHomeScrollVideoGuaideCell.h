@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BidLiveHomeVideoGuaideModel.h"
+#import "YFGIFImageView.h"
 
 
 @interface BidLiveLivingView : UIView
@@ -18,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BidLiveHomeScrollVideoGuaideCell : UICollectionViewCell
 @property (nonatomic, strong) BidLiveHomeVideoGuaideListModel *model;
 @property (nonatomic, strong) BidLiveLivingView *livingView;
+@property (nonatomic, strong) UIView *rtcSuperView;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,6 +12,9 @@
 		2289BA392861A13800EFCC0E /* TWEBRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2289BA322861A06A00EFCC0E /* TWEBRTC.framework */; };
 		2289BA3A2861A13800EFCC0E /* TWEBRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2289BA322861A06A00EFCC0E /* TWEBRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2289BA3E2861AC8300EFCC0E /* BidLivePIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289BA3D2861AC8300EFCC0E /* BidLivePIPViewController.m */; };
+		2289BA432862E6EB00EFCC0E /* WebRtcView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289BA412862E6EB00EFCC0E /* WebRtcView.m */; };
+		2289BA462862E8A700EFCC0E /* UIDevice+VGAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289BA452862E8A700EFCC0E /* UIDevice+VGAddition.m */; };
+		2289BA492862EA2B00EFCC0E /* BidLiveSimultaneouslyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2289BA472862EA2B00EFCC0E /* BidLiveSimultaneouslyScrollView.m */; };
 		22B54756284700C500525686 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54731284700C500525686 /* UIProgressView+AFNetworking.m */; };
 		22B54757284700C500525686 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54733284700C500525686 /* UIRefreshControl+AFNetworking.m */; };
 		22B54758284700C500525686 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B54736284700C500525686 /* AFNetworkActivityIndicatorManager.m */; };
@@ -46,7 +49,7 @@
 		22B547A328470A3200525686 /* BidLiveHomeFirstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B547A028470A3100525686 /* BidLiveHomeFirstCell.xib */; };
 		22B547A428470A3200525686 /* BidLiveHomeScrollSpeechCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B547A128470A3100525686 /* BidLiveHomeScrollSpeechCell.xib */; };
 		22B547A528470A3200525686 /* BidLiveHomeScollLiveNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B547A228470A3100525686 /* BidLiveHomeScollLiveNormalCell.xib */; };
-		22B547AB28470AC700525686 /* BidLiveBundleRecourseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B547A928470AC700525686 /* BidLiveBundleRecourseManager.m */; };
+		22B547AB28470AC700525686 /* BidLiveBundleResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B547A928470AC700525686 /* BidLiveBundleResourceManager.m */; };
 		22B547CB284DAAFA00525686 /* BidLiveHomeNetworkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B547CA284DAAFA00525686 /* BidLiveHomeNetworkModel.m */; };
 		22B547CF284DB21C00525686 /* BidLiveHomeBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B547CE284DB21C00525686 /* BidLiveHomeBannerModel.m */; };
 		22B547E9284DB39500525686 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B547D5284DB39500525686 /* MJPropertyType.m */; };
@@ -285,6 +288,12 @@
 		2289BA322861A06A00EFCC0E /* TWEBRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TWEBRTC.framework; sourceTree = "<group>"; };
 		2289BA3C2861AC8300EFCC0E /* BidLivePIPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLivePIPViewController.h; sourceTree = "<group>"; };
 		2289BA3D2861AC8300EFCC0E /* BidLivePIPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLivePIPViewController.m; sourceTree = "<group>"; };
+		2289BA412862E6EB00EFCC0E /* WebRtcView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRtcView.m; sourceTree = "<group>"; };
+		2289BA422862E6EB00EFCC0E /* WebRtcView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRtcView.h; sourceTree = "<group>"; };
+		2289BA442862E8A700EFCC0E /* UIDevice+VGAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+VGAddition.h"; sourceTree = "<group>"; };
+		2289BA452862E8A700EFCC0E /* UIDevice+VGAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+VGAddition.m"; sourceTree = "<group>"; };
+		2289BA472862EA2B00EFCC0E /* BidLiveSimultaneouslyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BidLiveSimultaneouslyScrollView.m; sourceTree = "<group>"; };
+		2289BA482862EA2B00EFCC0E /* BidLiveSimultaneouslyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BidLiveSimultaneouslyScrollView.h; sourceTree = "<group>"; };
 		22B54731284700C500525686 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		22B54732284700C500525686 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
 		22B54733284700C500525686 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
@@ -354,8 +363,8 @@
 		22B547A028470A3100525686 /* BidLiveHomeFirstCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BidLiveHomeFirstCell.xib; sourceTree = "<group>"; };
 		22B547A128470A3100525686 /* BidLiveHomeScrollSpeechCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BidLiveHomeScrollSpeechCell.xib; sourceTree = "<group>"; };
 		22B547A228470A3100525686 /* BidLiveHomeScollLiveNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BidLiveHomeScollLiveNormalCell.xib; sourceTree = "<group>"; };
-		22B547A928470AC700525686 /* BidLiveBundleRecourseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BidLiveBundleRecourseManager.m; sourceTree = "<group>"; };
-		22B547AA28470AC700525686 /* BidLiveBundleRecourseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BidLiveBundleRecourseManager.h; sourceTree = "<group>"; };
+		22B547A928470AC700525686 /* BidLiveBundleResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BidLiveBundleResourceManager.m; sourceTree = "<group>"; };
+		22B547AA28470AC700525686 /* BidLiveBundleResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BidLiveBundleResourceManager.h; sourceTree = "<group>"; };
 		22B547C9284DAAFA00525686 /* BidLiveHomeNetworkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidLiveHomeNetworkModel.h; sourceTree = "<group>"; };
 		22B547CA284DAAFA00525686 /* BidLiveHomeNetworkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidLiveHomeNetworkModel.m; sourceTree = "<group>"; };
 		22B547CC284DACA100525686 /* BidliveInterfaceEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidliveInterfaceEnum.h; sourceTree = "<group>"; };
@@ -965,6 +974,8 @@
 				22B549712851C8C400525686 /* BidLiveLiveMainArticleScrollView.m */,
 				22B549762851D61B00525686 /* BidLiveHomeScrollHighlightLotsView.h */,
 				22B549772851D61B00525686 /* BidLiveHomeScrollHighlightLotsView.m */,
+				2289BA482862EA2B00EFCC0E /* BidLiveSimultaneouslyScrollView.h */,
+				2289BA472862EA2B00EFCC0E /* BidLiveSimultaneouslyScrollView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1215,6 +1226,8 @@
 		22BD406D283DC99C00854873 /* bidlive */ = {
 			isa = PBXGroup;
 			children = (
+				2289BA422862E6EB00EFCC0E /* WebRtcView.h */,
+				2289BA412862E6EB00EFCC0E /* WebRtcView.m */,
 				2289BA3B2861AC6400EFCC0E /* 画中画 */,
 				22BD4071283DCB2F00854873 /* 首页 */,
 				22BD406E283DC9DB00854873 /* BidLievViewController.h */,
@@ -1226,25 +1239,25 @@
 		22BD4071283DCB2F00854873 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
-				22B547C8284DAADD00525686 /* model */,
-				22B5479F28470A3100525686 /* xib */,
-				22B5478F28470A1C00525686 /* view */,
-				22B5477F284709BA00525686 /* cell */,
+				22BD418F2840B4AE00854873 /* BidLiveHomeBtnItemsView.h */,
+				22BD41902840B4AE00854873 /* BidLiveHomeBtnItemsView.m */,
 				22BD408F283E1C9A00854873 /* BidLiveHomeFloatView.h */,
 				22BD4090283E1C9A00854873 /* BidLiveHomeFloatView.m */,
 				22BD4075283DCE6300854873 /* BidLiveHomeHeadView.h */,
 				22BD4076283DCE6300854873 /* BidLiveHomeHeadView.m */,
 				22BD41892840B02600854873 /* BidLiveHomeMainView.h */,
 				22BD418A2840B02600854873 /* BidLiveHomeMainView.m */,
+				22B5477D2847099700525686 /* BidLiveHomeScrollMainView.h */,
+				22B5477C2847099700525686 /* BidLiveHomeScrollMainView.m */,
 				22BD4083283E076300854873 /* BidLiveHomeViewController.h */,
 				22BD4084283E076300854873 /* BidLiveHomeViewController.m */,
 				22BD4080283E027400854873 /* BidLiveTopBannerView.h */,
 				22BD4081283E027400854873 /* BidLiveTopBannerView.m */,
+				22B5477F284709BA00525686 /* cell */,
+				22B547C8284DAADD00525686 /* model */,
 				22BD408B283E167500854873 /* SGAdvertScrollView */,
-				22BD418F2840B4AE00854873 /* BidLiveHomeBtnItemsView.h */,
-				22BD41902840B4AE00854873 /* BidLiveHomeBtnItemsView.m */,
-				22B5477D2847099700525686 /* BidLiveHomeScrollMainView.h */,
-				22B5477C2847099700525686 /* BidLiveHomeScrollMainView.m */,
+				22B5478F28470A1C00525686 /* view */,
+				22B5479F28470A3100525686 /* xib */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -1753,6 +1766,8 @@
 				9198C02C27F7EC0D00BC069F /* NSAttributedString+LLMake.m */,
 				9198C03727F7EC0D00BC069F /* NSData+Common.h */,
 				9198C03127F7EC0D00BC069F /* NSData+Common.m */,
+				2289BA442862E8A700EFCC0E /* UIDevice+VGAddition.h */,
+				2289BA452862E8A700EFCC0E /* UIDevice+VGAddition.m */,
 				9198C03A27F7EC0E00BC069F /* NSString+Common.h */,
 				9198C02A27F7EC0D00BC069F /* NSString+Common.m */,
 				9198C03227F7EC0D00BC069F /* UIColor+LLRandomColor.h */,
@@ -1879,8 +1894,8 @@
 				22B54B212856EBD700525686 /* YFGIFImageView.h */,
 				22B54B202856EBD700525686 /* YFGIFImageView.m */,
 				22B547F5284DC9C100525686 /* SDWebImage */,
-				22B547AA28470AC700525686 /* BidLiveBundleRecourseManager.h */,
-				22B547A928470AC700525686 /* BidLiveBundleRecourseManager.m */,
+				22B547AA28470AC700525686 /* BidLiveBundleResourceManager.h */,
+				22B547A928470AC700525686 /* BidLiveBundleResourceManager.m */,
 				22B54765284701F900525686 /* HJNetwork */,
 				9198C05127F7F17300BC069F /* CPISegementView.h */,
 				9198C05227F7F17300BC069F /* CPISegementView.m */,
@@ -2142,6 +2157,7 @@
 				22B5475B284700C500525686 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				916A339F282A0FAB00898E3C /* OTLStudentSideMainViewController.m in Sources */,
 				9198C01F27F6FECF00BC069F /* MCVideoMoreDetailView.m in Sources */,
+				2289BA492862EA2B00EFCC0E /* BidLiveSimultaneouslyScrollView.m in Sources */,
 				22B54AB328546CFB00525686 /* UIScrollView+MJExtension.m in Sources */,
 				916A338F28290BC300898E3C /* OTLPracticePianoTaskFirstPartView.m in Sources */,
 				22B5482B284DC9C100525686 /* SDWebImageManager.m in Sources */,
@@ -2196,7 +2212,7 @@
 				22B5475C284700C500525686 /* UIWebView+AFNetworking.m in Sources */,
 				9198C04327F7EC0E00BC069F /* UIImage+Common.m in Sources */,
 				22B54ABF28546CFB00525686 /* MJRefreshFooter.m in Sources */,
-				22B547AB28470AC700525686 /* BidLiveBundleRecourseManager.m in Sources */,
+				22B547AB28470AC700525686 /* BidLiveBundleResourceManager.m in Sources */,
 				9198C04C27F7F07600BC069F /* OTLWeekReportDetailTableViewCell.m in Sources */,
 				916A348F2831FFF800898E3C /* FileBaseFlowCell.m in Sources */,
 				9198C02427F702E400BC069F /* TipProgress.m in Sources */,
@@ -2268,6 +2284,7 @@
 				22B548EA284F32DE00525686 /* BidLiveHomeGlobalLiveModel.m in Sources */,
 				22B547F1284DB39500525686 /* MJPropertyKey.m in Sources */,
 				9198C01A27F6FECF00BC069F /* MCCallLogsBackupChooseRecoveryRecordView.m in Sources */,
+				2289BA462862E8A700EFCC0E /* UIDevice+VGAddition.m in Sources */,
 				22B549782851D61B00525686 /* BidLiveHomeScrollHighlightLotsView.m in Sources */,
 				9198BFDE27F6A92D00BC069F /* LCDiscoveryViewController.m in Sources */,
 				22B54AB028546CFB00525686 /* UIScrollView+MJRefresh.m in Sources */,
@@ -2296,6 +2313,7 @@
 				22B548EF284F417F00525686 /* BidLiveHomeHotCourseModel.m in Sources */,
 				916A34732831FF0000898E3C /* ShareGroupViewController.m in Sources */,
 				22B5495D28508DAF00525686 /* BidLiveHomeScrollAnchorCell.m in Sources */,
+				2289BA432862E6EB00EFCC0E /* WebRtcView.m in Sources */,
 				916A341B2831F3D600898E3C /* DiscoveryViewController.m in Sources */,
 				22B54AB728546CFB00525686 /* MJRefreshBackStateFooter.m in Sources */,
 				916A34712831FF0000898E3C /* CreateShareGroupNavView.m in Sources */,

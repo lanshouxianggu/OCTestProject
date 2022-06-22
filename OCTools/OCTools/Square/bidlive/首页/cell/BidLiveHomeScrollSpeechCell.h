@@ -7,7 +7,6 @@
 
 #import <UIKit/UIKit.h>
 #import "BidLiveHomeHotCourseModel.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BidLiveHomeScrollSpeechCell : UITableViewCell

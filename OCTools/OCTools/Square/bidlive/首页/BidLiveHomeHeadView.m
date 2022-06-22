@@ -6,7 +6,9 @@
 //
 
 #import "BidLiveHomeHeadView.h"
-#import "BidLiveBundleRecourseManager.h"
+#import "Masonry.h"
+#import "LCConfig.h"
+#import "BidLiveBundleResourceManager.h"
 
 @interface BidLiveHomeHeadView ()
 
@@ -38,7 +40,7 @@
     
     UILabel *lab = [UILabel new];
     lab.text = @"请输入关键字搜索";
-    lab.textColor = UIColorFromRGB(0x3b3b3b);
+    lab.textColor = UIColorFromRGB(0x666666);
     lab.font = [UIFont systemFontOfSize:14];
     lab.textAlignment = NSTextAlignmentCenter;
     
@@ -48,11 +50,12 @@
         make.centerX.offset(10);
     }];
     
-    UIImage *image = [BidLiveBundleRecourseManager getBundleImage:@"iconfont-sousuo" type:@"png"];
+    UIImage *image = [BidLiveBundleResourceManager getBundleImage:@"iconfont-sousuo" type:@"png"];
     UIImageView *imageV = [[UIImageView alloc] initWithImage:image];
+    
     [searchView addSubview:imageV];
     [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(20);
+        make.width.height.mas_equalTo(15);
         make.centerY.offset(0);
         make.right.equalTo(lab.mas_left).offset(-8);
     }];

@@ -8,23 +8,27 @@
 #import "BidLiveHomeScrollLiveMainView.h"
 #import "Masonry.h"
 #import "LCConfig.h"
-#import "BidLiveBundleRecourseManager.h"
+#import "BidLiveBundleResourceManager.h"
 #import "BidLiveHomeScollLiveNormalCell.h"
 #import "BidLiveHomeScrollLiveBtnView.h"
 #import "BidLiveHomeGlobalLiveModel.h"
 #import "BidLiveLiveMainArticleScrollView.h"
+#import "UIImageView+WebCache.h"
+#import "UIImage+GIF.h"
 
 @interface BidLiveHomeScrollLiveMainView () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) BidLiveLiveMainArticleScrollView *articleScrollView;
+@property (nonatomic, strong) UIImageView *gifImageView;
+@property (nonatomic, strong) UIImageView *bottomImageView;
+@property (nonatomic, strong) BidLiveHomeBannerModel *gifModel;
+@property (nonatomic, strong) BidLiveHomeBannerModel *bottomModel;
 @end
 
 @implementation BidLiveHomeScrollLiveMainView
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-//        self.firstPartLiveArray = @[@"",@"",@"",@""];
-//        self.secondPartLiveArray = @[@"",@"",@"",@""];
         [self setupUI];
     }
     return self;
@@ -41,9 +45,32 @@
     [self.tableView reloadData];
 }
 
--(void)updateBannerArray:(NSArray<BidLiveHomeCMSArticleModel *> *)bannerArray {
-    [self.articleScrollView updateBannerArray:bannerArray];
+-(void)updateBannerArray:(NSArray<BidLiveHomeBannerModel *> *)bannerArray {
+//    [self.articleScrollView updateBannerArray:bannerArray];
+    if (bannerArray.count==0) {
+        return;
+    }
+    BidLiveHomeBannerModel *firstModel = bannerArray.firstObject;
+    BidLiveHomeBannerModel *secondeModel = bannerArray[1];
+    self.bottomModel = secondeModel;
+    self.gifModel = firstModel;
+    if ([firstModel.imageUrl hasSuffix:@"gif"]) {
+        NSData *gifData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:firstModel.imageUrl]];
+        UIImage *gifImage = [UIImage sd_animatedGIFWithData:gifData];
+        self.gifImageView.image = gifImage;
+    }else {
+        [self.gifImageView sd_setImageWithURL:[NSURL URLWithString:firstModel.imageUrl] placeholderImage:nil];
+    }
+    
     [self reloadData];
+}
+
+-(void)gifImageViewTapAction{
+    !self.gifImageClickBlock?:self.gifImageClickBlock(self.gifModel);
+}
+
+-(void)bottomImageViewTapAction {
+    !self.bottomImageClickBlock?:self.bottomImageClickBlock(self.bottomModel);
 }
 
 #pragma mark - UITableViewDelegate
@@ -63,14 +90,15 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section==0||indexPath.section==1) {
-        return 140;
+//        return 140;
+        return (SCREEN_WIDTH-30)*218.5/537;
     }
-    return 100;
+    return (SCREEN_WIDTH-30)*138.5/537;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section==0||section==1) {
-        return 90;
+    if (section==1) {
+        return (SCREEN_WIDTH-30)*138.5/537+10;
     }
     return 70;
 }
@@ -80,25 +108,28 @@
     headView.backgroundColor = UIColorFromRGB(0xf8f8f8);
     WS(weakSelf)
     if (section==0) {
-        UIImage *image = [BidLiveBundleRecourseManager getBundleImage:@"special" type:@"png"];
+        UIImage *image = [BidLiveBundleResourceManager getBundleImage:@"indexBlock2" type:@"png"];
         
         UIImageView *imageV = [[UIImageView alloc] initWithImage:image];
         [headView addSubview:imageV];
         [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.offset(0);
+            make.centerX.offset(0);
+            make.centerY.offset(5);
             make.width.mas_equalTo(44*3.35);
             make.height.mas_equalTo(44);
         }];
     }
     if (section==1) {
-        UIView *view = [UIView new];
-        [headView addSubview:self.articleScrollView];
-//        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.left.offset(15);
-//            make.right.offset(-15);
-//            make.top.offset(5);
-//            make.bottom.offset(-5);
-//        }];
+//        [headView addSubview:self.articleScrollView];
+        [headView addSubview:self.gifImageView];
+        
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn addTarget:self action:@selector(gifImageViewTapAction) forControlEvents:UIControlEventTouchUpInside];
+        btn.frame = _gifImageView.bounds;
+        [headView addSubview:btn];
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.insets(UIEdgeInsetsZero);
+        }];
     }
     if (section==2) {
         BidLiveHomeScrollLiveBtnView *leftView = [[BidLiveHomeScrollLiveBtnView alloc] initWithFrame:CGRectZero title:@"海外" direction:ArrowDirectionRight];
@@ -145,18 +176,37 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     UIView *cellMainView = [UIView new];
-    cellMainView.backgroundColor = UIColor.cyanColor;
     [cell.contentView addSubview:cellMainView];
     [cellMainView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(15);
         make.right.offset(-15);
         make.top.bottom.offset(0);
     }];
+    
+    [cellMainView addSubview:self.bottomImageView];
+    if (self.bottomModel) {
+        [self.bottomImageView sd_setImageWithURL:[NSURL URLWithString:self.bottomModel.imageUrl] placeholderImage:nil];
+    }
+    [self.bottomImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.insets(UIEdgeInsetsZero);
+    }];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section==2) {
+        [self bottomImageViewTapAction];
+    }
+    if (indexPath.section==0) {
+        BidLiveHomeGlobalLiveModel *model = self.firstPartLiveArray[indexPath.row];
+        !self.cellClickBlock?:self.cellClickBlock(model);
+    }
+    if (indexPath.section==1) {
+        BidLiveHomeGlobalLiveModel *model = self.secondPartLiveArray[indexPath.row];
+        !self.cellClickBlock?:self.cellClickBlock(model);
+    }
 }
 
 
@@ -176,7 +226,7 @@
         
         
         [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"UITableViewCell"];
-        UINib *nib = [BidLiveBundleRecourseManager getBundleNib:@"BidLiveHomeScollLiveNormalCell" type:@"nib"];
+        UINib *nib = [BidLiveBundleResourceManager getBundleNib:@"BidLiveHomeScollLiveNormalCell" type:@"nib"];
         [_tableView registerNib:nib forCellReuseIdentifier:@"BidLiveHomeScollLiveNormalCell"];
     }
     return _tableView;
@@ -184,9 +234,24 @@
 
 -(BidLiveLiveMainArticleScrollView *)articleScrollView {
     if (!_articleScrollView) {
-        _articleScrollView = [[BidLiveLiveMainArticleScrollView alloc] initWithFrame:CGRectMake(15, 5, SCREEN_WIDTH-30, 80)];
+        _articleScrollView = [[BidLiveLiveMainArticleScrollView alloc] initWithFrame:CGRectMake(15, 5, SCREEN_WIDTH-30, (SCREEN_WIDTH-30)*138.5/537)];
     }
     return _articleScrollView;
 }
+
+-(UIImageView *)gifImageView {
+    if (!_gifImageView) {
+        _gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 5, SCREEN_WIDTH-30, (SCREEN_WIDTH-30)*138.5/537)];
+    }
+    return _gifImageView;
+}
+
+-(UIImageView *)bottomImageView {
+    if (!_bottomImageView) {
+        _bottomImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    }
+    return _bottomImageView;
+}
+
 @end
 

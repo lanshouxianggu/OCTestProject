@@ -10,6 +10,7 @@
 #import "Masonry.h"
 #import "UIImageView+WebCache.h"
 #import "NSString+LLStringConnection.h"
+#import "NSAttributedString+LLMake.h"
 
 @interface BidLiveHomeScrollYouLikeCell ()
 @property (nonatomic, strong) UIImageView *topImageView;
@@ -46,14 +47,17 @@
 
 -(void)setModel:(BidLiveHomeGuessYouLikeListModel *)model {
     _model = model;
-    [self.topImageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:nil];
+    @autoreleasepool {
+        [self.topImageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:nil];
+    }
+    
     self.nameLabel.text = @""[model.auctionItemName];
     
     self.priceLabel.attributedText = [NSAttributedString makeAttributedString:^(LLAttributedStringMaker * _Nonnull make) {
-        make.text(@"起拍价 ").foregroundColor(UIColorFromRGB(0x666666));
+        make.text(@"起拍价 ").foregroundColor(UIColorFromRGB(0x999999));
         make.text(model.strStartingPrice).foregroundColor(UIColorFromRGB(0x5E98CB));
     }];
-    if (model.status==2) {
+    if (model.auctionStatus==2) {
         self.stateLabel.text = @"正在直播";
         self.stateLabel.textColor = UIColorFromRGB(0xC6746C);
         self.dateLabel.text = @""[model.sellerName];
@@ -68,7 +72,8 @@
 -(UIImageView *)topImageView {
     if (!_topImageView) {
         _topImageView = [UIImageView new];
-        _topImageView.backgroundColor = UIColor.cyanColor;
+        _topImageView.backgroundColor = UIColor.whiteColor;
+        _topImageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return _topImageView;
 }
@@ -121,7 +126,7 @@
     if (!_priceLabel) {
         _priceLabel = [UILabel new];
         _priceLabel.text = @"起拍价 2万日元";
-        _priceLabel.textColor = UIColorFromRGB(0x666666);
+        _priceLabel.textColor = UIColorFromRGB(0x999999);
         _priceLabel.font = [UIFont systemFontOfSize:14];
     }
     return _priceLabel;
@@ -131,7 +136,7 @@
     if (!_dateLabel) {
         _dateLabel = [UILabel new];
         _dateLabel.text = @"距开拍 5天3时";
-        _dateLabel.textColor = UIColorFromRGB(0x666666);
+        _dateLabel.textColor = UIColorFromRGB(0x999999);
         _dateLabel.font = [UIFont systemFontOfSize:14];
     }
     return _dateLabel;

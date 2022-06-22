@@ -8,7 +8,7 @@
 #import "BidLiveHomeScrollLiveBtnView.h"
 #import "LCConfig.h"
 #import "Masonry.h"
-#import "BidLiveBundleRecourseManager.h"
+#import "BidLiveBundleResourceManager.h"
 
 @interface BidLiveHomeScrollLiveBtnView ()
 @property (nonatomic, copy) NSString *title;
@@ -24,7 +24,7 @@
         UILabel *label = [UILabel new];
         label.text = title;
         label.font = [UIFont systemFontOfSize:14];
-        label.textColor = UIColorFromRGB(0x666666);
+        label.textColor = UIColorFromRGB(0x999999);
         
         [self addSubview:label];
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -32,7 +32,7 @@
             make.left.offset(13);
         }];
         
-        UIImage *image = [BidLiveBundleRecourseManager getBundleImage:@"more" type:@"png"];
+        UIImage *image = [BidLiveBundleResourceManager getBundleImage:@"more" type:@"png"];
         UIImageView *imageV = [[UIImageView alloc] initWithImage:image];
         self.imageView = imageV;
         [self addSubview:imageV];

@@ -22,11 +22,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) void (^sendClickBlock)(void);
 ///资讯block
 @property (nonatomic, copy) void (^informationClickBlock)(void);
+///直播间block
+@property (nonatomic, copy) void (^liveRoomClickBlock)(void);
 @end
 
 
 @interface BidLiveHomeBtnItemCell : UICollectionViewCell
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *titleLable;
+@property (nonatomic, strong) UIView *leftLine;
+@property (nonatomic, strong) UIView *rightLine;
 @end
 NS_ASSUME_NONNULL_END

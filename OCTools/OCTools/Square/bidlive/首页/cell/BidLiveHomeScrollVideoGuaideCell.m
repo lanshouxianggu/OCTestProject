@@ -6,12 +6,18 @@
 //
 
 #import "BidLiveHomeScrollVideoGuaideCell.h"
-#import "BidLiveBundleRecourseManager.h"
+#import "BidLiveBundleResourceManager.h"
 #import "UIImageView+WebCache.h"
+#import "Masonry.h"
+#import "LCConfig.h"
+#import "UIView+PartRounded.h"
+#import "UIView+GradientColor.h"
+#import "UIImage+GIF.h"
 
 @interface BidLiveHomeScrollVideoGuaideCell ()
 @property (nonatomic, strong) UIImageView *videoImageView;
 @property (nonatomic, strong) UILabel *videoTitleLabel;
+
 @end
 
 @implementation BidLiveHomeScrollVideoGuaideCell
@@ -39,7 +45,7 @@
     
     [topView addSubview:self.livingView];
     
-    UIImage *image = [BidLiveBundleRecourseManager getBundleImage:@"lianpaijiangtangvideobg" type:@"png"];
+    UIImage *image = [BidLiveBundleResourceManager getBundleImage:@"iconicon-play" type:@"png"];
     
     UIImageView *iconImageV = [[UIImageView alloc] initWithImage:image];
     [topView addSubview:iconImageV];
@@ -47,6 +53,8 @@
         make.width.height.mas_equalTo(25);
         make.center.offset(0);
     }];
+    
+    [topView addSubview:self.rtcSuperView];
     
     UIView *bottomView = [UIView new];
     bottomView.backgroundColor = UIColor.whiteColor;
@@ -70,7 +78,7 @@
     _model = model;
     [self.videoImageView sd_setImageWithURL:[NSURL URLWithString:model.coverUrl] placeholderImage:nil];
     self.videoTitleLabel.text = model.name;
-//    self.livingView.hidden = !(model.isLiveroom && model.roomType==2);
+    self.livingView.hidden = !(model.isLiveroom && model.roomType==2);
 }
 
 #pragma mark - lazy
@@ -100,7 +108,19 @@
     }
     return _livingView;
 }
+
+-(UIView *)rtcSuperView {
+    if (!_rtcSuperView) {
+        CGRect frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height*4/7);
+        _rtcSuperView = [[UIView alloc] initWithFrame:frame];
+//        _rtcSuperView.hidden = YES;
+        _rtcSuperView.alpha = 0;
+    }
+    return _rtcSuperView;
+}
+
 @end
+
 
 @implementation BidLiveLivingView
 
@@ -120,7 +140,7 @@
     NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
     NSString *imagePath = [bundle pathForResource:@"animation_live" ofType:@"gif"];
     NSData *imageData = [NSData dataWithContentsOfFile:imagePath];
-//    UIImage *gifImage = [UIImage sd_imag eWithGIFData:imageData];
+    UIImage *gifImage = [UIImage sd_animatedGIFWithData:imageData];
     
     YFGIFImageView *imageV = [[YFGIFImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
 //    imageV.image = gifImage;

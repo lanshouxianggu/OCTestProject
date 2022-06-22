@@ -11,7 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class BidLiveHomeHighlightLotsListModel;
 @interface BidLiveHomeScrollHighlightLotsView : UIView
+
+
+
 -(void)updateHighlightLotsList:(NSArray<BidLiveHomeHighlightLotsListModel *> *)list;
+
+@property (nonatomic, copy) void (^scrollToRightBlock)(void);
+@property (nonatomic, copy) void (^cellClickBlock)(BidLiveHomeHighlightLotsListModel *model);
 @end
 
 NS_ASSUME_NONNULL_END

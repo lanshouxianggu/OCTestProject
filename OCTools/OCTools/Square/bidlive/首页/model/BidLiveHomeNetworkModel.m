@@ -6,9 +6,10 @@
 //
 
 #import "BidLiveHomeNetworkModel.h"
-#import "BidLiveHomeCMSArticleModel.h"
 #import "BidLiveInterfaceEnum.h"
 #import "MJExtension.h"
+#import "HJNetwork.h"
+#import "LCConfig.h"
 
 @implementation BidLiveHomeNetworkModel
 
@@ -32,7 +33,7 @@
 +(void)getHomePageArticleList:(int)pageIndex pageSize:(int)pageSize completion:(nonnull void (^)(NSArray<BidLiveHomeCMSArticleModel *> * _Nonnull))completionBlock {
     NSString *url = [NSString stringWithFormat:@"%@%@?pageIndex=%d&pageSize=%d",kAppEnApiAddress,kGetCMSArticleList,pageIndex,pageSize];
     
-    [HJNetwork POSTWithURL:url parameters:nil cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [HJNetwork POSTWithURL:url parameters:nil cachePolicy:HJCachePolicyNetworkElseCache callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (error) {
             !completionBlock?:completionBlock(@[]);
         }else {
@@ -50,7 +51,7 @@
     NSString *url = [NSString stringWithFormat:@"%@%@",kAppWebApiAddress,kGetListForIndex];
     NSDictionary *params = @{@"source":source};
     
-    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyNetworkElseCache callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (error) {
             !completionBlock?:completionBlock(@[]);
         }else {
@@ -102,7 +103,7 @@
                              @"scrollLeft":scrollLeft
     };
     
-    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyNetworkElseCache callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (error) {
             !completionBlock?:completionBlock([BidLiveHomeVideoGuaideModel new]);
         }else {
@@ -131,7 +132,7 @@
                              @"isContainBeforePage":@(isContainBeforePage)
     };
     
-    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyIgnoreCache callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyNetworkElseCache callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (error) {
             !completionBlock?:completionBlock([BidLiveHomeAnchorModel new]);
         }else {
@@ -153,7 +154,7 @@
     NSString *url = [NSString stringWithFormat:@"%@%@",kAppWebApiAddress,kGetGuangGuangPagedList];
     NSDictionary *params = @{@"pageIndex":@(pageIndex)};
     
-    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyIgnoreCache callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyNetworkElseCache callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (error) {
             !completionBlock?:completionBlock([BidLiveHomeGuessYouLikeModel new]);
         }else {
@@ -184,7 +185,7 @@
                              @"scrollLeft":scrollLeft
     };
     
-    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyCacheThenNetwork callback:^(id responseObject, BOOL isCache, NSError *error) {
+    [HJNetwork POSTWithURL:url parameters:params cachePolicy:HJCachePolicyNetworkElseCache callback:^(id responseObject, BOOL isCache, NSError *error) {
         if (error) {
             !completionBlock?:completionBlock([BidLiveHomeHighlightLotsModel new]);
         }else {
@@ -199,4 +200,61 @@
         }
     }];
 }
+
++(void)getHomePageGetLiveRoomStatus:(NSString *)liveRoomId completion:(void (^)(NSInteger))completionBlock
+{
+    NSString *url = @""[kAppNewttpApiAddress][kGetLiveRoomStatus];
+    NSDictionary *params = @{@"liveRoomId":@""[liveRoomId]};
+    
+    [HJNetwork POSTWithURL:url parameters:params callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (error) {
+            !completionBlock?:completionBlock(-1);
+        }else {
+            if ([responseObject isKindOfClass:NSDictionary.class]) {
+                if ([responseObject[@"result"] isKindOfClass:NSDictionary.class]) {
+                    NSDictionary *dataDic = responseObject[@"result"];
+                    NSInteger status = [dataDic[@"liveStatus"] integerValue];
+                    !completionBlock?:completionBlock(status);
+                }else{
+                    !completionBlock?:completionBlock(-1);
+                }
+            }
+        }
+    }];
+}
+
++(void)getHomePageGetTXTtpPlayUrl:(NSInteger)playType
+                           domain:(NSString *)domain
+                       streamName:(NSString *)streamName
+                          appName:(NSString *)appName
+                              key:(NSString *)key
+                      secondsTime:(NSInteger)secondsTime
+                       completion:(void (^)(NSString * _Nonnull))completionBlock
+{
+    NSString *url = @""[kAppWebApiAddress][kGetTXTtpPlayUrl];
+    NSDictionary *params = @{@"playType":@(playType),
+                             @"domain":@""[domain],
+                             @"streamName":@""[streamName],
+                             @"appName":@""[appName],
+                             @"key":@""[key],
+                             @"secondsTime":@(secondsTime)
+    };
+    
+    [HJNetwork POSTWithURL:url parameters:params callback:^(id responseObject, BOOL isCache, NSError *error) {
+        if (error) {
+            !completionBlock?:completionBlock(@"");
+        }else {
+            if ([responseObject isKindOfClass:NSDictionary.class]) {
+                if ([responseObject[@"result"] isKindOfClass:NSDictionary.class]) {
+                    NSDictionary *dataDic = responseObject[@"result"];
+                    NSString *url = @""[dataDic[@"message"]];
+                    !completionBlock?:completionBlock(url);
+                }else{
+                    !completionBlock?:completionBlock(@"");
+                }
+            }
+        }
+    }];
+}
+
 @end

@@ -9,18 +9,19 @@
 #import "BidLiveHomeScrollHighlightLotsCell.h"
 #import "LCConfig.h"
 #import "Masonry.h"
-#import "BidLiveBundleRecourseManager.h"
+#import "BidLiveBundleResourceManager.h"
 #import "BidLiveHomeHighlightLotsModel.h"
 
-#define kTopViewHeight 90
+#define kTopViewHeight 70
 #define kItemWidth (SCREEN_WIDTH-15*2-12*2)/2.25
-#define kBottomViewHeight (SCREEN_HEIGHT*1/3)
+#define kBottomViewHeight (SCREEN_WIDTH*0.689)
 
 @interface BidLiveHomeScrollHighlightLotsView () <UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UIView *topView;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UICollectionViewFlowLayout *layout;
 @property (nonatomic, strong) NSArray <BidLiveHomeHighlightLotsListModel *> *dataList;
+@property (nonatomic, assign) BOOL isScrollToRight;
 @end
 
 @implementation BidLiveHomeScrollHighlightLotsView
@@ -47,6 +48,10 @@
     }];
 }
 
+-(void)loadMoreData {
+    !self.scrollToRightBlock?:self.scrollToRightBlock();
+}
+
 -(void)updateHighlightLotsList:(NSArray<BidLiveHomeHighlightLotsListModel *> *)list {
     self.dataList = list;
     [self.collectionView reloadData];
@@ -63,19 +68,37 @@
     return cell;
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    BidLiveHomeHighlightLotsListModel *model = self.dataList[indexPath.item];
+    !self.cellClickBlock?:self.cellClickBlock(model);
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.isScrollToRight) {
+        return;
+    }
+    CGFloat offsetX = self.collectionView.contentOffset.x;
+    CGFloat width = scrollView.frame.size.width;
+    CGFloat distanceFromRight = scrollView.contentSize.width-offsetX;
+    if (distanceFromRight<=width) {
+        [self loadMoreData];
+        self.isScrollToRight = YES;
+    }
+}
+
 #pragma mark - lazy
 -(UIView *)topView {
     if (!_topView) {
         _topView = [[UIView alloc] initWithFrame:CGRectZero];
         _topView.backgroundColor = UIColorFromRGB(0xf8f8f8);
         
-        UIImage *image = [BidLiveBundleRecourseManager getBundleImage:@"classroom" type:@"png"];
+        UIImage *image = [BidLiveBundleResourceManager getBundleImage:@"indexBlock5" type:@"png"];
         
         UIImageView *imageV = [[UIImageView alloc] initWithImage:image];
         [_topView addSubview:imageV];
         [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.offset(0);
-            make.width.mas_equalTo(44*3.35);
+            make.width.mas_equalTo(44*3.23);
             make.height.mas_equalTo(44);
         }];
     }
@@ -99,7 +122,7 @@
         _collectionView.backgroundColor = UIColorFromRGB(0xf8f8f8);
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        
+        _collectionView.scrollsToTop = NO;
         [_collectionView registerClass:BidLiveHomeScrollHighlightLotsCell.class forCellWithReuseIdentifier:@"BidLiveHomeScrollHighlightLotsCell"];
     }
     return _collectionView;

@@ -6,7 +6,8 @@
 //
 
 #import "BidLiveHomeFloatView.h"
-#import "BidLiveBundleRecourseManager.h"
+#import "Masonry.h"
+#import "BidLiveBundleResourceManager.h"
 
 @implementation BidLiveHomeFloatView
 
@@ -18,11 +19,11 @@
 }
 
 -(void)setupUI {
-    self.layer.cornerRadius = 30;
-    self.layer.shadowColor = UIColor.blackColor.CGColor;
-    self.layer.shadowOffset = CGSizeMake(0, 0);
-    self.layer.shadowRadius = 6;
-    self.layer.shadowOpacity = 0.4;
+//    self.layer.cornerRadius = 30;
+//    self.layer.shadowColor = UIColor.blackColor.CGColor;
+//    self.layer.shadowOffset = CGSizeMake(0, 0);
+//    self.layer.shadowRadius = 6;
+//    self.layer.shadowOpacity = 0.4;
     
     UIView *mainView = [UIView new];
     mainView.layer.cornerRadius = 30;
@@ -32,9 +33,9 @@
         make.edges.insets(UIEdgeInsetsZero);
     }];
     
-    UIImage *image = [BidLiveBundleRecourseManager getBundleImage:@"newauctionicon" type:@"png"];
+    UIImage *image = [BidLiveBundleResourceManager getBundleImage:@"newauctionicon" type:@"png"];
+    
     UIImageView *imageV = [[UIImageView alloc] initWithImage:image];
-    imageV.contentMode = UIViewContentModeScaleAspectFill;
     [mainView addSubview:imageV];
     [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.insets(UIEdgeInsetsZero);
@@ -50,7 +51,7 @@
 }
 
 -(void)touchAction {
-    [TipProgress showText:@"新拍上场"];
+    !self.toNewAuctionClickBlock?:self.toNewAuctionClickBlock();
 }
 
 @end

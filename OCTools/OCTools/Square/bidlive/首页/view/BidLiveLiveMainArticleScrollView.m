@@ -36,6 +36,9 @@
 }
 
 -(void)updateBannerArray:(NSArray<BidLiveHomeCMSArticleModel *> *)bannerArray {
+    if (bannerArray.count==0) {
+        return;
+    }
     [self.imgArray removeAllObjects];
     [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
@@ -70,13 +73,13 @@
         [self.timer invalidate];
         self.timer = nil;
     }
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(scrollIamge) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(scrollIamge) userInfo:nil repeats:YES];
     NSRunLoop *runloop = [NSRunLoop currentRunLoop];
     [runloop addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
 -(void)imageViewTapGes:(UIButton *)btn {
-    !self.bannerClick?:self.bannerClick(self.imgArray[btn.tag-1]);
+    !self.bannerClick?:self.bannerClick(self.imgArray[btn.tag]);
 }
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat offsetX = scrollView.contentOffset.x;
@@ -122,7 +125,7 @@
     NSInteger page = [self.pageControl currentPage];
     page++;
     CGFloat offsetX = page*self.frame.size.width+self.frame.size.width;
-    [self setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    [self setContentOffset:CGPointMake(offsetX, 0) animated:NO];
 }
 
 -(void)dealloc {

@@ -9,10 +9,13 @@
 #import "BidLiveTopBannerView.h"
 #import "SGAdvertScrollView.h"
 #import "BidLiveHomeBtnItemsView.h"
-#import "LCConfig.h"
-#import "Masonry.h"
 #import "BidLiveHomeCMSArticleModel.h"
 #import "BidLiveHomeVideoGuideView.h"
+#import "LCConfig.h"
+#import "Masonry.h"
+#import "BidLiveBundleResourceManager.h"
+
+#define kMainViewHeihgt (SCREEN_WIDTH*72/585)
 
 @interface BidLiveHomeScrollTopMainView () <SGAdvertScrollViewDelegate>
 @property (nonatomic, strong) BidLiveTopBannerView *bannerView;
@@ -29,10 +32,7 @@
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.imageArray = @[UIColor.cyanColor,UIColor.blueColor,UIColor.yellowColor,UIColor.redColor];
-//        self.scrollTitleView.titles = @[@"1.上岛咖啡就是看劳动法就是盛开的积分是劳动法",
-//                                        @"2.SDK和索拉卡的附近是了的开发房贷",
-//                                        @"3.收快递费就SDK废旧塑料的发三楼的靠近非塑料袋开发计算量大开发就"];
+        self.imageArray = @[];
         self.scrollTitleView.titleColor = UIColorFromRGB(0x3b3b3b);
         self.scrollTitleView.titleFont = [UIFont systemFontOfSize:14];
         self.scrollTitleView.delegate = self;
@@ -63,6 +63,14 @@
         [self.itemsView setInformationClickBlock:^{
             !weakSelf.informationClickBlock?:weakSelf.informationClickBlock();
         }];
+        
+        [self.itemsView setLiveRoomClickBlock:^{
+            !weakSelf.liveRoomClickBlock?:weakSelf.liveRoomClickBlock();
+        }];
+        
+        [self.videoGuideView setCellClickBlock:^(BidLiveHomeVideoGuaideListModel * _Nonnull model) {
+            !weakSelf.videoGuaideCellClickBlock?:weakSelf.videoGuaideCellClickBlock(model);
+        }];
     }
     return self;
 }
@@ -72,6 +80,10 @@
     [self addSubview:self.itemsView];
     [self addSubview:self.scrollTitleSuperView];
     [self addSubview:self.videoGuideView];
+}
+
+-(void)videoGuaideViewBackToStartFrame {
+    [self.videoGuideView backToStartFrame];
 }
 
 -(void)updateBanners:(NSArray<BidLiveHomeBannerModel *> *)banners {
@@ -91,9 +103,21 @@
     [self.videoGuideView updateVideoGuideList:list];
 }
 
+-(void)stopVideoPlay {
+    [self.videoGuideView stopPlayVideo];
+}
+
+-(void)startVideoPlay {
+    [self.videoGuideView startPlayVideo];
+}
+
 #pragma mark - SGAdvertScrollViewDelegate
 -(void)advertScrollView:(SGAdvertScrollView *)advertScrollView didSelectedItemAtIndex:(NSInteger)index {
     !self.cmsArticleClickBlock?:self.cmsArticleClickBlock(self.cmsArticleArray[index]);
+}
+
+-(void)destroyTimer {
+    [self.bannerView destroyTimer];
 }
 
 #pragma mark - lazy
@@ -122,28 +146,40 @@
 
 -(UIView *)scrollTitleSuperView {
     if (!_scrollTitleSuperView) {
-        _scrollTitleSuperView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.itemsView.frame)+10, SCREEN_WIDTH, 30)];
+        _scrollTitleSuperView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.itemsView.frame)+10, SCREEN_WIDTH, kMainViewHeihgt)];
         _scrollTitleSuperView.backgroundColor = UIColor.whiteColor;
-        UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 60, 30)];
+        UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 60, kMainViewHeihgt)];
         lab.text = @"[动态]";
         lab.textColor = UIColorFromRGB(0x999999);
         lab.font = [UIFont systemFontOfSize:14];
         [_scrollTitleSuperView addSubview:lab];
         [_scrollTitleSuperView addSubview:self.scrollTitleView];
+        
+        UIImage *arrow = [BidLiveBundleResourceManager getBundleImage:@"arrow-dark-right" type:@"png"];
+        UIImageView *imageV = [[UIImageView alloc] initWithImage:arrow];
+        [_scrollTitleSuperView addSubview:imageV];
+        [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.offset(-15);
+            make.centerY.offset(0);
+            make.width.mas_equalTo(8);
+            make.height.mas_equalTo(12);
+        }];
     }
     return _scrollTitleSuperView;
 }
 
 -(SGAdvertScrollView *)scrollTitleView {
     if (!_scrollTitleView) {
-        _scrollTitleView = [[SGAdvertScrollView alloc] initWithFrame:CGRectMake(60, 0, SCREEN_WIDTH-70, 30)];
+        _scrollTitleView = [[SGAdvertScrollView alloc] initWithFrame:CGRectMake(60, 0, SCREEN_WIDTH-85, kMainViewHeihgt)];
+        _scrollTitleView.delegate = self;
+        _scrollTitleView.scrollTimeInterval = 2;
     }
     return _scrollTitleView;
 }
 
 -(BidLiveHomeVideoGuideView *)videoGuideView {
     if (!_videoGuideView) {
-        _videoGuideView = [[BidLiveHomeVideoGuideView alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(self.scrollTitleSuperView.frame)+10, SCREEN_WIDTH-30, SCREEN_HEIGHT*0.25)];
+        _videoGuideView = [[BidLiveHomeVideoGuideView alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(self.scrollTitleSuperView.frame)+10, SCREEN_WIDTH-30, SCREEN_HEIGHT*0.18)];
         _videoGuideView.backgroundColor = UIColorFromRGB(0xf8f8f8);
     }
     return _videoGuideView;

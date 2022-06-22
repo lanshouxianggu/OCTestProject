@@ -6,7 +6,9 @@
 //
 
 #import "BidLiveHomeBtnItemsView.h"
-#import "BidLiveBundleRecourseManager.h"
+#import "LCConfig.h"
+#import "Masonry.h"
+#import "BidLiveBundleResourceManager.h"
 
 @interface BidLiveHomeBtnItemsView () <UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionViewFlowLayout *layout;
@@ -19,13 +21,14 @@
 
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.titlesArr = @[@"全球拍卖",@"鉴定",@"国内拍卖",@"送拍",@"讲堂",@"资讯"];
-        UIImage *image1 = [BidLiveBundleRecourseManager getBundleImage:@"quanqiupai" type:@"png"];
-        UIImage *image2 = [BidLiveBundleRecourseManager getBundleImage:@"jianding" type:@"png"];
-        UIImage *image3 = [BidLiveBundleRecourseManager getBundleImage:@"guoneipai" type:@"png"];
-        UIImage *image4 = [BidLiveBundleRecourseManager getBundleImage:@"songpai" type:@"png"];
-        UIImage *image5 = [BidLiveBundleRecourseManager getBundleImage:@"lianpaijiangtang" type:@"png"];
-        UIImage *image6 = [BidLiveBundleRecourseManager getBundleImage:@"newsFeed" type:@"png"];
+        self.titlesArr = @[@"全球专场",@"鉴  定",@"国内专场",@"送  拍",@"直播间",@"讲  堂"];
+        
+        UIImage *image1 = [BidLiveBundleResourceManager getBundleImage:@"quanqiupai" type:@"png"];
+        UIImage *image2 = [BidLiveBundleResourceManager getBundleImage:@"jianding" type:@"png"];
+        UIImage *image3 = [BidLiveBundleResourceManager getBundleImage:@"guoneipai" type:@"png"];
+        UIImage *image4 = [BidLiveBundleResourceManager getBundleImage:@"songpai" type:@"png"];
+        UIImage *image5 = [BidLiveBundleResourceManager getBundleImage:@"zhibojian" type:@"png"];
+        UIImage *image6 = [BidLiveBundleResourceManager getBundleImage:@"lianpaijiangtang" type:@"png"];
         self.imagesArr = @[image1,image2,image3,image4,image5,image6];
         [self setupUI];
     }
@@ -46,6 +49,11 @@
     cell.backgroundColor = UIColor.whiteColor;
     cell.imageView.image = self.imagesArr[indexPath.item];
     cell.titleLable.text = self.titlesArr[indexPath.item];
+    cell.leftLine.hidden = cell.rightLine.hidden = YES;
+    if (indexPath.item==2||indexPath.item==3) {
+        cell.leftLine.hidden = cell.rightLine.hidden = NO;
+    }
+    
     return cell;
 }
 
@@ -55,8 +63,10 @@
         case 1:!self.appraisalClickBlock?:self.appraisalClickBlock();break;
         case 2:!self.countrySaleClickBlock?:self.countrySaleClickBlock();break;
         case 3:!self.sendClickBlock?:self.sendClickBlock();break;
-        case 4:!self.speechClassClickBlock?:self.speechClassClickBlock();break;
-        case 5:!self.informationClickBlock?:self.informationClickBlock();break;
+//        case 4:!self.speechClassClickBlock?:self.speechClassClickBlock();break;
+//        case 5:!self.informationClickBlock?:self.informationClickBlock();break;
+        case 4:!self.liveRoomClickBlock?:self.liveRoomClickBlock();break;
+        case 5:!self.speechClassClickBlock?:self.speechClassClickBlock();break;
         default:
             break;
     }
@@ -82,7 +92,7 @@
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.showsHorizontalScrollIndicator = NO;
-        _collectionView.backgroundColor = UIColorFromRGB(0xf8f8f8);
+        _collectionView.backgroundColor = UIColor.whiteColor;
         
         [_collectionView registerClass:BidLiveHomeBtnItemCell.class forCellWithReuseIdentifier:@"BidLiveHomeBtnItemCell"];
     }
@@ -105,9 +115,9 @@
 -(void)setupUI {
     [self.contentView addSubview:self.imageView];
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.offset(10);
+        make.left.offset(15);
         make.centerY.offset(0);
-        make.width.height.mas_equalTo(25);
+        make.width.height.mas_equalTo(18);
     }];
     
     [self.contentView addSubview:self.titleLable];
@@ -115,6 +125,22 @@
         make.left.equalTo(self.imageView.mas_right).offset(5);
         make.centerY.offset(0);
         make.right.offset(-10);
+    }];
+    
+    [self.contentView addSubview:self.leftLine];
+    [self.leftLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(0);
+        make.width.mas_equalTo(1);
+        make.height.mas_equalTo(15);
+        make.centerY.offset(0);
+    }];
+    
+    [self.contentView addSubview:self.rightLine];
+    [self.rightLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.offset(0);
+        make.width.mas_equalTo(1);
+        make.height.mas_equalTo(15);
+        make.centerY.offset(0);
     }];
 }
 
@@ -134,5 +160,21 @@
         _titleLable.textAlignment = NSTextAlignmentCenter;
     }
     return _titleLable;
+}
+
+-(UIView *)leftLine {
+    if (!_leftLine) {
+        _leftLine = [UIView new];
+        _leftLine.backgroundColor = UIColorFromRGB(0xf8f8f8);
+    }
+    return _leftLine;
+}
+
+-(UIView *)rightLine {
+    if (!_rightLine) {
+        _rightLine = [UIView new];
+        _rightLine.backgroundColor = UIColorFromRGB(0xf8f8f8);
+    }
+    return _rightLine;
 }
 @end

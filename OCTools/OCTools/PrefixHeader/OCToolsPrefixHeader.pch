@@ -28,6 +28,11 @@
 #import "HJNetwork.h"
 #import "YFGIFImageView.h"
 #import "UIView+GradientColor.h"
+#import "UIDevice+VGAddition.h"
+#import "BidLiveBundleResourceManager.h"
+#import "BidLiveHomeNetworkModel.h"
+#import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
 
 #ifdef __OBJC__
 // 配置头文件
