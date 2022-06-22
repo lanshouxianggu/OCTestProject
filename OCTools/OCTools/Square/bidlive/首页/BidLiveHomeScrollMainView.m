@@ -8,9 +8,7 @@
 #import "BidLiveHomeScrollMainView.h"
 #import "BidLiveHomeHeadView.h"
 #import "BidLiveHomeFloatView.h"
-#import "Masonry.h"
 #import "LCConfig.h"
-#import "BidLiveBundleResourceManager.h"
 
 #import "BidLiveHomeScrollTopMainView.h"
 #import "BidLiveHomeScrollLiveMainView.h"
@@ -257,6 +255,7 @@
     self.youlikePageNormalIndex = 0;
     self.superCanScroll = YES;
     self.isFirstScroll = YES;
+    self.isLoadMoreData = NO;
     self.youlikeContainAllBannersHeight = 0.0;
     self.youlikePageIndexArray = [NSMutableArray array];
     self.hightlightLotsList = [NSMutableArray array];
@@ -586,7 +585,9 @@
 //            }];
 //        }
         weakSelf.youlikePageNormalIndex++;
-        [weakSelf.youlikePageIndexArray removeObjectAtIndex:0];
+        if (weakSelf.youlikePageIndexArray.firstObject) {
+            [weakSelf.youlikePageIndexArray removeObjectAtIndex:0];
+        }
         
 //        CGPoint offset = weakSelf.youlikeMainView.collectionView.contentOffset;
 //        [weakSelf.youlikeMainView.collectionView reloadData];
@@ -884,6 +885,7 @@
         
         WS(weakSelf)
         [_youlikeMainView setLoadMoreGuessYouLikeDataBlock:^{
+            weakSelf.isPullRefresh = NO;
             [weakSelf loadMoreData];
         }];
         

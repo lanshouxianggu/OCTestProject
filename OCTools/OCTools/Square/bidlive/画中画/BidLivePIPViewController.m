@@ -30,6 +30,16 @@
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     [self startPip];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openOrClose) name:UIApplicationWillEnterForegroundNotification object:nil];
+    
+    WS(weakSelf)
+    [self.queuePlayer addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(1, NSEC_PER_SEC) queue:NULL usingBlock:^(CMTime time) {
+       //进度 当前时间/总时间
+        CGFloat progress = CMTimeGetSeconds(weakSelf.queuePlayer.currentItem.currentTime)/CMTimeGetSeconds(weakSelf.queuePlayer.currentItem.duration);
+        NSLog(@"当前视频播放进度：%f",progress);
+        if (progress>=1.0f) {
+            [weakSelf openPictureInPicture:@"https://cdn2.bzjupinhang.com:65/20220222/3jE8F54h/475kb/hls/index.m3u8"];
+        }
+    }];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -128,7 +138,6 @@
             AVPlayerItem *item = [[AVPlayerItem alloc] initWithAsset:asset];
             [item addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
             [self.queuePlayer replaceCurrentItemWithPlayerItem:item];
-//            [self.queuePlayer replaceCurrentItemWithPlayerItem:self.playItem];
         });
     }];
 }
@@ -139,7 +148,6 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (self.queuePlayer.status == AVPlayerStatusReadyToPlay) {
             [self.queuePlayer play];
-            
 //            [self openOrClose];
         } else {
         }
@@ -155,6 +163,8 @@
 }
 
 - (void)openOrClose {
+    [self openPictureInPicture:@"https://qiniu.hongwan.com.cn/hongwan/v/1982wi5b4690f4rqbd9kk.mp4"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     if (self.pipVC.isPictureInPictureActive) {
         [self.pipVC stopPictureInPicture];
         [self.pipBtn setTitle:@"开启画中画" forState:UIControlStateNormal];
@@ -162,6 +172,7 @@
         [self.pipVC startPictureInPicture];
         [self.pipBtn setTitle:@"关闭画中画" forState:UIControlStateNormal];
     }
+    });
 }
 
 -(AVPlayerItem *)loadingItem{
@@ -174,14 +185,14 @@
 
 -(AVPlayerItem *)testItem {
     if (!_testItem) {
-        _testItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:@"https://qiniu.hongwan.com.cn/hongwan/v/1982wi5b4690f4rqbd9kk.mp4"]];
+        _testItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:@"https://cdn2.bzjupinhang.com:65/20220222/3jE8F54h/475kb/hls/index.m3u8"]];
     }
     return _testItem;
 }
 
 - (AVQueuePlayer *)queuePlayer{
     if (!_queuePlayer) {
-        _queuePlayer = [AVQueuePlayer queuePlayerWithItems:@[self.loadingItem,self.testItem]];
+        _queuePlayer = [AVQueuePlayer queuePlayerWithItems:@[self.testItem]];
 //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_mediaPlayDidEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:_queuePlayer.currentItem];
         _queuePlayer.actionAtItemEnd = AVPlayerActionAtItemEndNone;
     }

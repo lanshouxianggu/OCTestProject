@@ -160,7 +160,8 @@
 
 -(AVPlayerItem *)loadingItem{
     if(!_loadingItem){
-        _loadingItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:@"https://fileoss.fdzq.com/go_fd_co/fd-1587373158-9t0y5n.mp4"]];
+//        _loadingItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:@"https://qiniu.hongwan.com.cn/hongwan/v/1982wi5b4690f4rqbd9kk.mp4"]];
+        _loadingItem = [AVPlayerItem playerItemWithURL:[NSURL URLWithString:@"http://liveplay2.weipaitang.com/live/1904051353wNzNVx.flv"]];
         [_loadingItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
     }
     return _loadingItem;
